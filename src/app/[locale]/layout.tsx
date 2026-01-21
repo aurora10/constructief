@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { GlowFrame } from "@/components/layout/GlowFrame";
 
 export default async function RootLayout({
   children,
@@ -41,6 +42,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${manrope.variable} antialiased bg-background text-neutral flex flex-col min-h-screen`}>
         <NextIntlClientProvider messages={messages}>
+          <GlowFrame />
           <Header />
           <main className="flex-grow">
             {children}

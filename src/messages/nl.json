@@ -13,30 +13,30 @@
         "contact": "Contact"
     },
     "Hero": {
-        "title": "Uw constructieve partner in de bouw",
-        "subtitle": "Wij verbinden vakkundige professionals met toonaangevende bouwbedrijven in België. Kwaliteit, betrouwbaarheid en vakmanschap staan centraal.",
-        "cta_candidates": "Ik zoek werk",
-        "cta_employers": "Ik zoek personeel"
+        "title": "Samen bouwen we aan een sterkere toekomst",
+        "subtitle": "Constructief verbindt top-vakkunsten met de meest uitdagende projecten in de Belgische bouwsector. Wij staan voor kwaliteit, snelheid en een mensgerichte aanpak.",
+        "cta_candidates": "Ontdek vacatures",
+        "cta_employers": "Vind vakkundig personeel"
     },
     "ValueProps": {
-        "title": "Waarom kiezen voor Constructief?",
-        "subtitle": "Wij bieden meer dan alleen vacatures. Wij bouwen aan duurzame relaties.",
+        "title": "De kracht van een constructieve samenwerking",
+        "subtitle": "Bij ons draait het om meer dan alleen een match. Wij investeren in de groei van vakkrachten en het succes van projecten.",
         "features": {
             "quality": {
-                "title": "Kwaliteit",
-                "description": "Wij selecteren alleen de beste vakmensen en betrouwbare werkgevers."
+                "title": "Gegarandeerde Kwaliteit",
+                "description": "Wij selecteren uitsluitend vakkundige professionals die hun sporen in de bouw hebben verdiend."
             },
             "speed": {
-                "title": "Snelheid",
-                "description": "Snelle matching zodat projecten geen vertraging oplopen."
+                "title": "Snelle Inzetbaarheid",
+                "description": "Dankzij ons uitgebreide netwerk vullen wij uw vacatures in recordtempo in, zonder kwaliteitsverlies."
             },
             "network": {
-                "title": "Netwerk",
-                "description": "Toegang tot een uitgebreid netwerk in de bouwsector."
+                "title": "Exclusief Netwerk",
+                "description": "Directe toegang tot de meest gerenommeerde bouwbedrijven en de beste vakmensen in de markt."
             },
             "reliability": {
-                "title": "Betrouwbaarheid",
-                "description": "Transparante communicatie en afspraken die worden nagekomen."
+                "title": "Rotsvaste Afspraken",
+                "description": "Bij Constructief doen we wat we beloven. Transparantie en integriteit zijn onze kernwaarden."
             }
         }
     },
@@ -134,10 +134,10 @@
         "view_details": "Bekijk vacature"
     },
     "AboutPage": {
-        "title": "Over Ons",
-        "subtitle": "Leer het team achter Constructief kennen.",
-        "story_p1": "Constructief is opgericht met een duidelijke missie: de kloof overbruggen tussen getalenteerde bouwprofessionals en ambitieuze bouwbedrijven. Wij geloven in de kracht van persoonlijk contact en duurzame relaties.",
-        "story_p2": "Met jarenlange ervaring in zowel de bouwsector als recruitment, begrijpen wij als geen ander wat er nodig is om succesvolle matches te maken. Onze aanpak is transparant, efficiënt en mensgericht."
+        "title": "Onze Missie & Visie",
+        "subtitle": "Maak kennis met het team dat de bouwsector in beweging brengt.",
+        "story_p1": "Constructief is ontstaan vanuit een passie voor vakmanschap en de overtuiging dat de juiste mens op de juiste plek het verschil maakt. Wij overbruggen de kloof tussen ambitie en uitvoering met een persoonlijke en deskundige aanpak.",
+        "story_p2": "Met onze jarenlange expertise in zowel de bouw als recruitment begrijpen we de taal van de werkvloer én de behoeften van de directiekamer. Onze aanpak is direct, eerlijk en altijd gericht op een resultaat waar iedereen op kan bouwen."
     },
     "NewsPage": {
         "title": "Nieuws",
@@ -161,7 +161,30 @@
     },
     "PrivacyPage": {
         "title": "Privacybeleid",
-        "content": "Dit is een voorbeeld van een privacybeleid. Hier komt de juridische tekst over hoe wij omgaan met persoonsgegevens."
+        "last_updated": "Laatst bijgewerkt: 21 januari 2026",
+        "intro": "Bij Constructief geloven we dat vertrouwen de fundering is van elke succesvolle samenwerking. Wij gaan uiterst zorgvuldig om met uw persoonsgegevens en zorgen ervoor dat uw privacy gewaarborgd blijft terwijl we u helpen de volgende stap in uw carrière of project te zetten.",
+        "sections": {
+            "collection": {
+                "title": "1. Welke gegevens verzamelen wij?",
+                "content": "Om u optimaal te kunnen begeleiden, verzamelen wij gegevens die essentieel zijn voor het recruitmentproces. Denk hierbij aan uw personalia, contactgegevens, professionele achtergrond (CV), relevante certificaten en uw specifieke carrièrevoorkeuren. Voor werkgevers verzamelen we de nodige bedrijfsgegevens om een kwalitatieve match te garanderen."
+            },
+            "usage": {
+                "title": "2. Hoe gebruiken wij uw gegevens?",
+                "content": "Uw gegevens worden uitsluitend gebruikt om onze kernopdracht te vervullen: het creëren van duurzame matches in de bouwsector. Wij analyseren uw profiel om u te verbinden met projecten die aansluiten bij uw expertise en ambities. Daarnaast gebruiken we uw feedback om onze dienstverlening continu te verfijnen."
+            },
+            "sharing": {
+                "title": "3. Vertrouwelijkheid en Derden",
+                "content": "Uw privacy is bij ons in veilige handen. Persoonlijke profielen worden pas gedeeld met potentiële werkgevers na uw uitdrukkelijke toestemming. Wij verkopen uw gegevens onder geen beding aan externe partijen voor commerciële doeleinden."
+            },
+            "security": {
+                "title": "4. Geavanceerde Beveiliging",
+                "content": "Wij investeren continu in moderne technologische infrastructuren om uw gegevens te beschermen. Door strikte toegangscontrole en encryptie zorgen we ervoor dat onbevoegden geen toegang krijgen tot uw persoonlijke informatie."
+            },
+            "rights": {
+                "title": "5. Uw Regie over Uw Gegevens",
+                "content": "U behoudt te allen tijde de volledige controle. U heeft het recht om uw gegevens in te zien, te corrigeren of volledig te laten verwijderen uit onze systemen. Onze processen zijn ingericht om vlot aan dergelijke verzoeken te voldoen via onze standaard contactkanalen."
+            }
+        }
     },
     "Team": {
         "title": "Ons Team",

@@ -56,7 +56,7 @@ export function Hero() {
                     <Button asChild size="lg" className="text-lg">
                         <Link href="/kandidaten">{t("cta_candidates")}</Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="text-lg">
+                    <Button asChild variant="outline" size="lg" className="text-lg border-accent text-accent hover:bg-accent hover:text-white">
                         <Link href="/werkgevers">{t("cta_employers")}</Link>
                     </Button>
                 </div>
