@@ -96,9 +96,12 @@
         }
     },
     "TrustSignals": {
-        "candidates": "Мастеров",
-        "companies": "Партнеров",
-        "placements": "Успешных совпадений"
+        "candidates": "Отклик",
+        "candidates_value": "< 24ч",
+        "companies": "Рекомендации",
+        "companies_value": "Проверены",
+        "placements": "Регион",
+        "placements_value": "Вся Бельгия"
     },
     "CandidatesPage": {
         "title": "Строй свое будущее",

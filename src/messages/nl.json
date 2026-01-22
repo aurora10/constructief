@@ -96,9 +96,12 @@
         }
     },
     "TrustSignals": {
-        "candidates": "Vakmannen",
-        "companies": "Partners",
-        "placements": "Succesvolle Matches"
+        "candidates": "Respons",
+        "candidates_value": "< 24u",
+        "companies": "Referenties",
+        "companies_value": "Gecheckt",
+        "placements": "Regio",
+        "placements_value": "Heel België"
     },
     "CandidatesPage": {
         "title": "Bouw aan je toekomst",
