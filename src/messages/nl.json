@@ -1,7 +1,7 @@
 {
     "HomePage": {
         "title": "Constructief",
-        "subtitle": "Uw constructieve partner in de bouw"
+        "subtitle": "Geen stapelas CV's, maar direct inzetbare vakmannen."
     },
     "Navigation": {
         "home": "Home",
@@ -14,209 +14,209 @@
     },
     "Hero": {
         "title": "Samen bouwen we aan een sterkere toekomst",
-        "subtitle": "Constructief verbindt top-vakkunsten met de meest uitdagende projecten in de Belgische bouwsector. Wij staan voor kwaliteit, snelheid en een mensgerichte aanpak.",
-        "cta_candidates": "Ontdek vacatures",
-        "cta_employers": "Vind vakkundig personeel"
+        "subtitle": "Vergeet de stapels ongelezen CV's. Wij selecteren persoonlijk de vakmannen die uw project naar een hoger niveau tillen. Direct inzetbaar, volledig gescreend en met een 7-daagse testgarantie.",
+        "cta_candidates": "Bekijk projecten",
+        "cta_employers": "Vind uw vakman"
     },
     "ValueProps": {
-        "title": "De kracht van een constructieve samenwerking",
-        "subtitle": "Bij ons draait het om meer dan alleen een match. Wij investeren in de groei van vakkrachten en het succes van projecten.",
+        "title": "Waarom Constructief uw partner is",
+        "subtitle": "Wij zijn geen algoritme, maar uw persoonlijke partner in de bouw. Kwaliteit door menselijke selectie.",
         "features": {
             "quality": {
-                "title": "Gegarandeerde Kwaliteit",
-                "description": "Wij selecteren uitsluitend vakkundige professionals die hun sporen in de bouw hebben verdiend."
+                "title": "Persoonlijke Vetting",
+                "description": "Wij spreken iedere kandidaat persoonlijk en checken alle referenties. U krijgt alleen personeel dat wij zelf ook zouden aannemen."
             },
             "speed": {
-                "title": "Snelle Inzetbaarheid",
-                "description": "Dankzij ons uitgebreide netwerk vullen wij uw vacatures in recordtempo in, zonder kwaliteitsverlies."
+                "title": "7-daagse Testweek",
+                "description": "Niet zeker van een match? Profiteer van onze testweek. De eerste 7 dagen zijn bedoeld om te zien of de klik er echt is."
             },
             "network": {
-                "title": "Exclusief Netwerk",
-                "description": "Directe toegang tot de meest gerenommeerde bouwbedrijven en de beste vakmensen in de markt."
+                "title": "Anonieme Screening",
+                "description": "Wij beschermen de privacy van onze vakmensen. U beoordeelt op skills en ervaring, contactgegevens volgen na de match."
             },
             "reliability": {
-                "title": "Rotsvaste Afspraken",
-                "description": "Bij Constructief doen we wat we beloven. Transparantie en integriteit zijn onze kernwaarden."
+                "title": "Geen Kopzorgen",
+                "description": "Wij regelen de administratie via onze Payroll-partners, zodat u zich kunt focussen op de bouw."
             }
         }
     },
     "HowItWorks": {
-        "title": "Hoe het werkt",
-        "subtitle": "Een eenvoudig proces voor zowel kandidaten als werkgevers.",
+        "title": "Zo werken wij",
+        "subtitle": "Een transparant proces gericht op kwaliteit en de perfecte klik.",
         "candidates": {
-            "title": "Voor Kandidaten",
-            "description": "Vind de perfecte baan in de bouw in 3 stappen.",
+            "title": "Voor Vakmannen",
+            "description": "Vind de juiste werkplek zonder gedoe.",
             "step1": {
-                "title": "Registreren",
-                "description": "Maak een profiel aan en upload je CV."
+                "title": "Kennismaking",
+                "description": "Wij spreken je persoonlijk om je skills en ambities te begrijpen."
             },
             "step2": {
-                "title": "Matching",
-                "description": "Wij matchen je profiel met passende vacatures."
+                "title": "Anonieme Voorstelling",
+                "description": "We stellen je voor aan partners op basis van je vakmanschap, niet je privégegevens."
             },
             "step3": {
-                "title": "Starten",
-                "description": "Ga op gesprek en start je nieuwe baan."
+                "title": "De Testweek",
+                "description": "Start met een proefweek van 7 dagen om te zien of het bedrijf bij je past."
             },
-            "cta": "Start nu"
+            "cta": "Meld je aan"
         },
         "employers": {
-            "title": "Voor Werkgevers",
-            "description": "Vind gekwalificeerd personeel in 3 stappen.",
+            "title": "Voor Partners",
+            "description": "Kwaliteit boven kwantiteit in 3 stappen.",
             "step1": {
-                "title": "Vacature plaatsen",
-                "description": "Deel je vacature en eisen met ons."
+                "title": "Behoefte bepalen",
+                "description": "Vertel ons precies welke expertise u zoekt voor uw project."
             },
             "step2": {
-                "title": "Selectie",
-                "description": "Wij selecteren de beste kandidaten voor jou."
+                "title": "Geselecteerde Voorstellen",
+                "description": "U ontvangt een selectie van gescreende kandidaten die wij persoonlijk hebben gesproken."
             },
             "step3": {
-                "title": "Aannemen",
-                "description": "Voer gesprekken en neem de beste kandidaat aan."
+                "title": "Start & Evaluatie",
+                "description": "De kandidaat start direct met een 7-daagse evaluatieperiode."
             },
-            "cta": "Plaats vacature"
+            "cta": "Vraag personeel aan"
         }
     },
     "FeaturedJobs": {
-        "title": "Uitgelichte Vacatures",
-        "subtitle": "Ontdek onze nieuwste kansen in de bouw.",
-        "view_all": "Alle vacatures",
-        "apply": "Bekijk vacature"
+        "title": "Actuele Projecten",
+        "subtitle": "Kansen voor echte vakmensen.",
+        "view_all": "Alle projecten",
+        "apply": "Bekijk project"
     },
     "Testimonials": {
-        "title": "Wat anderen zeggen",
+        "title": "Wat onze partners zeggen",
         "reviews": {
             "1": {
-                "text": "Constructief heeft ons geholpen om snel gekwalificeerd personeel te vinden voor ons grote project in Antwerpen."
+                "text": "Eindelijk een recruiter die begrijpt dat we geen CV's nodig hebben, maar mensen die weten van aanpakken."
             },
             "2": {
-                "text": "Dankzij Constructief heb ik een vaste baan gevonden bij een topbedrijf. De begeleiding was uitstekend."
+                "text": "De persoonlijke aanpak en de testweek gaven ons het vertrouwen dat we nodig hadden om snel te schakelen."
             }
         }
     },
     "TrustSignals": {
-        "candidates": "Kandidaten",
-        "companies": "Bedrijven",
-        "placements": "Plaatsingen"
+        "candidates": "Vakmannen",
+        "companies": "Partners",
+        "placements": "Succesvolle Matches"
     },
     "CandidatesPage": {
-        "title": "Voor Kandidaten",
-        "subtitle": "Bouw aan je toekomst met Constructief. Wij helpen je aan de perfecte baan."
+        "title": "Bouw aan je toekomst",
+        "subtitle": "Wij zijn jouw stem bij de beste bouwbedrijven. Persoonlijk, anoniem en gericht op jouw groei."
     },
     "EmployersPage": {
-        "title": "Voor Werkgevers",
-        "subtitle": "Vind de beste vakmensen voor uw projecten. Snel, betrouwbaar en op maat."
+        "title": "Uw Partner in Personeel",
+        "subtitle": "Krijg direct toegang tot gescreende vakmannen. Geen administratieve rompslomp, alleen resultaat."
     },
     "Services": {
-        "title": "Onze Diensten",
-        "subtitle": "Wij bieden flexibele oplossingen voor al uw personeelsbehoeften.",
+        "title": "Onze Expertise",
+        "subtitle": "Wij bieden oplossingen die passen bij de dynamiek van de bouw.",
         "items": {
             "temp": {
-                "title": "Uitzendarbeid",
-                "description": "Flexibele krachten voor tijdelijke pieken of vervanging."
+                "title": "Payroll Services",
+                "description": "Zorgeloze verloning via onze erkende partners, met behoud van uw flexibiliteit."
             },
             "perm": {
                 "title": "Werving & Selectie",
-                "description": "Vind de perfecte vaste medewerker voor uw team."
+                "description": "Vind de perfecte vaste aanwinst voor uw kernteam door onze grondige screening."
             },
             "project": {
-                "title": "Projectdetachering",
-                "description": "Specialisten voor de duur van uw project."
+                "title": "Freelance Bemiddeling",
+                "description": "De juiste zelfstandige professionals voor uw specifieke projectduur."
             }
         }
     },
     "VacanciesPage": {
-        "title": "Vacatures",
-        "subtitle": "Ontdek de nieuwste vacatures in de bouwsector.",
-        "search_placeholder": "Zoek op functie, trefwoord of bedrijf...",
-        "filter": "Filters",
-        "view_details": "Bekijk vacature"
+        "title": "Projecten & Kansen",
+        "subtitle": "Ontdek waar uw vakmanschap het meest gewaardeerd wordt.",
+        "search_placeholder": "Zoek op expertise of regio...",
+        "filter": "Filteren",
+        "view_details": "Project details"
     },
     "AboutPage": {
-        "title": "Onze Missie & Visie",
-        "subtitle": "Maak kennis met het team dat de bouwsector in beweging brengt.",
-        "story_p1": "Constructief is ontstaan vanuit een passie voor vakmanschap en de overtuiging dat de juiste mens op de juiste plek het verschil maakt. Wij overbruggen de kloof tussen ambitie en uitvoering met een persoonlijke en deskundige aanpak.",
-        "story_p2": "Met onze jarenlange expertise in zowel de bouw als recruitment begrijpen we de taal van de werkvloer én de behoeften van de directiekamer. Onze aanpak is direct, eerlijk en altijd gericht op een resultaat waar iedereen op kan bouwen."
+        "title": "Persoonlijk & Constructief",
+        "subtitle": "Uw directe lijn naar vakmanschap in de bouwsector.",
+        "story_p1": "Constructief is geen groot kantoor met anonieme consultants. Ik ben uw persoonlijke partner die de taal van de bouw spreekt. Met jarenlange ervaring in de sector weet ik dat een goede match meer is dan wat regels op een CV.",
+        "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen."
     },
     "NewsPage": {
-        "title": "Nieuws",
-        "subtitle": "Blijf op de hoogte van de laatste ontwikkelingen.",
+        "title": "Sector Insights",
+        "subtitle": "Blijf op de hoogte van wat er speelt in de Belgische bouw.",
         "read_more": "Lees meer"
     },
     "ContactPage": {
-        "title": "Contact",
-        "subtitle": "Neem contact met ons op voor al uw vragen.",
+        "title": "Laten we praten",
+        "subtitle": "Direct contact voor snelle oplossingen.",
         "info_title": "Contactgegevens",
-        "info_description": "Heeft u vragen of wilt u meer informatie? Wij staan voor u klaar.",
+        "info_description": "Wilt u weten wat ik voor uw project kan betekenen? Bel me direct of stuur een bericht.",
         "phone": "Telefoon",
         "email": "E-mail",
-        "address": "Adres",
-        "form_title": "Stuur ons een bericht",
+        "address": "Locatie",
+        "form_title": "Snel contact",
         "form_name": "Naam",
         "form_email": "E-mail",
         "form_subject": "Onderwerp",
-        "form_message": "Bericht",
+        "form_message": "Uw vraag",
         "form_submit": "Versturen"
     },
     "PrivacyPage": {
-        "title": "Privacybeleid",
-        "last_updated": "Laatst bijgewerkt: 21 januari 2026",
-        "intro": "Bij Constructief geloven we dat vertrouwen de fundering is van elke succesvolle samenwerking. Wij gaan uiterst zorgvuldig om met uw persoonsgegevens en zorgen ervoor dat uw privacy gewaarborgd blijft terwijl we u helpen de volgende stap in uw carrière of project te zetten.",
+        "title": "Privacy & Vertrouwen",
+        "last_updated": "Laatst bijgewerkt: 22 januari 2026",
+        "intro": "Vertrouwen is de fundering van de bouw. Bij Constructief gaan we verder dan de wet; we beschermen uw identiteit en uw gegevens alsof ze van onszelf zijn.",
         "sections": {
             "collection": {
-                "title": "1. Welke gegevens verzamelen wij?",
-                "content": "Om u optimaal te kunnen begeleiden, verzamelen wij gegevens die essentieel zijn voor het recruitmentproces. Denk hierbij aan uw personalia, contactgegevens, professionele achtergrond (CV), relevante certificaten en uw specifieke carrièrevoorkeuren. Voor werkgevers verzamelen we de nodige bedrijfsgegevens om een kwalitatieve match te garanderen."
+                "title": "1. Persoonlijke Screening",
+                "content": "Wij verzamelen alleen wat nodig is om u te kunnen introduceren: ervaring, skills en referenties. Uw contactgegevens blijven bij ons totdat er een wederzijdse klik is."
             },
             "usage": {
-                "title": "2. Hoe gebruiken wij uw gegevens?",
-                "content": "Uw gegevens worden uitsluitend gebruikt om onze kernopdracht te vervullen: het creëren van duurzame matches in de bouwsector. Wij analyseren uw profiel om u te verbinden met projecten die aansluiten bij uw expertise en ambities. Daarnaast gebruiken we uw feedback om onze dienstverlening continu te verfijnen."
+                "title": "2. Doelgerichte Matching",
+                "content": "Uw informatie wordt gebruikt om de perfecte match te vinden. Geen automatische systemen, maar menselijk inzicht bepaalt of een project bij u past."
             },
             "sharing": {
-                "title": "3. Vertrouwelijkheid en Derden",
-                "content": "Uw privacy is bij ons in veilige handen. Persoonlijke profielen worden pas gedeeld met potentiële werkgevers na uw uitdrukkelijke toestemming. Wij verkopen uw gegevens onder geen beding aan externe partijen voor commerciële doeleinden."
+                "title": "3. Anoniem Proces",
+                "content": "Uw privacy staat voorop. We stellen u anoniem voor aan partners. Pas wanneer u en de partner akkoord zijn om kennis te maken, delen we de nodige details."
             },
             "security": {
-                "title": "4. Geavanceerde Beveiliging",
-                "content": "Wij investeren continu in moderne technologische infrastructuren om uw gegevens te beschermen. Door strikte toegangscontrole en encryptie zorgen we ervoor dat onbevoegden geen toegang krijgen tot uw persoonlijke informatie."
+                "title": "4. Veilige Opslag",
+                "content": "Uw gegevens worden veilig opgeslagen en zijn alleen toegankelijk voor mij als uw persoonlijke aanspreekpunt."
             },
             "rights": {
-                "title": "5. Uw Regie over Uw Gegevens",
-                "content": "U behoudt te allen tijde de volledige controle. U heeft het recht om uw gegevens in te zien, te corrigeren of volledig te laten verwijderen uit onze systemen. Onze processen zijn ingericht om vlot aan dergelijke verzoeken te voldoen via onze standaard contactkanalen."
+                "title": "5. Uw Regie",
+                "content": "U beslist. Wilt u uw gegevens aanpassen of uit ons netwerk verwijderen? Eén berichtje is genoeg om dit direct te regelen."
             }
         }
     },
     "Team": {
-        "title": "Ons Team",
-        "subtitle": "Gepassioneerde professionals die voor u klaarstaan."
+        "title": "Uw Aanspreekpunt",
+        "subtitle": "Direct contact met de persoon achter de match."
     },
     "Values": {
-        "title": "Onze Waarden",
+        "title": "Onze Fundering",
         "items": {
             "integrity": {
-                "title": "Integriteit",
-                "description": "Wij doen wat we zeggen en zeggen wat we doen."
+                "title": "Eerlijkheid",
+                "description": "Geen praatjes, maar transparant advies over elke kandidaat en elk project."
             },
             "passion": {
-                "title": "Passie",
-                "description": "Wij hebben hart voor de bouw en voor mensen."
+                "title": "Vakmanschap",
+                "description": "Passie voor de bouw en respect voor de mensen die het werk doen."
             },
             "innovation": {
-                "title": "Innovatie",
-                "description": "Wij blijven onszelf en onze processen verbeteren."
+                "title": "Flexibiliteit",
+                "description": "Snel schakelen en oplossingen vinden die voor u werken."
             }
         }
     },
     "Footer": {
-        "tagline": "Uw constructieve partner in de bouw",
-        "links": "Links",
-        "candidates": "Kandidaten",
-        "employers": "Werkgevers",
-        "vacancies": "Vacatures",
-        "company": "Bedrijf",
-        "about": "Over ons",
+        "tagline": "Geen stapels CV's, maar direct inzetbare vakmannen.",
+        "links": "Navigatie",
+        "candidates": "Vakmannen",
+        "employers": "Partners",
+        "vacancies": "Projecten",
+        "company": "Over Constructief",
+        "about": "Persoonlijk verhaal",
         "contact": "Contact",
-        "privacy": "Privacybeleid",
+        "privacy": "Privacy & Trust",
         "rights": "Alle rechten voorbehouden."
     }
 }
