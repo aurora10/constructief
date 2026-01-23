@@ -221,5 +221,31 @@
         "contact": "Контакт",
         "privacy": "Конфиденциальность",
         "rights": "Все права защищены."
+    },
+    "CandidateForm": {
+        "title": "Быстрая регистрация",
+        "subtitle": "Аккаунт не нужен. Заполните данные, и мы позвоним, когда появится работа.",
+        "name": "Имя",
+        "name_placeholder": "Иван Петров",
+        "trade": "Специальность",
+        "trade_placeholder": "Выберите специальность...",
+        "trade_electrician": "Электрик",
+        "trade_carpenter": "Плотник",
+        "trade_bricklayer": "Каменщик",
+        "trade_painter": "Маляр",
+        "trade_plumber": "Сантехник",
+        "trade_other": "Другое",
+        "experience": "Лет опыта",
+        "experience_placeholder": "5",
+        "phone": "Телефон (WhatsApp)",
+        "phone_placeholder": "+32 XXX XX XX XX",
+        "email": "Email (не обязательно)",
+        "email_placeholder": "ivan@example.com",
+        "notes": "Примечания / Доступность",
+        "notes_placeholder": "Готов начать немедленно...",
+        "submit": "Отправить заявку",
+        "submitting": "Отправка...",
+        "success": "Спасибо! Мы получили ваши данные и свяжемся с вами в течение 24 часов.",
+        "error": "Что-то пошло не так. Попробуйте позже или позвоните нам напрямую."
     }
 }

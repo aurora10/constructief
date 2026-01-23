@@ -221,5 +221,31 @@
         "contact": "Contact",
         "privacy": "Privacy & Trust",
         "rights": "Alle rechten voorbehouden."
+    },
+    "CandidateForm": {
+        "title": "Direct Inschrijven",
+        "subtitle": "Geen account nodig. Vul je gegevens in en wij bellen je als we een klus hebben.",
+        "name": "Naam",
+        "name_placeholder": "Jan de Vries",
+        "trade": "Vakgebied",
+        "trade_placeholder": "Kies vakgebied...",
+        "trade_electrician": "Elektricien",
+        "trade_carpenter": "Timmerman",
+        "trade_bricklayer": "Metselaar",
+        "trade_painter": "Schilder",
+        "trade_plumber": "Loodgieter",
+        "trade_other": "Anders",
+        "experience": "Jaren Ervaring",
+        "experience_placeholder": "5",
+        "phone": "Telefoonnummer (WhatsApp)",
+        "phone_placeholder": "06 12345678",
+        "email": "Email (Optioneel)",
+        "email_placeholder": "jan@example.com",
+        "notes": "Opmerkingen / Beschikbaarheid",
+        "notes_placeholder": "Ik ben per direct beschikbaar...",
+        "submit": "Inschrijven",
+        "submitting": "Versturen...",
+        "success": "Bedankt! We hebben je gegevens ontvangen en nemen binnen 24 uur contact op.",
+        "error": "Er ging iets mis. Probeer het later opnieuw of bel ons direct."
     }
 }

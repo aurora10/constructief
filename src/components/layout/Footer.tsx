@@ -37,8 +37,16 @@ export function Footer() {
                     <div>
                         <h4 className="font-semibold mb-4">{t("contact")}</h4>
                         <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li>info@constructief.be</li>
-                            <li>+32 123 45 67 89</li>
+                            <li>
+                                <a href="mailto:info@constructief.be" className="hover:text-primary transition-colors">
+                                    info@constructief.be
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+32123456789" className="hover:text-primary transition-colors">
+                                    +32 123 45 67 89
+                                </a>
+                            </li>
                             <li>Antwerp, Belgium</li>
                         </ul>
                     </div>

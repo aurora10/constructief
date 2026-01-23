@@ -91,7 +91,7 @@ export function HowItWorks() {
 
                         <div className="pt-4 text-center lg:text-left">
                             <Button asChild>
-                                <Link href="/kandidaten">{t("candidates.cta")}</Link>
+                                <Link href="/kandidaten#register">{t("candidates.cta")}</Link>
                             </Button>
                         </div>
                     </div>
