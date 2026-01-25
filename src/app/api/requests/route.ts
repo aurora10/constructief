@@ -9,9 +9,9 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
 export async function POST(request: NextRequest) {
     try {
         const data = await request.json();
-        const { companyName, contactPerson, email, city, trade, url, phone } = data;
+        const { companyName, contactPerson, email, city, trades, url, phone, amount, projectType, description, startDate } = data;
 
-        if (!companyName || !email) {
+        if (!companyName || !email || !trades || !Array.isArray(trades) || trades.length === 0 || !description) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
                 { status: 400 }
@@ -25,9 +25,13 @@ export async function POST(request: NextRequest) {
                     'Contact Person': contactPerson,
                     'Email': email,
                     'City': city,
-                    'Trade': trade,
+                    'Trade': trades, // trades is now an array
                     'URL': url,
                     'Phone': phone,
+                    'Count': Number(amount),
+                    'Project Type': projectType,
+                    'Description': description,
+                    'StartDate': startDate,
                 },
             },
         ]);
