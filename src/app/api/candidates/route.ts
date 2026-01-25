@@ -9,20 +9,22 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
-    const { name, trade, experience, phone, email, notes } = data;
+    const { name, trades, experience, phone, email, notes } = data;
 
-    if (!name || !phone || !trade) {
+    // Validate required fields - trades should be an array with at least one item
+    if (!name || !phone || !trades || !Array.isArray(trades) || trades.length === 0) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
     }
 
+    // For Airtable Multiple Select fields, pass the array directly
     const record = await base('Candidates').create([
       {
         fields: {
           Name: name,
-          Trade: trade,
+          Trade: trades, // Airtable Multiple Select expects an array
           Experience: Number(experience),
           Status: 'New',
           Phone: phone,

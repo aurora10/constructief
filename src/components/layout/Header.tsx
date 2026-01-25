@@ -43,7 +43,7 @@ export function Header() {
                             key={item.href}
                             href={item.href}
                             className={cn(
-                                "text-sm font-medium transition-colors hover:text-primary",
+                                "text-lg font-medium transition-colors hover:text-primary",
                                 pathname === item.href ? "text-primary" : "text-muted-foreground"
                             )}
                         >
@@ -74,7 +74,7 @@ export function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-sm font-medium transition-colors hover:text-primary"
+                                className="text-lg font-medium transition-colors hover:text-primary"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.label}
