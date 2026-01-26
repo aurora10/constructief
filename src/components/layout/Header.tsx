@@ -51,7 +51,7 @@ export function Header() {
         >
             <div className="container flex h-20 items-center justify-between">
                 <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-3xl font-bold text-primary tracking-tight">Constructief</span>
+                    <span className="text-3xl font-bold text-primary tracking-tight translate-y-1">Constructief</span>
                 </Link>
 
                 {/* Desktop Navigation */}

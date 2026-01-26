@@ -101,7 +101,7 @@ export default function VacancyDetailPage() {
 
                             <div className="pt-8">
                                 <Button size="lg" className="w-full md:w-auto">
-                                    {t('apply')}
+                                    {t('FeaturedJobs.apply')}
                                 </Button>
                             </div>
                         </div>
