@@ -236,7 +236,9 @@
         "form_email": "E-mail",
         "form_subject": "Onderwerp",
         "form_message": "Uw vraag",
-        "form_submit": "Versturen"
+        "form_submit": "Versturen",
+        "success": "Bedankt voor je bericht! We hebben het goed ontvangen en nemen binnen 24 uur contact met je op.",
+        "error": "Er is een fout opgetreden bij het verzenden. Controleer je internetverbinding of probeer het later opnieuw."
     },
     "PrivacyPage": {
         "title": "Privacy & Vertrouwen",

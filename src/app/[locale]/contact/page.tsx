@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,40 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
     const t = useTranslations('ContactPage');
+
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setLoading(true);
+        setStatus('idle');
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            if (!res.ok) throw new Error('Submission failed');
+
+            setStatus('success');
+            (e.target as HTMLFormElement).reset();
+        } catch (error) {
+            setStatus('error');
+        } finally {
+            setLoading(false);
+        }
+    }
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -57,26 +92,39 @@ export default function ContactPage() {
                         {/* Contact Form */}
                         <div className="bg-neutral-50 p-8 rounded-lg">
                             <h2 className="text-2xl font-bold mb-6">{t('form_title')}</h2>
-                            <form className="space-y-4">
+                            <form onSubmit={handleSubmit} className="space-y-4">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-sm font-medium mb-1">{t('form_name')}</label>
-                                        <input type="text" className="w-full p-2 border rounded-md" />
+                                        <input name="name" required type="text" className="w-full p-2 border rounded-md" />
                                     </div>
                                     <div>
                                         <label className="block text-sm font-medium mb-1">{t('form_email')}</label>
-                                        <input type="email" className="w-full p-2 border rounded-md" />
+                                        <input name="email" required type="email" className="w-full p-2 border rounded-md" />
                                     </div>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-1">{t('form_subject')}</label>
-                                    <input type="text" className="w-full p-2 border rounded-md" />
+                                    <input name="subject" type="text" className="w-full p-2 border rounded-md" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-1">{t('form_message')}</label>
-                                    <textarea rows={4} className="w-full p-2 border rounded-md" />
+                                    <textarea name="message" required rows={4} className="w-full p-2 border rounded-md" />
                                 </div>
-                                <Button type="submit" className="w-full">{t('form_submit')}</Button>
+                                <Button type="submit" disabled={loading} className="w-full">
+                                    {loading ? t('form_submit') + '...' : t('form_submit')}
+                                </Button>
+
+                                {status === 'success' && (
+                                    <p className="mt-4 text-green-600 text-center font-medium">
+                                        {t('success')}
+                                    </p>
+                                )}
+                                {status === 'error' && (
+                                    <p className="mt-4 text-red-600 text-center font-medium">
+                                        {t('error')}
+                                    </p>
+                                )}
                             </form>
                         </div>
                     </div>

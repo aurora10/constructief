@@ -4,16 +4,27 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 export function Header() {
     const t = useTranslations("Navigation");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+    // Track scroll position for header styling
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial check
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const navItems = [
         { label: t("home"), href: "/" },
@@ -30,31 +41,45 @@ export function Header() {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header
+            className={cn(
+                "sticky top-0 z-50 w-full transition-all duration-300 border-b",
+                scrolled
+                    ? "bg-white/95 backdrop-blur-md shadow-sm border-neutral-200 py-0"
+                    : "bg-white/80 backdrop-blur-sm border-transparent py-2"
+            )}
+        >
             <div className="container flex h-16 items-center justify-between">
                 <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold text-primary">Constructief</span>
+                    <span className="text-2xl font-bold text-primary tracking-tight">Constructief</span>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-6">
+                <nav className="hidden md:flex items-center space-x-8">
                     {navItems.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
                             className={cn(
-                                "text-lg font-medium transition-colors hover:text-primary",
-                                pathname === item.href ? "text-primary" : "text-muted-foreground"
+                                "text-[17px] font-semibold transition-all hover:text-primary relative group py-2",
+                                pathname === item.href
+                                    ? "text-primary"
+                                    : "text-neutral-700 hover:opacity-100"
                             )}
                         >
                             {item.label}
+                            <span className={cn(
+                                "absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform duration-300 scale-x-0 group-hover:scale-x-100",
+                                pathname === item.href && "scale-x-100"
+                            )}></span>
                         </Link>
                     ))}
-                    <div className="flex items-center space-x-2">
-                        <Button variant="ghost" size="sm" onClick={() => switchLocale("nl")}>
+                    <div className="flex items-center gap-1 pl-4 border-l border-neutral-200">
+                        <Button variant="ghost" size="sm" className="font-bold text-xs" onClick={() => switchLocale("nl")}>
                             NL
                         </Button>
-                        <Button variant="ghost" size="sm" onClick={() => switchLocale("ru")}>
+                        <span className="text-neutral-300 h-4 w-px bg-neutral-200"></span>
+                        <Button variant="ghost" size="sm" className="font-bold text-xs" onClick={() => switchLocale("ru")}>
                             RU
                         </Button>
                     </div>
