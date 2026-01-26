@@ -45,13 +45,13 @@ export function Header() {
             className={cn(
                 "sticky top-0 z-50 w-full transition-all duration-300 border-b",
                 scrolled
-                    ? "bg-white/95 backdrop-blur-md shadow-sm border-neutral-200 py-0"
-                    : "bg-white/80 backdrop-blur-sm border-transparent py-2"
+                    ? "bg-white/95 backdrop-blur-md shadow-sm border-neutral-200 py-1"
+                    : "bg-white/80 backdrop-blur-sm border-transparent py-3"
             )}
         >
-            <div className="container flex h-16 items-center justify-between">
+            <div className="container flex h-20 items-center justify-between">
                 <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold text-primary tracking-tight">Constructief</span>
+                    <span className="text-3xl font-bold text-primary tracking-tight">Constructief</span>
                 </Link>
 
                 {/* Desktop Navigation */}

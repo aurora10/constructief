@@ -65,7 +65,9 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <p className="font-semibold">{t('phone')}</p>
-                                        <p className="text-neutral-600">+32 123 45 67 89</p>
+                                        <a href="tel:+32465811031" className="text-neutral-600 hover:text-primary transition-colors">
+                                            +32 465 811031
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">

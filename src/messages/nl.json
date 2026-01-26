@@ -14,7 +14,7 @@
     },
     "Hero": {
         "title": "Samen bouwen we aan een sterkere toekomst",
-        "subtitle": "Vergeet de stapels ongelezen CV's. Wij selecteren persoonlijk de vakmannen die uw project naar een hoger niveau tillen. Direct inzetbaar, volledig gescreend en met een 7-daagse testgarantie.",
+        "subtitle": "Vind de meest uitdagende projecten in Antwerpen, Limburg en Oost-Vlaanderen. Wij specialiseren in ruwbouw, afwerking en technieken. Direct inzetbaar, volledig gescreend en met een 7-daagse testgarantie.",
         "cta_candidates": "Bekijk projecten",
         "cta_employers": "Vind uw vakman"
     },
@@ -121,7 +121,7 @@
         "email": "Email",
         "email_placeholder": "info@bedrijf.nl",
         "phone": "Telefoonnummer",
-        "phone_placeholder": "06 12345678",
+        "phone_placeholder": "+32 465 811031",
         "city": "Stad / Locatie",
         "city_placeholder": "Amsterdam",
         "trade_label": "Wie zoekt u?",
@@ -173,7 +173,7 @@
         "title": "Persoonlijk & Constructief",
         "subtitle": "Uw directe lijn naar vakmanschap in de bouwsector.",
         "story_p1": "Constructief is geen groot kantoor met anonieme consultants. Ik ben uw persoonlijke partner die de taal van de bouw spreekt. Met jarenlange ervaring in de sector weet ik dat een goede match meer is dan wat regels op een CV.",
-        "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen."
+        "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Wij hebben een directe pool van beschikbare metsers, bekisters, kraanmachinisten, elektriciens en lassers. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen."
     },
     "NewsPage": {
         "title": "Sector Insights",
@@ -341,7 +341,7 @@
         "experience": "Jaren Ervaring",
         "experience_placeholder": "5",
         "phone": "Telefoonnummer (WhatsApp)",
-        "phone_placeholder": "06 12345678",
+        "phone_placeholder": "+32 465 811031",
         "email": "Email (Optioneel)",
         "email_placeholder": "jan@example.com",
         "notes": "Opmerkingen / Beschikbaarheid",
@@ -350,5 +350,14 @@
         "submitting": "Versturen...",
         "success": "Bedankt! We hebben je gegevens ontvangen en nemen binnen 24 uur contact op.",
         "error": "Er ging iets mis. Probeer het later opnieuw of bel ons direct."
+    },
+    "CookieBanner": {
+        "message": "Wij gebruiken cookies om uw ervaring te verbeteren.",
+        "accept": "Accepteren",
+        "privacy": "Privacybeleid"
+    },
+    "Metadata": {
+        "title": "Constructief | Rekrutering & Selectie Bouw | Freelance & Payroll",
+        "description": "Zoekt u vakkundig personeel in de bouw? Constructief verbindt aannemers met gescreende metsers, elektriciens en werfleiders. Snel, betrouwbaar en lokaal."
     }
 }

@@ -43,8 +43,8 @@ export function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+32123456789" className="hover:text-primary transition-colors">
-                                    +32 123 45 67 89
+                                <a href="tel:+32465811031" className="hover:text-primary transition-colors">
+                                    +32 465 811031
                                 </a>
                             </li>
                             <li>Antwerp, Belgium</li>

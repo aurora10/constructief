@@ -11,14 +11,22 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
-export const metadata: Metadata = {
-  title: "Constructief",
-  description: "Bilingual Construction Recruitment Platform",
-};
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlowFrame } from "@/components/layout/GlowFrame";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 
 export default async function RootLayout({
   children,
@@ -48,6 +56,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>

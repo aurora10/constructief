@@ -5,7 +5,7 @@ import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { useParams } from 'next/navigation';
-import { ArrowLeft, MapPin, Clock, Euro, Calendar } from "lucide-react";
+import { ArrowLeft, MapPin, Clock, Euro } from "lucide-react";
 
 export default function VacancyDetailPage() {
     const t = useTranslations('VacanciesPage');
@@ -19,8 +19,7 @@ export default function VacancyDetailPage() {
         location: "Antwerpen",
         type: "Fulltime",
         salary: "€4000 - €5500",
-        posted: "20 Jan 2026",
-        description: "Wij zoeken een ervaren projectleider voor grote utiliteitsbouwprojecten. Als projectleider ben je verantwoordelijk voor de algehele leiding over diverse bouwprojecten vanaf de voorbereidingsfase tot de oplevering.",
+        description: "Wij zoeken een ervaren projectleider voor grote utiliteitsbouwprojecten. Als projectleider ben je verantwoordelijk for de algehele leiding over diverse bouwprojecten vanaf de voorbereidingsfase tot de oplevering.",
         requirements: [
             "Bachelor of Master in de Bouwkunde",
             "Minimaal 5 jaar ervaring in een soortgelijke functie",
@@ -29,8 +28,45 @@ export default function VacancyDetailPage() {
         ]
     };
 
+    const jsonLd = {
+        "@context": "https://schema.org/",
+        "@type": "JobPosting",
+        "title": job.title,
+        "description": job.description,
+        "validThrough": "2026-04-20",
+        "employmentType": "FULL_TIME",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Constructief",
+            "sameAs": "https://constructief-bouw.be"
+        },
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": job.location,
+                "addressRegion": "Antwerpen",
+                "addressCountry": "BE"
+            }
+        },
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "EUR",
+            "value": {
+                "@type": "QuantitativeValue",
+                "minValue": 4000,
+                "maxValue": 5500,
+                "unitText": "MONTH"
+            }
+        }
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <PageHeader
                 title={job.title}
                 subtitle={`${t('subtitle')} - ID: ${id}`}
@@ -85,10 +121,6 @@ export default function VacancyDetailPage() {
                                     <div className="flex items-center gap-3 text-neutral-600">
                                         <Euro className="h-5 w-5 text-primary" />
                                         <span>{job.salary}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-neutral-600">
-                                        <Calendar className="h-5 w-5 text-primary" />
-                                        <span>Gepost: {job.posted}</span>
                                     </div>
                                 </div>
                             </div>
