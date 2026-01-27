@@ -132,7 +132,7 @@ export function EmployerForm() {
 
     return (
         <section className="py-12 bg-gray-50">
-            <div className="container mx-auto px-4 max-w-xl">
+            <div className="container mx-auto px-4 max-w-xl 2xl:max-w-2xl">
                 <div className="bg-white rounded-lg shadow-lg p-8">
                     <h2 className="text-2xl font-bold mb-2 text-gray-900">{t('form_title')}</h2>
                     <p className="mb-6 text-gray-600">{t('form_subtitle')}</p>

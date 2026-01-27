@@ -148,7 +148,7 @@ export function CandidateForm() {
 
     return (
         <section id="register" className="py-12 bg-gray-50">
-            <div className="container mx-auto px-4 max-w-xl">
+            <div className="container mx-auto px-4 max-w-xl 2xl:max-w-2xl">
                 <div className="bg-white rounded-lg shadow-lg p-8">
                     <h2 className="text-2xl font-bold mb-6 text-gray-900">{t('title')}</h2>
                     <p className="mb-6 text-gray-600">{t('subtitle')}</p>
@@ -203,8 +203,8 @@ export function CandidateForm() {
                                                         <label
                                                             key={trade}
                                                             className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-colors ${selectedTrades.has(trade)
-                                                                    ? 'bg-blue-50 border border-blue-200'
-                                                                    : 'hover:bg-gray-50 border border-transparent'
+                                                                ? 'bg-blue-50 border border-blue-200'
+                                                                : 'hover:bg-gray-50 border border-transparent'
                                                                 }`}
                                                         >
                                                             <input
@@ -271,8 +271,8 @@ export function CandidateForm() {
                             type="submit"
                             disabled={loading || selectedTrades.size === 0}
                             className={`w-full py-3 px-4 rounded-lg text-white font-medium transition-colors ${loading || selectedTrades.size === 0
-                                    ? 'bg-gray-400 cursor-not-allowed'
-                                    : 'bg-blue-600 hover:bg-blue-700'
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-blue-600 hover:bg-blue-700'
                                 }`}
                         >
                             {loading ? t('submitting') : t('submit')}
