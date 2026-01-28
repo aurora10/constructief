@@ -5,60 +5,12 @@ import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { MapPin, Clock, Euro, Search, Filter } from "lucide-react";
+import { jobs as jobsData } from "@/data/vacancies";
 
 export default function VacanciesPage() {
     const t = useTranslations('VacanciesPage');
 
-    const jobs = [
-        {
-            id: 1,
-            title: "Projectleider Bouw",
-            location: "Antwerpen",
-            type: "Fulltime",
-            salary: "€4000 - €5500",
-            description: "Wij zoeken een ervaren projectleider voor grote utiliteitsbouwprojecten."
-        },
-        {
-            id: 2,
-            title: "Werfleider",
-            location: "Gent",
-            type: "Fulltime",
-            salary: "€3500 - €4500",
-            description: "Leid de werf in goede banen en stuur het team aan."
-        },
-        {
-            id: 3,
-            title: "Bekister",
-            location: "Brussel",
-            type: "Interim",
-            salary: "€17 - €19 / uur",
-            description: "Ervaren bekister gezocht voor diverse projecten."
-        },
-        {
-            id: 4,
-            title: "Kraanmachinist",
-            location: "Limburg",
-            type: "Fulltime",
-            salary: "€18 - €20 / uur",
-            description: "Torenkraanmachinist met attest gezocht."
-        },
-        {
-            id: 5,
-            title: "Metser",
-            location: "West-Vlaanderen",
-            type: "Fulltime",
-            salary: "€16 - €18 / uur",
-            description: "Metselaar voor nieuwbouw en renovatie."
-        },
-        {
-            id: 6,
-            title: "Elektricien",
-            location: "Antwerpen",
-            type: "Fulltime",
-            salary: "€17 - €19 / uur",
-            description: "Industrieel elektricien voor onderhoudswerken."
-        },
-    ];
+    const jobs = jobsData;
 
     return (
         <div className="flex flex-col min-h-screen">

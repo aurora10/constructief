@@ -5,11 +5,12 @@ import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { Calendar, User } from "lucide-react";
+import { articleIds as articleIdsData } from "@/data/news";
 
 export default function NewsPage() {
     const t = useTranslations('NewsPage');
 
-    const articleIds = ['1', '2', '3'];
+    const articleIds = articleIdsData;
 
     return (
         <div className="flex flex-col min-h-screen">
