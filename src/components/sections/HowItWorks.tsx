@@ -68,14 +68,14 @@ export function HowItWorks() {
                     {/* Candidates Column */}
                     <div
                         ref={candidatesColRef}
-                        className="space-y-8" // Start invisible for GSAP
+                        className="flex flex-col h-full gap-8" // Start invisible for GSAP
                     >
                         <div className="text-center lg:text-left">
                             <h3 className="text-2xl font-bold text-primary mb-4">{t("candidates.title")}</h3>
                             <p className="text-neutral-600 mb-8">{t("candidates.description")}</p>
                         </div>
 
-                        <div className="space-y-6">
+                        <div className="flex flex-col gap-6 flex-1">
                             {candidateSteps.map((step) => (
                                 <div key={step} className="flex gap-4">
                                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">
@@ -89,7 +89,7 @@ export function HowItWorks() {
                             ))}
                         </div>
 
-                        <div className="pt-4 text-center lg:text-left">
+                        <div className="pt-4 mt-auto text-center lg:text-left">
                             <Button asChild>
                                 <Link href="/kandidaten#register">{t("candidates.cta")}</Link>
                             </Button>
@@ -99,14 +99,14 @@ export function HowItWorks() {
                     {/* Employers Column */}
                     <div
                         ref={employersColRef}
-                        className="space-y-8" // Start invisible for GSAP
+                        className="flex flex-col h-full gap-8" // Start invisible for GSAP
                     >
                         <div className="text-center lg:text-left">
                             <h3 className="text-2xl font-bold text-accent mb-4">{t("employers.title")}</h3>
                             <p className="text-neutral-600 mb-8">{t("employers.description")}</p>
                         </div>
 
-                        <div className="space-y-6">
+                        <div className="flex flex-col gap-6 flex-1">
                             {employerSteps.map((step) => (
                                 <div key={step} className="flex gap-4">
                                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold">
@@ -120,7 +120,7 @@ export function HowItWorks() {
                             ))}
                         </div>
 
-                        <div className="pt-4 text-center lg:text-left">
+                        <div className="pt-4 mt-auto text-center lg:text-left">
                             <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">
                                 <Link href="/werkgevers">{t("employers.cta")}</Link>
                             </Button>

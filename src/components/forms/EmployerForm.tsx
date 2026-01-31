@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { ChevronDown, Search, X, Check } from 'lucide-react';
+import { ChevronDown, Search, X, Check, Building2, Globe, User, Mail, Phone, MapPin, FileText, Briefcase, Calendar } from 'lucide-react';
 
 // Exact same 25 items as in CandidateForm for consistency
 const TRADES = [
@@ -133,55 +133,97 @@ export function EmployerForm() {
     return (
         <section className="py-12 bg-gray-50">
             <div className="container mx-auto px-4 max-w-xl 2xl:max-w-2xl">
-                <div className="bg-white rounded-lg shadow-lg p-8">
-                    <h2 className="text-2xl font-bold mb-2 text-gray-900">{t('form_title')}</h2>
-                    <p className="mb-6 text-gray-600">{t('form_subtitle')}</p>
+                <div className="bg-white rounded-xl shadow-md border-l-4 border-blue-600 p-8 md:p-10 transition-all hover:shadow-lg">
+                    <h2 className="text-3xl font-extrabold mb-2 text-slate-900">{t('form_title')}</h2>
+                    <p className="mb-8 text-gray-600">{t('form_subtitle')}</p>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Company Info */}
-                        <div className="grid grid-cols-1 gap-4">
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">{t('company_name')}</label>
-                                <input name="companyName" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder={t('company_name_placeholder')} />
+                        <div className="grid grid-cols-1 gap-6">
+                            <div className="space-y-1">
+                                <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('company_name')}</label>
+                                <div className="relative">
+                                    <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                    <input
+                                        name="companyName"
+                                        required
+                                        className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200"
+                                        placeholder={t('company_name_placeholder')}
+                                    />
+                                </div>
                             </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">{t('url')}</label>
-                                <input name="url" type="url" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder={t('url_placeholder')} />
+                            <div className="space-y-1">
+                                <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('url')}</label>
+                                <div className="relative">
+                                    <Globe className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                    <input
+                                        name="url"
+                                        type="url"
+                                        className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200"
+                                        placeholder={t('url_placeholder')}
+                                    />
+                                </div>
                             </div>
                         </div>
 
                         {/* Contact Info */}
-                        <div className="grid grid-cols-1 gap-4">
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">{t('contact_person')}</label>
-                                <input name="contactPerson" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder={t('contact_person_placeholder')} />
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">{t('email')}</label>
-                                    <input name="email" required type="email" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder={t('email_placeholder')} />
+                        <div className="grid grid-cols-1 gap-6">
+                            <div className="space-y-1">
+                                <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('contact_person')}</label>
+                                <div className="relative">
+                                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                    <input
+                                        name="contactPerson"
+                                        required
+                                        className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200"
+                                        placeholder={t('contact_person_placeholder')}
+                                    />
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">{t('phone')}</label>
-                                    <input name="phone" type="tel" className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder={t('phone_placeholder')} />
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div className="space-y-1">
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('email')}</label>
+                                    <div className="relative">
+                                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                        <input
+                                            name="email"
+                                            required
+                                            type="email"
+                                            className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200"
+                                            placeholder={t('email_placeholder')}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="space-y-1">
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('phone')}</label>
+                                    <div className="relative">
+                                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                        <input
+                                            name="phone"
+                                            type="tel"
+                                            className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200"
+                                            placeholder={t('phone_placeholder')}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <hr className="my-6 border-gray-100" />
+                        <hr className="my-8 border-gray-100" />
 
                         {/* Project Details */}
-                        <div className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">{t('trade_label')}</label>
+                        <div className="space-y-6">
+                            <div className="space-y-1">
+                                <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('trade_label')}</label>
                                 <div className="relative" ref={dropdownRef}>
                                     <div
                                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white flex items-center justify-between cursor-pointer"
+                                        className={`w-full px-4 py-3 border rounded-xl outline-none bg-white flex items-center justify-between cursor-pointer transition-all duration-200 ${isDropdownOpen ? 'ring-4 ring-blue-500/10 border-blue-500' : 'border-gray-200 hover:border-gray-300'
+                                            }`}
                                     >
                                         <div className="flex flex-wrap gap-1 items-center overflow-hidden">
                                             {selectedTrades.length > 0 ? (
-                                                <span className="text-gray-900 text-sm">
+                                                <span className="text-gray-900 text-sm font-medium">
                                                     {selectedTrades.length === 1
                                                         ? t('selected_one')
                                                         : t('selected_multiple', { count: selectedTrades.length })}
@@ -190,23 +232,23 @@ export function EmployerForm() {
                                                 <span className="text-gray-400 text-sm">{t('trade_placeholder')}</span>
                                             )}
                                         </div>
-                                        <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform flex-shrink-0 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                                        <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform duration-200 flex-shrink-0 ${isDropdownOpen ? 'rotate-180' : ''}`} />
                                     </div>
 
                                     {isDropdownOpen && (
-                                        <div className="absolute z-10 w-full mt-1 bg-white border rounded-lg shadow-xl max-h-60 overflow-hidden flex flex-col">
-                                            <div className="p-2 border-b bg-gray-50 flex items-center gap-2">
+                                        <div className="absolute z-20 w-full mt-2 bg-white border border-gray-100 rounded-xl shadow-xl max-h-60 overflow-hidden flex flex-col animate-in fade-in slide-in-from-top-2">
+                                            <div className="p-3 border-b border-gray-50 bg-gray-50/50 flex items-center gap-2">
                                                 <Search className="h-4 w-4 text-gray-400" />
                                                 <input
                                                     autoFocus
-                                                    className="w-full bg-transparent outline-none text-sm"
+                                                    className="w-full bg-transparent outline-none text-sm placeholder:text-gray-400"
                                                     placeholder={t('trade_placeholder')}
                                                     value={searchTerm}
                                                     onChange={(e) => setSearchTerm(e.target.value)}
                                                     onClick={(e) => e.stopPropagation()}
                                                 />
                                             </div>
-                                            <div className="overflow-y-auto">
+                                            <div className="overflow-y-auto p-1">
                                                 {filteredTrades.length > 0 ? (
                                                     filteredTrades.map((trade) => (
                                                         <div
@@ -215,16 +257,16 @@ export function EmployerForm() {
                                                                 e.stopPropagation();
                                                                 toggleTrade(trade);
                                                             }}
-                                                            className="px-4 py-2 hover:bg-blue-50 cursor-pointer text-sm transition-colors flex items-center justify-between"
+                                                            className="px-3 py-2.5 hover:bg-blue-50 rounded-lg cursor-pointer text-sm transition-colors flex items-center justify-between group"
                                                         >
-                                                            <span>{tForm(TRADE_TRANSLATION_KEYS[trade] || trade)}</span>
+                                                            <span className="text-gray-700 group-hover:text-blue-700">{tForm(TRADE_TRANSLATION_KEYS[trade] || trade)}</span>
                                                             {selectedTrades.includes(trade) && (
                                                                 <Check className="h-4 w-4 text-blue-600" />
                                                             )}
                                                         </div>
                                                     ))
                                                 ) : (
-                                                    <div className="px-4 py-3 text-sm text-gray-500 italic">Geen resultaten</div>
+                                                    <div className="px-4 py-3 text-sm text-gray-500 italic text-center">Geen resultaten</div>
                                                 )}
                                             </div>
                                         </div>
@@ -233,17 +275,17 @@ export function EmployerForm() {
 
                                 {/* Selected Trades Tags */}
                                 {selectedTrades.length > 0 && (
-                                    <div className="mt-2 flex flex-wrap gap-2">
+                                    <div className="mt-3 flex flex-wrap gap-2">
                                         {selectedTrades.map(trade => (
                                             <span
                                                 key={trade}
-                                                className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
+                                                className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 text-xs font-medium rounded-full animate-in zoom-in-95 duration-200"
                                             >
                                                 {tForm(TRADE_TRANSLATION_KEYS[trade] || trade)}
                                                 <button
                                                     type="button"
                                                     onClick={() => removeTrade(trade)}
-                                                    className="hover:text-blue-900 transition-colors"
+                                                    className="hover:text-blue-900 rounded-full p-0.5 hover:bg-blue-200 transition-colors"
                                                 >
                                                     <X className="h-3 w-3" />
                                                 </button>
@@ -253,62 +295,112 @@ export function EmployerForm() {
                                 )}
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">{t('amount_label')}</label>
-                                    <input name="amount" type="number" min="1" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder={t('amount_placeholder')} />
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div className="flex flex-col h-full gap-1">
+                                    <label className="block text-sm font-semibold text-gray-700 ml-1">{t('amount_label')}</label>
+                                    <div className="relative mt-auto">
+                                        <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                        <input
+                                            name="amount"
+                                            type="number"
+                                            min="1"
+                                            required
+                                            className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200"
+                                            placeholder={t('amount_placeholder')}
+                                        />
+                                    </div>
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">{t('project_type_label')}</label>
-                                    <select name="projectType" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
-                                        <option value="">{t('project_type_placeholder')}</option>
-                                        <option value="Nieuwbouw">{t('project_type_new')}</option>
-                                        <option value="Renovatie">{t('project_type_renovation')}</option>
-                                        <option value="Industrieel">{t('project_type_industrial')}</option>
-                                        <option value="Burgerlijk (Civil/Infra)">{t('project_type_civil')}</option>
-                                    </select>
+                                <div className="flex flex-col h-full gap-1">
+                                    <label className="block text-sm font-semibold text-gray-700 ml-1">{t('project_type_label')}</label>
+                                    <div className="relative mt-auto">
+                                        <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                        <select
+                                            name="projectType"
+                                            required
+                                            className="w-full pl-12 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200 appearance-none text-gray-700"
+                                        >
+                                            <option value="">{t('project_type_placeholder')}</option>
+                                            <option value="Nieuwbouw">{t('project_type_new')}</option>
+                                            <option value="Renovatie">{t('project_type_renovation')}</option>
+                                            <option value="Industrieel">{t('project_type_industrial')}</option>
+                                            <option value="Burgerlijk (Civil/Infra)">{t('project_type_civil')}</option>
+                                        </select>
+                                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                            <ChevronDown className="h-4 w-4 text-gray-400" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">{t('city')}</label>
-                                <input name="city" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder={t('city_placeholder')} />
+                            <div className="space-y-1">
+                                <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('city')}</label>
+                                <div className="relative">
+                                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                    <input
+                                        name="city"
+                                        required
+                                        className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200"
+                                        placeholder={t('city_placeholder')}
+                                    />
+                                </div>
                             </div>
 
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">{t('description_label')}</label>
-                                <textarea
-                                    name="description"
-                                    required
-                                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none min-h-[100px]"
-                                    placeholder={t('description_placeholder')}
-                                />
+                            <div className="space-y-1">
+                                <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('description_label')}</label>
+                                <div className="relative">
+                                    <FileText className="absolute left-4 top-4 text-gray-400 w-5 h-5 pointer-events-none" />
+                                    <textarea
+                                        name="description"
+                                        required
+                                        className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200 min-h-[120px]"
+                                        placeholder={t('description_placeholder')}
+                                    />
+                                </div>
                             </div>
 
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">{t('start_date_label')}</label>
-                                <input name="startDate" type="date" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900" />
+                            <div className="space-y-1">
+                                <label className="block text-sm font-semibold text-gray-700 mb-1 ml-1">{t('start_date_label')}</label>
+                                <div className="relative">
+                                    <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                    <input
+                                        name="startDate"
+                                        type="date"
+                                        required
+                                        className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all duration-200 text-gray-900"
+                                        placeholder="dd/mm/yyyy"
+                                    />
+                                </div>
                             </div>
                         </div>
 
-                        <div className="pt-4">
+                        <div className="pt-6">
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className={`w-full py-3 px-4 rounded-lg text-white font-medium shadow-md transition-all active:scale-[0.98] ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                                className={`w-full py-4 px-6 rounded-xl text-white font-bold transition-all duration-200 transform ${loading
+                                    ? 'bg-gray-300 cursor-not-allowed'
+                                    : 'bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]'
                                     }`}
                             >
-                                {loading ? t('submitting') : t('submit')}
+                                {loading ? (
+                                    <span className="flex items-center justify-center gap-2">
+                                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        {t('submitting')}
+                                    </span>
+                                ) : t('submit')}
                             </button>
                         </div>
 
                         {status === 'success' && (
-                            <div className="p-4 bg-green-50 text-green-700 rounded-lg text-center font-medium animate-in fade-in slide-in-from-top-2">
+                            <div className="p-4 bg-green-50 border border-green-100 text-green-700 rounded-xl text-center font-medium shadow-sm animate-in fade-in slide-in-from-top-2">
                                 {t('success')}
                             </div>
                         )}
                         {status === 'error' && (
-                            <div className="p-4 bg-red-50 text-red-700 rounded-lg text-center font-medium">
+                            <div className="p-4 bg-red-50 border border-red-100 text-red-700 rounded-xl text-center font-medium shadow-sm animate-in fade-in slide-in-from-top-2">
                                 {t('error')}
                             </div>
                         )}

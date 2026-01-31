@@ -81,12 +81,12 @@ export function Hero() {
                 </p>
                 <div
                     ref={ctaRef}
-                    className="mt-10 flex flex-col gap-4 sm:flex-row"
+                    className="mt-10 flex flex-col gap-4 sm:flex-row items-stretch justify-center"
                 >
                     <Button
                         asChild
                         size="lg"
-                        className="text-lg px-8 h-14 min-w-[220px] bg-white text-neutral-900 hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-500/10"
+                        className="text-lg px-8 h-auto min-h-[3.5rem] py-4 min-w-[220px] bg-white text-neutral-900 hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-500/10 whitespace-normal text-center leading-tight"
                     >
                         <Link href="/kandidaten">{t("cta_candidates")}</Link>
                     </Button>
@@ -94,7 +94,7 @@ export function Hero() {
                         asChild
                         variant="outline"
                         size="lg"
-                        className="text-lg px-8 h-14 min-w-[220px] border-white/30 text-white bg-transparent backdrop-blur-sm hover:bg-accent hover:border-accent hover:scale-105 transition-all duration-300"
+                        className="text-lg px-8 h-auto min-h-[3.5rem] py-4 min-w-[220px] border-white/30 text-white bg-transparent backdrop-blur-sm hover:bg-accent hover:border-accent hover:scale-105 transition-all duration-300 whitespace-normal text-center leading-tight"
                     >
                         <Link href="/werkgevers">{t("cta_employers")}</Link>
                     </Button>
