@@ -2,13 +2,14 @@
 import { notFound } from 'next/navigation';
 import Airtable from 'airtable';
 import { PageHeader } from '@/components/layout/PageHeader';
+import { cache } from 'react';
 
 // Initialize Airtable
 const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
     process.env.AIRTABLE_BASE_ID!
 );
 
-async function getCandidate(id: string) {
+const getCandidate = cache(async (id: string) => {
     try {
         const record = await base('Candidates').find(id);
         return {
@@ -21,7 +22,7 @@ async function getCandidate(id: string) {
     } catch (error) {
         return null;
     }
-}
+});
 
 export default async function BlindProfilePage({ params }: { params: { id: string } }) {
     const candidate = await getCandidate(params.id);
