@@ -1,10 +1,32 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { checkRateLimit } from '@/lib/rate-limit';
+import { verifyTurnstileToken } from '@/lib/turnstile';
 
 export async function POST(request: NextRequest) {
     try {
-        const { name, email, subject, message } = await request.json();
+        // 1. IP-based Rate Limiter to stop spammers
+        const ip = request.headers.get('x-forwarded-for') || 'unknown-ip';
+        const isAllowed = await checkRateLimit(ip);
+        if (!isAllowed) {
+            console.warn(`[RATE LIMIT] Blocked too many requests (Contact Form) from IP: ${ip}`);
+            return NextResponse.json({ error: 'Too many requests, please try again later.' }, { status: 429 });
+        }
+
+        const { name, email, subject, message, turnstileToken, website } = await request.json();
+
+        // 2. Honeypot check (website field should be empty)
+        if (website) {
+            console.warn(`[HONEYPOT] Blocked bot submission from IP: ${ip}`);
+            return NextResponse.json({ success: true, message: 'Message received' });
+        }
+
+        // 3. Verify Turnstile Token
+        const isHuman = await verifyTurnstileToken(turnstileToken);
+        if (!isHuman) {
+            return NextResponse.json({ error: 'Failed CAPTCHA verification' }, { status: 403 });
+        }
 
         // Validate fields
         if (!name || !email || !message) {

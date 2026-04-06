@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { User, Phone, Mail, FileText, Check, ChevronDown, Briefcase } from 'lucide-react';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 // Trade clusters for Belgian construction market
 // Values MUST match Airtable Multiple Select options exactly
@@ -81,6 +82,7 @@ export function CandidateForm() {
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [selectedTrades, setSelectedTrades] = useState<Set<string>>(new Set());
     const [expandedClusters, setExpandedClusters] = useState<Set<string>>(new Set(['structural']));
+    const [turnstileToken, setTurnstileToken] = useState<string>('');
 
     function toggleCluster(cluster: string) {
         setExpandedClusters(prev => {
@@ -124,6 +126,8 @@ export function CandidateForm() {
             experience: formData.get('experience'),
             email: formData.get('email'),
             notes: formData.get('notes'),
+            website: formData.get('website'), // Honeypot field
+            turnstileToken,
         };
 
         try {
@@ -137,6 +141,7 @@ export function CandidateForm() {
 
             setStatus('success');
             setSelectedTrades(new Set());
+            setTurnstileToken(''); // Reset token on success
             (e.target as HTMLFormElement).reset();
         } catch (error) {
             setStatus('error');
@@ -308,10 +313,29 @@ export function CandidateForm() {
                             </div>
                         </div>
 
+                        {/* Honeypot field (hidden from users) */}
+                        <div className="hidden">
+                            <input
+                                name="website"
+                                type="text"
+                                autoComplete="off"
+                                tabIndex={-1}
+                            />
+                        </div>
+
+                        <div className="flex justify-center my-4">
+                            <Turnstile
+                                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+                                onSuccess={(token) => setTurnstileToken(token)}
+                                onExpire={() => setTurnstileToken('')}
+                                onError={() => setTurnstileToken('')}
+                            />
+                        </div>
+
                         <button
                             type="submit"
-                            disabled={loading || selectedTrades.size === 0}
-                            className={`w-full py-4 px-6 rounded-xl text-white font-bold transition-all duration-200 transform ${loading || selectedTrades.size === 0
+                            disabled={loading || selectedTrades.size === 0 || !turnstileToken}
+                            className={`w-full py-4 px-6 rounded-xl text-white font-bold transition-all duration-200 transform ${loading || selectedTrades.size === 0 || !turnstileToken
                                     ? 'bg-gray-300 cursor-not-allowed'
                                     : 'bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]'
                                 }`}

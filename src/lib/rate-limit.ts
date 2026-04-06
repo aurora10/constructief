@@ -1,37 +1,36 @@
-interface RateLimitInfo {
-    count: number;
-    startTime: number;
-}
+import { Redis } from '@upstash/redis';
+import { Ratelimit } from '@upstash/ratelimit';
 
-const rateLimitMap = new Map<string, RateLimitInfo>();
+// Create a new ratelimiter, that allows 5 requests per 60 seconds
+// This is distributed across all your application instances
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL || '',
+  token: process.env.UPSTASH_REDIS_REST_TOKEN || '',
+});
 
-export function checkRateLimit(ip: string): boolean {
-    // Allow a maximum of 5 Form Submissions per minute, per IP Address 
-    const windowMs = 60 * 1000;
-    const maxRequests = 5;
+export const ratelimit = new Ratelimit({
+  redis: redis,
+  limiter: Ratelimit.slidingWindow(5, '60 s'),
+  analytics: true,
+  prefix: 'constructief_ratelimit',
+});
 
-    const rateLimitInfo = rateLimitMap.get(ip);
-    const now = Date.now();
-
-    if (!rateLimitInfo) {
-        rateLimitMap.set(ip, {
-            count: 1,
-            startTime: now,
-        });
-        return true; // OK
+/**
+ * Checks the rate limit for a given identifier (e.g., IP address).
+ * Note: Since this is async (external Redis call), we'll use it directly in API routes.
+ */
+export async function checkRateLimit(identifier: string): Promise<boolean> {
+    // If Redis credentials are not set, allow requests to avoid breaking the site
+    if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+        console.warn('UPSTASH_REDIS credentials missing. Rate limiting is currently DISABLED.');
+        return true; 
     }
 
-    if (now - rateLimitInfo.startTime > windowMs) {
-        // Reset window
-        rateLimitInfo.startTime = now;
-        rateLimitInfo.count = 1;
-        return true; // OK
+    try {
+        const { success } = await ratelimit.limit(identifier);
+        return success;
+    } catch (error) {
+        console.error('Rate limit check failed:', error);
+        return true; // Fallback to allow if error
     }
-
-    if (rateLimitInfo.count >= maxRequests) {
-        return false; // RATE LIMITED
-    }
-
-    rateLimitInfo.count++;
-    return true; // OK
 }

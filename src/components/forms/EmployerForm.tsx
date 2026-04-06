@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { ChevronDown, Search, X, Check, Building2, Globe, User, Mail, Phone, MapPin, FileText, Briefcase, Calendar } from 'lucide-react';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 // Exact same 25 items as in CandidateForm for consistency
 const TRADES = [
@@ -56,6 +57,7 @@ export function EmployerForm() {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedTrades, setSelectedTrades] = useState<string[]>([]);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [turnstileToken, setTurnstileToken] = useState<string>('');
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const filteredTrades = TRADES.filter(trade => {
@@ -108,6 +110,8 @@ export function EmployerForm() {
             projectType: formData.get('projectType'),
             description: formData.get('description'),
             startDate: formData.get('startDate'),
+            website: formData.get('website'), // Honeypot field
+            turnstileToken,
         };
 
         try {
@@ -122,6 +126,7 @@ export function EmployerForm() {
             setStatus('success');
             setSearchTerm('');
             setSelectedTrades([]);
+            setTurnstileToken(''); // Reset token
             (e.target as HTMLFormElement).reset();
         } catch (error) {
             setStatus('error');
@@ -373,11 +378,30 @@ export function EmployerForm() {
                             </div>
                         </div>
 
-                        <div className="pt-6">
+                        {/* Honeypot field (hidden from users) */}
+                        <div className="hidden">
+                            <input
+                                name="website"
+                                type="text"
+                                autoComplete="off"
+                                tabIndex={-1}
+                            />
+                        </div>
+
+                        <div className="pt-6 space-y-6">
+                            <div className="flex justify-center">
+                                <Turnstile
+                                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+                                    onSuccess={(token) => setTurnstileToken(token)}
+                                    onExpire={() => setTurnstileToken('')}
+                                    onError={() => setTurnstileToken('')}
+                                />
+                            </div>
+
                             <button
                                 type="submit"
-                                disabled={loading}
-                                className={`w-full py-4 px-6 rounded-xl text-white font-bold transition-all duration-200 transform ${loading
+                                disabled={loading || selectedTrades.length === 0 || !turnstileToken}
+                                className={`w-full py-4 px-6 rounded-xl text-white font-bold transition-all duration-200 transform ${loading || selectedTrades.length === 0 || !turnstileToken
                                     ? 'bg-gray-300 cursor-not-allowed'
                                     : 'bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]'
                                     }`}

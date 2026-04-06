@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Airtable from 'airtable';
 import { checkRateLimit } from '@/lib/rate-limit';
-
+import { verifyTurnstileToken } from '@/lib/turnstile';
 const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
     process.env.AIRTABLE_BASE_ID!
 );
@@ -22,14 +22,26 @@ export async function POST(request: NextRequest) {
     try {
         // 1. IP-based Rate Limiter to stop spammers
         const ip = request.headers.get('x-forwarded-for') || 'unknown-ip';
-        if (!checkRateLimit(ip)) {
+        const isAllowed = await checkRateLimit(ip);
+        if (!isAllowed) {
             console.warn(`[RATE LIMIT] Blocked too many requests from IP: ${ip}`);
             return NextResponse.json({ error: 'Too many requests, please try again later.' }, { status: 429 });
         }
 
         const data = await request.json();
-        const { companyName, contactPerson, email, city, trades, url, phone, amount, projectType, description, startDate } = data;
+        const { companyName, contactPerson, email, city, trades, url, phone, amount, projectType, description, startDate, turnstileToken, website } = data;
 
+        // 2. Honeypot check (website field should be empty)
+        if (website) {
+            console.warn(`[HONEYPOT] Blocked bot submission from IP: ${ip}`);
+            return NextResponse.json({ success: true, message: 'Message received' });
+        }
+
+        // 3. Verify Turnstile Token
+        const isHuman = await verifyTurnstileToken(turnstileToken);
+        if (!isHuman) {
+            return NextResponse.json({ error: 'Failed CAPTCHA verification' }, { status: 403 });
+        }
         if (!companyName || !email || !trades || !Array.isArray(trades) || trades.length === 0 || !description) {
             return NextResponse.json(
                 { error: 'Missing required fields' },

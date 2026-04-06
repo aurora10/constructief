@@ -5,12 +5,14 @@ import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function ContactPage() {
     const t = useTranslations('ContactPage');
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [turnstileToken, setTurnstileToken] = useState<string>('');
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -23,6 +25,8 @@ export default function ContactPage() {
             email: formData.get('email'),
             subject: formData.get('subject'),
             message: formData.get('message'),
+            website: formData.get('website'), // Honeypot field
+            turnstileToken,
         };
 
         try {
@@ -35,6 +39,7 @@ export default function ContactPage() {
             if (!res.ok) throw new Error('Submission failed');
 
             setStatus('success');
+            setTurnstileToken(''); // Clear token on success
             (e.target as HTMLFormElement).reset();
         } catch (error) {
             setStatus('error');
@@ -113,7 +118,27 @@ export default function ContactPage() {
                                     <label className="block text-sm font-medium mb-1">{t('form_message')}</label>
                                     <textarea name="message" required rows={4} className="w-full p-2 border rounded-md" />
                                 </div>
-                                <Button type="submit" disabled={loading} className="w-full">
+
+                                {/* Honeypot field (hidden from users) */}
+                                <div className="hidden">
+                                    <input
+                                        name="website"
+                                        type="text"
+                                        autoComplete="off"
+                                        tabIndex={-1}
+                                    />
+                                </div>
+
+                                <div className="flex justify-center py-2">
+                                    <Turnstile
+                                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+                                        onSuccess={(token) => setTurnstileToken(token)}
+                                        onExpire={() => setTurnstileToken('')}
+                                        onError={() => setTurnstileToken('')}
+                                    />
+                                </div>
+
+                                <Button type="submit" disabled={loading || !turnstileToken} className="w-full">
                                     {loading ? t('form_submit') + '...' : t('form_submit')}
                                 </Button>
 
