@@ -3,6 +3,15 @@ import { notFound } from 'next/navigation';
 import Airtable from 'airtable';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { cache } from 'react';
+import type { Metadata } from 'next';
+
+// Cache profile pages for 1 hour to prevent Airtable API abuse by bots
+export const revalidate = 3600;
+
+// Prevent search engines from indexing private blind profiles
+export const metadata: Metadata = {
+    robots: { index: false, follow: false },
+};
 
 // Initialize Airtable
 const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
