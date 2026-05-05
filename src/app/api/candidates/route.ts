@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkRateLimit } from '@/lib/rate-limit';
 import { verifyTurnstileToken } from '@/lib/turnstile';
-import { getNextId, insertRowAtTop } from '@/lib/googleSheets';
+import { insertRowWithId } from '@/lib/googleSheets';
 
 const TRUSTED_TRADES = [
   'Metser', 'Bekister', 'Ijzervlechter', 'Lasser (TIG/MIG/MAG)',
@@ -58,12 +58,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const id = await getNextId('Candidates');
-
     // Insert into Google Sheets "Candidates" tab at the top (row 2)
     // Column order: Id | Name | Trade | Experience | Status | Phone | Email | Recruiter Note
-    await insertRowAtTop('Candidates', [
-      id,
+    const id = await insertRowWithId('Candidates', [
       name,
       trades.join(', '),
       Number(experience),

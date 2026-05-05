@@ -68,83 +68,119 @@ async function getAccessToken(): Promise<string> {
     .setExpirationTime(now + 3600) // 1 hour max
     .sign(key);
 
-  const response = await fetch('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-      assertion: jwt,
-    }),
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10_000); // 10s OAuth timeout
 
-  if (!response.ok) {
-    const err = await response.text();
-    throw new Error(`Failed to get Google access token: ${err}`);
+  try {
+    const response = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+        assertion: jwt,
+      }),
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      const err = await response.text();
+      throw new Error(`Failed to get Google access token: ${err}`);
+    }
+
+    const data = await response.json();
+    tokenCache = {
+      accessToken: data.access_token,
+      expiresAt: Date.now() + (data.expires_in || 3600) * 1000,
+    };
+
+    return tokenCache.accessToken;
+  } finally {
+    clearTimeout(timeout);
   }
-
-  const data = await response.json();
-  tokenCache = {
-    accessToken: data.access_token,
-    expiresAt: Date.now() + (data.expires_in || 3600) * 1000,
-  };
-
-  return tokenCache.accessToken;
 }
 
 async function sheetsApi(path: string, options: RequestInit = {}): Promise<Response> {
   const token = await getAccessToken();
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GOOGLE_SHEETS_SPREADSHEET_ID}/${path}`;
 
-  const response = await fetch(url, {
-    ...options,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000); // 15s Sheets API timeout
 
-  if (!response.ok) {
-    const err = await response.text();
-    throw new Error(`Google Sheets API error (${response.status}): ${err}`);
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        ...options.headers,
+      },
+    });
+
+    if (!response.ok) {
+      const err = await response.text();
+      throw new Error(`Google Sheets API error (${response.status}): ${err}`);
+    }
+
+    return response;
+  } finally {
+    clearTimeout(timeout);
   }
-
-  return response;
 }
 
 /**
- * Appends a row to the top of a sheet (row 2), shifting existing data down.
+ * Inserts a new row at the top of a sheet (row 2) with an auto-generated
+ * sequential integer ID. Merges the read + ID computation + write into a
+ * single read/write pair to minimize latency.
+ *
  * @param sheetName - The tab/sheet name (e.g., "Candidates" or "Employers")
- * @param values - Array of values for the new row
+ * @param values - Array of values for the new row (excluding ID — ID is prepended)
+ * @returns The generated ID
  */
-export async function insertRowAtTop(sheetName: string, values: (string | number)[]): Promise<void> {
-  const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID!;
+export async function insertRowWithId(sheetName: string, values: (string | number)[]): Promise<number> {
+  console.time(`[Sheets] ${sheetName} insert`);
 
-  // 1. Read all existing data rows
+  // 1. Read all existing data rows (columns A through K)
   const range = `${encodeURIComponent(sheetName)}!A2:K`;
+  console.timeLog(`[Sheets] ${sheetName} insert`, 'reading existing rows');
   const readResponse = await sheetsApi(`values/${range}`);
-
   const readData = await readResponse.json();
   const existingRows: any[][] = readData.values || [];
 
-  // 2. Build the new data: new row at top, then existing rows below
-  const newData = [values, ...existingRows];
+  // 2. Compute the next sequential ID from existing rows
+  let maxId = 0;
+  for (const row of existingRows) {
+    const val = parseInt(row[0], 10);
+    if (!isNaN(val) && val > maxId) {
+      maxId = val;
+    }
+  }
+  const nextId = maxId + 1;
 
-  // 3. Determine the full range to write back
-  const numColumns = newData.length > 0 ? Math.max(...newData.map(r => r.length), values.length) : values.length;
-  const colLetter = String.fromCharCode(64 + numColumns); // A=1 → 65-1=64 offset
+  // 3. Build new data: new row (with ID) at top, then all existing rows
+  const newRow = [nextId, ...values];
+  const newData = [newRow, ...existingRows];
+
+  // 4. Determine the full range to write back
+  const numColumns = newData.length > 0 ? Math.max(...newData.map(r => r.length), newRow.length) : newRow.length;
+  const colLetter = String.fromCharCode(64 + numColumns); // 1→A, 2→B, ...
   const writeRange = `${encodeURIComponent(sheetName)}!A2:${colLetter}${2 + newData.length - 1}`;
 
-  // 4. Write everything back
+  // 5. Write everything back
+  console.timeLog(`[Sheets] ${sheetName} insert`, 'writing rows');
   await sheetsApi(`values/${writeRange}?valueInputOption=USER_ENTERED`, {
     method: 'PUT',
     body: JSON.stringify({ values: newData }),
   });
+
+  console.timeEnd(`[Sheets] ${sheetName} insert`);
+  return nextId;
 }
 
 /**
- * Returns the next sequential integer ID for a sheet by reading column A
- * and finding the highest existing numeric value.
+ * Returns the next sequential integer ID for a sheet by reading column A.
+ * Legacy helper — prefer insertRowWithId for write operations.
+ *
  * @param sheetName - The tab/sheet name (e.g., "Candidates" or "Employers")
  * @returns The next ID (1 if sheet is empty, otherwise max + 1)
  */
