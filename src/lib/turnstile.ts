@@ -1,12 +1,12 @@
 export async function verifyTurnstileToken(token: string): Promise<boolean> {
-  if (!token) return false;
+  // Skip Turnstile verification in development (localhost)
+  if (process.env.NODE_ENV === 'development') {
+    return true;
+  }
 
   const secretKey = process.env.TURNSTILE_SECRET_KEY;
   if (!secretKey) {
     console.warn('TURNSTILE_SECRET_KEY is not defined. Skipping verification in development mode (if intended).');
-    // If you strictly want to enforce it even if unset, return false.
-    // Assuming for now if it's missing, maybe it's not configured locally, 
-    // but in production it will fail if we return false. Let's strictly return false on missing to be secure.
     return false;
   }
 

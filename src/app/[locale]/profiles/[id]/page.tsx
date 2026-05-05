@@ -1,11 +1,10 @@
-
 import { notFound } from 'next/navigation';
-import Airtable from 'airtable';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { cache } from 'react';
 import type { Metadata } from 'next';
+import { findRowById } from '@/lib/googleSheets';
 
-// Cache profile pages for 1 hour to prevent Airtable API abuse by bots
+// Cache profile pages for 1 hour
 export const revalidate = 3600;
 
 // Prevent search engines from indexing private blind profiles
@@ -13,22 +12,22 @@ export const metadata: Metadata = {
     robots: { index: false, follow: false },
 };
 
-// Initialize Airtable
-const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
-    process.env.AIRTABLE_BASE_ID!
-);
-
 const getCandidate = cache(async (id: string) => {
     try {
-        const record = await base('Candidates').find(id);
+        const row = await findRowById('Candidates', id);
+        if (!row) return null;
+
         return {
-            trade: record.get('Trade') as string,
-            experience: record.get('Experience') as number,
-            notes: record.get('Recruiter Note') as string,
-            status: record.get('Status') as string,
-            id: record.id
+            // Map Google Sheets columns to the expected shape
+            // Column order: Id | Name | Trade | Experience | Status | Phone | Email | Recruiter Note
+            trade: row['Trade'] || '',
+            experience: Number(row['Experience']) || 0,
+            notes: row['Recruiter Note'] || '',
+            status: row['Status'] || '',
+            id,
         };
     } catch (error) {
+        console.error('Google Sheets Error:', error);
         return null;
     }
 });

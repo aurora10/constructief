@@ -57,7 +57,9 @@ export function EmployerForm() {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedTrades, setSelectedTrades] = useState<string[]>([]);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [turnstileToken, setTurnstileToken] = useState<string>('');
+    const [turnstileToken, setTurnstileToken] = useState<string>(
+        process.env.NODE_ENV === 'development' ? 'dev-bypass' : ''
+    );
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const filteredTrades = TRADES.filter(trade => {
@@ -389,14 +391,16 @@ export function EmployerForm() {
                         </div>
 
                         <div className="pt-6 space-y-6">
-                            <div className="flex justify-center">
-                                <Turnstile
-                                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
-                                    onSuccess={(token) => setTurnstileToken(token)}
-                                    onExpire={() => setTurnstileToken('')}
-                                    onError={() => setTurnstileToken('')}
-                                />
-                            </div>
+                            {process.env.NODE_ENV !== 'development' && (
+                                <div className="flex justify-center">
+                                    <Turnstile
+                                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+                                        onSuccess={(token) => setTurnstileToken(token)}
+                                        onExpire={() => setTurnstileToken('')}
+                                        onError={() => setTurnstileToken('')}
+                                    />
+                                </div>
+                            )}
 
                             <button
                                 type="submit"

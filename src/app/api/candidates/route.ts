@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import Airtable from 'airtable';
 import { checkRateLimit } from '@/lib/rate-limit';
 import { verifyTurnstileToken } from '@/lib/turnstile';
-const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
-  process.env.AIRTABLE_BASE_ID!
-);
+import { getNextId, insertRowAtTop } from '@/lib/googleSheets';
 
 const TRUSTED_TRADES = [
   'Metser', 'Bekister', 'Ijzervlechter', 'Lasser (TIG/MIG/MAG)',
@@ -52,7 +49,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Verify all trades are within the trusted list to prevent Airtable API rejection errors
+    // Verify all trades are within the trusted list
     const invalidTrades = trades.filter((t: string) => !TRUSTED_TRADES.includes(t));
     if (invalidTrades.length > 0) {
       return NextResponse.json(
@@ -61,24 +58,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // For Airtable Multiple Select fields, pass the array directly
-    const record = await base('Candidates').create([
-      {
-        fields: {
-          Name: name,
-          Trade: trades, // Airtable Multiple Select expects an array
-          Experience: Number(experience),
-          Status: 'New',
-          Phone: phone,
-          Email: email,
-          'Recruiter Note': notes || '',
-        },
-      },
+    const id = await getNextId('Candidates');
+
+    // Insert into Google Sheets "Candidates" tab at the top (row 2)
+    // Column order: Id | Name | Trade | Experience | Status | Phone | Email | Recruiter Note
+    await insertRowAtTop('Candidates', [
+      id,
+      name,
+      trades.join(', '),
+      Number(experience),
+      'New',
+      phone,
+      email || '',
+      notes || '',
     ]);
 
-    return NextResponse.json({ success: true, id: record[0].id });
+    return NextResponse.json({ success: true, id });
   } catch (error: any) {
-    console.error('Airtable Error:', error);
+    console.error('Google Sheets Error:', error);
     return NextResponse.json(
       { error: 'Failed to submit application', details: error.message },
       { status: 500 }

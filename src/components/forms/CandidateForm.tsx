@@ -6,7 +6,6 @@ import { User, Phone, Mail, FileText, Check, ChevronDown, Briefcase } from 'luci
 import { Turnstile } from '@marsidev/react-turnstile';
 
 // Trade clusters for Belgian construction market
-// Values MUST match Airtable Multiple Select options exactly
 const TRADE_CLUSTERS = {
     structural: [
         'Metser',
@@ -47,7 +46,6 @@ const TRADE_CLUSTERS = {
 
 type TradeKey = typeof TRADE_CLUSTERS[keyof typeof TRADE_CLUSTERS][number];
 
-// Map Airtable values to translation keys
 const TRADE_TRANSLATION_KEYS: Record<string, string> = {
     'Metser': 'trade_metser',
     'Bekister': 'trade_bekister',
@@ -82,7 +80,9 @@ export function CandidateForm() {
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [selectedTrades, setSelectedTrades] = useState<Set<string>>(new Set());
     const [expandedClusters, setExpandedClusters] = useState<Set<string>>(new Set(['structural']));
-    const [turnstileToken, setTurnstileToken] = useState<string>('');
+    const [turnstileToken, setTurnstileToken] = useState<string>(
+        process.env.NODE_ENV === 'development' ? 'dev-bypass' : ''
+    );
 
     function toggleCluster(cluster: string) {
         setExpandedClusters(prev => {
@@ -126,7 +126,7 @@ export function CandidateForm() {
             experience: formData.get('experience'),
             email: formData.get('email'),
             notes: formData.get('notes'),
-            website: formData.get('website'), // Honeypot field
+            website: formData.get('website'),
             turnstileToken,
         };
 
@@ -141,7 +141,7 @@ export function CandidateForm() {
 
             setStatus('success');
             setSelectedTrades(new Set());
-            setTurnstileToken(''); // Reset token on success
+            setTurnstileToken(process.env.NODE_ENV === 'development' ? 'dev-bypass' : '');
             (e.target as HTMLFormElement).reset();
         } catch (error) {
             setStatus('error');
@@ -186,7 +186,6 @@ export function CandidateForm() {
 
                                     return (
                                         <div key={clusterKey} className="border-b border-gray-100 last:border-b-0">
-                                            {/* Cluster Header */}
                                             <button
                                                 type="button"
                                                 onClick={() => toggleCluster(clusterKey)}
@@ -205,7 +204,6 @@ export function CandidateForm() {
                                                 />
                                             </button>
 
-                                            {/* Trade Options */}
                                             {isExpanded && (
                                                 <div className="px-5 py-3 bg-white grid grid-cols-1 sm:grid-cols-2 gap-2 animate-in slide-in-from-top-2 duration-300">
                                                     {trades.map((trade) => (
@@ -235,7 +233,6 @@ export function CandidateForm() {
                                 })}
                             </div>
 
-                            {/* Selected Trades Summary */}
                             {selectedTrades.size > 0 && (
                                 <div className="mt-3 flex flex-wrap gap-2 pt-2">
                                     {Array.from(selectedTrades).map((trade) => (
@@ -313,24 +310,21 @@ export function CandidateForm() {
                             </div>
                         </div>
 
-                        {/* Honeypot field (hidden from users) */}
+                        {/* Honeypot field */}
                         <div className="hidden">
-                            <input
-                                name="website"
-                                type="text"
-                                autoComplete="off"
-                                tabIndex={-1}
-                            />
+                            <input name="website" type="text" autoComplete="off" tabIndex={-1} />
                         </div>
 
-                        <div className="flex justify-center my-4">
-                            <Turnstile
-                                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
-                                onSuccess={(token) => setTurnstileToken(token)}
-                                onExpire={() => setTurnstileToken('')}
-                                onError={() => setTurnstileToken('')}
-                            />
-                        </div>
+                        {process.env.NODE_ENV !== 'development' && (
+                            <div className="flex justify-center my-4">
+                                <Turnstile
+                                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+                                    onSuccess={(token) => setTurnstileToken(token)}
+                                    onExpire={() => setTurnstileToken('')}
+                                    onError={() => setTurnstileToken('')}
+                                />
+                            </div>
+                        )}
 
                         <button
                             type="submit"
