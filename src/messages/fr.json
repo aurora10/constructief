@@ -1,0 +1,364 @@
+{
+    "HomePage": {
+        "title": "Constructief",
+        "subtitle": "Pas de piles de CV, mais des artisans directement opérationnels."
+    },
+    "Navigation": {
+        "home": "Accueil",
+        "candidates": "Candidats",
+        "employers": "Employeurs",
+        "vacancies": "Postes",
+        "about": "À propos",
+        "news": "Actualités",
+        "contact": "Contact"
+    },
+    "Hero": {
+        "title": "Construisons ensemble un avenir plus solide",
+        "subtitle": "Pas de piles de CV, mais des artisans directement opérationnels. Nous mettons en relation les entrepreneurs avec des professionnels du bâtiment présélectionnés.",
+        "cta_candidates": "Découvrir les offres",
+        "cta_employers": "Trouver votre artisan"
+    },
+    "ValueProps": {
+        "title": "Pourquoi Constructief est votre partenaire",
+        "subtitle": "Nous ne sommes pas un algorithme, mais votre partenaire personnel dans la construction. La qualité par la sélection humaine.",
+        "features": {
+            "quality": {
+                "title": "Vérification Personnelle",
+                "description": "Nous rencontrons chaque candidat en personne et vérifions toutes les références. Vous ne recevez que du personnel que nous embaucherions nous-mêmes."
+            },
+            "speed": {
+                "title": "Semaine d'essai de 7 jours",
+                "description": "Pas sûr de la compatibilité ? Profitez de notre semaine d'essai. Les 7 premiers jours sont destinés à vérifier si le courant passe vraiment."
+            },
+            "network": {
+                "title": "Sélection Anonyme",
+                "description": "Nous protégeons la confidentialité de nos artisans. Vous évaluez les compétences et l'expérience, les coordonnées suivent après la correspondance."
+            },
+            "reliability": {
+                "title": "Aucun Souci",
+                "description": "Nous gérons l'administration via nos partenaires de gestion de paie, pour que vous puissiez vous concentrer sur la construction."
+            }
+        }
+    },
+    "HowItWorks": {
+        "title": "Notre méthode de travail",
+        "subtitle": "Un processus transparent axé sur la qualité et la parfaite adéquation.",
+        "candidates": {
+            "title": "Pour les Artisans",
+            "description": "Trouvez le bon lieu de travail sans tracas.",
+            "step1": {
+                "title": "Présentation",
+                "description": "Nous vous rencontrons en personne pour comprendre vos compétences et vos ambitions."
+            },
+            "step2": {
+                "title": "Présentation Anonyme",
+                "description": "Nous vous présentons à nos partenaires sur la base de votre savoir-faire, pas de vos données personnelles."
+            },
+            "step3": {
+                "title": "La Semaine d'Essai",
+                "description": "Commencez par une semaine d'essai de 7 jours pour voir si l'entreprise vous convient."
+            },
+            "cta": "S'inscrire"
+        },
+        "employers": {
+            "title": "Pour les Partenaires",
+            "description": "La qualité avant la quantité en 3 étapes.",
+            "step1": {
+                "title": "Définir les besoins",
+                "description": "Dites-nous précisément quelle expertise vous recherchez pour votre projet."
+            },
+            "step2": {
+                "title": "Propositions Sélectionnées",
+                "description": "Vous recevez une sélection de candidats présélectionnés que nous avons rencontrés personnellement."
+            },
+            "step3": {
+                "title": "Démarrage & Évaluation",
+                "description": "Le candidat commence directement avec une période d'évaluation de 7 jours."
+            },
+            "cta": "Demander du personnel"
+        }
+    },
+    "FeaturedJobs": {
+        "title": "Projets Actuels",
+        "subtitle": "Des opportunités pour les vrais artisans.",
+        "view_all": "Tous les projets",
+        "apply": "Postuler"
+    },
+    "Testimonials": {
+        "title": "Ce que disent nos partenaires",
+        "reviews": {
+            "1": {
+                "text": "Enfin un recruteur qui comprend que nous n'avons pas besoin de CV, mais de personnes qui savent travailler."
+            },
+            "2": {
+                "text": "L'approche personnelle et la semaine d'essai nous ont donné la confiance nécessaire pour agir rapidement."
+            }
+        }
+    },
+    "TrustSignals": {
+        "candidates": "Réponse",
+        "candidates_value": "< 24h",
+        "companies": "Références",
+        "companies_value": "Vérifiées",
+        "placements": "Région",
+        "placements_value": "Toute la Belgique"
+    },
+    "CandidatesPage": {
+        "title": "Construisez votre avenir",
+        "subtitle": "Nous sommes votre voix auprès des meilleures entreprises de construction. Personnel, anonyme et axé sur votre développement."
+    },
+    "EmployersPage": {
+        "title": "Votre Partenaire en Personnel",
+        "subtitle": "Accédez directement à des artisans présélectionnés. Pas de paperasse, seulement des résultats.",
+        "form_title": "Demande de Personnel",
+        "form_subtitle": "Dites-nous ce dont vous avez besoin. Nous trouvons les bons artisans.",
+        "company_name": "Nom de l'entreprise",
+        "company_name_placeholder": "Entreprise de Construction Dupont SA",
+        "url": "Site Web (URL)",
+        "url_placeholder": "https://entreprise.be",
+        "contact_person": "Personne de contact",
+        "contact_person_placeholder": "Nom du contact",
+        "email": "Email",
+        "email_placeholder": "info@entreprise.be",
+        "phone": "Numéro de téléphone",
+        "phone_placeholder": "+32 465 811031",
+        "city": "Ville / Localisation",
+        "city_placeholder": "Bruxelles",
+        "trade_label": "Qui cherchez-vous ?",
+        "trade_placeholder": "Rechercher une spécialité...",
+        "amount_label": "De combien d'artisans avez-vous besoin ?",
+        "amount_placeholder": "1",
+        "project_type_label": "Type de Projet",
+        "project_type_placeholder": "Choisissez le type...",
+        "project_type_new": "Construction neuve",
+        "project_type_renovation": "Rénovation",
+        "project_type_industrial": "Industriel",
+        "project_type_civil": "Génie Civil / Infrastructures",
+        "description_label": "Description des tâches",
+        "description_placeholder": "Ex : Maçonnerie de briques de parement, mortier à joint mince, région d'Anvers, début la semaine prochaine...",
+        "start_date_label": "Quand doivent-ils commencer ?",
+        "submit": "Envoyer la demande",
+        "submitting": "Envoi en cours...",
+        "selected_one": "1 spécialité sélectionnée",
+        "selected_multiple": "{count} spécialités sélectionnées",
+        "success": "Demande reçue ! Nous vous contacterons dès que possible pour discuter des détails.",
+        "error": "Une erreur s'est produite. Veuillez réessayer plus tard."
+    },
+    "Services": {
+        "title": "Notre Expertise",
+        "subtitle": "Nous offrons des solutions adaptées à la dynamique de la construction.",
+        "items": {
+            "temp": {
+                "title": "Services de Gestion de Paie",
+                "description": "Une rémunération sans souci via nos partenaires agréés, tout en conservant votre flexibilité."
+            },
+            "perm": {
+                "title": "Recrutement & Sélection",
+                "description": "Trouvez le parfait renfort permanent pour votre équipe de base grâce à notre sélection rigoureuse."
+            },
+            "project": {
+                "title": "Intermédiation Freelance",
+                "description": "Les bons professionnels indépendants pour la durée spécifique de votre projet."
+            }
+        }
+    },
+    "VacanciesPage": {
+        "title": "Projets & Opportunités",
+        "subtitle": "Découvrez où votre savoir-faire est le plus apprécié.",
+        "search_placeholder": "Rechercher par expertise ou région...",
+        "filter": "Filtrer",
+        "view_details": "Détails du projet",
+        "apply": "Postuler"
+    },
+    "AboutPage": {
+        "title": "Personnel & Constructif",
+        "subtitle": "Votre ligne directe vers le savoir-faire dans le secteur de la construction.",
+        "story_p1": "Constructief n'est pas un grand bureau avec des consultants anonymes. Je suis votre partenaire personnel qui parle le langage de la construction. Avec des années d'expérience dans le secteur, je sais qu'un bon match est plus que quelques lignes sur un CV.",
+        "story_p2": "Mon approche est simple : je rencontre chaque artisan, je vérifie chaque référence, et je garantis personnellement la qualité que je fournis. Nous avons un vivier direct de maçons, coffreurs, grutiers, électriciens et soudeurs disponibles. Pas de fausses promesses, mais des conseils honnêtes et des résultats solides sur lesquels vous pouvez compter."
+    },
+    "NewsPage": {
+        "title": "Aperçus du Secteur",
+        "subtitle": "Restez informé de ce qui se passe dans la construction belge.",
+        "read_more": "Lire la suite",
+        "back_to_news": "Retour aux actualités",
+        "share": "Partager",
+        "articles": {
+            "1": {
+                "title": "L'avenir de la construction durable",
+                "date": "15 Jan 2026",
+                "author": "Jan Janssens",
+                "category": "Innovation",
+                "excerpt": "Découvrez les dernières tendances et technologies qui transforment le secteur de la construction vers un avenir plus vert.",
+                "content_p1": "Le secteur de la construction est à l'aube d'une révolution. Là où la rapidité et l'efficacité des coûts primaient autrefois, nous observons maintenant un changement fondamental vers la durabilité et la circularité. Cette transition n'est pas seulement un choix éthique, mais aussi une nécessité économique.",
+                "content_p2": "La construction modulaire en bois gagne rapidement du terrain en Belgique. Grâce à la préfabrication dans des conditions contrôlées, nous pouvons produire jusqu'à 70% de déchets de construction en moins. De plus, le bois agit comme un stockage naturel de CO2 : chaque mètre cube de bois stocke 900 kg de CO2. Cela rend les constructions en bois non seulement neutres pour le climat, mais même positives pour le climat.",
+                "content_h2": "La Révolution Circulaire",
+                "content_p3": "Le concept de « bâtiments comme banques de matériaux » transforme notre façon de concevoir. Les architectes et ingénieurs intègrent désormais des plans de démontage dans leurs conceptions, afin que les matériaux puissent être facilement réutilisés à la fin de la durée de vie d'un bâtiment. Le béton est broyé et recyclé, l'acier trouve une nouvelle vie, et même les plaques de plâtre retrouvent le chemin de nouveaux projets.",
+                "content_p4": "Pour les artisans, cela signifie de nouvelles opportunités. La demande de spécialistes en construction bois, rénovation et démolition soignée explose. Ceux qui se forment maintenant aux techniques de construction durable se positionnent pour une carrière florissante dans les décennies à venir.",
+                "content_p5": "Chez Constructief, nous voyons ces tendances quotidiennement. De plus en plus de nos entreprises partenaires demandent spécifiquement des artisans ayant de l'expérience dans les méthodes durables. L'avenir de la construction est vert, et cet avenir commence aujourd'hui."
+            },
+            "2": {
+                "title": "Sécurité sur le chantier : conseils pratiques",
+                "date": "10 Jan 2026",
+                "author": "Marie Peeters",
+                "category": "Sécurité",
+                "excerpt": "Des conseils pratiques pour garantir la sécurité sur le chantier et prévenir les accidents.",
+                "content_p1": "Chaque année, des milliers d'accidents du travail surviennent dans le secteur de la construction en Belgique. Beaucoup de ces accidents sont évitables avec les bonnes connaissances, le bon équipement et la vigilance. En tant qu'artisan, la sécurité n'est pas seulement votre droit, mais aussi votre responsabilité.",
+                "content_p2": "Les équipements de protection individuelle (EPI) constituent la première ligne de défense. Un bon casque de sécurité, des chaussures à embout d'acier, une protection auditive et des lunettes de sécurité ne sont pas des accessoires mais des outils essentiels. Vérifiez quotidiennement vos EPI pour détecter les dommages et remplacez-les en cas de doute. Un casque tombé n'offre plus la même protection.",
+                "content_h2": "Les Cinq Règles d'Or",
+                "content_p3": "Premièrement : connaissez votre environnement. Faites chaque matin un tour du chantier et identifiez les dangers potentiels. Deuxièmement : communiquez. Une réunion de sécurité de cinq minutes peut sauver des vies. Troisièmement : ne travaillez jamais seul en hauteur ou dans des espaces confinés. Quatrièmement : prenez des pauses. La fatigue est l'un des plus grands facteurs de risque. Cinquièmement : osez dire non aux situations dangereuses.",
+                "content_p4": "Le travail en hauteur reste l'activité la plus dangereuse sur le chantier. Assurez-vous toujours d'avoir des échafaudages stables, utilisez des harnais de sécurité pour les travaux au-dessus de 2 mètres, et vérifiez la stabilité des échelles. Une chute de quelques mètres seulement peut avoir des conséquences fatales.",
+                "content_p5": "Chez Constructief, nous vérifions non seulement le savoir-faire, mais aussi la conscience de la sécurité. Nos partenaires savent qu'ils reçoivent des artisans qui non seulement font du bon travail, mais le font aussi en toute sécurité. Car en fin de compte, tout le monde veut rentrer chez soi en bonne santé."
+            },
+            "3": {
+                "title": "Nouvelle réglementation 2026",
+                "date": "05 Jan 2026",
+                "author": "Peter Maes",
+                "category": "Législation",
+                "excerpt": "Un aperçu des principaux changements législatifs pour le secteur de la construction en 2026.",
+                "content_p1": "La nouvelle année apporte des changements importants pour le secteur belge de la construction. Des normes énergétiques plus strictes aux nouvelles règles sur le détachement : il est crucial de rester informé. Nous avons rassemblé pour vous les changements les plus importants.",
+                "content_p2": "La réglementation PEB (Performance Énergétique des Bâtiments) est encore renforcée. Les nouvelles habitations doivent désormais répondre au niveau Q-ZEN (Quasi Zéro Énergie) à partir de 2026. Cela signifie plus d'isolation, une meilleure étanchéité à l'air et l'intégration obligatoire de sources d'énergie renouvelables. Pour les artisans en isolation, HVAC et panneaux solaires, cela ouvre de nouveaux marchés.",
+                "content_h2": "Détachement et Droit du Travail",
+                "content_p3": "Les règles concernant le détachement des travailleurs étrangers sont plus strictement appliquées. La déclaration Limosa doit désormais être effectuée 24 heures avant le début des travaux. Les contrôles sur les chantiers augmentent et les amendes pour infractions ont doublé. Les employeurs sont tenus de fournir les fiches de paie dans la langue du travailleur.",
+                "content_p4": "Beaucoup de choses changent également dans le domaine de la coordination de sécurité. Le seuil de nomination obligatoire d'un coordinateur de sécurité a été abaissé. Même les petits chantiers nécessitent désormais un plan de sécurité formel. Cela crée une demande de coordinateurs spécialisés et élève les normes sur tous les chantiers.",
+                "content_p5": "Vous avez des questions sur l'impact de cette réglementation sur vous ou votre entreprise ? Contactez Constructief. Nous vous aiderons à naviguer dans le paysage changeant du secteur belge de la construction."
+            }
+        }
+    },
+    "ContactPage": {
+        "title": "Parlons-en",
+        "subtitle": "Contact direct pour des solutions rapides.",
+        "info_title": "Coordonnées",
+        "info_description": "Vous voulez savoir ce que je peux faire pour votre projet ? Appelez-moi directement ou envoyez un message.",
+        "phone": "Téléphone",
+        "email": "E-mail",
+        "address": "Localisation",
+        "form_title": "Contact rapide",
+        "form_name": "Nom",
+        "form_email": "E-mail",
+        "form_subject": "Sujet",
+        "form_message": "Votre question",
+        "form_submit": "Envoyer",
+        "success": "Merci pour votre message ! Nous l'avons bien reçu et nous vous contacterons dans les 24 heures.",
+        "error": "Une erreur s'est produite lors de l'envoi. Veuillez vérifier votre connexion Internet ou réessayer plus tard."
+    },
+    "PrivacyPage": {
+        "title": "Confidentialité & Confiance",
+        "last_updated": "Dernière mise à jour : 22 janvier 2026",
+        "intro": "La confiance est le fondement de la construction. Chez Constructief, nous allons au-delà de la loi ; nous protégeons votre identité et vos données comme si elles étaient les nôtres.",
+        "sections": {
+            "collection": {
+                "title": "1. Sélection Personnelle",
+                "content": "Nous ne collectons que ce qui est nécessaire pour vous présenter : expérience, compétences et références. Vos coordonnées restent chez nous jusqu'à ce qu'il y ait un accord mutuel."
+            },
+            "usage": {
+                "title": "2. Mise en Relation Ciblée",
+                "content": "Vos informations sont utilisées pour trouver la correspondance parfaite. Pas de systèmes automatiques, mais un jugement humain détermine si un projet vous convient."
+            },
+            "sharing": {
+                "title": "3. Processus Anonyme",
+                "content": "Votre confidentialité est primordiale. Nous vous présentons anonymement à nos partenaires. Ce n'est que lorsque vous et le partenaire acceptez de faire connaissance que nous partageons les détails nécessaires."
+            },
+            "security": {
+                "title": "4. Stockage Sécurisé",
+                "content": "Vos données sont stockées en toute sécurité et ne sont accessibles qu'à moi en tant que votre interlocuteur personnel."
+            },
+            "rights": {
+                "title": "5. Vous Décidez",
+                "content": "C'est vous qui décidez. Vous souhaitez modifier vos données ou les supprimer de notre réseau ? Un seul message suffit pour que ce soit fait immédiatement."
+            }
+        }
+    },
+    "Team": {
+        "title": "Votre Interlocuteur",
+        "subtitle": "Contact direct avec la personne derrière la mise en relation."
+    },
+    "Values": {
+        "title": "Notre Fondation",
+        "items": {
+            "integrity": {
+                "title": "Honnêteté",
+                "description": "Pas de belles paroles, mais des conseils transparents sur chaque candidat et chaque projet."
+            },
+            "passion": {
+                "title": "Savoir-faire",
+                "description": "Passion pour la construction et respect pour les personnes qui font le travail."
+            },
+            "innovation": {
+                "title": "Flexibilité",
+                "description": "Réactivité et recherche de solutions qui fonctionnent pour vous."
+            }
+        }
+    },
+    "Footer": {
+        "tagline": "Pas de piles de CV, mais des artisans directement opérationnels.",
+        "links": "Navigation",
+        "candidates": "Artisans",
+        "employers": "Partenaires",
+        "vacancies": "Projets",
+        "company": "À propos de Constructief",
+        "about": "Histoire personnelle",
+        "contact": "Contact",
+        "privacy": "Confidentialité",
+        "rights": "Tous droits réservés."
+    },
+    "CandidateForm": {
+        "title": "Inscription Directe",
+        "subtitle": "Pas besoin de compte. Remplissez vos coordonnées et nous vous appellerons quand nous aurons une mission.",
+        "name": "Nom",
+        "name_placeholder": "Jean Dupont",
+        "trades_label": "Spécialité(s)",
+        "trades_hint": "Sélectionnez toutes les spécialités dans lesquelles vous avez de l'expérience",
+        "select_trade_hint": "Sélectionnez au moins une spécialité pour continuer",
+        "cluster_structural": "Gros Œuvre",
+        "cluster_roofing": "Toiture",
+        "cluster_finishing": "Finition",
+        "cluster_technical": "Techniques",
+        "cluster_management": "Encadrement & Support",
+        "trade_metser": "Maçon",
+        "trade_bekister": "Coffreur",
+        "trade_ijzervlechter": "Ferrailleur",
+        "trade_lasser": "Soudeur (TIG/MIG/MAG)",
+        "trade_grondwerker": "Terrassier",
+        "trade_kraanmachinist": "Grutier (Grue à tour)",
+        "trade_graafkraanmachinist": "Conducteur de pelle",
+        "trade_wegenwerker": "Ouvrier routier / Poseur de pavés",
+        "trade_stellingbouwer": "Monteur d'échafaudages",
+        "trade_dakwerker_plat": "Couvreur (Toits plats / EPDM)",
+        "trade_dakwerker_hellend": "Couvreur (Toits inclinés)",
+        "trade_schilder": "Peintre",
+        "trade_stukadoor": "Plâtrier",
+        "trade_tegelzetter": "Carreleur / Solier",
+        "trade_gyproc": "Plaquiste (Gyproc)",
+        "trade_schrijnwerker_binnen": "Menuisier (Intérieur)",
+        "trade_schrijnwerker_buiten": "Menuisier (Extérieur / Atelier)",
+        "trade_monteur_ramen": "Monteur de fenêtres et portes",
+        "trade_elektricien_resi": "Électricien (Résidentiel)",
+        "trade_elektricien_ind": "Électricien (Industriel)",
+        "trade_loodgieter": "Plombier / Sanitaire",
+        "trade_hvac": "Technicien HVAC",
+        "trade_ploegbaas": "Chef d'équipe",
+        "trade_werfleider": "Conducteur de travaux",
+        "trade_handlanger": "Manœuvre",
+        "experience": "Années d'expérience",
+        "experience_placeholder": "5",
+        "phone": "Numéro de téléphone (WhatsApp)",
+        "phone_placeholder": "+32 465 811031",
+        "email": "Email (Optionnel)",
+        "email_placeholder": "jean@exemple.com",
+        "notes": "Remarques / Disponibilité",
+        "notes_placeholder": "Je suis disponible immédiatement...",
+        "submit": "S'inscrire",
+        "submitting": "Envoi en cours...",
+        "success": "Merci ! Nous avons reçu vos données et nous vous contacterons dans les 24 heures.",
+        "error": "Une erreur s'est produite. Veuillez réessayer plus tard ou appelez-nous directement."
+    },
+    "CookieBanner": {
+        "message": "Nous utilisons des cookies pour améliorer votre expérience.",
+        "accept": "Accepter",
+        "privacy": "Politique de confidentialité"
+    },
+    "Metadata": {
+        "title": "Constructief | Recrutement & Sélection Bâtiment | Freelance & Gestion de Paie",
+        "description": "Vous cherchez du personnel qualifié dans le bâtiment ? Constructief met en relation les entrepreneurs avec des maçons, électriciens et conducteurs de travaux présélectionnés. Rapide, fiable et local."
+    }
+}

@@ -79,9 +79,14 @@ export function Header() {
                             NL
                         </Button>
                         <span className="text-neutral-300 h-4 w-px bg-neutral-200"></span>
+                        <Button variant="ghost" size="sm" className="font-bold text-xs" onClick={() => switchLocale("fr")}>
+                            FR
+                        </Button>
                         <Button variant="ghost" size="sm" className="font-bold text-xs" onClick={() => switchLocale("ru")}>
                             RU
                         </Button>
+                        <span className="text-neutral-300 h-4 w-px bg-neutral-200"></span>
+                        
                     </div>
                 </nav>
 
@@ -109,9 +114,13 @@ export function Header() {
                             <Button variant="outline" size="sm" onClick={() => switchLocale("nl")}>
                                 NL
                             </Button>
+                            <Button variant="outline" size="sm" onClick={() => switchLocale("fr")}>
+                                FR
+                            </Button>
                             <Button variant="outline" size="sm" onClick={() => switchLocale("ru")}>
                                 RU
                             </Button>
+                            
                         </div>
                     </nav>
                 </div>
