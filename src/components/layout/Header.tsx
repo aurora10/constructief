@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -13,6 +13,7 @@ export function Header() {
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
+    const locale = useLocale();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -74,19 +75,46 @@ export function Header() {
                             )}></span>
                         </Link>
                     ))}
-                    <div className="flex items-center gap-1 pl-4 border-l border-neutral-200">
-                        <Button variant="ghost" size="sm" className="font-bold text-xs" onClick={() => switchLocale("nl")}>
+                    <div className="flex items-center gap-1.5 pl-4 border-l border-neutral-200">
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className={cn(
+                                "font-bold text-xs rounded-full px-3 transition-colors",
+                                locale === "nl"
+                                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                                    : "hover:bg-primary/15"
+                            )}
+                            onClick={() => switchLocale("nl")}
+                        >
                             NL
                         </Button>
-                        <span className="text-neutral-300 h-4 w-px bg-neutral-200"></span>
-                        <Button variant="ghost" size="sm" className="font-bold text-xs" onClick={() => switchLocale("fr")}>
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className={cn(
+                                "font-bold text-xs rounded-full px-3 transition-colors",
+                                locale === "fr"
+                                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                                    : "hover:bg-primary/15"
+                            )}
+                            onClick={() => switchLocale("fr")}
+                        >
                             FR
                         </Button>
-                        <Button variant="ghost" size="sm" className="font-bold text-xs" onClick={() => switchLocale("ru")}>
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className={cn(
+                                "font-bold text-xs rounded-full px-3 transition-colors",
+                                locale === "ru"
+                                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                                    : "hover:bg-primary/15"
+                            )}
+                            onClick={() => switchLocale("ru")}
+                        >
                             RU
                         </Button>
-                        <span className="text-neutral-300 h-4 w-px bg-neutral-200"></span>
-                        
                     </div>
                 </nav>
 
@@ -110,17 +138,46 @@ export function Header() {
                                 {item.label}
                             </Link>
                         ))}
-                        <div className="flex items-center space-x-4 pt-4 border-t">
-                            <Button variant="outline" size="sm" onClick={() => switchLocale("nl")}>
+                        <div className="flex items-center space-x-2 pt-4 border-t">
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className={cn(
+                                    "rounded-full px-3 transition-colors font-bold text-xs",
+                                    locale === "nl"
+                                        ? "bg-primary text-primary-foreground border-primary hover:bg-primary/90"
+                                        : "hover:bg-primary/15"
+                                )}
+                                onClick={() => switchLocale("nl")}
+                            >
                                 NL
                             </Button>
-                            <Button variant="outline" size="sm" onClick={() => switchLocale("fr")}>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className={cn(
+                                    "rounded-full px-3 transition-colors font-bold text-xs",
+                                    locale === "fr"
+                                        ? "bg-primary text-primary-foreground border-primary hover:bg-primary/90"
+                                        : "hover:bg-primary/15"
+                                )}
+                                onClick={() => switchLocale("fr")}
+                            >
                                 FR
                             </Button>
-                            <Button variant="outline" size="sm" onClick={() => switchLocale("ru")}>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className={cn(
+                                    "rounded-full px-3 transition-colors font-bold text-xs",
+                                    locale === "ru"
+                                        ? "bg-primary text-primary-foreground border-primary hover:bg-primary/90"
+                                        : "hover:bg-primary/15"
+                                )}
+                                onClick={() => switchLocale("ru")}
+                            >
                                 RU
                             </Button>
-                            
                         </div>
                     </nav>
                 </div>
