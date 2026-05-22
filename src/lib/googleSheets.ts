@@ -140,8 +140,8 @@ async function sheetsApi(path: string, options: RequestInit = {}): Promise<Respo
 export async function insertRowWithId(sheetName: string, values: (string | number)[]): Promise<number> {
   console.time(`[Sheets] ${sheetName} insert`);
 
-  // 1. Read all existing data rows (columns A through K)
-  const range = `${encodeURIComponent(sheetName)}!A2:K`;
+  // 1. Read all existing data rows (columns A through Z, to capture all columns including Created At)
+  const range = `${encodeURIComponent(sheetName)}!A2:Z`;
   console.timeLog(`[Sheets] ${sheetName} insert`, 'reading existing rows');
   const readResponse = await sheetsApi(`values/${range}`);
   const readData = await readResponse.json();
