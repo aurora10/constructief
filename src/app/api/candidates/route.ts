@@ -58,8 +58,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const now = new Date();
+    const createdAt = `${String(now.getDate()).padStart(2, '0')} - ${String(now.getMonth() + 1).padStart(2, '0')} - ${now.getFullYear()}`;
+
     // Insert into Google Sheets "Candidates" tab at the top (row 2)
-    // Column order: Id | Name | Trade | Experience | Status | Phone | Email | Recruiter Note
+    // Column order: Id | Name | Trade | Experience | Status | Phone | Email | Recruiter Note | Created At
     const id = await insertRowWithId('Candidates', [
       name,
       trades.join(', '),
@@ -68,6 +71,7 @@ export async function POST(request: NextRequest) {
       phone,
       email || '',
       notes || '',
+      createdAt,
     ]);
 
     return NextResponse.json({ success: true, id });
