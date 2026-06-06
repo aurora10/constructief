@@ -46,10 +46,38 @@ export default async function RootLayout({
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["EmploymentAgency", "Organization"],
+    "name": "Constructief",
+    "url": "https://constructief-bouw.be",
+    "description": t('description'),
+    "areaServed": {
+      "@type": "Country",
+      "name": "Belgium",
+      "alternateName": "BE"
+    },
+    "knowsAbout": [
+      "Construction Subcontractors",
+      "General Contractors",
+      "Bouwpersoneel",
+      "Hoofdaannemers"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Aankoop en calculatieafdelingen van grote bouwbedrijven en hoofdaannemers"
+    }
+  };
 
   return (
     <html lang={locale}>
       <body className={`${manrope.variable} antialiased bg-background text-neutral flex flex-col min-h-screen`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <GlowFrame />
           <Header />
