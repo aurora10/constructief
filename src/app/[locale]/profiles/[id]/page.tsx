@@ -32,8 +32,9 @@ const getCandidate = cache(async (id: string) => {
     }
 });
 
-export default async function BlindProfilePage({ params }: { params: { id: string } }) {
-    const candidate = await getCandidate(params.id);
+export default async function BlindProfilePage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const candidate = await getCandidate(id);
 
     if (!candidate) {
         notFound();

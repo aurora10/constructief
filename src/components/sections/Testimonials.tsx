@@ -35,7 +35,7 @@ export function Testimonials() {
                         <div key={testimonial.id} className="bg-white p-8 rounded-lg shadow-sm relative">
                             <Quote className="h-8 w-8 text-primary/20 absolute top-6 left-6" />
                             <p className="text-lg text-neutral-600 mb-6 relative z-10 pt-4 italic">
-                                "{t(`reviews.${testimonial.id}.text`)}"
+                                &quot;{t(`reviews.${testimonial.id}.text`)}&quot;
                             </p>
                             <div className="flex items-center gap-4">
                                 <div className="h-10 w-10 rounded-full bg-neutral-200" />

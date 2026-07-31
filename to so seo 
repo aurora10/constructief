@@ -1,0 +1,35 @@
+To rank well and convert visitors into leads, these programmatic city pages shouldn't just be thin placeholders. They need to provide a complete "landing page experience" tailored to a B2B audience (purchasing managers, project leaders, calculation departments).
+
+Here is the ideal content structure I suggest adding to these pages over time (which we can easily structure into the CitySEO JSON block later):
+
+1. The Hero Section (Intent & Urgency)
+H1 (Title): Betrouwbare Onderaannemers & Bouwpersoneel in [City]
+Subheadline: Address their main pain point. “Heeft u op korte termijn extra capaciteit nodig voor uw bouwproject in de regio [City]? Wij leveren direct inzetbare, gescreende vakmensen voor grote aannemers.”
+Call to Action (CTA): Vraag direct capaciteit aan (Request capacity now)
+2. Available Trades (What can they hire?)
+List the specific types of workers you supply. Google loves semantic keywords.
+
+Vakgebieden beschikbaar in regio [City]:
+Ruwbouw (Metselaars, Bekisters, IJzervlechters)
+Afwerking (Stukadoors, Schilders, Tegelzetters)
+Technieken (Elektriciens, Loodgieters, HVAC)
+Machinisten (Kraan, Graafmachine)
+3. Local Trust & Logistics (Why Choose You)
+Explain why working with you in that specific region makes sense.
+
+Lokale Kennis: “Onze onderaannemers zijn lokaal gehuisvest of bereid tot verblijf in de buurt van [City], waardoor u geen last heeft van vertragingen.” (Local presence prevents delays).
+Administratieve Ontzorging: “Wij regelen alle wettelijke verplichtingen (Limosa, A1, Checkinatwork) zodat u zich kunt focussen op de bouw.” (Handling administration/compliance).
+7-Dagen Proefperiode: Mention your 7-day trial week (from your main site's messaging).
+4. Regional Breadcrumbs / Surrounding Areas
+To boost local SEO, it helps to mention the surrounding province.
+
+"Niet alleen in [City] centrum, maar ook actief op werven in de omliggende gemeenten en de rest van de provincie." (Active not just in the city center, but surrounding municipalities).
+5. FAQs (Frequently Asked Questions)
+Google often pulls FAQ content into the search results. Include 3 questions:
+
+Hoe snel kunnen onderaannemers starten in [City]? (How fast can they start?)
+Zijn alle documenten in orde voor werven in België? (Are all documents compliant?)
+Kan ik ook ploegen inclusief meewerkend voorman inhuren? (Can I hire teams with a working foreman?)
+6. Final Call to Action
+"Klaar om uw werf in [City] te versterken? Bespreek vandaag nog uw personeelsbehoefte met ons team."
+Next Steps Strategy: You don't need to write 100% unique text for every single city. You can write one really strong version of the structure above, put it in the nl.json / fr.json templates, and use the {city} variable throughout it. Google understands that programmatic SEO pages share structural content, as long as the local relevance and intent match what the user is searching for!

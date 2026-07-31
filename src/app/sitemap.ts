@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { jobs } from '@/data/vacancies';
 import { articleIds } from '@/data/news';
+import { citiesData } from '@/data/cities';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://constructief-bouw.be';
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const sitemapEntries: MetadataRoute.Sitemap = [];
 
     for (const locale of locales) {
+        // Static pages
         for (const page of staticPages) {
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}${page}`,
@@ -30,6 +32,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         }
 
+        // City landing pages (onderaannemer-{city})
+        for (const city of citiesData) {
+            sitemapEntries.push({
+                url: `${baseUrl}/${locale}/diensten/onderaannemer-${city.slug}`,
+                lastModified: new Date(),
+                changeFrequency: 'weekly',
+                priority: 0.9,
+            });
+        }
+
+        // Vacancy detail pages
         for (const job of jobs) {
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}/vacatures/${job.id}`,
@@ -39,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         }
 
+        // News article pages
         for (const articleId of articleIds) {
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}/nieuws/${articleId}`,

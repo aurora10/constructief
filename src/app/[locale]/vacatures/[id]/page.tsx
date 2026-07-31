@@ -1,19 +1,45 @@
-"use client";
-
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
-import { useParams, notFound } from 'next/navigation';
 import { ArrowLeft, MapPin, Clock, Euro } from "lucide-react";
 import { jobs } from '@/data/vacancies';
+import { routing } from '@/i18n/routing';
 
-export default function VacancyDetailPage() {
-    const t = useTranslations('VacanciesPage');
-    const params = useParams();
-    const id = Number(params.id);
+type Props = {
+    params: Promise<{ locale: string; id: string }>;
+};
 
-    const job = jobs.find(j => j.id === id);
+export function generateStaticParams() {
+    const params: { locale: string; id: string }[] = [];
+    for (const locale of routing.locales) {
+        for (const job of jobs) {
+            params.push({ locale, id: String(job.id) });
+        }
+    }
+    return params;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale, id } = await params;
+    const job = jobs.find(j => j.id === Number(id));
+
+    if (!job) return { title: 'Not Found' };
+
+    return {
+        title: `${job.title} | Constructief`,
+        description: job.description,
+    };
+}
+
+export default async function VacancyDetailPage({ params }: Props) {
+    const { locale, id } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
+
+    const job = jobs.find(j => j.id === Number(id));
 
     if (!job) {
         notFound();
@@ -35,7 +61,7 @@ export default function VacancyDetailPage() {
             "@type": "Place",
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": job.location, // Assuming city for now
+                "addressLocality": job.location,
                 "addressCountry": "BE"
             }
         },
@@ -44,7 +70,7 @@ export default function VacancyDetailPage() {
             "currency": "EUR",
             "value": {
                 "@type": "QuantitativeValue",
-                "value": job.salary, // This might need parsing if strict schema is needed, but for now passing string
+                "value": job.salary,
                 "unitText": "MONTH"
             }
         }
