@@ -41,6 +41,14 @@ export async function generateMetadata({
   return {
     title: `${t('heading', { city: cityData.name })} | Constructief`,
     description: t('intro', { city: cityData.name }),
+    alternates: {
+      canonical: `https://constructief-bouw.be/nl/diensten/${slug}`,
+      languages: {
+        nl: `https://constructief-bouw.be/nl/diensten/${slug}`,
+        fr: `https://constructief-bouw.be/fr/diensten/${slug}`,
+        ru: `https://constructief-bouw.be/ru/diensten/${slug}`,
+      },
+    },
   };
 }
 
