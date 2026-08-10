@@ -1,4 +1,5 @@
 import { targetCities, citiesData } from '@/data/cities';
+import { citiesSeoData } from '@/data/citiesSeo';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
@@ -42,7 +43,7 @@ export async function generateMetadata({
     title: `${t('heading', { city: cityData.name })} | Constructief`,
     description: t('intro', { city: cityData.name }),
     alternates: {
-      canonical: `https://constructief-bouw.be/nl/diensten/${slug}`,
+      canonical: `https://constructief-bouw.be/${locale}/diensten/${slug}`,
       languages: {
         nl: `https://constructief-bouw.be/nl/diensten/${slug}`,
         fr: `https://constructief-bouw.be/fr/diensten/${slug}`,
@@ -202,6 +203,21 @@ export default async function CityLandingPage({
           </p>
         </div>
       </section>
+
+      {/* 4.5 Local SEO Context */}
+      {citiesSeoData[city]?.uniqueDescription && (
+        <section className="py-16 px-4 md:px-8 bg-neutral-50 dark:bg-neutral-900/50">
+          <div className="container max-w-4xl text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-neutral-900 dark:text-white">
+              De bouwsector in {cityName}
+            </h2>
+            <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-8"></div>
+            <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-3xl mx-auto">
+              {citiesSeoData[city].uniqueDescription}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* 5. FAQs */}
       <section className="py-20 px-4 md:px-8 bg-white">
