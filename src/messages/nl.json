@@ -15,9 +15,9 @@
     },
     "Hero": {
         "title": "Samen bouwen we aan een sterkere toekomst",
-        "subtitle": "Geen stapels CV's, maar direct inzetbare vakmannen. Wij verbinden aannemers met gescreende professionals in de bouw.",
+        "subtitle": "Geen stapels CV's, maar direct inzetbare vakmannen. Uitsluitend voor professionele (hoofd)aannemers en grote bouwbedrijven. Geen particuliere projecten.",
         "cta_candidates": "Ontdek vacatures",
-        "cta_employers": "Vind uw vakman"
+        "cta_employers": "Voor aannemers"
     },
     "ValueProps": {
         "title": "Waarom Constructief uw partner is",
@@ -110,7 +110,7 @@
     },
     "EmployersPage": {
         "title": "Uw Partner in Personeel",
-        "subtitle": "Krijg direct toegang tot gescreende vakmannen. Geen administratieve rompslomp, alleen resultaat.",
+        "subtitle": "Krijg direct toegang tot gescreende vakmannen voor uw bouwbedrijf. Uitsluitend B2B, geen particuliere aanvragen.",
         "form_title": "Personeel Aanvragen",
         "form_subtitle": "Vertel ons wat je nodig hebt. Wij matchen de juiste vakmensen.",
         "company_name": "Bedrijfsnaam",
@@ -230,7 +230,7 @@
         "title": "Laten we praten",
         "subtitle": "Direct contact voor snelle oplossingen.",
         "info_title": "Contactgegevens",
-        "info_description": "Wilt u weten wat ik voor uw project kan betekenen? Bel me direct of stuur een bericht.",
+        "info_description": "Wilt u weten wat ik voor uw project kan betekenen? Bel me direct of stuur een bericht. Let op: Wij werken uitsluitend B2B voor erkende bouwbedrijven.",
         "phone": "Telefoon",
         "email": "E-mail",
         "address": "Locatie",

@@ -90,7 +90,7 @@ export function HowItWorks() {
                         </div>
 
                         <div className="pt-4 mt-auto text-center lg:text-left">
-                            <Button asChild>
+                            <Button asChild className="w-full">
                                 <Link href="/kandidaten#register">{t("candidates.cta")}</Link>
                             </Button>
                         </div>
@@ -121,7 +121,7 @@ export function HowItWorks() {
                         </div>
 
                         <div className="pt-4 mt-auto text-center lg:text-left">
-                            <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">
+                            <Button asChild variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-white">
                                 <Link href="/werkgevers">{t("employers.cta")}</Link>
                             </Button>
                         </div>

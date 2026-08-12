@@ -15,9 +15,9 @@
     },
     "Hero": {
         "title": "Construisons ensemble un avenir plus solide",
-        "subtitle": "Pas de piles de CV, mais des artisans directement opérationnels. Nous mettons en relation les entrepreneurs avec des professionnels du bâtiment présélectionnés.",
+        "subtitle": "Pas de piles de CV, mais des artisans directement opérationnels. Exclusivement pour les entrepreneurs professionnels et les grandes entreprises de construction. Pas de projets particuliers.",
         "cta_candidates": "Découvrir les offres",
-        "cta_employers": "Trouver votre artisan"
+        "cta_employers": "Pour les entrepreneurs"
     },
     "ValueProps": {
         "title": "Pourquoi Constructief est votre partenaire",
@@ -110,8 +110,8 @@
     },
     "EmployersPage": {
         "title": "Votre Partenaire en Personnel",
-        "subtitle": "Accédez directement à des artisans présélectionnés. Pas de paperasse, seulement des résultats.",
-        "form_title": "Demande de Personnel",
+        "subtitle": "Accédez directement à des artisans présélectionnés pour votre entreprise de construction. Exclusivement B2B, pas de demandes de particuliers.",
+        "form_title": "Demander du Personnel",
         "form_subtitle": "Dites-nous ce dont vous avez besoin. Nous trouvons les bons artisans.",
         "company_name": "Nom de l'entreprise",
         "company_name_placeholder": "Entreprise de Construction Dupont SA",
@@ -230,7 +230,7 @@
         "title": "Parlons-en",
         "subtitle": "Contact direct pour des solutions rapides.",
         "info_title": "Coordonnées",
-        "info_description": "Vous voulez savoir ce que je peux faire pour votre projet ? Appelez-moi directement ou envoyez un message.",
+        "info_description": "Vous voulez savoir ce que je peux faire pour votre projet ? Appelez-moi directement ou envoyez un message. Attention : Nous travaillons exclusivement en B2B pour des entreprises de construction reconnues.",
         "phone": "Téléphone",
         "email": "E-mail",
         "address": "Localisation",
