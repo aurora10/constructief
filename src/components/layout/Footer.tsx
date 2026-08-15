@@ -55,8 +55,10 @@ export function Footer() {
 
                 <div className="mt-8 pt-8 border-t">
                     <h4 className="font-semibold mb-4 text-sm">{t("regions")}</h4>
-                    <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-x-4 gap-y-1 text-xs">
-                        {citiesData.map((city) => (
+                    <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                        {citiesData
+                            .filter(city => ['antwerpen', 'brussel', 'gent', 'rotterdam', 'amsterdam'].includes(city.slug))
+                            .map((city) => (
                             <li key={city.slug}>
                                 <Link
                                     href={`/diensten/onderaannemer-${city.slug}`}
@@ -66,6 +68,11 @@ export function Footer() {
                                 </Link>
                             </li>
                         ))}
+                        <li>
+                            <Link href="/diensten" className="font-semibold text-primary hover:underline transition-colors">
+                                {t("view_all_regions")}
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 

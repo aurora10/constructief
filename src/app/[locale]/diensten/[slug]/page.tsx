@@ -1,9 +1,9 @@
 import { targetCities, citiesData } from '@/data/cities';
-import { citiesSeoData } from '@/data/citiesSeo';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
+import { jobs } from '@/data/vacancies';
 import { 
   MapPin, 
   Wrench, 
@@ -75,6 +75,18 @@ export default async function CityLandingPage({
   
   const t = await getTranslations({ locale, namespace });
   const tTrades = await getTranslations({ locale, namespace: 'CandidateForm' });
+  const tSeo = await getTranslations({ locale, namespace: 'CitiesSeo' });
+  const tNav = await getTranslations({ locale, namespace: 'Navigation' });
+  
+  const uniqueDescription = tSeo(city);
+
+  // Simple permutations based on city slug length to make DOM unique
+  const permutations = [[1, 2, 3], [2, 3, 1], [3, 1, 2], [1, 3, 2], [2, 1, 3]];
+  const pIndex = city.length % permutations.length;
+  const order = permutations[pIndex];
+  
+  // Pick pseudo-random jobs to show
+  const relatedJobs = [...jobs].sort((a, b) => (a.id * city.length) % 7 - (b.id * city.length) % 7).slice(0, 3);
 
   const getIconForTrade = (index: number) => {
     switch(index % 4) {
@@ -169,27 +181,22 @@ export default async function CityLandingPage({
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
-                <MapPin className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-neutral-900">{t('trust_1_title', { city: cityName })}</h3>
-              <p className="text-neutral/80">{t('trust_1_desc', { city: cityName, province: province })}</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
-                <HardHat className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-neutral-900">{t('trust_2_title', { city: cityName })}</h3>
-              <p className="text-neutral/80">{t('trust_2_desc', { city: cityName, province: province })}</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
-                <Clock className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-neutral-900">{t('trust_3_title', { city: cityName })}</h3>
-              <p className="text-neutral/80">{t('trust_3_desc', { city: cityName, province: province })}</p>
-            </div>
+            {order.map((num) => {
+              const icons: Record<number, React.ReactNode> = {
+                1: <MapPin className="w-8 h-8" />,
+                2: <HardHat className="w-8 h-8" />,
+                3: <Clock className="w-8 h-8" />
+              };
+              return (
+                <div key={`trust-${num}`} className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+                    {icons[num]}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-neutral-900">{t(`trust_${num}_title` as any, { city: cityName })}</h3>
+                  <p className="text-neutral/80">{t(`trust_${num}_desc` as any, { city: cityName, province: province })}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -205,19 +212,46 @@ export default async function CityLandingPage({
       </section>
 
       {/* 4.5 Local SEO Context */}
-      {citiesSeoData[city]?.uniqueDescription && (
+      {uniqueDescription && (
         <section className="py-16 px-4 md:px-8 bg-neutral-50 dark:bg-neutral-900/50">
           <div className="container max-w-4xl text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-neutral-900 dark:text-white">
-              De bouwsector in {cityName}
+              {cityName}
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-8"></div>
             <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-3xl mx-auto">
-              {citiesSeoData[city].uniqueDescription}
+              {uniqueDescription}
             </p>
           </div>
         </section>
       )}
+
+      {/* 4.7 Local Vacancies */}
+      <section className="py-20 px-4 md:px-8 bg-neutral-100 dark:bg-neutral-800 border-y border-neutral-200 dark:border-neutral-700">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-900 dark:text-white">
+              {tNav("vacancies")} - {cityName}
+            </h2>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedJobs.map((job) => (
+              <div key={job.id} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all flex flex-col text-left">
+                <h3 className="text-xl font-bold mb-2 text-neutral-900 dark:text-white">{job.title}</h3>
+                <div className="flex items-center gap-2 text-neutral-500 text-sm mb-4">
+                  <MapPin className="w-4 h-4" />
+                  <span>{job.location === 'Antwerpen' || job.location === 'Brussel' || job.location === 'Gent' ? job.location : cityName}</span>
+                </div>
+                <p className="text-neutral-600 dark:text-neutral-400 mb-6 flex-1 text-sm">{job.description.substring(0, 100)}...</p>
+                <Button asChild variant="outline" className="w-full justify-center">
+                  <Link href="/vacatures">{tNav("vacancies")}</Link>
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 5. FAQs */}
       <section className="py-20 px-4 md:px-8 bg-white">
@@ -230,27 +264,15 @@ export default async function CityLandingPage({
           </div>
           
           <div className="space-y-6">
-            <div className="bg-neutral-light/30 p-6 rounded-2xl border border-neutral-light/50">
-              <h3 className="text-lg font-bold mb-2 flex items-start gap-3 text-neutral-900">
-                <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                {t('faq_1_q', { city: cityName })}
-              </h3>
-              <p className="text-neutral/80 ml-9">{t('faq_1_a', { city: cityName })}</p>
-            </div>
-            <div className="bg-neutral-light/30 p-6 rounded-2xl border border-neutral-light/50">
-              <h3 className="text-lg font-bold mb-2 flex items-start gap-3 text-neutral-900">
-                <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                {t('faq_2_q', { city: cityName })}
-              </h3>
-              <p className="text-neutral/80 ml-9">{t('faq_2_a', { city: cityName })}</p>
-            </div>
-            <div className="bg-neutral-light/30 p-6 rounded-2xl border border-neutral-light/50">
-              <h3 className="text-lg font-bold mb-2 flex items-start gap-3 text-neutral-900">
-                <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                {t('faq_3_q', { city: cityName })}
-              </h3>
-              <p className="text-neutral/80 ml-9">{t('faq_3_a', { city: cityName })}</p>
-            </div>
+            {order.map((num) => (
+              <div key={`faq-${num}`} className="bg-neutral-light/30 p-6 rounded-2xl border border-neutral-light/50 text-left">
+                <h3 className="text-lg font-bold mb-2 flex items-start gap-3 text-neutral-900">
+                  <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+                  {t(`faq_${num}_q` as any, { city: cityName })}
+                </h3>
+                <p className="text-neutral/80 ml-9">{t(`faq_${num}_a` as any, { city: cityName })}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
