@@ -129,7 +129,7 @@ async function sheetsApi(path: string, options: RequestInit = {}): Promise<Respo
 }
 
 /**
- * Inserts a new row at the top of a sheet (row 2) with an auto-generated
+ * Appends a new row at the bottom of a sheet with an auto-generated
  * sequential integer ID. Merges the read + ID computation + write into a
  * single read/write pair to minimize latency.
  *
@@ -157,9 +157,9 @@ export async function insertRowWithId(sheetName: string, values: (string | numbe
   }
   const nextId = maxId + 1;
 
-  // 3. Build new data: new row (with ID) at top, then all existing rows
+  // 3. Build new data: all existing rows, then the new row (with ID) at the bottom
   const newRow = [nextId, ...values];
-  const newData = [newRow, ...existingRows];
+  const newData = [...existingRows, newRow];
 
   // 4. Determine the full range to write back
   const numColumns = newData.length > 0 ? Math.max(...newData.map(r => r.length), newRow.length) : newRow.length;

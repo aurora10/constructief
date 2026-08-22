@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
         const now = new Date();
         const createdAt = `${String(now.getDate()).padStart(2, '0')} - ${String(now.getMonth() + 1).padStart(2, '0')} - ${now.getFullYear()}`;
 
-        // Insert into Google Sheets "Employers" tab at the top (row 2)
+        // Append to the bottom of the Google Sheets "Employers" tab
         // Column order: Id | Company Name | Contact Person | Email | City | Trade | URL | Phone | Count | Project Type | Description | StartDate | Created At
         const id = await insertRowWithId('Employers', [
             companyName,
