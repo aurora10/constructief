@@ -302,7 +302,7 @@
         "contact": "Contact",
         "privacy": "Privacy & Trust",
         "regions": "Regio's",
-        "view_all_regions": "Bekijk alle regio's \u2192",
+        "view_all_regions": "Bekijk alle regio's →",
         "rights": "Alle rechten voorbehouden."
     },
     "CandidateForm": {
@@ -486,5 +486,123 @@
         "leiden": "Met het Leiden Bio Science Park als motor, is er een constante stroom aan complexe laboratoriumbouw. Dit vereist absolute precisie van installateurs en afbouwers.",
         "maastricht": "De bouw in de heuvelachtige en historische stad Maastricht brengt unieke logistieke uitdagingen met zich mee. Vakmensen met ervaring in mergelbouw en complexe restauraties zijn hier onmisbaar.",
         "dordrecht": "Als oudste stad van Holland, gelegen aan het water, spelen maritieme bouw en dijkverzwaringen in Dordrecht een grote rol. Er is veel werk voor specialisten in waterbouw en funderingsherstel."
+    },
+    "CitySeoUi": {
+        "local_title": "Lokaal inzet & regionale vraag in {city}",
+        "local_context_title": "Bouwmarkt in {city} ({province})",
+        "demand_title": "Lokale vraag in {city}",
+        "demand_line": "Constructief werft in {city} actief voor {trades}.",
+        "nearby_title": "Ook actief in de buurt van {city}",
+        "nearby_desc": "Constructief levert ook personeel in de omliggende gemeenten en regio's van {city}. Kies hieronder een naburige regio."
+    },
+    "CityRegio": {
+        "antwerpen": {
+            "context": "Antwerpen combineert de grootste haven van het land met continue stadsvernieuwing langs de Schelde; ruwbouw-, bekistings- en kraanprofielen zijn er voortdurend in trek."
+        },
+        "gent": {
+            "context": "Gent is een hub voor renovatie en stadsontwikkeling rond de dokken; er is veel vraag naar restauratievakmensen en teams voor duurzame nieuwbouw."
+        },
+        "brussel": {
+            "context": "De Brusselse vastgoedmarkt draait op kantoor- en woontransformaties plus de Europese instellingen; schilder-, pleister- en techniekprofielen zijn er sterk vertegenwoordigd."
+        },
+        "brugge": {
+            "context": "Brugge combineert erfgoedrenovatie in de historische binnenstad met nieuwbouw in de rand; dak- en schrijnwerkprofielen zijn er duidelijk aanwezig."
+        },
+        "leuven": {
+            "context": "Leuven is een kennisstad waar ziekenhuis- en campusprojecten de vraag sturen; metsel-, elektro- en ploegleiding zijn er courant."
+        },
+        "mechelen": {
+            "context": "Mechelen groeit in de regio tussen Brussel en Antwerpen; afwerkingsprofielen zoals gyproc, tegelzetters en gevelrenovatie zijn er gangbaar."
+        },
+        "hasselt": {
+            "context": "Hasselt en omgeving profiteren van grond- en wegenwerken én de uitbouw rond het Albertkanaal; grondwerkers en kraanmachinisten zijn er goed vertegenwoordigd."
+        },
+        "luik": {
+            "context": "Luik is een industriële as aan de Maas met veel onderhouds- en storingswerk; lassers, elektro- en HVAC-techniekers zijn er zeer gezocht."
+        },
+        "aalst": {
+            "context": "Aalst en de Dender-omgeving kennen veel nieuwbouw en renovatie; metsel-, bekistings- en afwerkingsprofielen zijn er steeds in trek."
+        },
+        "kortrijk": {
+            "context": "Kortrijk is een ondernemende regio in West-Vlaanderen met sterke schrijnwerkerij en dakwerken; schrijnwerkers en plaatsers van ramen en deuren zijn er niet weg te denken."
+        },
+        "sint-niklaas": {
+            "context": "Sint-Niklaas is een logistieke speler tussen Gent en Antwerpen; elektro-, lood- en techniekprofielen zijn er volop aanwezig."
+        },
+        "oostende": {
+            "context": "Oostende combineert kustrenovatie met toeristische nieuwbouw; gevel-, pleister- en afwerkingsprofielen zijn er bij renovaties sterk aanwezig."
+        },
+        "genk": {
+            "context": "Genk is een pool van de Limburgse maakindustrie; lassers, elektro- en stellingprofielen zijn er rond de industrieparken erg gezocht."
+        },
+        "roeselare": {
+            "context": "Roeselare is een sterk ondernemende stad met veel bouwbedrijven; metsel-, dak- en ploegprofielen zijn er breed aanwezig."
+        },
+        "amsterdam": {
+            "context": "Amsterdam combineert funderingsherstel in de grachtengordel met grote nieuwbouw zoals op de Zuidas; schilder-, pleister- en techniekprofielen zijn er sterk gevraagd."
+        },
+        "rotterdam": {
+            "context": "Rotterdam is de stad van hoogbouw, havens en innovatieve architectuur; lassers, machine- en elektroprofielen zijn er onmisbaar."
+        },
+        "den-haag": {
+            "context": "Den Haag combineert overheidskantoren met woon- en renovatieprojecten; metsel-, tegel- en elektroprofielen zijn er courant."
+        },
+        "utrecht": {
+            "context": "Utrecht is een knooppunt met veel nieuwbouw en transformatie van kantoorpanden; bekisting, ploegleiding en technieken zijn er sterk vertegenwoordigd."
+        },
+        "eindhoven": {
+            "context": "Eindhoven en Brainport draaien op industrie en techniek; industriële elektro-, lassers- en HVAC-profielen zijn er erg gezocht."
+        },
+        "tilburg": {
+            "context": "Tilburg kent veel logistieke en transformatieprojecten; grond-, wegen- en stellingprofielen zijn er courant."
+        },
+        "almere": {
+            "context": "Almere is een snelgroeiende gemeente met veel nieuwbouw; metsel-, dak- en schrijnwerkprofielen zijn er volop aanwezig."
+        },
+        "groningen": {
+            "context": "Groningen combineert stadshartrenovatie met nieuwbouw en versterkingswerk; schilder-, pleister- en gevelprofielen zijn er sterk in trek."
+        },
+        "breda": {
+            "context": "Breda is een aantrekkelijke woonregio met veel renovatie; bekisting, ijzervlechtwerk en ploegleiding zijn er goed vertegenwoordigd."
+        },
+        "nijmegen": {
+            "context": "Nijmegen staat bekend om de Waalkwartieren en stadsontwikkeling aan de rivier; schrijnwerk-, lood- en techniekprofielen zijn er courant."
+        },
+        "apeldoorn": {
+            "context": "Apeldoorn is een bosrijke gemeente met veel woningbouw en utiliteit; residentiële elektro-, lood- en tegelprofielen zijn er gezocht."
+        },
+        "haarlem": {
+            "context": "Haarlem combineert erfgoedwoningen in de binnenstad met nieuwbouw; metsel-, pleister- en techniekprofielen zijn er sterk aanwezig."
+        },
+        "enschede": {
+            "context": "Enschede en Twente zijn ondernemend met veel nieuwbouw en transformatie; grond-, wegen- en stellingprofielen zijn er courant."
+        },
+        "arnhem": {
+            "context": "Arnhem ligt aan de Rijn en kent veel stadsvernieuwing; lassers, industriële elektro- en kraanprofielen zijn er vertegenwoordigd."
+        },
+        "amersfoort": {
+            "context": "Amersfoort is een historische stad met veel nieuwbouw in de rand; bekisting, ijzervlechtwerk en ploegleiding zijn er gangbaar."
+        },
+        "zaandam": {
+            "context": "Zaandam combineert industriële bedrijvigheid met woonrenovatie; schrijnwerk-, lood- en gevelprofielen zijn er in trek."
+        },
+        "s-hertogenbosch": {
+            "context": "'s-Hertogenbosch combineert erfgoed in het centrum met nieuwe wijken; metsel-, tegel- en elektroprofielen zijn er goed vertegenwoordigd."
+        },
+        "zwolle": {
+            "context": "Zwolle groeit als economisch knooppunt met veel nieuwbouw; dak-, schilder- en pleisterprofielen zijn er courant."
+        },
+        "zoetermeer": {
+            "context": "Zoetermeer is een naoorlogse woonstad met veel renovatie en utiliteit; grond-, wegen- en handlangersprofielen zijn er gezocht."
+        },
+        "leiden": {
+            "context": "Leiden is een universiteits- en zorgstad met veel renovatie; bekisting, ijzervlechtwerk en ploegleiding zijn er aanwezig."
+        },
+        "maastricht": {
+            "context": "Maastricht combineert erfgoed, zorg en maakindustrie; lassers, industriële elektro- en kraanprofielen zijn er sterk gevraagd."
+        },
+        "dordrecht": {
+            "context": "Dordrecht is een binnenhavenstad met veel renovatie en waterbouw; metsel-, schrijnwerk- en montageprofielen zijn er courant."
+        }
     }
 }

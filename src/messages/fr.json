@@ -302,7 +302,7 @@
         "contact": "Contact",
         "privacy": "Confidentialité",
         "regions": "Régions",
-        "view_all_regions": "Voir toutes les régions \u2192",
+        "view_all_regions": "Voir toutes les régions →",
         "rights": "Tous droits réservés."
     },
     "CandidateForm": {
@@ -486,5 +486,123 @@
         "leiden": "Avec le Leiden Bio Science Park comme moteur, il y a un flux constant de constructions de laboratoires complexes. Cela exige une précision absolue de la part des installateurs et des finisseurs.",
         "maastricht": "La construction dans la ville vallonnée et historique de Maastricht pose des défis logistiques uniques. Les artisans ayant de l'expérience dans la construction en marne et les restaurations complexes y sont indispensables.",
         "dordrecht": "En tant que plus ancienne ville de Hollande, située au bord de l'eau, la construction maritime et le renforcement des digues jouent un rôle majeur à Dordrecht. Il y a beaucoup de travail pour les spécialistes des travaux hydrauliques et de la réparation des fondations."
+    },
+    "CitySeoUi": {
+        "local_title": "Travail local & demande régionale à {city}",
+        "local_context_title": "Marché de la construction à {city} ({province})",
+        "demand_title": "Demande locale à {city}",
+        "demand_line": "Constructief recrute activement à {city} pour {trades}.",
+        "nearby_title": "Également actif près de {city}",
+        "nearby_desc": "Constructief fournit aussi du personnel dans les communes et régions environnantes de {city}. Choisissez une région voisine ci-dessous."
+    },
+    "CityRegio": {
+        "antwerpen": {
+            "context": "Anvers combine le plus grand port du pays et un renouvellement urbain continu le long de l'Escaut; les profils gros œuvre, coffrage et grue y sont constamment demandés."
+        },
+        "gent": {
+            "context": "Gand est un pôle de rénovation et d'aménagement urbain autour des docks; les artisans de la restauration et les équipes de construction durable y sont très recherchés."
+        },
+        "brussel": {
+            "context": "Le marché immobilier bruxellois repose sur les transformations de bureaux et de logements ainsi que sur les institutions européennes; peinture, plâtrerie et technique y sont bien représentées."
+        },
+        "brugge": {
+            "context": "Bruges combine la rénovation du patrimoine dans le centre historique et le neuf en périphérie; les profils toiture et menuiserie y sont très présents."
+        },
+        "leuven": {
+            "context": "Louvain est une ville du savoir où les projets hospitaliers et de campus stimulent la demande; maçonnerie, électricité et conduite d'équipe y sont courantes."
+        },
+        "mechelen": {
+            "context": "Malines se développe entre Bruxelles et Anvers; les profils de finition comme le placo, la pose de carrelage et la rénovation de façades y sont fréquents."
+        },
+        "hasselt": {
+            "context": "Hasselt et sa région profitent des travaux de terrassement et de voirie ainsi que du développement du canal Albert; terrassiers et grutiers y sont bien représentés."
+        },
+        "luik": {
+            "context": "Liège est un axe industriel sur la Meuse avec beaucoup de maintenance et de dépannage; soudeurs, électriciens et techniciens CVC y sont très demandés."
+        },
+        "aalst": {
+            "context": "Alost et la région de la Dendre connaissent beaucoup de neuf et de rénovation; maçonnerie, coffrage et finition y sont toujours recherchés."
+        },
+        "kortrijk": {
+            "context": "Courtrai est une région entreprenante de Flandre-Occidentale, forte en menuiserie et en toiture; les menuisiers et poseurs de fenêtres et de portes y sont incontournables."
+        },
+        "sint-niklaas": {
+            "context": "Saint-Nicolas est un acteur logistique entre Gand et Anvers; les profils électricité, plomberie et technique y sont largement présents."
+        },
+        "oostende": {
+            "context": "Ostende combine rénovation côtière et construction touristique; les profils façade, plâtrerie et finition y sont très demandés lors des rénovations."
+        },
+        "genk": {
+            "context": "Genk est un pôle de l'industrie manufacturière limbourgeoise; soudeurs, électriciens et monteurs d'échafaudage y sont très recherchés autour des parcs industriels."
+        },
+        "roeselare": {
+            "context": "Roulers est une ville très entreprenante avec de nombreuses entreprises de construction; maçonnerie, toiture et chef d'équipe y sont largement présents."
+        },
+        "amsterdam": {
+            "context": "Amsterdam combine la réparation des fondations dans les canaux et de grands projets comme au Zuidas; peinture, plâtrerie et technique y sont fortement demandées."
+        },
+        "rotterdam": {
+            "context": "Rotterdam est la ville des tours, du port et de l'architecture innovante; soudeurs, profils machine et électricité y sont indispensables."
+        },
+        "den-haag": {
+            "context": "La Haye combine bureaux gouvernementaux et projets résidentiels et de rénovation; maçonnerie, carrelage et électricité y sont courants."
+        },
+        "utrecht": {
+            "context": "Utrecht est un nœud avec beaucoup de neuf et de transformation de bureaux; coffrage, conduite d'équipe et techniques y sont bien représentés."
+        },
+        "eindhoven": {
+            "context": "Eindhoven et Brainport reposent sur l'industrie et la technologie; les profils électricité industrielle, soudeur et CVC y sont très recherchés."
+        },
+        "tilburg": {
+            "context": "Tilburg connaît de nombreux projets logistiques et de transformation; les profils terrassement, voirie et échafaudage y sont courants."
+        },
+        "almere": {
+            "context": "Almere est une commune en croissance rapide avec beaucoup de construction neuve; maçonnerie, toiture et menuiserie y sont très présentes."
+        },
+        "groningen": {
+            "context": "Groningue combine rénovation du centre-ville, construction neuve et renforcement résistant aux séismes; peinture, plâtrerie et façade y sont très demandés."
+        },
+        "breda": {
+            "context": "Breda est une région résidentielle attractive avec beaucoup de rénovation; coffrage, ferraillage et conduite d'équipe y sont bien représentés."
+        },
+        "nijmegen": {
+            "context": "Nimègue est connue pour ses quartiers de Waal et son aménagement au bord du fleuve; menuiserie, plomberie et techniques y sont courantes."
+        },
+        "apeldoorn": {
+            "context": "Apeldoorn est une commune boisée avec beaucoup de logement et d'utilitaire; les profils électricité résidentielle, plomberie et carrelage y sont recherchés."
+        },
+        "haarlem": {
+            "context": "Haarlem combine patrimoine dans le centre et construction neuve; maçonnerie, plâtrerie et techniques y sont fortement présentes."
+        },
+        "enschede": {
+            "context": "Enschede et Twente sont entreprenantes avec beaucoup de neuf et de transformation; terrassement, voirie et échafaudage y sont courants."
+        },
+        "arnhem": {
+            "context": "Arnhem se situe sur le Rhin et connaît beaucoup de renouvellement urbain; soudeurs, électricité industrielle et grutiers y sont représentés."
+        },
+        "amersfoort": {
+            "context": "Amersfoort est une ville historique avec beaucoup de neuf en périphérie; coffrage, ferraillage et conduite d'équipe y sont fréquents."
+        },
+        "zaandam": {
+            "context": "Zaandam combine activité industrielle et rénovation de logements; menuiserie, plomberie et façade y sont recherchées."
+        },
+        "s-hertogenbosch": {
+            "context": "Bois-le-Duc combine patrimoine au centre et nouveaux quartiers; maçonnerie, carrelage et électricité y sont bien représentés."
+        },
+        "zwolle": {
+            "context": "Zwolle se développe comme nœud économique avec beaucoup de neuf; toiture, peinture et plâtrerie y sont courants."
+        },
+        "zoetermeer": {
+            "context": "Zoetermeer est une ville résidentielle d'après-guerre avec beaucoup de rénovation et d'utilitaire; terrassement, voirie et manutention y sont recherchés."
+        },
+        "leiden": {
+            "context": "Leyde est une ville universitaire et de soins avec beaucoup de rénovation; coffrage, ferraillage et conduite d'équipe y sont présents."
+        },
+        "maastricht": {
+            "context": "Maastricht combine patrimoine, soins et industrie; soudeurs, électricité industrielle et grutiers y sont fortement demandés."
+        },
+        "dordrecht": {
+            "context": "Dordrecht est une ville portuaire intérieure avec beaucoup de rénovation et de travaux d'eau; maçonnerie, menuiserie et pose y sont courantes."
+        }
     }
 }

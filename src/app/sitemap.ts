@@ -32,8 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         }
 
-        // City landing pages (onderaannemer-{city})
+        // City landing pages (onderaannemer-{city}).
+        // The ru city pages are noindexed (see the city page's generateMetadata),
+        // so we do not advertise them in the sitemap. Everything else keeps the
+        // index signal for the nl/fr city pages, which are the money pages.
         for (const city of citiesData) {
+            if (locale === 'ru') continue;
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}/diensten/onderaannemer-${city.slug}`,
                 lastModified: new Date(),
