@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function ContactPage() {
@@ -104,6 +104,31 @@ export default function ContactPage() {
                                     <div>
                                         <p className="font-semibold">{t('address')}</p>
                                         <p className="text-neutral-600">Antwerp, Belgium</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="font-semibold">{t('social')}</p>
+                                    <div className="flex gap-2 mt-2">
+                                        <a
+                                            href="https://www.instagram.com/constructief_bouw/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Instagram"
+                                            title="Instagram"
+                                            className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                                        >
+                                            <Instagram className="h-5 w-5" />
+                                        </a>
+                                        <a
+                                            href="https://www.facebook.com/profile.php?id=61591572760518"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Facebook"
+                                            title="Facebook"
+                                            className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                                        >
+                                            <Facebook className="h-5 w-5" />
+                                        </a>
                                     </div>
                                 </div>
                             </div>

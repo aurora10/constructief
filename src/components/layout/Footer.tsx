@@ -1,6 +1,12 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { citiesData } from "@/data/cities";
+import { Instagram, Facebook } from "lucide-react";
+
+const socialLinks = [
+    { label: "Instagram", href: "https://www.instagram.com/constructief_bouw/", Icon: Instagram },
+    { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61591572760518", Icon: Facebook },
+];
 
 export function Footer() {
     const t = useTranslations("Footer");
@@ -15,6 +21,24 @@ export function Footer() {
                         <p className="text-sm text-muted-foreground">
                             {t("tagline")}
                         </p>
+                        <div>
+                            <h4 className="font-semibold mb-3">{t("social")}</h4>
+                            <div className="flex gap-2">
+                                {socialLinks.map(({ label, href, Icon }) => (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={label}
+                                        title={label}
+                                        className="w-10 h-10 rounded-full inline-flex items-center justify-center border border-neutral-200 dark:border-neutral-700 text-neutral-500 hover:text-primary hover:border-primary transition-colors"
+                                    >
+                                        <Icon className="h-5 w-5" />
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     <div>

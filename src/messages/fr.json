@@ -239,6 +239,7 @@
         "form_email": "E-mail",
         "form_subject": "Sujet",
         "form_message": "Votre question",
+        "social": "Suivez-nous",
         "form_submit": "Envoyer",
         "success": "Merci pour votre message ! Nous l'avons bien reçu et nous vous contacterons dans les 24 heures.",
         "error": "Une erreur s'est produite lors de l'envoi. Veuillez vérifier votre connexion Internet ou réessayer plus tard."
@@ -303,6 +304,7 @@
         "privacy": "Confidentialité",
         "regions": "Régions",
         "view_all_regions": "Voir toutes les régions →",
+        "social": "Suivez-nous",
         "rights": "Tous droits réservés."
     },
     "CandidateForm": {

@@ -206,25 +206,6 @@ export default async function CityLandingPage({
     knowsAbout: topTrades.map((k) => tTrades(k)),
   };
 
-  const jobsJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: `${tNav('vacancies')} - ${cityName}`,
-    itemListElement: relatedJobs.map((job, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      item: {
-        '@type': 'JobPosting',
-        title: job.title,
-        jobLocation: {
-          '@type': 'Place',
-          address: { '@type': 'PostalAddress', addressLocality: job.location },
-        },
-        description: job.description,
-      },
-    })),
-  };
-
   const getIconForTrade = (index: number) => {
     switch (index % 4) {
       case 0:
@@ -279,10 +260,6 @@ export default async function CityLandingPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobsJsonLd) }}
       />
 
       {/* 1. Hero Section — styled to match main Hero.tsx */}

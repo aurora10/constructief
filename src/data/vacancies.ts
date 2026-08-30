@@ -6,11 +6,14 @@ export interface Job {
     salary: string;
     description: string;
     requirements: string[];
+    /** ISO 8601 (YYYY-MM-DD) publication date, required for JobPosting structured data. */
+    datePosted: string;
 }
 
 export const jobs: Job[] = [
     {
         id: 1,
+        datePosted: "2026-08-06",
         title: "Projectleider Bouw",
         location: "Antwerpen",
         type: "Fulltime",
@@ -25,6 +28,7 @@ export const jobs: Job[] = [
     },
     {
         id: 2,
+        datePosted: "2026-08-08",
         title: "Werfleider",
         location: "Gent",
         type: "Fulltime",
@@ -38,6 +42,7 @@ export const jobs: Job[] = [
     },
     {
         id: 3,
+        datePosted: "2026-08-10",
         title: "Bekister",
         location: "Brussel",
         type: "Interim",
@@ -51,6 +56,7 @@ export const jobs: Job[] = [
     },
     {
         id: 4,
+        datePosted: "2026-08-11",
         title: "Kraanmachinist",
         location: "Limburg",
         type: "Fulltime",
@@ -64,6 +70,7 @@ export const jobs: Job[] = [
     },
     {
         id: 5,
+        datePosted: "2026-08-12",
         title: "Metser",
         location: "West-Vlaanderen",
         type: "Fulltime",
@@ -77,6 +84,7 @@ export const jobs: Job[] = [
     },
     {
         id: 6,
+        datePosted: "2026-08-13",
         title: "Elektricien",
         location: "Antwerpen",
         type: "Fulltime",

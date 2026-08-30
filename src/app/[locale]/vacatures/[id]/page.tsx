@@ -45,35 +45,75 @@ export default async function VacancyDetailPage({ params }: Props) {
         notFound();
     }
 
+    // Parse the salary ("€4000 - €5500" monthly, "€17 - €19 / uur" hourly) into a
+    // numeric MonetaryAmount range so the JobPosting markup is valid.
+    const salaryNumbers = (job.salary.match(/[\d.,]+/g) ?? [])
+        .map((n) => parseFloat(n.replace(',', '.')))
+        .filter((n) => !Number.isNaN(n));
+    const isHourly = /\/\s*uur/i.test(job.salary);
+    const baseMin = salaryNumbers[0];
+    const baseMax = salaryNumbers.length > 1 ? salaryNumbers[1] : salaryNumbers[0];
+
+    const employmentType =
+        job.type === 'Fulltime'
+            ? 'FULL_TIME'
+            : job.type === 'Parttime'
+              ? 'PART_TIME'
+              : job.type === 'Interim'
+                ? 'TEMPORARY'
+                : 'OTHER';
+
+    // Best-effort postal address used in the JobPosting markup. Where the data
+    // only names a province ("Limburg", "West-Vlaanderen") there is no single
+    // postcode, so we omit that field rather than invent one.
+    const addressByLocation: Record<string, { addressRegion: string; postalCode?: string }> = {
+        Antwerpen: { addressRegion: 'Antwerpen', postalCode: '2000' },
+        Gent: { addressRegion: 'Oost-Vlaanderen', postalCode: '9000' },
+        Brussel: { addressRegion: 'Brussels Hoofdstedelijk Gewest', postalCode: '1000' },
+        Limburg: { addressRegion: 'Limburg' },
+        'West-Vlaanderen': { addressRegion: 'West-Vlaanderen' },
+    };
+    const loc = addressByLocation[job.location] ?? {};
+
+    // A future expiry (datePosted + 60 days) so the posting isn't treated as expired.
+    const posted = new Date(job.datePosted + 'T00:00:00Z');
+    posted.setDate(posted.getDate() + 60);
+    const validThrough = posted.toISOString().slice(0, 10);
+
     const jsonLd = {
-        "@context": "https://schema.org/",
-        "@type": "JobPosting",
-        "title": job.title,
-        "description": job.description,
-        "validThrough": "2026-04-20",
-        "employmentType": job.type === "Fulltime" ? "FULL_TIME" : "TEMPORARY",
-        "hiringOrganization": {
-            "@type": "Organization",
-            "name": "Constructief",
-            "sameAs": "https://constructief-bouw.be"
+        '@context': 'https://schema.org/',
+        '@type': 'JobPosting',
+        title: job.title,
+        description: job.description,
+        datePosted: job.datePosted,
+        validThrough,
+        employmentType,
+        hiringOrganization: {
+            '@type': 'Organization',
+            name: 'Constructief',
+            sameAs: 'https://constructief-bouw.be',
+            logo: 'https://constructief-bouw.be/icon',
         },
-        "jobLocation": {
-            "@type": "Place",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": job.location,
-                "addressCountry": "BE"
-            }
+        jobLocation: {
+            '@type': 'Place',
+            address: {
+                '@type': 'PostalAddress',
+                addressLocality: job.location,
+                ...(loc.addressRegion ? { addressRegion: loc.addressRegion } : {}),
+                ...(loc.postalCode ? { postalCode: loc.postalCode } : {}),
+                addressCountry: 'BE',
+            },
         },
-        "baseSalary": {
-            "@type": "MonetaryAmount",
-            "currency": "EUR",
-            "value": {
-                "@type": "QuantitativeValue",
-                "value": job.salary,
-                "unitText": "MONTH"
-            }
-        }
+        baseSalary: {
+            '@type': 'MonetaryAmount',
+            currency: 'EUR',
+            value: {
+                '@type': 'QuantitativeValue',
+                ...(baseMin !== undefined ? { minValue: baseMin } : {}),
+                ...(baseMax !== undefined ? { maxValue: baseMax } : {}),
+                unitText: isHourly ? 'HOUR' : 'MONTH',
+            },
+        },
     };
 
     return (

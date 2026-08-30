@@ -239,6 +239,7 @@
         "form_email": "E-mail",
         "form_subject": "Onderwerp",
         "form_message": "Uw vraag",
+        "social": "Volg ons",
         "form_submit": "Versturen",
         "success": "Bedankt voor je bericht! We hebben het goed ontvangen en nemen binnen 24 uur contact met je op.",
         "error": "Er is een fout opgetreden bij het verzenden. Controleer je internetverbinding of probeer het later opnieuw."
@@ -303,6 +304,7 @@
         "privacy": "Privacy & Trust",
         "regions": "Regio's",
         "view_all_regions": "Bekijk alle regio's →",
+        "social": "Volg ons",
         "rights": "Alle rechten voorbehouden."
     },
     "CandidateForm": {
