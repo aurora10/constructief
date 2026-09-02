@@ -28,9 +28,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     if (!job) return { title: 'Not Found' };
 
+    // Self-referencing canonical; RU worker cluster gets x-default → self (standalone),
+    // never collapsed into the B2B Dutch pages.
+    const canonical = `https://constructief-bouw.be/${locale}/vacatures/${id}`;
+    const alternates: Metadata['alternates'] = { canonical };
+    if (locale === 'ru') {
+        alternates.languages = { 'x-default': canonical };
+    }
+
     return {
         title: `${job.title} | Constructief`,
         description: job.description,
+        alternates,
     };
 }
 

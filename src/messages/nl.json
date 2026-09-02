@@ -495,7 +495,10 @@
         "demand_title": "Lokale vraag in {city}",
         "demand_line": "Constructief werft in {city} actief voor {trades}.",
         "nearby_title": "Ook actief in de buurt van {city}",
-        "nearby_desc": "Constructief levert ook personeel in de omliggende gemeenten en regio's van {city}. Kies hieronder een naburige regio."
+        "nearby_desc": "Constructief levert ook personeel in de omliggende gemeenten en regio's van {city}. Kies hieronder een naburige regio.",
+        "werkgevers_link_lead": "Werkt u landelijk of zoekt u een specifieke ploeg? Bekijk hoe wij ",
+        "werkgevers_link_anchor": "gescreende bouwploegen voor aannemers",
+        "werkgevers_link_tail": " selecteren en leveren."
     },
     "CityRegio": {
         "antwerpen": {
@@ -665,6 +668,60 @@
             "cta_desc": "Vraag direct een complete renovatieploeg aan voor uw project in {city}.",
             "cta_button": "Renovatieploeg aanvragen",
             "section_title": "Wat uw renovatieploeg doet in {city}"
+        },
+        "beton": {
+            "label": "Beton",
+            "title": "Betonploegen & betonarbeiders in {city}",
+            "intro": "Ervaren betonploegen voor funderingen, vloeren en constructiewerk in {city}. Betonarbeiders, bekisters en ijzervlechters — legaal, gescreend en direct inzetbaar.",
+            "features": [
+                "Funderingen, vloeren en betonconstructies",
+                "Bekisting en ijzervlechtwerk",
+                "Complete ploeg inclusief meewerkend voorman"
+            ],
+            "cta_title": "Betonploeg in {city} aanvragen",
+            "cta_desc": "Vraag direct een geteste betonploeg aan voor uw project in {city}.",
+            "cta_button": "Betonploeg aanvragen",
+            "section_title": "Wat uw betonploeg doet in {city}"
+        },
+        "dak": {
+            "label": "Dak",
+            "title": "Dakwerkers & dakploegen in {city}",
+            "intro": "Dakwerkers voor platte en hellende daken in {city} — EPDM, bitumen, pannen. Gescreende ploegen, volledig legaal met A1 en Limosa geregeld.",
+            "features": [
+                "Platte daken (EPDM, bitumen)",
+                "Hellende daken (pannen, leien)",
+                "Dakrenovatie en herstelwerken"
+            ],
+            "cta_title": "Dakploeg in {city} aanvragen",
+            "cta_desc": "Vraag direct een gescreende dakploeg aan voor uw project in {city}.",
+            "cta_button": "Dakploeg aanvragen",
+            "section_title": "Wat uw dakploeg doet in {city}"
         }
+    },
+    "WorkerFaq": {
+        "title": "Veelgestelde vragen van vakmensen",
+        "subtitle": "Wat je moet weten voor je aan de slag gaat.",
+        "items": [
+            {
+                "q": "Heb ik documenten zoals A1 of Limosa nodig?",
+                "a": "Wij regelen alle wettelijke verplichtingen, waaronder A1-verklaringen en Limosa-meldingen. Jij hoeft je geen zorgen te maken over de papierwinkel — wij zorgen dat jij 100% legaal werkt."
+            },
+            {
+                "q": "Wordt huisvesting geregeld?",
+                "a": "Ja, wij helpen met onderdak dicht bij de werf. Zo verlies je geen tijd en geld aan reizen — je woont vlakbij het project."
+            },
+            {
+                "q": "Wanneer en hoe word ik betaald?",
+                "a": "Betaling is regelmatig en transparant, volgens afspraak en naar werkelijkheid. Alle betalingen verlopen officieel en gedocumenteerd."
+            },
+            {
+                "q": "Hoe snel kan ik starten?",
+                "a": "Na goedkeuring kun je meestal al binnen enkele dagen tot een week op de werf beginnen, afhankelijk van je specialisme."
+            },
+            {
+                "q": "Moet ik me inschrijven of registreren in België?",
+                "a": "Nee. Wij begeleiden je door het hele proces. Alleen jouw ervaring en skills tellen — de rest regelen wij."
+            }
+        ]
     }
 }

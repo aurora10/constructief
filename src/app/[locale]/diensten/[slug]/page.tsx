@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { jobs } from '@/data/vacancies';
 import { TradeCityLanding } from '@/components/sections/TradeCityLanding';
+import { WerkgeversLink } from '@/components/sections/WerkgeversLink';
 import {
   MapPin,
   Wrench,
@@ -130,6 +131,9 @@ export default async function CityLandingPage({
 
   const cityName = cityData.name;
   const province = cityData.province;
+  // Interpolation params shared across every CitySEO_var* t() call so a
+  // key containing {province} can never be rendered as a raw placeholder.
+  const seoParams = { city: cityName, province };
   const namespace = `CitySEO_var${cityData.variation}`;
 
   const t = await getTranslations({ locale, namespace });
@@ -179,10 +183,10 @@ export default async function CityLandingPage({
   // Structured data
   const faq = [1, 2, 3].map((num) => ({
     '@type': 'Question',
-    name: t(`faq_${num}_q` as any, { city: cityName }),
+    name: t(`faq_${num}_q` as any, seoParams),
     acceptedAnswer: {
       '@type': 'Answer',
-      text: t(`faq_${num}_a` as any, { city: cityName }),
+      text: t(`faq_${num}_a` as any, seoParams),
     },
   }));
 
@@ -324,12 +328,12 @@ export default async function CityLandingPage({
 
         <div className="container relative z-10 flex flex-col items-center text-center">
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl mb-6 leading-tight">
-            {t('heading', { city: cityName }).split(cityName)[0]}
+            {t('heading', seoParams).split(cityName)[0]}
             <span className="text-primary">{cityName}</span>
-            {t('heading', { city: cityName }).split(cityName)[1] || ''}
+            {t('heading', seoParams).split(cityName)[1] || ''}
           </h1>
           <p className="max-w-2xl text-lg text-neutral-200 mb-10 leading-relaxed">
-            {t('intro', { city: cityName })}
+            {t('intro', seoParams)}
           </p>
           <Button
             asChild
@@ -349,7 +353,7 @@ export default async function CityLandingPage({
         <div className="container max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-900">
-              {t('trades_title', { city: cityName })}
+              {t('trades_title', seoParams)}
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
           </div>
@@ -365,7 +369,7 @@ export default async function CityLandingPage({
                   {tTrades(tradeKey)}
                 </h3>
                 <p className="text-neutral/70 text-sm">
-                  {t('regional_text', { city: cityName, province: province }).substring(0, 50)}...
+                  {t('regional_text', seoParams).substring(0, 50)}...
                 </p>
               </div>
             ))}
@@ -377,7 +381,7 @@ export default async function CityLandingPage({
       <section className="py-20 px-4 md:px-8 bg-neutral-light/30">
         <div className="container max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-neutral-900">
-            {t('trust_title', { city: cityName })}
+            {t('trust_title', seoParams)}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -393,10 +397,10 @@ export default async function CityLandingPage({
                     {icons[num]}
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-neutral-900">
-                    {t(`trust_${num}_title` as any, { city: cityName })}
+                    {t(`trust_${num}_title` as any, seoParams)}
                   </h3>
                   <p className="text-neutral/80">
-                    {t(`trust_${num}_desc` as any, { city: cityName, province: province })}
+                    {t(`trust_${num}_desc` as any, seoParams)}
                   </p>
                 </div>
               );
@@ -410,7 +414,7 @@ export default async function CityLandingPage({
         <div className="container max-w-4xl text-center flex flex-col md:flex-row items-center justify-center gap-4">
           <MapPin className="text-primary w-6 h-6 shrink-0" />
           <p className="text-lg text-neutral-light/90">
-            {t('regional_text', { city: cityName, province: province })}
+            {t('regional_text', seoParams)}
           </p>
         </div>
       </section>
@@ -436,7 +440,7 @@ export default async function CityLandingPage({
           <div className="container max-w-5xl">
             <div className="mb-10 text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-900">
-                {tSeoUi('local_title', { city: cityName })}
+                {tSeoUi('local_title', seoParams)}
               </h2>
               <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
@@ -447,7 +451,7 @@ export default async function CityLandingPage({
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-neutral-900">
-                    {tSeoUi('local_context_title', { city: cityName, province })}
+                    {tSeoUi('local_context_title', seoParams)}
                   </h3>
                   <p className="text-neutral-600 leading-relaxed">{regioContext}</p>
                 </div>
@@ -458,7 +462,7 @@ export default async function CityLandingPage({
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-neutral-900">
-                    {tSeoUi('demand_title', { city: cityName })}
+                    {tSeoUi('demand_title', seoParams)}
                   </h3>
                   <p className="text-neutral-600 leading-relaxed">{demandText}</p>
                 </div>
@@ -515,10 +519,10 @@ export default async function CityLandingPage({
             <div className="mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-neutral-900 dark:text-white flex items-center gap-3">
                 <Layers className="w-7 h-7 text-primary" />
-                {tSeoUi('nearby_title', { city: cityName })}
+                {tSeoUi('nearby_title', seoParams)}
               </h2>
               <p className="text-neutral-600 dark:text-neutral-400">
-                {tSeoUi('nearby_desc', { city: cityName })}
+                {tSeoUi('nearby_desc', seoParams)}
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -552,7 +556,7 @@ export default async function CityLandingPage({
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-900">
-              {t('faq_title', { city: cityName })}
+              {t('faq_title', seoParams)}
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
           </div>
@@ -565,23 +569,26 @@ export default async function CityLandingPage({
               >
                 <h3 className="text-lg font-bold mb-2 flex items-start gap-3 text-neutral-900">
                   <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                  {t(`faq_${num}_q` as any, { city: cityName })}
+                  {t(`faq_${num}_q` as any, seoParams)}
                 </h3>
-                <p className="text-neutral/80 ml-9">{t(`faq_${num}_a` as any, { city: cityName })}</p>
+                <p className="text-neutral/80 ml-9">{t(`faq_${num}_a` as any, seoParams)}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* 5.5 Contextual internal link to the commercial flagship /werkgevers */}
+      <WerkgeversLink locale={locale} />
+
       {/* 6. Final Call to Action */}
       <section className="py-24 px-4 md:px-8 bg-primary text-white text-center">
         <div className="container max-w-3xl">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            {t('final_cta_title', { city: cityName })}
+            {t('final_cta_title', seoParams)}
           </h2>
           <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto text-white/90">
-            {t('final_cta_desc', { city: cityName })}
+            {t('final_cta_desc', seoParams)}
           </p>
           <Button
             asChild

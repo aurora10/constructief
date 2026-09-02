@@ -2,12 +2,26 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { citiesData, formatCityName } from '@/data/cities';
 import { MapPin, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
 import { Hero } from '@/components/sections/Hero';
 import { ValueProps } from '@/components/sections/ValueProps';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { FeaturedJobs } from '@/components/sections/FeaturedJobs';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { TrustSignals } from '@/components/sections/TrustSignals';
+
+// Self-referencing canonical. For the RU worker cluster, x-default points at the
+// RU page itself (standalone), NOT at /nl — so Google never collapses the
+// worker-intent RU pages into the B2B Dutch pages.
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const canonical = `https://constructief-bouw.be/${locale}`;
+    const alternates: Metadata['alternates'] = { canonical };
+    if (locale === 'ru') {
+        alternates.languages = { 'x-default': canonical };
+    }
+    return { alternates };
+}
 
 // A curated subset of the highest-value city pages. Linking to them from the
 // homepage (the page with the most internal authority) helps Google discover

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { EmployerUSP } from '@/components/sections/EmployerUSP';
+import { WerkgeversLink } from '@/components/sections/WerkgeversLink';
 import { CheckCircle2, ChevronRight, Home, Layers, Wrench } from 'lucide-react';
 import type { CityData } from '@/data/cities';
 
@@ -108,6 +109,9 @@ export async function TradeCityLanding({
 
       {/* Trust / compliance / testweek / pay-for-result proof */}
       <EmployerUSP />
+
+      {/* Contextual internal link to the commercial flagship /werkgevers */}
+      <WerkgeversLink locale={locale} />
 
       {/* CTA */}
       <section className="py-24 px-4 md:px-8 bg-primary text-white text-center">

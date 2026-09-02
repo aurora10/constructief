@@ -495,7 +495,10 @@
         "demand_title": "Demande locale à {city}",
         "demand_line": "Constructief recrute activement à {city} pour {trades}.",
         "nearby_title": "Également actif près de {city}",
-        "nearby_desc": "Constructief fournit aussi du personnel dans les communes et régions environnantes de {city}. Choisissez une région voisine ci-dessous."
+        "nearby_desc": "Constructief fournit aussi du personnel dans les communes et régions environnantes de {city}. Choisissez une région voisine ci-dessous.",
+        "werkgevers_link_lead": "Vous travaillez dans tout le pays ou cherchez une équipe précise ? Découvrez comment nous ",
+        "werkgevers_link_anchor": "sélectionnons et livrons des équipes de construction présélectionnées pour les entrepreneurs",
+        "werkgevers_link_tail": "."
     },
     "CityRegio": {
         "antwerpen": {
@@ -669,6 +672,60 @@
             "cta_desc": "Demandez immédiatement une équipe de rénovation complète pour votre projet à {city}.",
             "cta_button": "Demander une équipe de rénovation",
             "section_title": "Ce que fait votre équipe de rénovation à {city}"
+        },
+        "beton": {
+            "label": "Béton",
+            "title": "Équipes de bétonnage & maçons en béton à {city}",
+            "intro": "Équipes de bétonnage expérimentées pour les fondations, les dalles et les travaux de construction à {city}. Bétonneurs, coffreurs et ferrailleurs — légaux, présélectionnés et immédiatement disponibles.",
+            "features": [
+                "Fondations, dalles et structures en béton",
+                "Coffrage et ferraillage",
+                "Équipe complète avec chef de chantier"
+            ],
+            "cta_title": "Demandez une équipe de bétonnage à {city}",
+            "cta_desc": "Demandez immédiatement une équipe de bétonnage testée pour votre projet à {city}.",
+            "cta_button": "Demander une équipe de bétonnage",
+            "section_title": "Ce que fait votre équipe de bétonnage à {city}"
+        },
+        "dak": {
+            "label": "Toit",
+            "title": "Couvreurs & équipes de toiture à {city}",
+            "intro": "Couvreurs pour toits plats et inclinés à {city} — EPDM, bitume, tuiles. Équipes présélectionnées, entièrement légales avec A1 et Limosa gérés.",
+            "features": [
+                "Toits plats (EPDM, bitume)",
+                "Toits inclinés (tuiles, ardoises)",
+                "Rénovation et réparation de toiture"
+            ],
+            "cta_title": "Demandez une équipe de toiture à {city}",
+            "cta_desc": "Demandez immédiatement une équipe de toiture présélectionnée pour votre projet à {city}.",
+            "cta_button": "Demander une équipe de toiture",
+            "section_title": "Ce que fait votre équipe de toiture à {city}"
         }
+    },
+    "WorkerFaq": {
+        "title": "Questions fréquentes des artisans",
+        "subtitle": "Ce qu'il faut savoir avant de commencer.",
+        "items": [
+            {
+                "q": "Ai-je besoin de documents comme A1 ou Limosa ?",
+                "a": "Nous gérons toutes les obligations légales, y compris les attestations A1 et les déclarations Limosa. Vous n'avez pas à vous soucier de la paperasse — vous travaillez 100 % légalement."
+            },
+            {
+                "q": "Le logement est-il fourni ?",
+                "a": "Oui, nous aidons avec un logement près du chantier. Vous ne perdez ni temps ni argent en déplacements — vous habitez près du projet."
+            },
+            {
+                "q": "Quand et comment suis-je payé ?",
+                "a": "Le paiement est régulier et transparent, selon l'accord et le travail fourni. Tous les paiements sont officiels et documentés."
+            },
+            {
+                "q": "À quelle vitesse puis-je commencer ?",
+                "a": "Après approbation, vous pouvez généralement commencer sur le chantier en quelques jours à une semaine, selon votre spécialité."
+            },
+            {
+                "q": "Dois-je m'inscrire ou m'enregistrer en Belgique ?",
+                "a": "Non. Nous vous guidons tout au long du processus. Seuls votre expérience et vos compétences comptent — nous nous occupons du reste."
+            }
+        ]
     }
 }
