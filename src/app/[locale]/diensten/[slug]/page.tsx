@@ -1,11 +1,12 @@
-import { targetCities, citiesData, formatCityName } from '@/data/cities';
-import { getNearbyCities } from '@/data/cityContent';
+import { targetCities, citiesData, formatCityName, flagshipCitySlugs } from '@/data/cities';
+import { getNearbyCities, parseDienstenSlug, flagshipTrades } from '@/data/cityContent';
 import { getTranslations, setRequestLocale, getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { routing } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { jobs } from '@/data/vacancies';
+import { TradeCityLanding } from '@/components/sections/TradeCityLanding';
 import {
   MapPin,
   Wrench,
@@ -22,15 +23,22 @@ import {
 } from 'lucide-react';
 
 export async function generateStaticParams() {
-  // Include the locale dimension so every locale×city combination is statically
-  // pre-rendered (rather than server-rendered on demand). Pre-rendered HTML is
-  // easier for Google to crawl and index than a dynamically rendered page.
-  return routing.locales.flatMap((locale) =>
-    targetCities.map((city) => ({
+  // Include the locale dimension so every locale×city / locale×trade-city
+  // combination is statically pre-rendered (rather than server-rendered on
+  // demand). Pre-rendered HTML is easier for Google to crawl and index.
+  return routing.locales.flatMap((locale) => {
+    const cityEntries = targetCities.map((city) => ({
       locale,
       slug: `onderaannemer-${city}`,
-    })),
-  );
+    }));
+    const tradeEntries = flagshipCitySlugs.flatMap((city) =>
+      flagshipTrades.map((trade) => ({
+        locale,
+        slug: `onderaannemer-${trade}-${city}`,
+      })),
+    );
+    return [...cityEntries, ...tradeEntries];
+  });
 }
 
 export async function generateMetadata({
@@ -40,15 +48,12 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = await params;
 
-  const city = slug.replace('onderaannemer-', '');
+  const { trade, city } = parseDienstenSlug(slug);
 
   const cityData = citiesData.find((c) => c.slug === city);
   if (!cityData) {
     return {};
   }
-
-  const namespace = `CitySEO_var${cityData.variation}`;
-  const t = await getTranslations({ locale, namespace });
 
   const baseUrl = 'https://constructief-bouw.be';
   const canonical = `${baseUrl}/${locale}/diensten/${slug}`;
@@ -61,15 +66,28 @@ export async function generateMetadata({
     languages.fr = `${baseUrl}/fr/diensten/${slug}`;
     languages['x-default'] = `${baseUrl}/nl/diensten/${slug}`;
   } else {
-    // The ru city pages are intentionally not indexed (noindex). Point the
+    // The ru pages are intentionally not indexed (noindex). Point the
     // default/alternate language at the canonical nl version so the ru copy is
     // clearly a duplicate of a single indexed page rather than a standalone one.
     languages['x-default'] = `${baseUrl}/nl/diensten/${slug}`;
   }
 
+  let title: string;
+  let description: string;
+  if (trade) {
+    const tT = await getTranslations({ locale, namespace: 'Trades' });
+    title = `${tT(`${trade}.title`, { city: cityData.name })} | Constructief`;
+    description = tT(`${trade}.intro`, { city: cityData.name });
+  } else {
+    const namespace = `CitySEO_var${cityData.variation}`;
+    const t = await getTranslations({ locale, namespace });
+    title = `${t('heading', { city: cityData.name })} | Constructief`;
+    description = t('intro', { city: cityData.name });
+  }
+
   return {
-    title: `${t('heading', { city: cityData.name })} | Constructief`,
-    description: t('intro', { city: cityData.name }),
+    title,
+    description,
     alternates: {
       canonical,
       languages,
@@ -78,8 +96,8 @@ export async function generateMetadata({
       ? { index: true, follow: true }
       : { index: false, follow: true },
     openGraph: {
-      title: `${t('heading', { city: cityData.name })} | Constructief`,
-      description: t('intro', { city: cityData.name }),
+      title,
+      description,
       type: 'website',
       url: canonical,
       locale,
@@ -97,11 +115,17 @@ export default async function CityLandingPage({
 
   setRequestLocale(locale);
 
-  const city = slug.replace('onderaannemer-', '');
+  const { trade, city } = parseDienstenSlug(slug);
 
   const cityData = citiesData.find((c) => c.slug === city);
   if (!cityData) {
     notFound();
+  }
+
+  // Trade+city pages (e.g. oneraannemer-gevel-antwerpen) render a focused,
+  // trade-specific landing instead of the generic city page.
+  if (trade) {
+    return <TradeCityLanding trade={trade} city={cityData} locale={locale} />;
   }
 
   const cityName = cityData.name;

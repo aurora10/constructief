@@ -1,3 +1,5 @@
+import { citiesData } from '@/data/cities';
+
 // Per-city programmatic-SEO enrichment.
 //
 // `nearbyCities` maps a base city slug to the slugs of real, nearby cities that
@@ -53,4 +55,23 @@ export const nearbyCities: Record<string, string[]> = {
 
 export function getNearbyCities(slug: string): string[] {
   return nearbyCities[slug] ?? [];
+}
+
+// Only these trades get dedicated trade+city pages, and only where we genuinely
+// deliver ready teams (per the strategy: don't mass-generate thin pages).
+export const flagshipTrades = ['gevel', 'renovatie'];
+
+export function parseDienstenSlug(slug: string): { trade?: string; city: string } {
+  const rest = slug.replace(/^onderaannemer-/, '');
+  const parts = rest.split('-');
+  // Trade+city slugs look like "gevel-antwerpen". Only treat the first segment
+  // as a trade when it is a known flagship trade AND the remainder is a real city
+  // (so a real city slug such as "s-hertogenbosch" is never mis-parsed).
+  if (parts.length > 1 && flagshipTrades.includes(parts[0])) {
+    const city = parts.slice(1).join('-');
+    if (citiesData.some((c) => c.slug === city)) {
+      return { trade: parts[0], city };
+    }
+  }
+  return { city: rest };
 }

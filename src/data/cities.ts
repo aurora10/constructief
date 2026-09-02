@@ -51,6 +51,20 @@ export const citiesData: CityData[] = [
 
 export const targetCities = citiesData.map(c => c.slug);
 
+// Strategy: stop mass-generating thin city pages. Only high-value cities get
+// promoted via the sitemap / internal linking; the remaining city URLs are
+// de-emphasised (not advertised in the sitemap).
+//
+// - flagshipCitySlugs: the Belgian cities worth full landing pages.
+// - nlMarketCitySlugs: Dutch-market cities that already show search demand in
+//   GSC (e.g. Amsterdam, Rotterdam). Served as Dutch-language (/nl/) pages — the
+//   /nl/ prefix is the LANGUAGE locale, not "Netherlands"; hreflang handles the
+//   country pairing.
+export const flagshipCitySlugs = ['antwerpen', 'gent', 'leuven', 'brussel'];
+export const nlMarketCitySlugs = ['amsterdam', 'rotterdam', 'den-haag', 'utrecht'];
+
+export const indexedCitySlugs = [...flagshipCitySlugs, ...nlMarketCitySlugs];
+
 // Helper to get formatted name for display
 export const formatCityName = (citySlug: string) => {
   const city = citiesData.find(c => c.slug === citySlug);

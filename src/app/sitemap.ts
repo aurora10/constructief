@@ -2,7 +2,8 @@ import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { jobs } from '@/data/vacancies';
 import { articleIds } from '@/data/news';
-import { citiesData } from '@/data/cities';
+import { citiesData, flagshipCitySlugs, indexedCitySlugs } from '@/data/cities';
+import { flagshipTrades } from '@/data/cityContent';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://constructief-bouw.be';
@@ -33,16 +34,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
 
         // City landing pages (onderaannemer-{city}).
-        // The ru city pages are noindexed (see the city page's generateMetadata),
-        // so we do not advertise them in the sitemap. Everything else keeps the
-        // index signal for the nl/fr city pages, which are the money pages.
+        // Strategy: advertise the Belgian flagship cities (Antwerpen/Gent/Leuven/
+        // Brussel) plus the Dutch-market cities (Amsterdam/Rotterdam/Den Haag/
+        // Utrecht) that already show search demand. The ru city pages are noindexed,
+        // and the remaining thin city URLs are de-emphasised (kept out of the
+        // sitemap) rather than being mass-generated.
         for (const city of citiesData) {
             if (locale === 'ru') continue;
+            if (!indexedCitySlugs.includes(city.slug)) continue;
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}/diensten/onderaannemer-${city.slug}`,
                 lastModified: new Date(),
                 changeFrequency: 'weekly',
                 priority: 0.9,
+            });
+        }
+
+        // Trade+city pages (onderaannemer-{trade}-{city}) — only for the trades we
+        // actually deliver, across the flagship cities, and not for ru.
+        if (locale !== 'ru') {
+            for (const city of flagshipCitySlugs) {
+                for (const trade of flagshipTrades) {
+                    sitemapEntries.push({
+                        url: `${baseUrl}/${locale}/diensten/onderaannemer-${trade}-${city}`,
+                        lastModified: new Date(),
+                        changeFrequency: 'weekly',
+                        priority: 0.9,
+                    });
+                }
+            }
+        }
+
+        // FR "sous-traitance bâtiment" opportunity page (fr only)
+        if (locale === 'fr') {
+            sitemapEntries.push({
+                url: `${baseUrl}/fr/sous-traitance-batiment`,
+                lastModified: new Date(),
+                changeFrequency: 'weekly',
+                priority: 0.8,
             });
         }
 

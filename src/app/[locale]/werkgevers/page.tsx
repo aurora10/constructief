@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/layout/PageHeader';
+import { EmployerUSP } from '@/components/sections/EmployerUSP';
 import { Services } from '@/components/sections/Services';
 import { TrustSignals } from '@/components/sections/TrustSignals';
 import { Testimonials } from '@/components/sections/Testimonials';
@@ -14,6 +15,7 @@ export default function EmployersPage() {
                 title={t('title')}
                 subtitle={t('subtitle')}
             />
+            <EmployerUSP />
             <EmployerForm />
             <Services />
             <TrustSignals />

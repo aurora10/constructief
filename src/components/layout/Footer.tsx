@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { citiesData } from "@/data/cities";
+import { citiesData, flagshipCitySlugs } from "@/data/cities";
 import { Instagram, Facebook } from "lucide-react";
 
 const socialLinks = [
@@ -81,7 +81,7 @@ export function Footer() {
                     <h4 className="font-semibold mb-4 text-sm">{t("regions")}</h4>
                     <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
                         {citiesData
-                            .filter(city => ['antwerpen', 'brussel', 'gent', 'rotterdam', 'amsterdam'].includes(city.slug))
+                            .filter(city => flagshipCitySlugs.includes(city.slug))
                             .map((city) => (
                             <li key={city.slug}>
                                 <Link

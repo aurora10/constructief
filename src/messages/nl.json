@@ -1,7 +1,7 @@
 {
     "HomePage": {
         "title": "Constructief",
-        "subtitle": "Geen stapelas CV's, maar direct inzetbare vakmannen."
+        "subtitle": "Geen stapels CV's, maar direct inzetbare vakmannen."
     },
     "Navigation": {
         "home": "Home",
@@ -15,21 +15,21 @@
     },
     "Hero": {
         "title": "Samen bouwen we aan een sterkere toekomst",
-        "subtitle": "Geen stapels CV's, maar direct inzetbare vakmannen. Uitsluitend voor professionele (hoofd)aannemers en grote bouwbedrijven. Geen particuliere projecten.",
+        "subtitle": "Geen stapels CV's, maar direct inzetbare vakmannen en bouwploegen. Uitsluitend voor professionele (hoofd)aannemers en grote bouwbedrijven. Geen particuliere projecten.",
         "cta_candidates": "Ontdek vacatures",
         "cta_employers": "Voor aannemers"
     },
     "ValueProps": {
         "title": "Waarom Constructief uw partner is",
-        "subtitle": "Wij zijn geen algoritme, maar uw persoonlijke partner in de bouw. Kwaliteit door menselijke selectie.",
+        "subtitle": "Wij zijn geen algoritme, maar uw persoonlijke partner in de bouw. Kwaliteit door menselijke selectie — voor individuele vakmannen én complete bouwploegen.",
         "features": {
             "quality": {
                 "title": "Persoonlijke Vetting",
                 "description": "Wij spreken iedere kandidaat persoonlijk en checken alle referenties. U krijgt alleen personeel dat wij zelf ook zouden aannemen."
             },
             "speed": {
-                "title": "7-daagse Testweek",
-                "description": "Niet zeker van een match? Profiteer van onze testweek. De eerste 7 dagen zijn bedoeld om te zien of de klik er echt is."
+                "title": "14-daagse Testweek",
+                "description": "Niet zeker van een match? Profiteer van onze testweek. De eerste 14 dagen zijn bedoeld om te zien of de klik er echt is."
             },
             "network": {
                 "title": "Anonieme Screening",
@@ -37,7 +37,7 @@
             },
             "reliability": {
                 "title": "Geen Kopzorgen",
-                "description": "Wij regelen de administratie via onze Payroll-partners, zodat u zich kunt focussen op de bouw."
+                "description": "Wij regelen de administratie (via onze Payroll-partners) voor vakmensen én bouwploegen, zodat u zich kunt focussen op de bouw."
             }
         }
     },
@@ -57,7 +57,7 @@
             },
             "step3": {
                 "title": "De Testweek",
-                "description": "Start met een proefweek van 7 dagen om te zien of het bedrijf bij je past."
+                "description": "Start met een proefweek van 14 dagen om te zien of het bedrijf bij je past."
             },
             "cta": "Meld je aan"
         },
@@ -74,7 +74,7 @@
             },
             "step3": {
                 "title": "Start & Evaluatie",
-                "description": "De kandidaat start direct met een 7-daagse evaluatieperiode."
+                "description": "De kandidaat start direct met een 14-daagse evaluatieperiode."
             },
             "cta": "Vraag personeel aan"
         }
@@ -109,8 +109,8 @@
         "subtitle": "Wij zijn jouw stem bij de beste bouwbedrijven. Persoonlijk, anoniem en gericht op jouw groei."
     },
     "EmployersPage": {
-        "title": "Uw Partner in Personeel",
-        "subtitle": "Krijg direct toegang tot gescreende vakmannen voor uw bouwbedrijf. Uitsluitend B2B, geen particuliere aanvragen.",
+        "title": "Onderaannemer bouw — gescreende bouwploegen voor aannemers",
+        "subtitle": "Bouwploeg inhuren zonder stapels cv's. Wij leveren gescreende Poolse arbeiders en ander bouwpersoneel via detachering — legaal, met A1 & Limosa geregeld en een 14-dagen testweek. Uitsluitend B2B, geen particuliere aanvragen.",
         "form_title": "Personeel Aanvragen",
         "form_subtitle": "Vertel ons wat je nodig hebt. Wij matchen de juiste vakmensen.",
         "company_name": "Bedrijfsnaam",
@@ -176,7 +176,7 @@
         "title": "Persoonlijk & Constructief",
         "subtitle": "Uw directe lijn naar vakmanschap in de bouwsector.",
         "story_p1": "Constructief is geen groot kantoor met anonieme consultants. Ik ben uw persoonlijke partner die de taal van de bouw spreekt. Met jarenlange ervaring in de sector weet ik dat een goede match meer is dan wat regels op een CV.",
-        "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Wij hebben een directe pool van beschikbare metsers, bekisters, kraanmachinisten, elektriciens en lassers. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen."
+        "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Wij hebben een directe pool van beschikbare metsers, bekisters, kraanmachinisten, elektriciens en lassers. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen. Naast individuele vakmannen stellen wij ook complete, legaal werkende bouwploegen samen voor hoofdaannemers — tegen een vergoeding op resultaat."
     },
     "NewsPage": {
         "title": "Sector Insights",
@@ -364,8 +364,8 @@
         "privacy": "Privacybeleid"
     },
     "Metadata": {
-        "title": "Constructief | Personeel & Onderaannemers voor Hoofdaannemers in België",
-        "description": "Constructief ondersteunt de aankoop- en calculatieafdelingen van grote bouwbedrijven in België met betrouwbare onderaannemers en direct inzetbaar vast personeel."
+        "title": "Onderaannemer Bouw Inhuren — Gescreende Bouwploegen | Constructief",
+        "description": "Huur gescreende bouwploegen of Poolse arbeiders via detachering van bouwpersoneel. Legale ploegen met A1 & Limosa geregeld en een 14-dagen testweek. Voor hoofdaannemers in België."
     },
     "CitySEO_var1": {
         "heading": "Betrouwbare Onderaannemers & Bouwpersoneel in {city}",
@@ -381,8 +381,8 @@
         "trust_1_desc": "Onze onderaannemers zijn lokaal gehuisvest of bereid tot verblijf in de buurt van {city}, waardoor u geen last heeft van vertragingen door lange reistijden.",
         "trust_2_title": "Administratieve Ontzorging",
         "trust_2_desc": "Wij regelen alle wettelijke verplichtingen (Limosa, A1, Checkinatwork) zodat u zich volledig kunt focussen op de bouw.",
-        "trust_3_title": "7-Dagen Proefperiode",
-        "trust_3_desc": "Twijfelt u over de match? Maak gebruik van onze proefweek. De eerste 7 dagen zijn bedoeld om te kijken of het echt klikt op uw werf in {city}.",
+        "trust_3_title": "14-Dagen Proefperiode",
+        "trust_3_desc": "Twijfelt u over de match? Maak gebruik van onze proefweek. De eerste 14 dagen zijn bedoeld om te kijken of het echt klikt op uw werf in {city}.",
         "regional_text": "Niet alleen actief in {city} centrum, maar ook dagelijks aanwezig op werven in de omliggende gemeenten en de rest van de provincie.",
         "faq_title": "Veelgestelde Vragen over Personeel in {city}",
         "faq_1_q": "Hoe snel kunnen onderaannemers starten in {city}?",
@@ -410,7 +410,7 @@
         "trust_2_title": "100% Wettelijk in orde",
         "trust_2_desc": "Geen administratieve stress. Limosa, A1, en Checkinatwork regelen wij volledig voor u.",
         "trust_3_title": "Gegarandeerde Kwaliteit",
-        "trust_3_desc": "Ontdek de match zelf tijdens onze 7-daagse proefweek. Zo weet u zeker of de vakman past op uw project in {city}.",
+        "trust_3_desc": "Ontdek de match zelf tijdens onze 14-daagse proefweek. Zo weet u zeker of de vakman past op uw project in {city}.",
         "regional_text": "Niet alleen actief in {city} centrum, maar in heel de provincie {province}.",
         "faq_title": "Veelgestelde Vragen voor {city}",
         "faq_1_q": "Zijn er op korte termijn vakmensen beschikbaar in {city}?",
@@ -438,7 +438,7 @@
         "trust_2_title": "Volledig Ontzorgd",
         "trust_2_desc": "Alle papierwerk, van contracten tot A1-verklaringen en Limosa, nemen wij uit handen.",
         "trust_3_title": "Test het zelf",
-        "trust_3_desc": "Via onze 7-daagse evaluatieperiode kunt u risicovrij ervaren of de samenwerking op uw werf in {city} goed bevalt.",
+        "trust_3_desc": "Via onze 14-daagse evaluatieperiode kunt u risicovrij ervaren of de samenwerking op uw werf in {city} goed bevalt.",
         "regional_text": "Onze teams werken dagelijks op grote werven in {city} en verspreid over de hele provincie {province}.",
         "faq_title": "Informatie over personeel in {city}",
         "faq_1_q": "Wanneer kunnen de onderaannemers opstarten in {city}?",
@@ -605,6 +605,66 @@
         },
         "dordrecht": {
             "context": "Dordrecht is een binnenhavenstad met veel renovatie en waterbouw; metsel-, schrijnwerk- en montageprofielen zijn er courant."
+        }
+    },
+    "EmployersUsp": {
+        "eyebrow": "Voor hoofdaannemers & bouwbedrijven",
+        "title": "Onderaannemers inhuren die wérken — geen CV-stapels",
+        "intro": "U hoeft niet te bladeren door stapels cv's. Bouwploeg inhuren kan vandaag: gescreende Poolse arbeiders en vakmensen, via detachering van bouwpersoneel — legaal, direct inzetbaar en versterkt met vakmanschap uit heel Europa.",
+        "features": [
+            {
+                "title": "Geteste ploegen, geen CV-stapels",
+                "desc": "Elke vakman wordt gescreend en proeft bij u aan de slag. In plaats van twintig cv's stuurt u drie gescreende ploegen die morgen kunnen starten."
+            },
+            {
+                "title": "Legale ploegen: A1 & Limosa geregeld",
+                "desc": "Wij handelen alle wettelijke verplichtingen af — A1-verklaringen, Limosa-meldingen en Check-in-at-work. U huurt 100% legaal, zonder risico op zwartwerk."
+            },
+            {
+                "title": "14-dagen testweek",
+                "desc": "Zekerheid vooraf: de eerste 14 dagen bepalen of de ploeg echt klikt met uw werf en uw aanpak. Geeft het niet? Dan gaan we verder."
+            },
+            {
+                "title": "Vergoeding op resultaat",
+                "desc": "Geen vaste staffingkosten. Onze vergoeding is gekoppeld aan het geleverde resultaat — u betaalt wanneer het werkt."
+            },
+            {
+                "title": "Ploegen uit heel Europa",
+                "desc": "Wij stellen ploegen samen uit vakmensen uit heel Europa, aangevuld met lokale krachten wanneer het project erom vraagt."
+            }
+        ],
+        "cta_title": "Vraag direct een gescreende ploeg aan",
+        "cta_desc": "Vertel ons wat u nodig heeft — wij leveren een geteste, legale ploeg op uw werf.",
+        "cta_button": "Personeel aanvragen"
+    },
+    "Trades": {
+        "gevel": {
+            "label": "Gevel",
+            "title": "Gevelaannemers & gevelrenovatie in {city}",
+            "intro": "Gespecialiseerde gevelteams die de buitengevel van oudere woningen in {city} renoveren, isoleren en verfraaien. Legaal, gescreend en direct inzetbaar.",
+            "features": [
+                "Gevelrenovatie en -isolatie",
+                "Herstel van gevelpleister en metselwerk",
+                "Voeg- en schilderwerken aan de buitengevel"
+            ],
+            "cta_title": "Gescreende gevelploeg in {city} aanvragen",
+            "cta_desc": "Vraag direct een gevelteam aan voor uw project in {city}.",
+            "cta_button": "Gevelploeg aanvragen",
+            "section_title": "Wat uw gevelteam doet in {city}"
+        },
+        "renovatie": {
+            "label": "Renovatie",
+            "title": "Algemene renovatie & opwaardering van oudere woningen in {city}",
+            "intro": "Algemene renovatieploegen die oudere woningen in {city} opknappen en verhogen — van dak tot fundering, inclusief ruwbouw en afwerking. Legaal, gescreend en flexibel.",
+            "features": [
+                "Renovatie en verhoging van oudere woningen",
+                "Ruwbouw, afwerking en technieken",
+                "Samenstellen van een complete, op elkaar ingespeelde ploeg"
+            ],
+            "cta_title": "Renovatieploeg in {city} aanvragen",
+            "cta_desc": "Vraag direct een complete renovatieploeg aan voor uw project in {city}.",
+            "cta_button": "Renovatieploeg aanvragen",
+            "section_title": "Wat uw renovatieploeg doet in {city}"
         }
     }
 }

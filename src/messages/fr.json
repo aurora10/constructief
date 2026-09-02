@@ -15,21 +15,21 @@
     },
     "Hero": {
         "title": "Construisons ensemble un avenir plus solide",
-        "subtitle": "Pas de piles de CV, mais des artisans directement opérationnels. Exclusivement pour les entrepreneurs professionnels et les grandes entreprises de construction. Pas de projets particuliers.",
+        "subtitle": "Pas de piles de CV, mais des artisans et des équipes de construction directement opérationnels. Exclusivement pour les entrepreneurs professionnels et les grandes entreprises de construction. Pas de projets particuliers.",
         "cta_candidates": "Découvrir les offres",
         "cta_employers": "Pour les entrepreneurs"
     },
     "ValueProps": {
         "title": "Pourquoi Constructief est votre partenaire",
-        "subtitle": "Nous ne sommes pas un algorithme, mais votre partenaire personnel dans la construction. La qualité par la sélection humaine.",
+        "subtitle": "Nous ne sommes pas un algorithme, mais votre partenaire personnel dans la construction. La qualité par la sélection humaine — pour des artisans individuels et des équipes complètes de construction.",
         "features": {
             "quality": {
                 "title": "Vérification Personnelle",
                 "description": "Nous rencontrons chaque candidat en personne et vérifions toutes les références. Vous ne recevez que du personnel que nous embaucherions nous-mêmes."
             },
             "speed": {
-                "title": "Semaine d'essai de 7 jours",
-                "description": "Pas sûr de la compatibilité ? Profitez de notre semaine d'essai. Les 7 premiers jours sont destinés à vérifier si le courant passe vraiment."
+                "title": "Semaine d'essai de 14 jours",
+                "description": "Pas sûr de la compatibilité ? Profitez de notre semaine d'essai. Les 14 premiers jours sont destinés à vérifier si le courant passe vraiment."
             },
             "network": {
                 "title": "Sélection Anonyme",
@@ -37,7 +37,7 @@
             },
             "reliability": {
                 "title": "Aucun Souci",
-                "description": "Nous gérons l'administration via nos partenaires de gestion de paie, pour que vous puissiez vous concentrer sur la construction."
+                "description": "Nous gérons l'administration (via nos partenaires de paie) pour les artisans et les équipes de construction, afin que vous puissiez vous concentrer sur la construction."
             }
         }
     },
@@ -57,7 +57,7 @@
             },
             "step3": {
                 "title": "La Semaine d'Essai",
-                "description": "Commencez par une semaine d'essai de 7 jours pour voir si l'entreprise vous convient."
+                "description": "Commencez par une semaine d'essai de 14 jours pour voir si l'entreprise vous convient."
             },
             "cta": "S'inscrire"
         },
@@ -74,7 +74,7 @@
             },
             "step3": {
                 "title": "Démarrage & Évaluation",
-                "description": "Le candidat commence directement avec une période d'évaluation de 7 jours."
+                "description": "Le candidat commence directement avec une période d'évaluation de 14 jours."
             },
             "cta": "Demander du personnel"
         }
@@ -109,8 +109,8 @@
         "subtitle": "Nous sommes votre voix auprès des meilleures entreprises de construction. Personnel, anonyme et axé sur votre développement."
     },
     "EmployersPage": {
-        "title": "Votre Partenaire en Personnel",
-        "subtitle": "Accédez directement à des artisans présélectionnés pour votre entreprise de construction. Exclusivement B2B, pas de demandes de particuliers.",
+        "title": "Sous-traitance bâtiment — équipes présélectionnées pour les entrepreneurs",
+        "subtitle": "Sous-traitez une équipe sans piles de CV : ouvriers polonais et artisans présélectionnés par détachement, 100% légaux, avec A1 & Limosa gérés et une semaine d'essai de 14 jours. Exclusivement B2B.",
         "form_title": "Demander du Personnel",
         "form_subtitle": "Dites-nous ce dont vous avez besoin. Nous trouvons les bons artisans.",
         "company_name": "Nom de l'entreprise",
@@ -176,7 +176,7 @@
         "title": "Personnel & Constructif",
         "subtitle": "Votre ligne directe vers le savoir-faire dans le secteur de la construction.",
         "story_p1": "Constructief n'est pas un grand bureau avec des consultants anonymes. Je suis votre partenaire personnel qui parle le langage de la construction. Avec des années d'expérience dans le secteur, je sais qu'un bon match est plus que quelques lignes sur un CV.",
-        "story_p2": "Mon approche est simple : je rencontre chaque artisan, je vérifie chaque référence, et je garantis personnellement la qualité que je fournis. Nous avons un vivier direct de maçons, coffreurs, grutiers, électriciens et soudeurs disponibles. Pas de fausses promesses, mais des conseils honnêtes et des résultats solides sur lesquels vous pouvez compter."
+        "story_p2": "Mon approche est simple : je rencontre chaque artisan, je vérifie chaque référence, et je garantis personnellement la qualité que je fournis. Nous avons un vivier direct de maçons, coffreurs, grutiers, électriciens et soudeurs disponibles. Pas de fausses promesses, mais des conseils honnêtes et des résultats solides sur lesquels vous pouvez compter. En plus d'artisans individuels, nous constituons aussi des équipes de construction complètes et légales pour les entrepreneurs généraux — contre une rémunération au résultat."
     },
     "NewsPage": {
         "title": "Aperçus du Secteur",
@@ -364,8 +364,8 @@
         "privacy": "Politique de confidentialité"
     },
     "Metadata": {
-        "title": "Constructief | Personnel & Sous-traitants pour Entrepreneurs Généraux en Belgique",
-        "description": "Constructief soutient les départements d'achats et de calcul des grandes entreprises de construction en Belgique avec des sous-traitants fiables et du personnel fixe."
+        "title": "Sous-traiter la main-d'œuvre bâtiment — Équipes présélectionnées | Constructief",
+        "description": "Sous-traitez des équipes de construction ou des ouvriers polonais par détachement. Équipes légales avec A1 & Limosa gérés et une semaine d'essai de 14 jours. Pour les entrepreneurs généraux en Belgique."
     },
     "CitySEO_var1": {
         "heading": "Sous-traitants Fiables & Personnel de Construction à {city}",
@@ -381,8 +381,8 @@
         "trust_1_desc": "Nos sous-traitants sont logés localement ou prêts à séjourner près de {city}, vous évitant ainsi les retards dus aux longs trajets.",
         "trust_2_title": "Tranquillité Administrative",
         "trust_2_desc": "Nous gérons toutes les obligations légales (Limosa, A1, Checkinatwork) afin que vous puissiez vous concentrer pleinement sur la construction.",
-        "trust_3_title": "Période d'essai de 7 jours",
-        "trust_3_desc": "Un doute sur l'adéquation ? Profitez de notre semaine d'essai. Les 7 premiers jours servent à vérifier si la collaboration fonctionne vraiment sur votre chantier à {city}.",
+        "trust_3_title": "Période d'essai de 14 jours",
+        "trust_3_desc": "Un doute sur l'adéquation ? Profitez de notre semaine d'essai. Les 14 premiers jours servent à vérifier si la collaboration fonctionne vraiment sur votre chantier à {city}.",
         "regional_text": "Non seulement actifs dans le centre de {city}, mais également présents quotidiennement sur les chantiers des communes environnantes et dans le reste de la province.",
         "faq_title": "Questions Fréquemment Posées sur le personnel à {city}",
         "faq_1_q": "À quelle vitesse les sous-traitants peuvent-ils commencer à {city} ?",
@@ -410,7 +410,7 @@
         "trust_2_title": "100% Légal",
         "trust_2_desc": "Pas de stress administratif. Limosa, A1 et Checkinatwork sont entièrement gérés pour vous.",
         "trust_3_title": "Qualité Garantie",
-        "trust_3_desc": "Découvrez par vous-même grâce à notre semaine d'essai de 7 jours. Vous saurez si l'artisan convient à votre projet à {city}.",
+        "trust_3_desc": "Découvrez par vous-même grâce à notre semaine d'essai de 14 jours. Vous saurez si l'artisan convient à votre projet à {city}.",
         "regional_text": "Actif non seulement dans le centre de {city}, mais dans toute la province de {province}.",
         "faq_title": "Questions Fréquentes pour {city}",
         "faq_1_q": "Des professionnels sont-ils disponibles à court terme à {city} ?",
@@ -438,7 +438,7 @@
         "trust_2_title": "Entièrement pris en charge",
         "trust_2_desc": "Nous prenons en charge tous les documents, des contrats aux déclarations A1 et Limosa.",
         "trust_3_title": "Testez-le vous-même",
-        "trust_3_desc": "Grâce à notre période d'évaluation de 7 jours, vous pouvez vérifier sans risque si la collaboration sur votre chantier à {city} vous convient.",
+        "trust_3_desc": "Grâce à notre période d'évaluation de 14 jours, vous pouvez vérifier sans risque si la collaboration sur votre chantier à {city} vous convient.",
         "regional_text": "Nos équipes travaillent quotidiennement sur de grands chantiers à {city} et dans toute la province de {province}.",
         "faq_title": "Informations sur le personnel à {city}",
         "faq_1_q": "Quand les sous-traitants peuvent-ils commencer à {city} ?",
@@ -605,6 +605,70 @@
         },
         "dordrecht": {
             "context": "Dordrecht est une ville portuaire intérieure avec beaucoup de rénovation et de travaux d'eau; maçonnerie, menuiserie et pose y sont courantes."
+        }
+    },
+    "EmployersUsp": {
+        "eyebrow": "Pour les entrepreneurs généraux",
+        "title": "Sous-traitez la main-d'œuvre qui travaille — pas des piles de CV",
+        "intro": "Pas besoin de trier des piles de CV. Sous-traitez une équipe en construction dès aujourd'hui : ouvriers polonais et artisans présélectionnés par détachement — 100% légaux, immédiatement opérationnels et renforcés par des artisans venus de toute l'Europe.",
+        "features": [
+            {
+                "title": "Équipes testées, pas de piles de CV",
+                "desc": "Chaque artisan est présélectionné et démarre chez vous à l'essai. Au lieu de vingt CV, vous recevez trois équipes présélectionnées, prêtes à démarrer demain."
+            },
+            {
+                "title": "Équipes légales : A1 & Limosa gérés",
+                "desc": "Nous gérons toutes les obligations légales — attestations A1, déclarations Limosa et Check-in-at-work. Vous engagez 100% légalement, sans risque de travail au noir."
+            },
+            {
+                "title": "Semaine d'essai de 14 jours",
+                "desc": "Sécurité avant tout : les 14 premiers jours déterminent si l'équipe s'accorde vraiment à votre chantier."
+            },
+            {
+                "title": "Rémunération au résultat",
+                "desc": "Pas de coûts fixes de staffing. Notre rémunération est liée au résultat — vous payez quand ça fonctionne."
+            },
+            {
+                "title": "Équipes venues de toute l'Europe",
+                "desc": "Nous constituons des équipes d'artisans venus de toute l'Europe, complétées par des forces locales quand le projet l'exige."
+            }
+        ],
+        "cta_title": "Demandez une équipe présélectionnée",
+        "cta_desc": "Dites-nous ce dont vous avez besoin — nous livrons une équipe testée et légale sur votre chantier.",
+        "cta_button": "Demander du personnel"
+    },
+    "SousTraitance": {
+        "title": "Sous-traitance bâtiment : des équipes prêtes à travailler",
+        "subtitle": "Pour les entrepreneurs généraux qui veulent sous-traiter une main-d'œuvre fiable, 100% légale et immédiatement disponible — pas des piles de CV."
+    },
+    "Trades": {
+        "gevel": {
+            "label": "Façade",
+            "title": "Entrepreneurs de façade & rénovation de façade à {city}",
+            "intro": "Équipes de façade spécialisées qui rénovent, isolent et embellissent la façade de maisons anciennes à {city}. Légales, présélectionnées et immédiatement disponibles.",
+            "features": [
+                "Rénovation et isolation de façade",
+                "Réparation d'enduit et de maçonnerie",
+                "Travaux de jointement et de peinture"
+            ],
+            "cta_title": "Demandez une équipe de façade présélectionnée à {city}",
+            "cta_desc": "Demandez immédiatement une équipe de façade pour votre projet à {city}.",
+            "cta_button": "Demander une équipe de façade",
+            "section_title": "Ce que fait votre équipe de façade à {city}"
+        },
+        "renovatie": {
+            "label": "Rénovation",
+            "title": "Rénovation générale & mise à niveau de maisons anciennes à {city}",
+            "intro": "Équipes de rénovation générale qui rénovent et surhaussent des maisons anciennes à {city} — du toit aux fondations. Légales, présélectionnées et flexibles.",
+            "features": [
+                "Rénovation et surhaussement de maisons anciennes",
+                "Gros œuvre, finitions et techniques",
+                "Constitution d'une équipe complète et soudée"
+            ],
+            "cta_title": "Demandez une équipe de rénovation à {city}",
+            "cta_desc": "Demandez immédiatement une équipe de rénovation complète pour votre projet à {city}.",
+            "cta_button": "Demander une équipe de rénovation",
+            "section_title": "Ce que fait votre équipe de rénovation à {city}"
         }
     }
 }
