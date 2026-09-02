@@ -109,8 +109,8 @@
         "subtitle": "Wij zijn jouw stem bij de beste bouwbedrijven. Persoonlijk, anoniem en gericht op jouw groei."
     },
     "EmployersPage": {
-        "title": "Onderaannemer bouw — gescreende bouwploegen voor aannemers",
-        "subtitle": "Bouwploeg inhuren zonder stapels cv's. Wij leveren gescreende Poolse arbeiders en ander bouwpersoneel via detachering — legaal, met A1 & Limosa geregeld en een 14-dagen testweek. Uitsluitend B2B, geen particuliere aanvragen.",
+        "title": "Onderaannemer bouw met vooraf gescreende ploegen",
+        "subtitle": "Voor detachering bouwpersoneel en Poolse arbeiders bouw krijgt u persoonlijk gescreende ploegen. A1, Limosa en Checkinatwork zijn volledig geregeld.",
         "form_title": "Personeel Aanvragen",
         "form_subtitle": "Vertel ons wat je nodig hebt. Wij matchen de juiste vakmensen.",
         "company_name": "Bedrijfsnaam",
@@ -364,8 +364,8 @@
         "privacy": "Privacybeleid"
     },
     "Metadata": {
-        "title": "Onderaannemer Bouw Inhuren — Gescreende Bouwploegen | Constructief",
-        "description": "Huur gescreende bouwploegen of Poolse arbeiders via detachering van bouwpersoneel. Legale ploegen met A1 & Limosa geregeld en een 14-dagen testweek. Voor hoofdaannemers in België."
+        "title": "Onderaannemer bouw | Vooraf gescreende ploegen",
+        "description": "Onderaannemer bouw nodig? Wij spreken iedere vakman en regelen A1, Limosa en Checkinatwork. Start met een 14-daagse testweek."
     },
     "CitySEO_var1": {
         "heading": "Betrouwbare Onderaannemers & Bouwpersoneel in {city}",
@@ -696,6 +696,34 @@
             "cta_desc": "Vraag direct een gescreende dakploeg aan voor uw project in {city}.",
             "cta_button": "Dakploeg aanvragen",
             "section_title": "Wat uw dakploeg doet in {city}"
+        },
+        "ruwbouw": {
+            "label": "Ruwbouw",
+            "title": "Ruwbouwploegen & ruwbouwers in {city}",
+            "intro": "Ruwbouwploegen voor metselwerk, bekisting en ruwbouw van woning- en utiliteitsbouw in {city}. Metsers, bekisters en ijzervlechters — legaal, gescreend en direct inzetbaar.",
+            "features": [
+                "Metselwerk, bekisting en betonruwbouw",
+                "Ruwbouw van woning- en utiliteitsbouw",
+                "Complete ploeg inclusief ploegbaas"
+            ],
+            "cta_title": "Ruwbouwploeg in {city} aanvragen",
+            "cta_desc": "Vraag direct een gescreende ruwbouwploeg aan voor uw project in {city}.",
+            "cta_button": "Ruwbouwploeg aanvragen",
+            "section_title": "Wat uw ruwbouwploeg doet in {city}"
+        },
+        "interieur": {
+            "label": "Interieur",
+            "title": "Interieurafwerking & afbouwploegen in {city}",
+            "intro": "Ploegen voor interieurafwerking in {city}: gyproc, stukadoorswerk, schilderwerk en afbouw voor woningen en kantoren. Gescreend, legaal en direct inzetbaar.",
+            "features": [
+                "Gyproc en binnenwanden",
+                "Stukadoors-, schilder- en afwerkingswerken",
+                "Afbouw voor woningen, kantoren en utiliteit"
+            ],
+            "cta_title": "Afbouwploeg in {city} aanvragen",
+            "cta_desc": "Vraag direct een gescreende interieur- en afbouwploeg aan voor uw project in {city}.",
+            "cta_button": "Afbouwploeg aanvragen",
+            "section_title": "Wat uw interieur- en afbouwploeg doet in {city}"
         }
     },
     "WorkerFaq": {

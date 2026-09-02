@@ -59,7 +59,7 @@ export function getNearbyCities(slug: string): string[] {
 
 // Only these trades get dedicated trade+city pages, and only where we genuinely
 // deliver ready teams (per the strategy: don't mass-generate thin pages).
-export const flagshipTrades = ['gevel', 'renovatie', 'beton', 'dak'];
+export const flagshipTrades = ['gevel', 'renovatie', 'beton', 'dak', 'ruwbouw', 'interieur'];
 
 export function parseDienstenSlug(slug: string): { trade?: string; city: string } {
   const rest = slug.replace(/^onderaannemer-/, '');

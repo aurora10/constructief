@@ -700,6 +700,34 @@
             "cta_desc": "Demandez immédiatement une équipe de toiture présélectionnée pour votre projet à {city}.",
             "cta_button": "Demander une équipe de toiture",
             "section_title": "Ce que fait votre équipe de toiture à {city}"
+        },
+        "ruwbouw": {
+            "label": "Gros œuvre",
+            "title": "Équipes de gros œuvre & maçons à {city}",
+            "intro": "Équipes de gros œuvre pour la maçonnerie, le coffrage et la structure des bâtiments résidentiels et utilitaires à {city}. Maçons, coffreurs et ferrailleurs — légaux, présélectionnés et immédiatement disponibles.",
+            "features": [
+                "Maçonnerie, coffrage et structure en béton",
+                "Gros œuvre résidentiel et utilitaire",
+                "Équipe complète avec chef de chantier"
+            ],
+            "cta_title": "Demandez une équipe de gros œuvre à {city}",
+            "cta_desc": "Demandez immédiatement une équipe de gros œuvre présélectionnée pour votre projet à {city}.",
+            "cta_button": "Demander une équipe de gros œuvre",
+            "section_title": "Ce que fait votre équipe de gros œuvre à {city}"
+        },
+        "interieur": {
+            "label": "Intérieur",
+            "title": "Finition intérieure & équipes d'aménagement à {city}",
+            "intro": "Équipes de finition intérieure à {city} : placo, plâtrerie, peinture et aménagement pour logements et bureaux. Présélectionnées, légales et immédiatement disponibles.",
+            "features": [
+                "Placo et cloisons intérieures",
+                "Plâtrerie, peinture et finitions",
+                "Aménagement de logements, bureaux et bâtiments utilitaires"
+            ],
+            "cta_title": "Demandez une équipe de finition à {city}",
+            "cta_desc": "Demandez immédiatement une équipe de finition présélectionnée pour votre projet à {city}.",
+            "cta_button": "Demander une équipe de finition",
+            "section_title": "Ce que fait votre équipe de finition intérieure à {city}"
         }
     },
     "WorkerFaq": {
