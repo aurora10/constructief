@@ -1,4 +1,4 @@
-import { targetCities, citiesData, formatCityName, flagshipCitySlugs } from '@/data/cities';
+import { targetCities, citiesData, formatCityName, flagshipCitySlugs, type CityData } from '@/data/cities';
 import { getNearbyCities, parseDienstenSlug, flagshipTrades } from '@/data/cityContent';
 import { getTranslations, setRequestLocale, getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { jobs } from '@/data/vacancies';
 import { TradeCityLanding } from '@/components/sections/TradeCityLanding';
+import { TradeLanding } from '@/components/sections/TradeLanding';
 import { WerkgeversLink } from '@/components/sections/WerkgeversLink';
 import {
   MapPin,
@@ -23,6 +24,19 @@ import {
   Layers,
 } from 'lucide-react';
 
+// Region label used for nation-wide (city-agnostic) trade pages like
+// /diensten/onderaannemer-renovatie. The Trades.* copy uses a {city} placeholder;
+// we substitute it with the region so the page reads without a specific city.
+function tradeRegion(locale: string): string {
+  return locale === 'fr' ? 'Belgique' : locale === 'ru' ? 'Бельгия' : 'België';
+}
+
+// Synthetic city used to reuse TradeCityLanding for base-trade pages.
+function baseTradeCity(locale: string): CityData {
+  const name = tradeRegion(locale);
+  return { slug: 'belgie', name, province: name, country: 'BE', variation: 1, popularTrades: [] };
+}
+
 export async function generateStaticParams() {
   // Include the locale dimension so every locale×city / locale×trade-city
   // combination is statically pre-rendered (rather than server-rendered on
@@ -38,7 +52,12 @@ export async function generateStaticParams() {
         slug: `onderaannemer-${trade}-${city}`,
       })),
     );
-    return [...cityEntries, ...tradeEntries];
+    // Base (nation-wide) trade pages: /diensten/onderaannemer-{trade}
+    const baseTradeEntries = flagshipTrades.map((trade) => ({
+      locale,
+      slug: `onderaannemer-${trade}`,
+    }));
+    return [...cityEntries, ...tradeEntries, ...baseTradeEntries];
   });
 }
 
@@ -51,8 +70,9 @@ export async function generateMetadata({
 
   const { trade, city } = parseDienstenSlug(slug);
 
+  const baseTrade = Boolean(trade && !city);
   const cityData = citiesData.find((c) => c.slug === city);
-  if (!cityData) {
+  if (!cityData && !baseTrade) {
     return {};
   }
 
@@ -75,15 +95,21 @@ export async function generateMetadata({
 
   let title: string;
   let description: string;
-  if (trade) {
+  if (trade && !city) {
+    // Base (nation-wide) trade page — substitute the {city} placeholder with region.
+    const region = tradeRegion(locale);
     const tT = await getTranslations({ locale, namespace: 'Trades' });
-    title = `${tT(`${trade}.title`, { city: cityData.name })} | Constructief`;
-    description = tT(`${trade}.intro`, { city: cityData.name });
+    title = `${tT(`${trade}.title`, { city: region })} | Constructief`;
+    description = tT(`${trade}.intro`, { city: region });
+  } else if (trade) {
+    const tT = await getTranslations({ locale, namespace: 'Trades' });
+    title = `${tT(`${trade}.title`, { city: cityData!.name })} | Constructief`;
+    description = tT(`${trade}.intro`, { city: cityData!.name });
   } else {
-    const namespace = `CitySEO_var${cityData.variation}`;
+    const namespace = `CitySEO_var${cityData!.variation}`;
     const t = await getTranslations({ locale, namespace });
-    title = `${t('heading', { city: cityData.name })} | Constructief`;
-    description = t('intro', { city: cityData.name });
+    title = `${t('heading', { city: cityData!.name })} | Constructief`;
+    description = t('intro', { city: cityData!.name });
   }
 
   return {
@@ -118,6 +144,18 @@ export default async function CityLandingPage({
 
   const { trade, city } = parseDienstenSlug(slug);
 
+  // Base (nation-wide) trade page: use the unique TradeLanding hub when the
+  // current locale has TradeNation copy (nl/fr); otherwise fall back to the
+  // region TradeCityLanding so noindexed locales (e.g. ru) still render.
+  if (trade && !city) {
+    const messages = await getMessages({ locale });
+    const hasNation = !!(messages as any)?.TradeNation?.[trade];
+    if (hasNation) {
+      return <TradeLanding trade={trade} locale={locale} />;
+    }
+    return <TradeCityLanding trade={trade} city={baseTradeCity(locale)} locale={locale} />;
+  }
+
   const cityData = citiesData.find((c) => c.slug === city);
   if (!cityData) {
     notFound();
@@ -142,7 +180,7 @@ export default async function CityLandingPage({
   const tNav = await getTranslations({ locale, namespace: 'Navigation' });
   const tSeoUi = await getTranslations({ locale, namespace: 'CitySeoUi' });
 
-  const uniqueDescription = tSeo(city);
+  const uniqueDescription = tSeo(cityData.slug);
 
   // Per-city unique context. Read straight off the message tree so we never
   // throw when a non-indexed locale (e.g. ru) has not been authored; it falls
@@ -150,8 +188,8 @@ export default async function CityLandingPage({
   const messages = await getMessages({ locale });
   const nlMessages = await getMessages({ locale: routing.defaultLocale });
   const regioContext =
-    (messages as any)?.['CityRegio']?.[city]?.context ??
-    (nlMessages as any)?.['CityRegio']?.[city]?.context ??
+    (messages as any)?.['CityRegio']?.[cityData.slug]?.context ??
+    (nlMessages as any)?.['CityRegio']?.[cityData.slug]?.context ??
     '';
 
   // Simple permutations based on city slug length to make DOM unique
@@ -162,12 +200,12 @@ export default async function CityLandingPage({
     [1, 3, 2],
     [2, 1, 3],
   ];
-  const pIndex = city.length % permutations.length;
+  const pIndex = cityData.slug.length % permutations.length;
   const order = permutations[pIndex];
 
   // Pick pseudo-random jobs to show
   const relatedJobs = [...jobs]
-    .sort((a, b) => (a.id * city.length) % 7 - (b.id * city.length) % 7)
+    .sort((a, b) => (a.id * cityData.slug.length) % 7 - (b.id * cityData.slug.length) % 7)
     .slice(0, 3);
 
   // Local demand derived from this city's own trade mix (genuinely differs per
@@ -176,7 +214,7 @@ export default async function CityLandingPage({
   const tradeList = topTrades.map((k) => tTrades(k)).join(', ');
   const demandText = tSeoUi('demand_line', { city: cityName, trades: tradeList });
 
-  const nearby = getNearbyCities(city);
+  const nearby = getNearbyCities(cityData.slug);
   const baseUrl = 'https://constructief-bouw.be';
   const canonical = `${baseUrl}/${locale}/diensten/${slug}`;
 

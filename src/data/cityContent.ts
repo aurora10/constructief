@@ -61,7 +61,7 @@ export function getNearbyCities(slug: string): string[] {
 // deliver ready teams (per the strategy: don't mass-generate thin pages).
 export const flagshipTrades = ['gevel', 'renovatie', 'beton', 'dak', 'ruwbouw', 'interieur'];
 
-export function parseDienstenSlug(slug: string): { trade?: string; city: string } {
+export function parseDienstenSlug(slug: string): { trade?: string; city: string | null } {
   const rest = slug.replace(/^onderaannemer-/, '');
   const parts = rest.split('-');
   // Trade+city slugs look like "gevel-antwerpen". Only treat the first segment
@@ -72,6 +72,11 @@ export function parseDienstenSlug(slug: string): { trade?: string; city: string 
     if (citiesData.some((c) => c.slug === city)) {
       return { trade: parts[0], city };
     }
+  }
+  // Base trade page ("renovatie"): a single segment that is a flagship trade.
+  // Renders as a city-agnostic trade landing (nation-wide for that trade).
+  if (parts.length === 1 && flagshipTrades.includes(parts[0])) {
+    return { trade: parts[0], city: null };
   }
   return { city: rest };
 }

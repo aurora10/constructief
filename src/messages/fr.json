@@ -755,5 +755,91 @@
                 "a": "Non. Nous vous guidons tout au long du processus. Seuls votre expérience et vos compétences comptent — nous nous occupons du reste."
             }
         ]
+    },
+    "TradeNation": {
+        "beton": {
+            "title": "Trouvez une équipe béton pour vos chantiers",
+            "meta_description": "Sous-traitance béton partout en Belgique. Équipes contrôlées, essai de 14 jours et formalités A1, Limosa et présences gérées.",
+            "intro": "Renforcez vos chantiers partout en Belgique avec des équipes béton présélectionnées et en règle. Nous gérons les formalités A1, Limosa et l’enregistrement des présences, avec une période d’essai de 14 jours et une rémunération au résultat.",
+            "section_title": "Prestations de nos équipes béton",
+            "features": [
+                "Coffrage traditionnel et modulaire pour fondations, dalles, voiles, poutres et colonnes.",
+                "Ferraillage, pose des armatures et préparation avant le coulage du béton.",
+                "Coulage, vibration, nivellement, finition et décoffrage des ouvrages en béton."
+            ],
+            "cta_title": "Trouvez votre sous-traitant béton",
+            "cta_desc": "Décrivez votre chantier et les compétences requises. Nous vous proposons une équipe contrôlée, sans piles de CV.",
+            "cta_button": "Demander une équipe béton"
+        },
+        "dak": {
+            "title": "Faites réaliser vos travaux de toiture",
+            "meta_description": "Sous-traitance toiture en Belgique avec équipes contrôlées, formalités gérées et période d’essai de 14 jours. Rémunération au résultat.",
+            "intro": "Nous mettons à votre disposition des équipes de toiture présélectionnées pour vos chantiers partout en Belgique. Vous recevez une solution de sous-traitance toiture conforme, sans piles de CV, avec une période d’essai de 14 jours.",
+            "section_title": "Travaux réalisés par nos équipes de toiture",
+            "features": [
+                "Pose et rénovation de couvertures en tuiles, ardoises et métal",
+                "Isolation, étanchéité et pose de membranes de toiture",
+                "Pose de gouttières, évacuations d’eau et finitions de toiture"
+            ],
+            "cta_title": "Renforcez votre capacité en toiture",
+            "cta_desc": "Décrivez votre chantier et vos délais. Nous recherchons une équipe contrôlée, gérons les formalités administratives et sociales, et vous facturons au résultat.",
+            "cta_button": "Demander une équipe de toiture"
+        },
+        "gevel": {
+            "title": "Renforcez vos chantiers de façade en Belgique",
+            "meta_description": "Sous-traitance façade avec équipes contrôlées. Essai de 14 jours et formalités A1, Limosa et Checkinatwork gérées.",
+            "intro": "Nous fournissons partout en Belgique des équipes de façade contrôlées aux entreprises générales. Vous recevez une équipe adaptée au chantier, sans piles de CV, avec une période d’essai de 14 jours.",
+            "section_title": "Prestations de nos équipes de façade",
+            "features": [
+                "Pose de bardages et de systèmes de façade ventilée.",
+                "Installation d’isolation extérieure et de systèmes d’enduit sur isolant.",
+                "Rénovation, rejointoiement et réparation de façades existantes."
+            ],
+            "cta_title": "Trouvez votre équipe de façade",
+            "cta_desc": "Décrivez votre chantier. Nous présélectionnons une équipe en règle et gérons les formalités A1, Limosa et Checkinatwork. Notre rémunération dépend du résultat.",
+            "cta_button": "Demander une équipe"
+        },
+        "interieur": {
+            "title": "Renforcez vos chantiers en plâtrerie & finition",
+            "meta_description": "Sous-traitance plâtrerie & finition en Belgique. Équipes contrôlées, formalités gérées, essai de 14 jours et rémunération au résultat.",
+            "intro": "Nous fournissons aux maîtres d’œuvre des équipes contrôlées de plâtrerie & finition dans toute la Belgique. Les documents A1, Limosa et Checkinatwork sont gérés. Vous bénéficiez d’une période d’essai de 14 jours et payez au résultat, sans piles de CV.",
+            "section_title": "Prestations de nos équipes",
+            "features": [
+                "Pose de plaques de plâtre, cloisons et faux plafonds",
+                "Enduisage, plafonnage et préparation des supports",
+                "Peinture intérieure, finitions murales et retouches de chantier"
+            ],
+            "cta_title": "Trouvez une équipe pour votre chantier",
+            "cta_desc": "Décrivez vos besoins en plâtrerie & finition. Nous vous proposons une équipe contrôlée et disponible en Belgique.",
+            "cta_button": "Demander une équipe"
+        },
+        "renovatie": {
+            "title": "Renforcez vos chantiers de rénovation",
+            "meta_description": "Sous-traitance rénovation en Belgique. Équipes contrôlées, formalités A1 et Limosa gérées, essai de 14 jours et rémunération au résultat.",
+            "intro": "Nous fournissons aux entrepreneurs généraux des équipes de rénovation préalablement contrôlées, disponibles partout en Belgique. Les formalités légales et l’enregistrement des présences sont gérés. Vous bénéficiez d’une période d’essai de 14 jours, sans piles de CV.",
+            "section_title": "Ce que nos équipes de rénovation réalisent",
+            "features": [
+                "Démolition intérieure, dépose des anciens matériaux et préparation des supports.",
+                "Travaux de maçonnerie, plafonnage, isolation et pose de cloisons.",
+                "Finitions intérieures, notamment carrelage, peinture et menuiserie."
+            ],
+            "cta_title": "Trouvez une équipe de rénovation adaptée",
+            "cta_desc": "Décrivez votre chantier et vos besoins. Nous sélectionnons une équipe conforme et vous payez notre intervention au résultat.",
+            "cta_button": "Demander une équipe"
+        },
+        "ruwbouw": {
+            "title": "Renforcez vos chantiers de gros œuvre",
+            "meta_description": "Sous-traitance gros œuvre partout en Belgique. Équipes contrôlées, formalités A1 et Limosa gérées, rémunération au résultat.",
+            "intro": "Nous fournissons aux entreprises générales des équipes de gros œuvre contrôlées et en règle, partout en Belgique. Vous accédez rapidement aux compétences requises, sans piles de CV. Les formalités A1, Limosa et l’enregistrement des présences sont gérés.",
+            "section_title": "Ce que nos équipes de gros œuvre réalisent",
+            "features": [
+                "Coffrage de fondations, murs, colonnes, poutres et dalles.",
+                "Ferraillage et pose d’armatures pour les ouvrages en béton.",
+                "Maçonnerie porteuse, coulage du béton et travaux de fondation."
+            ],
+            "cta_title": "Trouvez votre équipe de gros œuvre",
+            "cta_desc": "Décrivez votre chantier et vos besoins. Vous bénéficiez d’une période d’essai de 14 jours et d’une rémunération au résultat.",
+            "cta_button": "Demander une équipe"
+        }
     }
 }

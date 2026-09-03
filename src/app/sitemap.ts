@@ -63,6 +63,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
                     });
                 }
             }
+            // Base (nation-wide) trade pages (onderaannemer-{trade}) — the
+            // country-level landing per trade, target for non-city trade queries.
+            for (const trade of flagshipTrades) {
+                sitemapEntries.push({
+                    url: `${baseUrl}/${locale}/diensten/onderaannemer-${trade}`,
+                    lastModified: new Date(),
+                    changeFrequency: 'weekly',
+                    priority: 0.9,
+                });
+            }
         }
 
         // FR "sous-traitance bâtiment" opportunity page (fr only)

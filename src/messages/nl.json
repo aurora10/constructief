@@ -751,5 +751,91 @@
                 "a": "Nee. Wij begeleiden je door het hele proces. Alleen jouw ervaring en skills tellen — de rest regelen wij."
             }
         ]
+    },
+    "TradeNation": {
+        "beton": {
+            "title": "Schakel ervaren betonploegen in",
+            "meta_description": "Onderaannemer bouw voor betonwerken. Persoonlijk gescreende ploegen met A1, Limosa en Checkinatwork volledig geregeld.",
+            "intro": "Constructief levert gescreende betonploegen aan hoofdaannemers in heel België. Wij spreken iedere vakman persoonlijk en regelen A1, Limosa en Checkinatwork. U ontvangt geen stapels CV's, maar een ploeg die aansluit bij uw planning en werf.",
+            "section_title": "Wat onze betonploegen leveren",
+            "features": [
+                "Bekisting en ontkisting voor funderingen, wanden, kolommen en vloerplaten",
+                "Plaatsing en verwerking van wapening volgens uitvoeringsplan",
+                "Storten, verdichten en afwerken van beton op ruwbouw- en infrastructuurwerven"
+            ],
+            "cta_title": "Een betonploeg nodig voor uw werf",
+            "cta_desc": "Bespreek uw planning en vereisten met ons. Start met een 14-daagse testweek. Onze vergoeding is gekoppeld aan het resultaat.",
+            "cta_button": "Vraag een betonploeg aan"
+        },
+        "dak": {
+            "title": "Vind een onderaannemer voor dakwerken",
+            "meta_description": "Onderaannemer dakwerken of sous-traitant toiture nodig? Persoonlijk gescreende ploegen. A1, Limosa en Checkinatwork volledig geregeld.",
+            "intro": "Constructief koppelt hoofdaannemers in heel België aan persoonlijk gescreende ploegen voor dakwerken. Wij spreken iedere vakman, regelen de administratie en bieden een 14-daagse testweek. U krijgt geen stapels cv's en betaalt een vergoeding gekoppeld aan resultaat.",
+            "section_title": "Wat onze dakploegen leveren",
+            "features": [
+                "Plaatsing en renovatie van platte daken met bitumen, EPDM of andere dakmembranen.",
+                "Opbouw en afwerking van hellende daken, inclusief onderdak, pannen en leien.",
+                "Plaatsing van dakisolatie, goten, dakranden en aansluitingen voor nieuwbouw en renovatie."
+            ],
+            "cta_title": "Bespreek uw dakproject",
+            "cta_desc": "Geef uw planning, werfvereisten en gewenste bezetting door. Wij zoeken een vooraf gescreende ploeg die past bij uw opdracht.",
+            "cta_button": "Vraag een dakploeg aan"
+        },
+        "gevel": {
+            "title": "Schakel een gevelploeg in voor uw bouwproject",
+            "meta_description": "Onderaannemer bouw nodig voor gevelwerken? Iedere vakman is persoonlijk gescreend. A1, Limosa en Checkinatwork zijn volledig geregeld.",
+            "intro": "Constructief koppelt hoofdaannemers in heel België aan vooraf gescreende, legale gevelploegen. Of u nu zoekt naar Poolse arbeiders voor de bouw, detachering van bouwpersoneel of sous-traitance bâtiment, wij spreken iedere vakman persoonlijk. U ontvangt geen stapels cv's en wij regelen A1, Limosa en Checkinatwork volledig.",
+            "section_title": "Wat onze gevelploegen leveren",
+            "features": [
+                "Nieuwbouwgevels: uitvoering in gevelsteen, blokwerk en voegwerk volgens plan en planning.",
+                "Gevelisolatie en bekleding: plaatsing van isolatiesystemen, steenstrips en diverse gevelbekledingen.",
+                "Gevelrenovatie en aansluitdetails: herstel, hervoegen en afwerking aan dakranden, afgestemd met uw onderaannemer dakwerken."
+            ],
+            "cta_title": "Een gevelploeg nodig?",
+            "cta_desc": "Deel uw planning, scope en gewenste startdatum. Wij selecteren een passende sous-traitant construction, met een 14-daagse testweek en een vergoeding gekoppeld aan resultaat.",
+            "cta_button": "Vraag een gevelploeg aan"
+        },
+        "interieur": {
+            "title": "Schakel gescreende interieurploegen in",
+            "meta_description": "Onderaannemer bouw voor interieur nodig? Wij spreken iedere vakman. A1, Limosa en Checkinatwork geregeld, met een 14-daagse testweek.",
+            "intro": "Voor interieurprojecten in heel België koppelen wij hoofdaannemers aan persoonlijk gescreende ploegen. Wij spreken iedere vakman en regelen A1, Limosa en Checkinatwork. U krijgt geen stapels CV's, maar een passende ploeg met een 14-daagse testweek.",
+            "section_title": "Wat onze interieurploegen leveren",
+            "features": [
+                "Plaatsing van gyprocwanden, voorzetwanden en verlaagde plafonds.",
+                "Montage van binnendeuren, maatwerk, plinten en ander interieurschrijnwerk.",
+                "Plaatsing van vloerbekleding en uitvoering van schilder- en afwerkingswerken."
+            ],
+            "cta_title": "Een interieurploeg nodig",
+            "cta_desc": "Bespreek uw planning, vereiste vakkennis en bezetting. Wij zoeken een gescreende ploeg en koppelen onze vergoeding aan het resultaat.",
+            "cta_button": "Vraag een interieurploeg aan"
+        },
+        "renovatie": {
+            "title": "Vind uw onderaannemer renovatie in België",
+            "meta_description": "Onderaannemer renovatie nodig? Persoonlijk gescreende ploegen in heel België. A1, Limosa en Checkinatwork volledig geregeld.",
+            "intro": "Constructief koppelt hoofdaannemers in heel België aan een passende onderaannemer renovatie of entrepreneur rénovation. Wij spreken iedere vakman persoonlijk en regelen alle vereiste documenten. U ontvangt geen stapels CV's, maar een inzetbare ploeg met een 14-daagse testweek.",
+            "section_title": "Wat onze renovatieploegen uitvoeren",
+            "features": [
+                "Volledige binnenrenovatie, inclusief afbraak, heropbouw en afwerking",
+                "Renovatie van gevels, daken en andere buitenschillen",
+                "Aanpassing en herstel van woningen, kantoren en commerciële gebouwen"
+            ],
+            "cta_title": "Een renovatieploeg nodig?",
+            "cta_desc": "Bespreek uw planning en vereisten. Wij zoeken een gescreende ploeg en regelen A1, Limosa en Checkinatwork. Onze vergoeding is gekoppeld aan resultaat.",
+            "cta_button": "Vind mijn renovatieploeg"
+        },
+        "ruwbouw": {
+            "title": "Onderaannemer ruwbouw inschakelen",
+            "meta_description": "Onderaannemer ruwbouw of betonvlechters nodig? Wij spreken iedere vakman en regelen A1, Limosa en Checkinatwork volledig.",
+            "intro": "Constructief levert vooraf gescreende ruwbouwploegen voor projecten in heel België. Wij spreken iedere vakman persoonlijk en regelen A1, Limosa en Checkinatwork. U ontvangt een passende ploeg, geen stapels CV's.",
+            "section_title": "Wat onze ruwbouwploegen leveren",
+            "features": [
+                "Bekisting, wapening en betonwerken voor funderingen, vloeren, wanden en kolommen.",
+                "Ervaren betonvlechters voor het knippen, buigen en plaatsen van betonstaal volgens plan.",
+                "Metselwerken voor dragende muren, binnenmuren en andere ruwbouwconstructies."
+            ],
+            "cta_title": "Vind een passende ruwbouwploeg",
+            "cta_desc": "Bespreek uw planning en bezetting met ons. Start met een 14-daagse testweek. Onze vergoeding is gekoppeld aan resultaat.",
+            "cta_button": "Vraag een ruwbouwploeg aan"
+        }
     }
 }
