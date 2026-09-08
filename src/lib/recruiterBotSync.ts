@@ -151,7 +151,7 @@ export async function appendRecruiterRow(row: (string | number)[]): Promise<void
   if (RECRUITER_SHEET_ID && RECRUITER_SHEET_ID !== '') {
     await ensureHeader();
   }
-  await sheetsFetch(`${TAB}!A1:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {
+  await sheetsFetch(`values/${TAB}!A1:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {
     method: 'POST',
     body: JSON.stringify({ values: [row] }),
   });
