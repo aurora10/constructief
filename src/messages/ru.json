@@ -641,5 +641,127 @@
                 "a": "Нет. Мы проводим вас через весь процесс. Важен только ваш опыт и навыки — остальное мы организуем."
             }
         ]
+    },
+    "SubcontractorForm": {
+        "page_title": "Стать субподрядчиком — регистрация вашей бригады",
+        "page_subtitle": "Заполните эту форму, и мы добавим вашу бригаду в нашу сеть проверенных субподрядчиков. Ваши данные попадают напрямую к нашему рекрутеру.",
+        "form_title": "Регистрация субподрядчика",
+        "form_subtitle": "Заполнение займёт около 2 минут.",
+        "name": "Имя",
+        "name_ph": "Напр. Денис",
+        "specialization": "Специализация",
+        "specialization_ph": "Напр. каменщик, штукатур, фасадчик...",
+        "legal_status": "Документы / право работать в Бельгии",
+        "car_and_tools": "Машина и инструмент",
+        "location": "Текущий город",
+        "location_ph": "Напр. Антверпен",
+        "rate": "Желаемая ставка",
+        "rate_ph": "Напр. 22 €/час или 18 €/м²",
+        "phone": "Номер телефона (WhatsApp)",
+        "phone_ph": "+32 465 811031",
+        "languages": "Языки на стройке",
+        "languages_ph": "Напр. польский, базовый нидерландский",
+        "team_size": "Один или бригада?",
+        "availability": "Когда готовы выйти?",
+        "photos": "Фото ваших работ (необязательно, макс. 3)",
+        "photos_hint": "Выберите фото недавних проектов (JPG/PNG).",
+        "submit": "Отправить регистрацию",
+        "submitting": "Отправка...",
+        "success_title": "Спасибо за регистрацию!",
+        "success_text": "Наш рекрутер посмотрит ваш профиль и свяжется с вами, когда появится подходящий объект.",
+        "error_title": "Что-то пошло не так",
+        "error_text": "Попробуйте ещё раз или свяжитесь с нами в WhatsApp.",
+        "required_hint": "обязательно",
+        "legal_status_options": [
+            {
+                "value": "EU-paspoort (EU-land)",
+                "label": "Паспорт ЕС (страна ЕС)"
+            },
+            {
+                "value": "Belgische kaart A",
+                "label": "Бельгийская карта A"
+            },
+            {
+                "value": "A1-detachering (buitenlandse firma)",
+                "label": "A1 (командировка иностранной фирмы)"
+            },
+            {
+                "value": "Eigen BV / firma (TVA actief)",
+                "label": "Своя фирма BV (активный НДС)"
+            },
+            {
+                "value": "Anders / nog te bevestigen",
+                "label": "Другое / уточнить"
+            }
+        ],
+        "car_and_tools_options": [
+            {
+                "value": "Eigen vervoer + eigen handgereedschap",
+                "label": "Своя машина + свой инструмент"
+            },
+            {
+                "value": "Eigen vervoer, beperkt gereedschap",
+                "label": "Своя машина, ограниченный инструмент"
+            },
+            {
+                "value": "Geen eigen vervoer",
+                "label": "Нет своей машины"
+            }
+        ],
+        "team_size_options": [
+            {
+                "value": "Ik werk alleen (zzp)",
+                "label": "Работаю один (zzp)"
+            },
+            {
+                "value": "Ploeg van 2-3 man",
+                "label": "Бригада 2-3 человека"
+            },
+            {
+                "value": "Ploeg van 4-6 man",
+                "label": "Бригада 4-6 человек"
+            },
+            {
+                "value": "Ploeg van 7+ man",
+                "label": "Бригада 7+ человек"
+            }
+        ],
+        "availability_options": [
+            {
+                "value": "Per direct beschikbaar",
+                "label": "Готов выйти сразу"
+            },
+            {
+                "value": "Vanaf binnen 1 week",
+                "label": "В течение 1 недели"
+            },
+            {
+                "value": "Vanaf binnen 2-4 weken",
+                "label": "В течение 2-4 недель"
+            },
+            {
+                "value": "Later (datum volgt)",
+                "label": "Позже (дата уточнится)"
+            }
+        ],
+        "specialization_suggestions": [
+            "Каменщик",
+            "Штукатур",
+            "Плиточник",
+            "Опалубщик",
+            "Арматурщик",
+            "Маляр",
+            "Гипсокартонщик",
+            "Кровельщик",
+            "Фасадчик",
+            "Столяр/плотник",
+            "Электрик",
+            "Сантехник",
+            "HVAC-техник",
+            "Укладчик полов",
+            "Внутренняя отделка",
+            "Разнорабочий",
+            "Бригадир"
+        ]
     }
 }

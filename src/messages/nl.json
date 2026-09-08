@@ -837,5 +837,127 @@
             "cta_desc": "Bespreek uw planning en bezetting met ons. Start met een 14-daagse testweek. Onze vergoeding is gekoppeld aan resultaat.",
             "cta_button": "Vraag een ruwbouwploeg aan"
         }
+    },
+    "SubcontractorForm": {
+        "page_title": "Onderaannemer worden — schrijf je ploeg in",
+        "page_subtitle": "Vul dit formulier in en wij voegen je ploeg toe aan ons netwerk van gescreende onderaannemers. Je gegevens gaan rechtstreeks naar onze recruiter.",
+        "form_title": "Inschrijving onderaannemer",
+        "form_subtitle": "Invullen duurt ongeveer 2 minuten.",
+        "name": "Voornaam",
+        "name_ph": "Bijv. Denys",
+        "specialization": "Specialisatie",
+        "specialization_ph": "Bijv. metser, stukadoor, gevelwerker...",
+        "legal_status": "Documenten / recht om te werken in België",
+        "car_and_tools": "Auto en gereedschap",
+        "location": "Huidige locatie (stad)",
+        "location_ph": "Bijv. Antwerpen",
+        "rate": "Gewenst tarief",
+        "rate_ph": "Bijv. 22 euro/uur of 18 euro/m²",
+        "phone": "Telefoonnummer (WhatsApp)",
+        "phone_ph": "+32 465 811031",
+        "languages": "Talen op de werf",
+        "languages_ph": "Bijv. Pools, basis Nederlands",
+        "team_size": "Alleen of ploeg?",
+        "availability": "Wanneer kun je starten?",
+        "photos": "Foto's van je werk (optioneel, max 3)",
+        "photos_hint": "Kies foto's van recente projecten (JPG/PNG).",
+        "submit": "Verstuur inschrijving",
+        "submitting": "Versturen...",
+        "success_title": "Bedankt voor je inschrijving!",
+        "success_text": "Onze recruiter bekijkt je profiel en neemt contact op zodra er een passend project is.",
+        "error_title": "Er ging iets mis",
+        "error_text": "Probeer het opnieuw of neem contact op via WhatsApp.",
+        "required_hint": "verplicht",
+        "legal_status_options": [
+            {
+                "value": "EU-paspoort (EU-land)",
+                "label": "EU-paspoort (EU-land)"
+            },
+            {
+                "value": "Belgische kaart A",
+                "label": "Belgische kaart A"
+            },
+            {
+                "value": "A1-detachering (buitenlandse firma)",
+                "label": "A1-detachering (buitenlandse firma)"
+            },
+            {
+                "value": "Eigen BV / firma (TVA actief)",
+                "label": "Eigen BV / firma (TVA actief)"
+            },
+            {
+                "value": "Anders / nog te bevestigen",
+                "label": "Anders / nog te bevestigen"
+            }
+        ],
+        "car_and_tools_options": [
+            {
+                "value": "Eigen vervoer + eigen handgereedschap",
+                "label": "Eigen vervoer + eigen handgereedschap"
+            },
+            {
+                "value": "Eigen vervoer, beperkt gereedschap",
+                "label": "Eigen vervoer, beperkt gereedschap"
+            },
+            {
+                "value": "Geen eigen vervoer",
+                "label": "Geen eigen vervoer"
+            }
+        ],
+        "team_size_options": [
+            {
+                "value": "Ik werk alleen (zzp)",
+                "label": "Ik werk alleen (zzp)"
+            },
+            {
+                "value": "Ploeg van 2-3 man",
+                "label": "Ploeg van 2-3 man"
+            },
+            {
+                "value": "Ploeg van 4-6 man",
+                "label": "Ploeg van 4-6 man"
+            },
+            {
+                "value": "Ploeg van 7+ man",
+                "label": "Ploeg van 7+ man"
+            }
+        ],
+        "availability_options": [
+            {
+                "value": "Per direct beschikbaar",
+                "label": "Per direct beschikbaar"
+            },
+            {
+                "value": "Vanaf binnen 1 week",
+                "label": "Vanaf binnen 1 week"
+            },
+            {
+                "value": "Vanaf binnen 2-4 weken",
+                "label": "Vanaf binnen 2-4 weken"
+            },
+            {
+                "value": "Later (datum volgt)",
+                "label": "Later (datum volgt)"
+            }
+        ],
+        "specialization_suggestions": [
+            "Metser",
+            "Stukadoor",
+            "Tegelzetter / Vloerder",
+            "Bekister",
+            "Ijzervlechter",
+            "Schilder",
+            "Gyproc plaatser",
+            "Dakwerker",
+            "Gevelwerker",
+            "Schrijnwerker",
+            "Elektricien",
+            "Loodgieter",
+            "HVAC Technieker",
+            "Vloerder",
+            "Binnenafwerking",
+            "Allround bouwvakker",
+            "Ploegbaas"
+        ]
     }
 }

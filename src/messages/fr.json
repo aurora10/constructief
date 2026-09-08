@@ -841,5 +841,127 @@
             "cta_desc": "Décrivez votre chantier et vos besoins. Vous bénéficiez d’une période d’essai de 14 jours et d’une rémunération au résultat.",
             "cta_button": "Demander une équipe"
         }
+    },
+    "SubcontractorForm": {
+        "page_title": "Devenir sous-traitant — inscrivez votre équipe",
+        "page_subtitle": "Remplissez ce formulaire et nous ajouterons votre équipe à notre réseau de sous-traitants présélectionnés. Vos données vont directement à notre recruteur.",
+        "form_title": "Inscription sous-traitant",
+        "form_subtitle": "Comptez environ 2 minutes.",
+        "name": "Prénom",
+        "name_ph": "Ex. Denys",
+        "specialization": "Spécialisation",
+        "specialization_ph": "Ex. maçon, plâtrier, façadier...",
+        "legal_status": "Documents / droit de travailler en Belgique",
+        "car_and_tools": "Véhicule et outillage",
+        "location": "Ville actuelle",
+        "location_ph": "Ex. Anvers",
+        "rate": "Tarif souhaité",
+        "rate_ph": "Ex. 22 €/h ou 18 €/m²",
+        "phone": "Téléphone (WhatsApp)",
+        "phone_ph": "+32 465 811031",
+        "languages": "Langues sur le chantier",
+        "languages_ph": "Ex. polonais, néerlandais de base",
+        "team_size": "Seul ou en équipe ?",
+        "availability": "Quand pouvez-vous commencer ?",
+        "photos": "Photos de votre travail (optionnel, max. 3)",
+        "photos_hint": "Choisissez des photos de projets récents (JPG/PNG).",
+        "submit": "Envoyer l'inscription",
+        "submitting": "Envoi en cours...",
+        "success_title": "Merci pour votre inscription !",
+        "success_text": "Notre recruteur examine votre profil et vous contactera dès qu'un projet correspond.",
+        "error_title": "Une erreur s'est produite",
+        "error_text": "Réessayez ou contactez-nous via WhatsApp.",
+        "required_hint": "obligatoire",
+        "legal_status_options": [
+            {
+                "value": "EU-paspoort (EU-land)",
+                "label": "Passeport UE (pays UE)"
+            },
+            {
+                "value": "Belgische kaart A",
+                "label": "Carte A belge"
+            },
+            {
+                "value": "A1-detachering (buitenlandse firma)",
+                "label": "Détachement A1 (entreprise étrangère)"
+            },
+            {
+                "value": "Eigen BV / firma (TVA actief)",
+                "label": "BV / firme propre (TVA active)"
+            },
+            {
+                "value": "Anders / nog te bevestigen",
+                "label": "Autre / à confirmer"
+            }
+        ],
+        "car_and_tools_options": [
+            {
+                "value": "Eigen vervoer + eigen handgereedschap",
+                "label": "Véhicule propre + outillage propre"
+            },
+            {
+                "value": "Eigen vervoer, beperkt gereedschap",
+                "label": "Véhicule propre, outillage limité"
+            },
+            {
+                "value": "Geen eigen vervoer",
+                "label": "Pas de véhicule propre"
+            }
+        ],
+        "team_size_options": [
+            {
+                "value": "Ik werk alleen (zzp)",
+                "label": "Je travaille seul (indépendant)"
+            },
+            {
+                "value": "Ploeg van 2-3 man",
+                "label": "Équipe de 2-3 personnes"
+            },
+            {
+                "value": "Ploeg van 4-6 man",
+                "label": "Équipe de 4-6 personnes"
+            },
+            {
+                "value": "Ploeg van 7+ man",
+                "label": "Équipe de 7+ personnes"
+            }
+        ],
+        "availability_options": [
+            {
+                "value": "Per direct beschikbaar",
+                "label": "Disponible immédiatement"
+            },
+            {
+                "value": "Vanaf binnen 1 week",
+                "label": "Sous 1 semaine"
+            },
+            {
+                "value": "Vanaf binnen 2-4 weken",
+                "label": "Sous 2-4 semaines"
+            },
+            {
+                "value": "Later (datum volgt)",
+                "label": "Plus tard (date à confirmer)"
+            }
+        ],
+        "specialization_suggestions": [
+            "Maçon",
+            "Plâtrier",
+            "Carreleur / Solier",
+            "Coffreur",
+            "Ferralleur",
+            "Peintre",
+            "Plaquiste",
+            "Couvreur",
+            "Façadier",
+            "Menuisier",
+            "Électricien",
+            "Plombier",
+            "Technicien CVC",
+            "Solier",
+            "Finitions intérieures",
+            "Ouvrier polyvalent",
+            "Chef d'équipe"
+        ]
     }
 }
