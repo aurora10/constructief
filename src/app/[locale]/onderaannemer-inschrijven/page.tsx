@@ -33,11 +33,7 @@ export default async function SubcontractorIntakePage({
     return (
         <div className="flex flex-col min-h-screen">
             <PageHeader title={t('page_title')} subtitle={t('page_subtitle')} />
-            <section className="py-14 px-4 md:px-8 bg-white dark:bg-neutral-950">
-                <div className="container">
-                    <SubcontractorForm />
-                </div>
-            </section>
+            <SubcontractorForm />
         </div>
     );
 }
