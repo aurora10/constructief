@@ -943,25 +943,6 @@
                 "value": "Later (datum volgt)",
                 "label": "Plus tard (date à confirmer)"
             }
-        ],
-        "specialization_suggestions": [
-            "Maçon",
-            "Plâtrier",
-            "Carreleur / Solier",
-            "Coffreur",
-            "Ferralleur",
-            "Peintre",
-            "Plaquiste",
-            "Couvreur",
-            "Façadier",
-            "Menuisier",
-            "Électricien",
-            "Plombier",
-            "Technicien CVC",
-            "Solier",
-            "Finitions intérieures",
-            "Ouvrier polyvalent",
-            "Chef d'équipe"
         ]
     }
 }

@@ -80,7 +80,6 @@ export function SubcontractorForm() {
     const carOptions = (t.raw("car_and_tools_options") as { value: string; label: string }[]) ?? [];
     const teamOptions = (t.raw("team_size_options") as { value: string; label: string }[]) ?? [];
     const availabilityOptions = (t.raw("availability_options") as { value: string; label: string }[]) ?? [];
-    const suggestions = (t.raw("specialization_suggestions") as string[]) ?? [];
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -182,13 +181,8 @@ export function SubcontractorForm() {
                         <div className="space-y-1">
                             <label className={labelCls}>{t("specialization")}</label>
                             <Field icon={<Wrench className={iconCls} />}>
-                                <input name="specialization" type="text" list="subcontractor-trades" className={inputCls} placeholder={t("specialization_ph")} />
+                                <input name="specialization" type="text" className={inputCls} placeholder={t("specialization_ph")} />
                             </Field>
-                            <datalist id="subcontractor-trades">
-                                {suggestions.map((s) => (
-                                    <option key={s} value={s} />
-                                ))}
-                            </datalist>
                         </div>
 
                         <div className="space-y-1">

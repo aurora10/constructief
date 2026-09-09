@@ -939,25 +939,6 @@
                 "value": "Later (datum volgt)",
                 "label": "Later (datum volgt)"
             }
-        ],
-        "specialization_suggestions": [
-            "Metser",
-            "Stukadoor",
-            "Tegelzetter / Vloerder",
-            "Bekister",
-            "Ijzervlechter",
-            "Schilder",
-            "Gyproc plaatser",
-            "Dakwerker",
-            "Gevelwerker",
-            "Schrijnwerker",
-            "Elektricien",
-            "Loodgieter",
-            "HVAC Technieker",
-            "Vloerder",
-            "Binnenafwerking",
-            "Allround bouwvakker",
-            "Ploegbaas"
         ]
     }
 }
