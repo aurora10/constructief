@@ -1,0 +1,68 @@
+import type { Article } from '../types';
+
+export const article: Article = {
+    slug: 'a1-limosa-check-hoofdaannemer',
+    title: 'A1 en Limosa: wat u als hoofdaannemer moet checken vóór een ploeg start',
+    description:
+        'Praktische checklist voor Belgische aannemers: welke documenten vraagt u op bij een buitenlandse onderaannemer, en hoe voorkomt u dat u zelf aansprakelijk wordt bij een controle.',
+    date: '2026-08-12',
+    updated: '2026-08-18',
+    author: 'Constructief',
+    authorIsOrganization: true,
+    category: 'Compliance',
+    keywords: ['A1 verklaring', 'Limosa melding', 'Checkinatwork', 'detachering bouw'],
+    readingMinutes: 6,
+    blocks: [
+        { type: 'p', text: 'Buitenlandse bouwploegen zijn een normale realiteit op Belgische werven. Wat niet normaal mag worden, is dat de administratie pas in orde komt nadat de sociale inspectie is langsgekomen. Als hoofdaannemer bent u mee verantwoordelijk voor wat er op uw werf gebeurt — ook voor de papieren van de ploegen die u inhuurt.' },
+        { type: 'p', text: 'Deze checklist behandelt de drie documenten die het vaakst ontbreken of fout zijn: de A1-verklaring, de Limosa-melding en de Checkinatwork-registratie.' },
+        { type: 'h2', text: 'A1: bewijs van toepasselijke sociale zekerheid' },
+        { type: 'p', text: 'Een A1-verklaring (voorheen E101) bevestigt welke sociale zekerheidswetgeving van toepassing is op een werknemer die tijdelijk in een ander EU-land werkt. Voor een gedetacheerde werknemer betekent dit in de regel dat hij in zijn thuisland sociaal verzekerd blijft.' },
+        { type: 'ul', items: [
+            'Vraag een A1 per individuele werknemer, niet één document voor de hele ploeg.',
+            'Controleer of de naam, geboortedatum en het nummer overeenkomen met het identiteitsbewijs.',
+            'Let op de geldigheidsduur: een verlopen A1 is geen geldige A1.',
+            'Bewaar een kopie per werknemer zolang het werk duurt, plus de gebruikelijke bewaartermijn.',
+        ] },
+        { type: 'p', text: 'Een A1 die niet klopt, wordt bij controle behandeld als een ontbrekende A1. Een verkeerd document is even problematisch als geen document.' },
+        { type: 'h2', text: 'Limosa: verplichte melding vóór de start' },
+        { type: 'p', text: 'Limosa is de Belgische meldingsplicht voor detachering en voor zelfstandigen die tijdelijk in België komen werken. De melding moet gebeuren vóór de werkzaamheden aanvangen, en de gegevens moeten kloppen: welke klant, welke werf, welke periode en welke personen.' },
+        { type: 'ul', items: [
+            'Vraag het Limosa-meldingsnummer op vóór de eerste werkdag.',
+            'Controleer of de opgegeven werf en periode overeenkomen met de realiteit.',
+            'Laat tussentijdse wijzigingen (verlenging, extra mensen) opnieuw melden.',
+            'Bewaar een schermafbeelding of PDF van de melding, niet alleen het nummer.',
+        ] },
+        { type: 'p', text: 'Een melding die na de start wordt gedaan, of die een andere werf vermeldt, geeft bij een inspectie geen dekking. Dit is een van de meest voorkomende vaststellingen op grotere werven.' },
+        { type: 'h2', text: 'Checkinatwork: registratie op de werf zelf' },
+        { type: 'p', text: 'Op Belgische bouwwerven met een registratieverplichting moet iedere aanwezige — ook onderaannemers en zelfstandigen — dagelijks in- en uitchecken. De registratie is geen formaliteit: bij een bezoek vergelijkt de inspectie de aanwezige personen met de registratie en met de opgevraagde attesten.' },
+        { type: 'ul', items: [
+            'Leg afspraken vast over wie de dagelijkse registratie doet.',
+            'Controleer of nieuwkomers in de ploeg effectief geregistreerd worden.',
+            'Zorg dat de registratie ook klopt bij ploegen die later op de dag starten of vroeger stoppen.',
+        ] },
+        { type: 'h2', text: 'Wat u als hoofdaannemer zelf in huis moet hebben' },
+        { type: 'p', text: 'Uw eigen dossier moet even sterk zijn als dat van uw onderaannemer. Zorg dat u per ingehuurde ploeg een map kunt tonen met de opgevraagde documenten, de contractuele afspraken en het bewijs dat u heeft gecontroleerd. Wie kan aantonen dat hij zijn zorgvuldigheidsverplichting is nagekomen, staat juridisch oneindig veel sterker dan wie zegt dat de onderaannemer het zou regelen.' },
+        { type: 'quote', text: 'Uitbesteden betekent niet dat u de verantwoordelijkheid uitbesteedt.' },
+        { type: 'h2', text: 'Praktische werkwijze die werkt' },
+        { type: 'ul', items: [
+            'Vraag het documentenpakket op bij de offerte, niet bij de start.',
+            'Maak een standaard documentenlijst die u bij elke nieuwe ploeg opnieuw gebruikt.',
+            'Keur de ploeg pas goed als de documenten compleet zijn — niet andersom.',
+            'Herhaal de controle bij elke wijziging in de ploegsamenstelling.',
+        ] },
+        { type: 'p', text: 'Deze regels kosten u een kwartier per ploeg en voorkomen discussies die oplopen tot duizenden euro\'s en een tijdelijk stilgelegde werf. Vertrouw op de documenten, niet op de belofte dat ze er "morgen wel zijn".' },
+        { type: 'h2', text: 'Tot slot' },
+        { type: 'p', text: 'Compliance is geen rem op snelheid; het is de voorwaarde om snel te kunnen blijven werken. Wie standaard met controleerbare, wettelijk in orde zijnde ploegen werkt, verliest geen tijd aan een inspectie en houdt zijn planning overeind.' },
+    ],
+    related: [
+        { label: 'Onderaannemer bouw inhuren: waar u op moet letten', href: '/nieuws/onderaannemer-bouw-inhuren' },
+        { label: 'Zwartwerk op de werf vermijden: checklist', href: '/nieuws/zwartwerk-vermijden-checklist' },
+        { label: 'Gescreende bouwploegen voor aannemers', href: '/werkgevers' },
+    ],
+    cta: {
+        title: 'Legale ploegen, zonder papierwerk voor u',
+        text: 'Wij regelen A1-verklaringen, Limosa-meldingen en Checkinatwork voor elke ploeg die wij leveren.',
+        label: 'Bekijk onze aanpak voor aannemers',
+        href: '/werkgevers',
+    },
+};

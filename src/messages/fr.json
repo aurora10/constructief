@@ -184,47 +184,9 @@
         "read_more": "Lire la suite",
         "back_to_news": "Retour aux actualités",
         "share": "Partager",
-        "articles": {
-            "1": {
-                "title": "L'avenir de la construction durable",
-                "date": "15 Jan 2026",
-                "author": "Jan Janssens",
-                "category": "Innovation",
-                "excerpt": "Découvrez les dernières tendances et technologies qui transforment le secteur de la construction vers un avenir plus vert.",
-                "content_p1": "Le secteur de la construction est à l'aube d'une révolution. Là où la rapidité et l'efficacité des coûts primaient autrefois, nous observons maintenant un changement fondamental vers la durabilité et la circularité. Cette transition n'est pas seulement un choix éthique, mais aussi une nécessité économique.",
-                "content_p2": "La construction modulaire en bois gagne rapidement du terrain en Belgique. Grâce à la préfabrication dans des conditions contrôlées, nous pouvons produire jusqu'à 70% de déchets de construction en moins. De plus, le bois agit comme un stockage naturel de CO2 : chaque mètre cube de bois stocke 900 kg de CO2. Cela rend les constructions en bois non seulement neutres pour le climat, mais même positives pour le climat.",
-                "content_h2": "La Révolution Circulaire",
-                "content_p3": "Le concept de « bâtiments comme banques de matériaux » transforme notre façon de concevoir. Les architectes et ingénieurs intègrent désormais des plans de démontage dans leurs conceptions, afin que les matériaux puissent être facilement réutilisés à la fin de la durée de vie d'un bâtiment. Le béton est broyé et recyclé, l'acier trouve une nouvelle vie, et même les plaques de plâtre retrouvent le chemin de nouveaux projets.",
-                "content_p4": "Pour les artisans, cela signifie de nouvelles opportunités. La demande de spécialistes en construction bois, rénovation et démolition soignée explose. Ceux qui se forment maintenant aux techniques de construction durable se positionnent pour une carrière florissante dans les décennies à venir.",
-                "content_p5": "Chez Constructief, nous voyons ces tendances quotidiennement. De plus en plus de nos entreprises partenaires demandent spécifiquement des artisans ayant de l'expérience dans les méthodes durables. L'avenir de la construction est vert, et cet avenir commence aujourd'hui."
-            },
-            "2": {
-                "title": "Sécurité sur le chantier : conseils pratiques",
-                "date": "10 Jan 2026",
-                "author": "Marie Peeters",
-                "category": "Sécurité",
-                "excerpt": "Des conseils pratiques pour garantir la sécurité sur le chantier et prévenir les accidents.",
-                "content_p1": "Chaque année, des milliers d'accidents du travail surviennent dans le secteur de la construction en Belgique. Beaucoup de ces accidents sont évitables avec les bonnes connaissances, le bon équipement et la vigilance. En tant qu'artisan, la sécurité n'est pas seulement votre droit, mais aussi votre responsabilité.",
-                "content_p2": "Les équipements de protection individuelle (EPI) constituent la première ligne de défense. Un bon casque de sécurité, des chaussures à embout d'acier, une protection auditive et des lunettes de sécurité ne sont pas des accessoires mais des outils essentiels. Vérifiez quotidiennement vos EPI pour détecter les dommages et remplacez-les en cas de doute. Un casque tombé n'offre plus la même protection.",
-                "content_h2": "Les Cinq Règles d'Or",
-                "content_p3": "Premièrement : connaissez votre environnement. Faites chaque matin un tour du chantier et identifiez les dangers potentiels. Deuxièmement : communiquez. Une réunion de sécurité de cinq minutes peut sauver des vies. Troisièmement : ne travaillez jamais seul en hauteur ou dans des espaces confinés. Quatrièmement : prenez des pauses. La fatigue est l'un des plus grands facteurs de risque. Cinquièmement : osez dire non aux situations dangereuses.",
-                "content_p4": "Le travail en hauteur reste l'activité la plus dangereuse sur le chantier. Assurez-vous toujours d'avoir des échafaudages stables, utilisez des harnais de sécurité pour les travaux au-dessus de 2 mètres, et vérifiez la stabilité des échelles. Une chute de quelques mètres seulement peut avoir des conséquences fatales.",
-                "content_p5": "Chez Constructief, nous vérifions non seulement le savoir-faire, mais aussi la conscience de la sécurité. Nos partenaires savent qu'ils reçoivent des artisans qui non seulement font du bon travail, mais le font aussi en toute sécurité. Car en fin de compte, tout le monde veut rentrer chez soi en bonne santé."
-            },
-            "3": {
-                "title": "Nouvelle réglementation 2026",
-                "date": "05 Jan 2026",
-                "author": "Peter Maes",
-                "category": "Législation",
-                "excerpt": "Un aperçu des principaux changements législatifs pour le secteur de la construction en 2026.",
-                "content_p1": "La nouvelle année apporte des changements importants pour le secteur belge de la construction. Des normes énergétiques plus strictes aux nouvelles règles sur le détachement : il est crucial de rester informé. Nous avons rassemblé pour vous les changements les plus importants.",
-                "content_p2": "La réglementation PEB (Performance Énergétique des Bâtiments) est encore renforcée. Les nouvelles habitations doivent désormais répondre au niveau Q-ZEN (Quasi Zéro Énergie) à partir de 2026. Cela signifie plus d'isolation, une meilleure étanchéité à l'air et l'intégration obligatoire de sources d'énergie renouvelables. Pour les artisans en isolation, HVAC et panneaux solaires, cela ouvre de nouveaux marchés.",
-                "content_h2": "Détachement et Droit du Travail",
-                "content_p3": "Les règles concernant le détachement des travailleurs étrangers sont plus strictement appliquées. La déclaration Limosa doit désormais être effectuée 24 heures avant le début des travaux. Les contrôles sur les chantiers augmentent et les amendes pour infractions ont doublé. Les employeurs sont tenus de fournir les fiches de paie dans la langue du travailleur.",
-                "content_p4": "Beaucoup de choses changent également dans le domaine de la coordination de sécurité. Le seuil de nomination obligatoire d'un coordinateur de sécurité a été abaissé. Même les petits chantiers nécessitent désormais un plan de sécurité formel. Cela crée une demande de coordinateurs spécialisés et élève les normes sur tous les chantiers.",
-                "content_p5": "Vous avez des questions sur l'impact de cette réglementation sur vous ou votre entreprise ? Contactez Constructief. Nous vous aiderons à naviguer dans le paysage changeant du secteur belge de la construction."
-            }
-        }
+        "min_read": "min de lecture",
+        "related_title": "À lire aussi",
+        "updated_label": "Mis à jour"
     },
     "ContactPage": {
         "title": "Parlons-en",

@@ -1,13 +1,19 @@
 import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { jobs } from '@/data/vacancies';
-import { articleIds } from '@/data/news';
+import { getArticles } from '@/content/nieuws';
 import { citiesData, flagshipCitySlugs, indexedCitySlugs } from '@/data/cities';
 import { flagshipTrades } from '@/data/cityContent';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://constructief-bouw.be';
     const locales = routing.locales;
+
+    /** Never let one malformed date break the whole sitemap. */
+    const safeDate = (value?: string): Date => {
+        const d = value ? new Date(value) : new Date();
+        return Number.isNaN(d.getTime()) ? new Date() : d;
+    };
 
     const staticPages = [
         '',
@@ -95,13 +101,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         }
 
-        // News article pages
-        for (const articleId of articleIds) {
+        // News / insights articles (slug URLs, real lastmod per article)
+        for (const article of getArticles(locale)) {
             sitemapEntries.push({
-                url: `${baseUrl}/${locale}/nieuws/${articleId}`,
-                lastModified: new Date(),
-                changeFrequency: 'weekly',
-                priority: 0.8,
+                url: `${baseUrl}/${locale}/nieuws/${article.slug}`,
+                lastModified: safeDate(article.updated || article.date),
+                changeFrequency: 'monthly',
+                priority: 0.7,
             });
         }
     }
