@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { getArticles } from '@/content/nieuws';
+import { heroImage } from '@/content/nieuws/media';
 import { ArticleImage } from '@/components/news/ArticleImage';
 
 const BASE_URL = 'https://constructief-bouw.be';
@@ -29,11 +30,6 @@ export async function generateMetadata({
                 : { nl: `${BASE_URL}/nl/nieuws`, fr: `${BASE_URL}/fr/nieuws`, 'x-default': `${BASE_URL}/nl/nieuws` },
         },
     };
-}
-
-function imageFor(slug: string, legacyIds?: string[]): string | null {
-    const numeric = legacyIds?.[0];
-    return numeric ? `/images/news/article-${numeric}.png` : null;
 }
 
 function formatDate(iso: string): string {
@@ -75,7 +71,7 @@ export default async function NewsPage({
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {articles.map((article) => {
-                            const image = article.image ?? imageFor(article.slug, article.legacyIds);
+                            const image = heroImage(article);
                             return (
                                 <div key={article.slug} className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col">
                                     <ArticleImage src={image} alt={article.title} category={article.category} variant="card" />

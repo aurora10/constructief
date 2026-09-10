@@ -11,7 +11,7 @@ export const article: Article = {
     category: 'Compliance',
     keywords: ['A1 verklaring 2026', 'digitaal A1', 'ESSPASS', 'detachering Oost-Europa', 'posted workers'],
     readingMinutes: 7,
-    image: '/images/news/a1-digitaal-2026-nieuwe-eu-afspraken.png',
+    image: '/images/news/a1-digitaal-2026.webp',
     blocks: [
         { type: 'p', text: 'Voor een hoofdaannemer met een Poolse, Roemeense of Slowaakse ploeg op de werf is de A1-verklaring het belangrijkste document in het hele dossier. Het bewijst dat de werknemer in zijn thuisland sociaal verzekerd blijft terwijl hij tijdelijk in België werkt. Zolang die verklaring klopt, is er niets aan de hand. Klopt ze niet, dan is het niet de ploeg die het probleem heeft — het is uw werf.' },
         { type: 'p', text: 'Precies daarom is het relevant dat er op twee fronten beweging zit: de Europese coördinatieregels voor detachering worden herzien, en de A1-verklaring wordt gedigitaliseerd. Hieronder wat er speelt en wat u er vandaag mee moet doen.' },

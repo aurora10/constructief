@@ -11,7 +11,7 @@ export const article: Article = {
     category: 'Risico & compliance',
     keywords: ['ketenaansprakelijkheid 2026', 'zorgvuldigheidsplicht bouw', 'onderaanneming aansprakelijkheid', 'schijnconstructies'],
     readingMinutes: 7,
-    image: '/images/news/ketenaansprakelijkheid-2026-zorgvuldigheidsplicht.png',
+    image: '/images/news/ketenaansprakelijkheid-2026.webp',
     blocks: [
         { type: 'p', text: 'Jarenlang was de boodschap aan hoofdaannemers: controleer uw onderaannemers. Nieuw is dat die verwachting in een aantal landen en regio\'s verschuift van een morele plicht naar een wettelijke zorgvuldigheidsplicht: u moet niet alleen controleren, u moet kunnen aantonen dát u gecontroleerd heeft.' },
         { type: 'p', text: 'Dat verschil lijkt klein, maar het verandert alles aan hoe u met onderaannemers werkt. Een contractclausule waarin de onderaannemer verklaart alles in orde te hebben, is geen zorgvuldigheid. Een dossier per ploeg is dat wel.' },

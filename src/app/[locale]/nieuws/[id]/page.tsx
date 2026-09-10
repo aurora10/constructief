@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, User, Share2, Clock, ChevronRight, Home, ArrowRight } from 'lucide-react';
 import { getArticle, getArticles, findSlugByLegacyId } from '@/content/nieuws';
+import { heroImage, ogImage } from '@/content/nieuws/media';
 import { ArticleImage } from '@/components/news/ArticleImage';
 import type { ArticleBlock } from '@/content/nieuws';
 
@@ -14,12 +15,6 @@ type Props = {
 };
 
 const BASE_URL = 'https://constructief-bouw.be';
-
-/** Fallback image for the migrated posts (article-1/2/3.png). */
-function imageFor(slug: string, legacyIds?: string[]): string | null {
-    const numeric = legacyIds?.[0];
-    return numeric ? `/images/news/article-${numeric}.png` : null;
-}
 
 function formatDate(iso: string): string {
     const d = new Date(iso);
@@ -58,7 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         languages.fr = `${BASE_URL}/fr/nieuws/${article.slug}`;
     }
 
-    const image = article.image ?? imageFor(article.slug, article.legacyIds);
+    const image = heroImage(article);
+    const og = ogImage(article);
 
     return {
         title: `${article.title} | Constructief`,
@@ -75,12 +71,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             publishedTime: article.date,
             modifiedTime: article.updated || article.date,
             authors: [article.author],
-            ...(image ? { images: [{ url: `${BASE_URL}${image}` }] } : {}),
+            ...(og ? { images: [{ url: `${BASE_URL}${og}` }] } : {}),
         },
         twitter: {
             card: 'summary_large_image',
             title: article.title,
             description: article.description,
+            ...(og ? { images: [`${BASE_URL}${og}`] } : {}),
         },
     };
 }
@@ -124,7 +121,7 @@ export default async function NewsDetailPage({ params }: Props) {
     const tNav = await getTranslations({ locale, namespace: 'Navigation' });
 
     const canonical = `${BASE_URL}/${locale}/nieuws/${article.slug}`;
-    const image = article.image ?? imageFor(article.slug, article.legacyIds);
+    const image = heroImage(article);
 
     const blogPostingJsonLd = {
         '@context': 'https://schema.org',

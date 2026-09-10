@@ -12,7 +12,7 @@ export const article: Article = {
     category: 'Risico & compliance',
     keywords: ['zwartwerk bouw', 'illegale tewerkstelling', 'controle onderaannemer'],
     readingMinutes: 6,
-    image: '/images/news/zwartwerk-vermijden-checklist.png',
+    image: '/images/news/zwartwerk-vermijden-checklist.webp',
     blocks: [
         { type: 'p', text: 'Illegale tewerkstelling op een bouwwerf is zelden het werk van één persoon. Ze ontstaat meestal in een keten: een hoofdaannemer die onder tijdsdruk een ploeg aanneemt, een tussenpartij die de administratie "regelt", en een ploeg die effectief op de werf staat zonder dat iemand de documenten echt heeft gecontroleerd.' },
         { type: 'p', text: 'De gevolgen komen terecht bij de partij die het minst heeft gecontroleerd. Daarom is verificatie geen bureaucratie maar risicobeheer.' },
