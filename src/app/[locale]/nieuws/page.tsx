@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { getArticles } from '@/content/nieuws';
+import { ArticleImage } from '@/components/news/ArticleImage';
 
 const BASE_URL = 'https://constructief-bouw.be';
 
@@ -74,20 +75,10 @@ export default async function NewsPage({
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {articles.map((article) => {
-                            const image = imageFor(article.slug, article.legacyIds);
+                            const image = article.image ?? imageFor(article.slug, article.legacyIds);
                             return (
                                 <div key={article.slug} className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col">
-                                    {image ? (
-                                        <div className="h-48 bg-neutral-200 overflow-hidden">
-                                            <img src={image} alt={article.title} className="w-full h-full object-cover" />
-                                        </div>
-                                    ) : (
-                                        <div className="h-48 bg-gradient-to-br from-[#0a0f1a] via-[#10233f] to-[#1d4ed8] flex items-center justify-center">
-                                            <span className="text-white/80 font-semibold tracking-wide uppercase text-xs px-6 text-center">
-                                                {article.category}
-                                            </span>
-                                        </div>
-                                    )}
+                                    <ArticleImage src={image} alt={article.title} category={article.category} variant="card" />
                                     <div className="p-6 flex flex-col flex-1">
                                         <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 mb-4">
                                             <span className="bg-primary/10 text-primary px-2 py-1 rounded">

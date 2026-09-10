@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, User, Share2, Clock, ChevronRight, Home, ArrowRight } from 'lucide-react';
 import { getArticle, getArticles, findSlugByLegacyId } from '@/content/nieuws';
+import { ArticleImage } from '@/components/news/ArticleImage';
 import type { ArticleBlock } from '@/content/nieuws';
 
 type Props = {
@@ -57,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         languages.fr = `${BASE_URL}/fr/nieuws/${article.slug}`;
     }
 
-    const image = imageFor(article.slug, article.legacyIds);
+    const image = article.image ?? imageFor(article.slug, article.legacyIds);
 
     return {
         title: `${article.title} | Constructief`,
@@ -123,7 +124,7 @@ export default async function NewsDetailPage({ params }: Props) {
     const tNav = await getTranslations({ locale, namespace: 'Navigation' });
 
     const canonical = `${BASE_URL}/${locale}/nieuws/${article.slug}`;
-    const image = imageFor(article.slug, article.legacyIds);
+    const image = article.image ?? imageFor(article.slug, article.legacyIds);
 
     const blogPostingJsonLd = {
         '@context': 'https://schema.org',
@@ -213,17 +214,7 @@ export default async function NewsDetailPage({ params }: Props) {
                             )}
                         </div>
 
-                        {image ? (
-                            <div className="h-64 bg-neutral-200 rounded-xl mb-12 overflow-hidden">
-                                <img src={image} alt={article.title} className="w-full h-full object-cover" />
-                            </div>
-                        ) : (
-                            <div className="h-40 rounded-xl mb-12 bg-gradient-to-br from-[#0a0f1a] via-[#10233f] to-[#1d4ed8] flex items-center justify-center">
-                                <span className="text-white/80 font-semibold tracking-wide uppercase text-sm px-6 text-center">
-                                    {article.category}
-                                </span>
-                            </div>
-                        )}
+                        <ArticleImage src={image} alt={article.title} category={article.category} variant="hero" />
 
                         <div className="space-y-6 text-lg text-neutral-700 leading-relaxed">
                             {article.blocks.map((block, i) => (

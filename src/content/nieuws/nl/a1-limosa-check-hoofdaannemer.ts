@@ -12,6 +12,7 @@ export const article: Article = {
     category: 'Compliance',
     keywords: ['A1 verklaring', 'Limosa melding', 'Checkinatwork', 'detachering bouw'],
     readingMinutes: 6,
+    image: '/images/news/a1-limosa-check-hoofdaannemer.png',
     blocks: [
         { type: 'p', text: 'Buitenlandse bouwploegen zijn een normale realiteit op Belgische werven. Wat niet normaal mag worden, is dat de administratie pas in orde komt nadat de sociale inspectie is langsgekomen. Als hoofdaannemer bent u mee verantwoordelijk voor wat er op uw werf gebeurt — ook voor de papieren van de ploegen die u inhuurt.' },
         { type: 'p', text: 'Deze checklist behandelt de drie documenten die het vaakst ontbreken of fout zijn: de A1-verklaring, de Limosa-melding en de Checkinatwork-registratie.' },

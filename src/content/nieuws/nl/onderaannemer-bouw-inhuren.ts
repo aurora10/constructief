@@ -12,6 +12,7 @@ export const article: Article = {
     category: 'Inkoop & compliance',
     keywords: ['onderaannemer bouw inhuren', 'bouwploeg inhuren', 'onderaanneming checklist'],
     readingMinutes: 7,
+    image: '/images/news/onderaannemer-bouw-inhuren.png',
     blocks: [
         { type: 'p', text: 'Een onderaannemer inschakelen lijkt een simpele inkoopbeslissing: u heeft capaciteit nodig, iemand levert mensen, de werf loopt door. In de praktijk bepaalt de manier waarop u die ploeg selecteert of u aan het einde van het project winst maakt of een juridisch dossier rijker bent. Deze gids zet op een rij waar hoofdaannemers in België en Nederland het vaakst op vastlopen.' },
         { type: 'h2', text: '1. Bepaal eerst welk type samenwerking u nodig heeft' },

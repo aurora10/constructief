@@ -42,6 +42,8 @@ export interface Article {
     category: string;
     keywords?: string[];
     readingMinutes: number;
+    /** Public path of the hero/OG image, e.g. "/images/news/{slug}.png" */
+    image?: string;
     blocks: ArticleBlock[];
     /** Internal links to money pages / related articles */
     related?: ArticleLink[];

@@ -7,9 +7,13 @@ import { article as onderaannemerInhuren } from './onderaannemer-bouw-inhuren';
 import { article as a1Limosa } from './a1-limosa-check-hoofdaannemer';
 import { article as kostenPloeg } from './kosten-bouwploeg-per-uur';
 import { article as zwartwerk } from './zwartwerk-vermijden-checklist';
+import { article as a1Digitaal } from './a1-digitaal-2026-nieuwe-eu-afspraken';
+import { article as ketenaansprakelijkheid } from './ketenaansprakelijkheid-2026-zorgvuldigheidsplicht';
 
 // Newest first
 export const articles: Article[] = [
+    ketenaansprakelijkheid,
+    a1Digitaal,
     zwartwerk,
     kostenPloeg,
     a1Limosa,

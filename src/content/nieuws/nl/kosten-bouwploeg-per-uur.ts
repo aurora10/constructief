@@ -12,6 +12,7 @@ export const article: Article = {
     category: 'Kosten & planning',
     keywords: ['bouwploeg prijs', 'uurtarief bouwploeg', 'kostprijs onderaannemer'],
     readingMinutes: 6,
+    image: '/images/news/kosten-bouwploeg-per-uur.png',
     blocks: [
         { type: 'p', text: 'Twee offertes voor "een ploeg van vier" kunnen er identiek uitzien en toch een verschil van tienduizenden euro\'s op uw project betekenen. Het verschil zit zelden in het uurtarief dat bovenaan staat, maar in wat er wel en niet in dat tarief zit — en in wat er gebeurt als de omstandigheden veranderen.' },
         { type: 'h2', text: 'Waar een all-in uurprijs uit bestaat' },
