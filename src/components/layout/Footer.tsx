@@ -100,6 +100,20 @@ export function Footer() {
                     </ul>
                 </div>
 
+                <div className="mt-8 pt-8 border-t">
+                    <h4 className="font-semibold mb-4 text-sm">{t("for_subcontractors")}</h4>
+                    <ul className="text-sm">
+                        <li>
+                            <Link
+                                href="/onderaannemer-inschrijven"
+                                className="font-semibold text-primary hover:underline transition-colors"
+                            >
+                                {t("subcontractor_signup")}
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
                 <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
                     <p>&copy; {currentYear} Constructief. {t("rights")}</p>
                 </div>

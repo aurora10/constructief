@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/nieuws',
         '/contact',
         '/privacy',
+        '/onderaannemer-inschrijven',
     ];
 
     const sitemapEntries: MetadataRoute.Sitemap = [];

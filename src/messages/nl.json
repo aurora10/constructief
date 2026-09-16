@@ -267,7 +267,9 @@
         "regions": "Regio's",
         "view_all_regions": "Bekijk alle regio's →",
         "social": "Volg ons",
-        "rights": "Alle rechten voorbehouden."
+        "rights": "Alle rechten voorbehouden.",
+        "for_subcontractors": "Voor onderaannemers",
+        "subcontractor_signup": "Schrijf je in als onderaannemer"
     },
     "CandidateForm": {
         "title": "Direct Inschrijven",
@@ -901,6 +903,61 @@
                 "value": "Later (datum volgt)",
                 "label": "Later (datum volgt)"
             }
-        ]
+        ],
+        "content": {
+            "heading": "Onderaannemer worden bij Constructief",
+            "intro": "Constructief is een Belgisch bedrijf dat gescreende bouwploegen levert aan hoofdaannemers in België en Nederland. Wij werken met ploegen uit Oost-Europa: metselaars, betonwerkers, stukadoors, gevelwerkers, dakwerkers en afwerkers. Inschrijven is gratis — u betaalt niets; onze vergoeding wordt door de opdrachtgever betaald.",
+            "benefits_heading": "Wat u krijgt",
+            "benefits": [
+                "Rechtstreekse opdrachten van hoofdaannemers — zonder tussenpersonen.",
+                "Wij regelen A1, Limosa en Checkinatwork.",
+                "Het tarief is bekend vóór u start op de werf.",
+                "Eén vast aanspreekpunt dat uw taal spreekt.",
+                "Werk voor langere periodes, niet voor één dag."
+            ],
+            "docs_heading": "Welke documenten hebt u nodig",
+            "docs": [
+                "Geldig paspoort of ID.",
+                "A1 — voor werknemers uit de EU.",
+                "Voor niet-EU: wettige verblijfsstatus en recht op werk.",
+                "Limosa-melding (wij helpen bij de aanvraag).",
+                "IBAN-bankrekeningnummer voor uitbetaling."
+            ],
+            "process_heading": "Hoe de selectie verloopt",
+            "process": [
+                "U vult het formulier hieronder in (± 2 minuten).",
+                "Wij contacteren u via WhatsApp en bespreken ervaring, ploeg en tarief.",
+                "Wij controleren de documenten en zoeken een passende werf.",
+                "U start op de werf; de eerste twee weken zijn een testperiode.",
+                "Als het klikt, werken we verder op vaste basis."
+            ],
+            "faq_heading": "Veelgestelde vragen",
+            "faq": [
+                {
+                    "q": "Moet ik betalen om in te schrijven?",
+                    "a": "Nee. Inschrijven en matching zijn gratis. Onze vergoeding wordt door de opdrachtgever betaald, niet door u."
+                },
+                {
+                    "q": "Wat zijn A1 en Limosa en wie regelt die?",
+                    "a": "A1 bewijst dat u sociale bijdragen in uw EU-land betaalt. Limosa is de verplichte melding voor werk in België. Wij zeggen welke documenten nodig zijn en helpen bij Limosa."
+                },
+                {
+                    "q": "Kan ik werken zonder de taal te kennen?",
+                    "a": "Ja. Op de werf volstaat basis-Nederlands of Engels, en u hebt contact met een begeleider die uw taal spreekt."
+                },
+                {
+                    "q": "Hoeveel verdien ik?",
+                    "a": "Het tarief hangt af van uw specialiteit en de werf. U kent het tarief vóór u start."
+                },
+                {
+                    "q": "Ik werk alleen — kom ik in aanmerking?",
+                    "a": "Ja. Wij plaatsen zowel losse specialisten als volledige ploegen met ploegbaas."
+                },
+                {
+                    "q": "Waar kan ik wonen tijdens het werk?",
+                    "a": "Wij helpen bij het vinden van huisvesting bij de werf. De kosten bespreken we vooraf."
+                }
+            ]
+        }
     }
 }

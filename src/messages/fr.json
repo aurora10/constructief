@@ -267,7 +267,9 @@
         "regions": "Régions",
         "view_all_regions": "Voir toutes les régions →",
         "social": "Suivez-nous",
-        "rights": "Tous droits réservés."
+        "rights": "Tous droits réservés.",
+        "for_subcontractors": "Pour les sous-traitants",
+        "subcontractor_signup": "Inscrivez-vous comme sous-traitant"
     },
     "CandidateForm": {
         "title": "Inscription Directe",
@@ -905,6 +907,61 @@
                 "value": "Later (datum volgt)",
                 "label": "Plus tard (date à confirmer)"
             }
-        ]
+        ],
+        "content": {
+            "heading": "Devenir sous-traitant chez Constructief",
+            "intro": "Constructief est une entreprise belge qui fournit des équipes de construction contrôlées aux entrepreneurs généraux en Belgique et aux Pays-Bas. Nous travaillons avec des équipes d'Europe de l'Est : maçons, bétonneurs, plafonneurs, façadiers, couvreurs et finisseurs. L'inscription est gratuite — vous ne payez rien ; notre rémunération est payée par le donneur d'ordre.",
+            "benefits_heading": "Ce que vous obtenez",
+            "benefits": [
+                "Des commandes directes d'entrepreneurs généraux — sans intermédiaires.",
+                "Nous gérons A1, Limosa et Checkinatwork.",
+                "Le tarif est connu avant votre début sur chantier.",
+                "Un interlocuteur unique qui parle votre langue.",
+                "Du travail sur de longues périodes, pas pour une seule journée."
+            ],
+            "docs_heading": "Quels documents faut-il",
+            "docs": [
+                "Passeport ou carte d'identité valable.",
+                "A1 — pour les travailleurs de l'UE.",
+                "Hors UE : statut de séjour légal et droit de travail.",
+                "Notification Limosa (nous vous aidons à la faire).",
+                "Numéro de compte bancaire (IBAN) pour les paiements."
+            ],
+            "process_heading": "Comment se déroule la sélection",
+            "process": [
+                "Vous remplissez le formulaire ci-dessous (± 2 minutes).",
+                "Nous vous contactons via WhatsApp et discutons expérience, équipe et tarif.",
+                "Nous vérifions les documents et cherchons un chantier adapté.",
+                "Vous démarrez sur chantier ; les deux premières semaines sont une période d'essai.",
+                "Si cela convient, nous continuons sur une base régulière."
+            ],
+            "faq_heading": "Questions fréquentes",
+            "faq": [
+                {
+                    "q": "Dois-je payer pour m'inscrire ?",
+                    "a": "Non. L'inscription et la mise en relation sont gratuites. Notre rémunération est payée par le donneur d'ordre, pas par vous."
+                },
+                {
+                    "q": "Que sont A1 et Limosa et qui s'en occupe ?",
+                    "a": "A1 prouve que vous payez vos cotisations sociales dans votre pays de l'UE. Limosa est la notification obligatoire pour travailler en Belgique. Nous vous indiquons les documents nécessaires et vous aidons pour Limosa."
+                },
+                {
+                    "q": "Puis-je travailler sans connaître la langue ?",
+                    "a": "Oui. Sur chantier, un néerlandais ou un anglais de base suffit, et vous avez un contact qui parle votre langue."
+                },
+                {
+                    "q": "Combien vais-je gagner ?",
+                    "a": "Le tarif dépend de votre spécialité et du chantier. Vous connaissez le tarif avant de commencer."
+                },
+                {
+                    "q": "Je travaille seul — suis-je éligible ?",
+                    "a": "Oui. Nous plaçons aussi bien des spécialistes seuls que des équipes complètes avec chef d'équipe."
+                },
+                {
+                    "q": "Où loger pendant le travail ?",
+                    "a": "Nous vous aidons à trouver un logement près du chantier. Les coûts sont discutés à l'avance."
+                }
+            ]
+        }
     }
 }
