@@ -90,10 +90,16 @@ export default async function RootLayout({
       "Limosa",
       "Checkinatwork"
     ],
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Aankoop en calculatieafdelingen van grote bouwbedrijven en hoofdaannemers"
-    }
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Aankoop- en calculatieafdelingen van hoofdaannemers en grote bouwbedrijven (opdrachtgevers die onderaannemers en bouwploegen inhuren)"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Vakmensen, zelfstandigen en bouwploegen die werk zoeken in België of Nederland (inclusief Nederlandstalige, Franstalige en Russischtalige kandidaten)"
+      }
+    ]
   };
 
   return (
