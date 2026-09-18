@@ -5,6 +5,7 @@ import { EmployerUSP } from '@/components/sections/EmployerUSP';
 import { WerkgeversLink } from '@/components/sections/WerkgeversLink';
 import { CheckCircle2, ChevronRight, Home, Layers, Wrench } from 'lucide-react';
 import type { CityData } from '@/data/cities';
+import { tradeSchema } from '@/data/cityContent';
 
 export async function TradeCityLanding({
   trade,
@@ -28,8 +29,41 @@ export async function TradeCityLanding({
   const ctaButton = tT(`${trade}.cta_button`);
   const features = (tT.raw(`${trade}.features`) as string[]) ?? [];
 
+  // Structured data: a Service (we supply these crews) + breadcrumb trail.
+  const canonical = `https://constructief-bouw.be/${locale}/diensten/onderaannemer-${trade}-${city.slug}`;
+  const schemaInfo = tradeSchema[trade];
+
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${label} ${city.name}`,
+    serviceType: schemaInfo?.serviceType ?? label,
+    description: intro,
+    url: canonical,
+    provider: { '@id': 'https://constructief-bouw.be/#organization' },
+    areaServed: [
+      { '@type': 'City', name: city.name },
+      { '@type': 'AdministrativeArea', name: city.province },
+    ],
+    availableLanguage: ['nl', 'fr', 'ru'],
+    ...(schemaInfo?.additionalType ? { additionalType: `https://schema.org/${schemaInfo.additionalType}` } : {}),
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: tNav('home'), item: `https://constructief-bouw.be/${locale}` },
+      { '@type': 'ListItem', position: 2, name: tNav('regions'), item: `https://constructief-bouw.be/${locale}/diensten` },
+      { '@type': 'ListItem', position: 3, name: `${label} ${city.name}`, item: canonical },
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
       {/* Breadcrumb */}
       <nav aria-label={tNav('home')} className="container py-4 text-sm text-muted-foreground">
         <ol className="flex flex-wrap items-center gap-1.5">

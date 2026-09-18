@@ -54,20 +54,41 @@ export default async function RootLayout({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": ["EmploymentAgency", "Organization"],
+    "@type": ["EmploymentAgency", "Organization", "ProfessionalService"],
+    "@id": "https://constructief-bouw.be/#organization",
     "name": "Constructief",
+    "alternateName": "Constructief Bouw",
     "url": "https://constructief-bouw.be",
+    "logo": "https://constructief-bouw.be/icon",
     "description": t('description'),
-    "areaServed": {
-      "@type": "Country",
-      "name": "Belgium",
-      "alternateName": "BE"
-    },
+    "areaServed": [
+      { "@type": "Country", "name": "Belgium", "alternateName": "BE" },
+      { "@type": "Country", "name": "Netherlands", "alternateName": "NL" }
+    ],
+    "availableLanguage": ["nl", "fr", "ru"],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+32465811031",
+        "email": "info@constructief.be",
+        "availableLanguage": ["nl", "fr", "ru"],
+        "areaServed": ["BE", "NL"]
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/constructief_bouw/",
+      "https://www.facebook.com/profile.php?id=61591572760518"
+    ],
     "knowsAbout": [
       "Construction Subcontractors",
       "General Contractors",
       "Bouwpersoneel",
-      "Hoofdaannemers"
+      "Onderaanneming",
+      "Detachering bouwpersoneel",
+      "A1-verklaring",
+      "Limosa",
+      "Checkinatwork"
     ],
     "audience": {
       "@type": "Audience",

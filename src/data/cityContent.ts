@@ -61,6 +61,32 @@ export function getNearbyCities(slug: string): string[] {
 // deliver ready teams (per the strategy: don't mass-generate thin pages).
 export const flagshipTrades = ['gevel', 'renovatie', 'beton', 'dak', 'ruwbouw', 'interieur'];
 
+/**
+ * Schema.org mapping for trade+city pages.
+ *
+ * These pages describe the CREWS WE SUPPLY, not work we execute ourselves, so the
+ * page is typed as a `Service` (provider = our organization). Where an exact
+ * Schema.org subtype exists for the trade, it is attached as `additionalType`
+ * for specificity — without claiming we ARE that kind of contractor.
+ *
+ * Subtypes that exist: dak → RoofingContractor, renovatie → GeneralContractor.
+ * (For future trades: schilder → HousePainter, elektricien → Electrician,
+ * loodgieter → Plumber, hvac → HVACBusiness.)
+ */
+export interface TradeSchemaInfo {
+  serviceType: string;
+  additionalType?: string;
+}
+
+export const tradeSchema: Record<string, TradeSchemaInfo> = {
+  gevel: { serviceType: 'Gevelrenovatie en gevelisolatie' },
+  renovatie: { serviceType: 'Algemene renovatie van woningen', additionalType: 'GeneralContractor' },
+  beton: { serviceType: 'Betonwerk, funderingen en bekisting' },
+  dak: { serviceType: 'Dakwerken (plat en hellend)', additionalType: 'RoofingContractor' },
+  ruwbouw: { serviceType: 'Ruwbouw, metselwerk en bekisting' },
+  interieur: { serviceType: 'Interieurafwerking en afbouw' },
+};
+
 export function parseDienstenSlug(slug: string): { trade?: string; city: string | null } {
   const rest = slug.replace(/^onderaannemer-/, '');
   const parts = rest.split('-');
