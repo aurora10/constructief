@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/layout/PageHeader';
+import { selfCanonicalWithDefault } from '@/lib/seo';
 import { EmployerUSP } from '@/components/sections/EmployerUSP';
 import { Services } from '@/components/sections/Services';
 import { TrustSignals } from '@/components/sections/TrustSignals';
@@ -29,9 +30,7 @@ export async function generateMetadata({
     return {
         title: t('title'),
         description: t('subtitle'),
-        alternates: {
-            canonical: `${BASE_URL}/fr/sous-traitance-batiment`,
-        },
+        alternates: selfCanonicalWithDefault('fr', '/sous-traitance-batiment'),
     };
 }
 

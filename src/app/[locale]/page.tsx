@@ -3,6 +3,7 @@ import { Link } from '@/i18n/routing';
 import { citiesData, formatCityName } from '@/data/cities';
 import { MapPin, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
+import { pageAlternates } from '@/lib/seo';
 import { Hero } from '@/components/sections/Hero';
 import { ValueProps } from '@/components/sections/ValueProps';
 import { HowItWorks } from '@/components/sections/HowItWorks';
@@ -15,12 +16,7 @@ import { TrustSignals } from '@/components/sections/TrustSignals';
 // worker-intent RU pages into the B2B Dutch pages.
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    const canonical = `https://constructief-bouw.be/${locale}`;
-    const alternates: Metadata['alternates'] = { canonical };
-    if (locale === 'ru') {
-        alternates.languages = { 'x-default': canonical };
-    }
-    return { alternates };
+    return { alternates: pageAlternates(locale, '') };
 }
 
 // A curated subset of the highest-value city pages. Linking to them from the

@@ -1,4 +1,4 @@
-import { targetCities, citiesData, formatCityName, flagshipCitySlugs, type CityData } from '@/data/cities';
+import { targetCities, citiesData, formatCityName, flagshipCitySlugs, indexedCitySlugs, type CityData } from '@/data/cities';
 import { getNearbyCities, parseDienstenSlug, flagshipTrades } from '@/data/cityContent';
 import { getTranslations, setRequestLocale, getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -79,10 +79,19 @@ export async function generateMetadata({
   const baseUrl = 'https://constructief-bouw.be';
   const canonical = `${baseUrl}/${locale}/diensten/${slug}`;
 
-  const isLocaleIndexed = locale !== 'ru';
+  // Indexability:
+  //  - ru pages are never indexed (their content duplicates the indexed B2B pages).
+  //  - city-only pages are indexable ONLY for the promoted city set
+  //    (indexedCitySlugs). The remaining city pages stay reachable but are
+  //    noindexed, so Google stops choosing its own canonical between dozens of
+  //    near-identical templates ("Duplicate, Google chose different canonical
+  //    than user").
+  const isCityOnlyPage = Boolean(cityData && !trade);
+  const isIndexable =
+    locale !== 'ru' && (!isCityOnlyPage || indexedCitySlugs.includes(cityData!.slug));
 
   const languages: Record<string, string> = {};
-  if (isLocaleIndexed) {
+  if (isIndexable) {
     languages.nl = `${baseUrl}/nl/diensten/${slug}`;
     languages.fr = `${baseUrl}/fr/diensten/${slug}`;
     languages['x-default'] = `${baseUrl}/nl/diensten/${slug}`;
@@ -119,7 +128,7 @@ export async function generateMetadata({
       canonical,
       languages,
     },
-    robots: isLocaleIndexed
+    robots: isIndexable
       ? { index: true, follow: true }
       : { index: false, follow: true },
     openGraph: {

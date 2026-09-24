@@ -5,17 +5,13 @@ import { FeaturedJobs } from '@/components/sections/FeaturedJobs';
 import { CandidateForm } from '@/components/forms/CandidateForm';
 import { WorkerFaqSection } from '@/components/sections/WorkerFaqSection';
 import type { Metadata } from 'next';
+import { pageAlternates } from '@/lib/seo';
 
 // Self-referencing canonical; RU worker cluster gets x-default → self (standalone),
 // never collapsed into the B2B Dutch pages.
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    const canonical = `https://constructief-bouw.be/${locale}/kandidaten`;
-    const alternates: Metadata['alternates'] = { canonical };
-    if (locale === 'ru') {
-        alternates.languages = { 'x-default': canonical };
-    }
-    return { alternates };
+    return { alternates: pageAlternates(locale, '/kandidaten') };
 }
 
 export default function CandidatesPage() {

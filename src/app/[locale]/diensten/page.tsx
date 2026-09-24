@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { citiesData } from '@/data/cities';
+import { pageAlternates } from '@/lib/seo';
 import { flagshipTrades } from '@/data/cityContent';
 import { MapPin, ArrowRight, Wrench } from 'lucide-react';
 import { PageHeader } from '@/components/layout/PageHeader';
@@ -16,14 +17,7 @@ export async function generateMetadata({
   return {
     title: `${t('regions')} | Constructief`,
     description: "Vind betrouwbare onderaannemers en bouwpersoneel in uw regio.",
-    alternates: {
-      canonical: `https://constructief-bouw.be/${locale}/diensten`,
-      languages: {
-        nl: `https://constructief-bouw.be/nl/diensten`,
-        fr: `https://constructief-bouw.be/fr/diensten`,
-        ru: `https://constructief-bouw.be/ru/diensten`,
-      },
-    },
+    alternates: pageAlternates(locale, '/diensten'),
   };
 }
 

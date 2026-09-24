@@ -6,6 +6,14 @@ import { TrustSignals } from '@/components/sections/TrustSignals';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { EmployerForm } from '@/components/forms/EmployerForm';
 
+import type { Metadata } from 'next';
+import { pageAlternates } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    return { alternates: pageAlternates(locale, '/werkgevers') };
+}
+
 export default function EmployersPage() {
     const t = useTranslations('EmployersPage');
 
