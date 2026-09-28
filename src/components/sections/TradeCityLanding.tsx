@@ -1,5 +1,6 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale, getMessages } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
+import { routing } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { EmployerUSP } from '@/components/sections/EmployerUSP';
 import { WerkgeversLink } from '@/components/sections/WerkgeversLink';
@@ -28,6 +29,19 @@ export async function TradeCityLanding({
   const ctaDesc = tT(`${trade}.cta_desc`, { city: city.name });
   const ctaButton = tT(`${trade}.cta_button`);
   const features = (tT.raw(`${trade}.features`) as string[]) ?? [];
+
+  // Unique LOCAL copy per city (CitiesSeo + CityRegio). Without this, every
+  // trade+city page is the same trade copy with only {city} swapped — which is
+  // why Google reported them as "Discovered - currently not indexed"
+  // (near-duplicate). This makes each page genuinely distinct.
+  const tSeo = await getTranslations({ locale, namespace: 'CitiesSeo' });
+  const messages = await getMessages({ locale });
+  const nlMessages = await getMessages({ locale: routing.defaultLocale });
+  const cityDescription = tSeo(city.slug);
+  const cityContext =
+    (messages as any)?.['CityRegio']?.[city.slug]?.context ??
+    (nlMessages as any)?.['CityRegio']?.[city.slug]?.context ??
+    '';
 
   // Structured data: a Service (we supply these crews) + breadcrumb trail.
   const canonical = `https://constructief-bouw.be/${locale}/diensten/onderaannemer-${trade}-${city.slug}`;
@@ -138,6 +152,24 @@ export async function TradeCityLanding({
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Unique LOCAL context per city — differentiates this page from its
+          sibling trade/city pages (fixes the near-duplicate indexing problem). */}
+      <section className="py-16 px-4 md:px-8 bg-neutral-50 dark:bg-neutral-900/50">
+        <div className="container max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+            {label} in {city.name}
+          </h2>
+          <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            {cityDescription}
+          </p>
+          {cityContext && (
+            <p className="mt-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              {cityContext}
+            </p>
+          )}
         </div>
       </section>
 
