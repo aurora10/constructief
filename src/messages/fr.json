@@ -963,5 +963,43 @@
                 }
             ]
         }
+    },
+    "TradeCity": {
+        "beton": {
+            "antwerpen": "À Anvers, les chantiers portuaires, logistiques et résidentiels soutiennent la demande en coffreurs, ferrailleurs et finisseurs de béton. Constructief fournit des équipes présélectionnées en sous-traitance bâtiment, avec A1, Limosa et Checkinatwork gérés et une période d’essai de 14 jours.",
+            "gent": "À Gand, la rénovation de sites industriels, les projets résidentiels et les aménagements urbains nécessitent des profils expérimentés en coffrage, ferraillage et coulage de béton. Vous obtenez un sous-traitant construction adapté au chantier, sans piles de CV et avec une rémunération au résultat.",
+            "leuven": "À Louvain, les projets de logements, de bâtiments universitaires et d’infrastructures de soins créent des besoins réguliers en équipes de béton capables de travailler sur des sites occupés ou contraints. Notre solution de detachering bouwpersoneel repose sur des professionnels présélectionnés et des formalités légales gérées.",
+            "brussel": "À Bruxelles, les immeubles mixtes, les rénovations lourdes et les chantiers d’infrastructure demandent des coffreurs, ferrailleurs et opérateurs de béton habitués aux accès limités et aux plannings coordonnés. Constructief fournit des équipes légales et contrôlées en sous-traitance bâtiment, avec 14 jours d’essai et paiement au résultat."
+        },
+        "dak": {
+            "antwerpen": "À Anvers, la rénovation de maisons mitoyennes et l’entretien des toitures de bâtiments logistiques créent une demande pour des couvreurs, zingueurs et étancheurs. Constructief vous fournit un onderaannemer dakwerken présélectionné, avec A1, Limosa et Checkinatwork gérés ainsi qu’une période d’essai de 14 jours.",
+            "gent": "À Gand, les rénovations du bâti ancien et les nouveaux ensembles résidentiels nécessitent des profils capables de travailler sur des toitures inclinées, des plateformes et des raccords de zinguerie. Vous recevez une équipe légale et contrôlée, sans piles de CV, avec une rémunération au résultat.",
+            "leuven": "À Louvain, la rénovation de maisons, d’immeubles à appartements et de bâtiments liés au secteur universitaire soutient la demande en couvreurs polyvalents et spécialistes de l’isolation. Constructief trouve votre sous-traitant toiture présélectionné et prend en charge les formalités A1, Limosa et Checkinatwork.",
+            "brussel": "À Bruxelles, la rénovation d’immeubles à appartements, de bureaux et de maisons de rangée exige surtout des étancheurs pour toitures plates, des zingueurs et des spécialistes de l’isolation. Nous vous proposons une équipe contrôlée avec une période d’essai de 14 jours, sans recrutement sur CV et avec paiement au résultat."
+        },
+        "gevel": {
+            "antwerpen": "À Anvers, la rénovation d’immeubles urbains, d’entrepôts et de bâtiments portuaires crée une demande régulière en équipes de façade capables de poser isolation, crépi ou bardage. Constructief fournit un onderaannemer bouw avec du personnel contrôlé, y compris des poolse arbeiders bouw en règle, et gère les formalités A1, Limosa et Checkinatwork.",
+            "gent": "À Gand, les rénovations énergétiques de maisons de rangée et la construction de logements collectifs nécessitent des façadiers expérimentés en isolation extérieure, rejointoiement et finitions. Notre formule de detachering bouwpersoneel vous donne accès à une équipe présélectionnée, avec une période d’essai de 14 jours et sans piles de CV.",
+            "leuven": "À Louvain, la rénovation du bâti résidentiel et des bâtiments liés aux activités universitaires soutient la demande en profils maîtrisant l’isolation de façade, l’enduit et la maçonnerie de parement. Constructief organise la sous-traitance bâtiment avec des équipes légales et une rémunération au résultat.",
+            "brussel": "À Bruxelles, les rénovations de façades d’immeubles mitoyens, de bureaux et de logements collectifs exigent des équipes capables de travailler dans des sites occupés et des espaces urbains contraints. Comme sous-traitant construction, chaque équipe est contrôlée en amont, tandis que les obligations A1, Limosa et Checkinatwork sont gérées par Constructief."
+        },
+        "interieur": {
+            "antwerpen": "À Anvers, la rénovation d’appartements, d’immeubles anciens et d’espaces logistiques crée une demande régulière en plafonneurs, enduiseurs et poseurs de cloisons. Constructief vous met en relation avec un onderaannemer bouw présélectionné, avec A1, Limosa et Checkinatwork gérés et une période d’essai de 14 jours.",
+            "gent": "À Gand, les rénovations de maisons de ville, les logements collectifs et les transformations de bureaux nécessitent des équipes capables d’assurer plafonnage, cloisons et finitions soignées. Pour vos recherches de poolse arbeiders bouw, Constructief propose des équipes légales et vérifiées, sans piles de CV et avec une rémunération au résultat.",
+            "leuven": "À Louvain, les appartements, les bâtiments universitaires et les infrastructures de soins demandent des profils expérimentés en enduits, faux plafonds et finitions techniques. Notre formule de detachering bouwpersoneel vous donne accès à des équipes présélectionnées, avec les formalités A1, Limosa et Checkinatwork prises en charge.",
+            "brussel": "À Bruxelles, la rénovation d’immeubles résidentiels, la reconversion de bureaux et les chantiers à contraintes d’accès soutiennent la demande en plâtrerie et finition. Constructief vous trouve un sous-traitant construction adapté à votre planning, avec une période d’essai de 14 jours et une rémunération au résultat."
+        },
+        "renovatie": {
+            "antwerpen": "À Anvers, la rénovation d’immeubles de rapport, de maisons de ville et de bâtiments commerciaux demande notamment des maçons, plafonneurs et menuisiers. Constructief fournit aux entrepreneurs en rénovation des équipes contrôlées, avec une période d’essai de 14 jours et les formalités A1, Limosa et Checkinatwork gérées.",
+            "gent": "À Gand, les rénovations de maisons mitoyennes, de logements étudiants et de bâtiments à usage mixte mobilisent des profils polyvalents, capables d’intervenir dans des espaces contraints. Vous recevez une équipe présélectionnée plutôt que des piles de CV, et notre rémunération dépend du résultat.",
+            "leuven": "À Louvain, la demande est portée par la remise à niveau de logements compacts, de résidences étudiantes et de bâtiments éducatifs ou de soins. Nous trouvons pour les maîtres d’œuvre des équipes légales de peintres, carreleurs, plafonneurs et poseurs de cloisons, avec A1, Limosa et Checkinatwork en ordre.",
+            "brussel": "À Bruxelles, la rénovation d’appartements, de bureaux transformés et de façades anciennes exige des équipes habituées aux chantiers urbains et aux bâtiments occupés. Constructief accompagne chaque entrepreneur en rénovation avec du personnel contrôlé, une période d’essai de 14 jours et une rémunération au résultat."
+        },
+        "ruwbouw": {
+            "antwerpen": "À Anvers, les projets logistiques, les immeubles résidentiels et la rénovation de bâtiments urbains soutiennent la demande en équipes de gros œuvre. Constructief fournit aux entrepreneurs généraux des coffreurs, ferrailleurs et maçons présélectionnés, avec période d’essai de 14 jours et formalités A1, Limosa et Checkinatwork gérées.",
+            "gent": "À Gand, la reconversion de sites industriels, les projets résidentiels et les bâtiments le long des axes portuaires nécessitent des équipes de gros œuvre polyvalentes. Vous recevez des profils contrôlés pour le coffrage, le ferraillage et la maçonnerie, sans piles de CV et avec une rémunération au résultat.",
+            "leuven": "À Louvain, les logements collectifs, les bâtiments universitaires et les espaces de recherche créent des besoins en coffreurs, maçons et ferrailleurs capables de travailler sur des chantiers urbains contraints. Constructief propose des équipes légales présélectionnées, avec une période d’essai de 14 jours.",
+            "brussel": "À Bruxelles, la rénovation lourde d’immeubles, les projets mixtes et les constructions sur des parcelles denses demandent des équipes expérimentées en structures en béton, sous-sols et maçonnerie. Constructief gère la sélection ainsi que les documents A1, Limosa et Checkinatwork pour les entrepreneurs généraux."
+        }
     }
 }

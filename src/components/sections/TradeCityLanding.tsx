@@ -34,10 +34,22 @@ export async function TradeCityLanding({
   // trade+city page is the same trade copy with only {city} swapped — which is
   // why Google reported them as "Discovered - currently not indexed"
   // (near-duplicate). This makes each page genuinely distinct.
-  const tSeo = await getTranslations({ locale, namespace: 'CitiesSeo' });
   const messages = await getMessages({ locale });
   const nlMessages = await getMessages({ locale: routing.defaultLocale });
-  const cityDescription = tSeo(city.slug);
+
+  // Same defensive read as the per-trade copy below. Base-trade pages pass a
+  // SYNTHETIC city slug ("belgie") that has no CitiesSeo entry in any locale, so
+  // t('belgie') used to throw MISSING_MESSAGE and break those pages for ru.
+  const cityDescription =
+    (messages as Record<string, any>)?.CitiesSeo?.[city.slug] ??
+    (nlMessages as Record<string, any>)?.CitiesSeo?.[city.slug] ??
+    '';
+
+  // Per-trade-per-city copy. Read straight from the message tree (instead of
+  // t(`${trade}.${city.slug}`)) so a locale without generated TradeCity content
+  // degrades gracefully rather than throwing a MISSING_MESSAGE render error.
+  const tradeCityText =
+    (messages as Record<string, any>)?.TradeCity?.[trade]?.[city.slug] ?? null;
   const cityContext =
     (messages as any)?.['CityRegio']?.[city.slug]?.context ??
     (nlMessages as any)?.['CityRegio']?.[city.slug]?.context ??
@@ -162,9 +174,16 @@ export async function TradeCityLanding({
           <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
             {label} in {city.name}
           </h2>
-          <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            {cityDescription}
-          </p>
+          {tradeCityText && (
+            <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              {tradeCityText}
+            </p>
+          )}
+          {cityDescription && (
+            <p className="mt-4 text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              {cityDescription}
+            </p>
+          )}
           {cityContext && (
             <p className="mt-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
               {cityContext}

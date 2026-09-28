@@ -959,5 +959,43 @@
                 }
             ]
         }
+    },
+    "TradeCity": {
+        "beton": {
+            "antwerpen": "In Antwerpen zorgen havengebouwen, logistieke hallen en stedelijke appartementsbouw voor vraag naar bekisters, ijzervlechters en stortploegen. Als onderaannemer bouw krijgt u persoonlijk gescreende vakmensen, met A1, Limosa en Checkinatwork volledig geregeld.",
+            "gent": "In Gent vragen stadsvernieuwing, appartementsprojecten en werken rond kades om ervaren bekisters en ijzervlechters die op compacte werven kunnen werken. U test de voorgestelde ploeg 14 dagen en ontvangt geen stapels cv's.",
+            "leuven": "In Leuven creëren studentenhuisvesting, zorggebouwen en onderzoeksomgevingen vraag naar nauwkeurige ruwbouwploegen voor funderingen, wanden en vloerplaten. Voor detachering bouwpersoneel selecteren wij vakmensen persoonlijk en koppelen wij onze vergoeding aan het resultaat.",
+            "brussel": "In Brussel stimuleren appartementsbouw, kantoortransformaties en ondergrondse constructies de vraag naar bekisters, ijzervlechters en stortploegen. Wij leveren vooraf gescreende ploegen aan de onderaannemer bouw, met de vereiste A1-documenten, Limosa-aangifte en Checkinatwork in orde."
+        },
+        "dak": {
+            "antwerpen": "In Antwerpen zorgen renovaties van rijwoningen, appartementsgebouwen en industriële panden in de havenzone voor vraag naar ervaren dakwerkers. Constructief levert een persoonlijk gescreende onderaannemer dakwerken voor platte en hellende constructies, met A1, Limosa en Checkinatwork geregeld.",
+            "gent": "Gent combineert renovaties in de historische binnenstad met nieuwe woonprojecten aan de stadsrand. Daarvoor zijn ploegen nodig die ervaring hebben met hellende constructies, isolatie en renovatiewerken in een beperkte werfomgeving.",
+            "leuven": "In Leuven komt de vraag vooral uit renovaties van studentenhuisvesting, rijwoningen en appartementsgebouwen. U krijgt geen stapels cv's, maar een persoonlijk gescreende onderaannemer dakwerken die u eerst gedurende 14 dagen kunt testen.",
+            "brussel": "Brussel kent veel renovaties van appartementsgebouwen, herenhuizen en platte constructies, vaak op werven met beperkte toegang. Wie een sous-traitant toiture zoekt, krijgt via Constructief een vooraf gescreende ploeg met de vereiste administratie volledig geregeld."
+        },
+        "gevel": {
+            "antwerpen": "In Antwerpen zorgen appartementsrenovaties, pakhuizen en logistieke gebouwen voor vraag naar metselaars, voegers en plaatsers van buitenisolatie. Als onderaannemer bouw leveren wij persoonlijk gescreende vakmensen, met A1, Limosa en Checkinatwork volledig geregeld.",
+            "gent": "In Gent vragen renovaties van historische panden en nieuwe woonprojecten om vaklui voor traditioneel metselwerk, voegwerk en isolatiesystemen. Via detachering bouwpersoneel krijgt u een passende ploeg zonder stapels cv's, met een testperiode van 14 dagen.",
+            "leuven": "In Leuven drijven renovaties van studentenhuisvesting, appartementsgebouwen en compacte stadsprojecten de vraag naar metselaars en isolatieplaatsers. Wij spreken iedere vakman persoonlijk en koppelen onze vergoeding aan het resultaat.",
+            "brussel": "In Brussel vragen de renovatie van kantoren en appartementsgebouwen en de verduurzaming van oudere panden om ploegen voor metselwerk, herstel en buitenisolatie. Wij leveren vooraf gescreende bouwvakkers en regelen A1, Limosa en Checkinatwork volledig."
+        },
+        "interieur": {
+            "antwerpen": "De renovatie van herenwoningen, appartementen en handelspanden in Antwerpen vraagt vakmensen voor gyproc, plafonds, binnenschrijnwerk en maatwerk. Als onderaannemer bouw leveren wij persoonlijk gescreende ploegen, met A1, Limosa en Checkinatwork volledig geregeld.",
+            "gent": "In Gent zorgen renovaties van rijwoningen, studentenkamers en historische panden voor vraag naar ervaren plaatsers van wanden, plafonds, deuren en vaste meubels. U krijgt geen stapels cv’s, maar een voorgestelde ploeg die u tijdens een 14-daagse testperiode op de werf beoordeelt.",
+            "leuven": "De markt in Leuven wordt mee bepaald door renovaties van woningen, studentenhuisvesting, kantoren en zorggebouwen. Voor detachering bouwpersoneel selecteren wij vakmensen die nauwkeurig gyproc, binnenschrijnwerk en afwerking uitvoeren, met een vergoeding gekoppeld aan het resultaat.",
+            "brussel": "In Brussel vragen de renovatie van appartementen, kantoren en handelspanden vaak meertalige ploegen voor wanden, plafonds, deuren en maatwerk. Wie zoekt naar poolse arbeiders bouw krijgt via Constructief een persoonlijk gescreende ploeg met alle wettelijke documenten vooraf geregeld."
+        },
+        "renovatie": {
+            "antwerpen": "Bij de vernieuwing van herenhuizen, appartementen en handelspanden in Antwerpen zijn polyvalente afwerkers, stukadoors en tegelzetters nodig. Constructief levert persoonlijk gescreende ploegen, met A1, Limosa en Checkinatwork volledig geregeld.",
+            "gent": "In Gent zorgen de modernisering van rijwoningen, studentenhuisvesting en oude bedrijfspanden voor vraag naar vakmensen voor afbraak, ruwbouwherstel en binnenafwerking. U test de voorgestelde ploeg gedurende 14 dagen en de vergoeding is gekoppeld aan resultaat.",
+            "leuven": "De vernieuwing van stadswoningen, appartementsgebouwen en panden voor studenten vraagt in Leuven om compacte ploegen die in bewoonde en moeilijk bereikbare gebouwen kunnen werken. Wij spreken iedere vakman persoonlijk, zodat u geen stapels cv's ontvangt.",
+            "brussel": "In Brussel drijven de opwaardering van appartementsgebouwen, kantoren en oudere stadswoningen de vraag naar meertalige ploegen voor totaalwerken en afwerking. Wie zoekt naar een entrepreneur rénovation krijgt via Constructief een persoonlijk gescreende ploeg met alle vereiste documenten geregeld."
+        },
+        "ruwbouw": {
+            "antwerpen": "In Antwerpen zorgen stedelijke appartementsbouw, renovaties en logistieke projecten rond de haven voor vraag naar betonvlechters, bekisters en metselaars. Wij spreken iedere vakman persoonlijk en regelen A1, Limosa en Checkinatwork volledig.",
+            "gent": "In Gent vragen stadsvernieuwing, appartementsbouw en de herbestemming van industriële panden om ervaren ploegen voor funderingen, betonstructuren en metselwerk. U test de geselecteerde vakmensen eerst 14 dagen op de werf.",
+            "leuven": "In Leuven komt de vraag vooral uit compacte woonprojecten, zorggebouwen en gebouwen voor onderwijs en onderzoek. Wij leveren gescreende betonvlechters, bekisters en metselaars zonder stapels cv's, met een vergoeding gekoppeld aan resultaat.",
+            "brussel": "In Brussel creëren appartementsrenovaties, kantoortransformaties en gemengde stadsprojecten behoefte aan flexibele ploegen voor beton- en casco-werken. Wij selecteren iedere vakman persoonlijk en verzorgen alle vereiste documenten voor een conforme inzet."
+        }
     }
 }
