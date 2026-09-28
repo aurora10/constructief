@@ -80,25 +80,36 @@ export async function generateMetadata({
   const canonical = `${baseUrl}/${locale}/diensten/${slug}`;
 
   // Indexability:
-  //  - ru pages are never indexed (their content duplicates the indexed B2B pages).
-  //  - city-only pages are indexable ONLY for the promoted city set
-  //    (indexedCitySlugs). The remaining city pages stay reachable but are
-  //    noindexed, so Google stops choosing its own canonical between dozens of
-  //    near-identical templates ("Duplicate, Google chose different canonical
-  //    than user").
+  //  - TRADE pages (base `onderaannemer-{trade}` and `onderaannemer-{trade}-{city}`)
+  //    are indexable in every locale INCLUDING ru: each one now carries its own
+  //    unique copy per trade and per city (Trades/TradeNation/TradeCity), so the
+  //    near-duplicate reason the ru locale used to be excluded for no longer
+  //    applies.
+  //  - city-only pages (`onderaannemer-{city}`) are indexable ONLY for the
+  //    promoted city set (indexedCitySlugs), and never for ru. The remaining city
+  //    pages stay reachable but noindexed, so Google stops choosing its own
+  //    canonical between dozens of near-identical templates ("Duplicate, Google
+  //    chose different canonical than user").
   const isCityOnlyPage = Boolean(cityData && !trade);
   const isIndexable =
-    locale !== 'ru' && (!isCityOnlyPage || indexedCitySlugs.includes(cityData!.slug));
+    Boolean(trade) ||
+    (locale !== 'ru' && (!isCityOnlyPage || indexedCitySlugs.includes(cityData!.slug)));
+  // hreflang must describe the SAME set of URLs on every locale's copy of a page,
+  // so the ru alternate is only advertised for trade pages (where ru is indexed).
+  const ruIndexable = Boolean(trade);
 
   const languages: Record<string, string> = {};
   if (isIndexable) {
     languages.nl = `${baseUrl}/nl/diensten/${slug}`;
     languages.fr = `${baseUrl}/fr/diensten/${slug}`;
+    if (ruIndexable) {
+      languages.ru = `${baseUrl}/ru/diensten/${slug}`;
+    }
     languages['x-default'] = `${baseUrl}/nl/diensten/${slug}`;
   } else {
-    // The ru pages are intentionally not indexed (noindex). Point the
-    // default/alternate language at the canonical nl version so the ru copy is
-    // clearly a duplicate of a single indexed page rather than a standalone one.
+    // Non-indexed copies (thin city pages, and ru city pages) point the
+    // default/alternate language at the canonical nl version so they read as
+    // duplicates of a single indexed page rather than as standalone pages.
     languages['x-default'] = `${baseUrl}/nl/diensten/${slug}`;
   }
 

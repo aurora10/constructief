@@ -58,28 +58,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
 
         // Trade+city pages (onderaannemer-{trade}-{city}) — only for the trades we
-        // actually deliver, across the flagship cities, and not for ru.
-        if (locale !== 'ru') {
-            for (const city of flagshipCitySlugs) {
-                for (const trade of flagshipTrades) {
-                    sitemapEntries.push({
-                        url: `${baseUrl}/${locale}/diensten/onderaannemer-${trade}-${city}`,
-                        lastModified: new Date(),
-                        changeFrequency: 'weekly',
-                        priority: 0.9,
-                    });
-                }
-            }
-            // Base (nation-wide) trade pages (onderaannemer-{trade}) — the
-            // country-level landing per trade, target for non-city trade queries.
+        // actually deliver, across the flagship cities. Every locale is included,
+        // ru as well: these pages carry unique per-trade-per-city copy
+        // (Trades/TradeNation/TradeCity) in nl, fr and ru, so the near-duplicate
+        // problem that used to keep ru out of the index no longer applies.
+        for (const city of flagshipCitySlugs) {
             for (const trade of flagshipTrades) {
                 sitemapEntries.push({
-                    url: `${baseUrl}/${locale}/diensten/onderaannemer-${trade}`,
+                    url: `${baseUrl}/${locale}/diensten/onderaannemer-${trade}-${city}`,
                     lastModified: new Date(),
                     changeFrequency: 'weekly',
                     priority: 0.9,
                 });
             }
+        }
+        // Base (nation-wide) trade pages (onderaannemer-{trade}) — the
+        // country-level landing per trade, target for non-city trade queries.
+        for (const trade of flagshipTrades) {
+            sitemapEntries.push({
+                url: `${baseUrl}/${locale}/diensten/onderaannemer-${trade}`,
+                lastModified: new Date(),
+                changeFrequency: 'weekly',
+                priority: 0.9,
+            });
         }
 
         // FR "sous-traitance bâtiment" opportunity page (fr only)
