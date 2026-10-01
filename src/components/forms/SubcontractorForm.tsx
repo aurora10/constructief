@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Turnstile } from "@marsidev/react-turnstile";
 import {
     ChevronDown,
     User,
     Phone,
+    Mail,
     Wrench,
     FileCheck2,
     Truck,
@@ -76,6 +77,7 @@ function Field({ icon, children }: { icon: React.ReactNode; children: React.Reac
 
 export function SubcontractorForm() {
     const t = useTranslations("SubcontractorForm");
+    const locale = useLocale();
     const legalOptions = (t.raw("legal_status_options") as { value: string; label: string }[]) ?? [];
     const carOptions = (t.raw("car_and_tools_options") as { value: string; label: string }[]) ?? [];
     const teamOptions = (t.raw("team_size_options") as { value: string; label: string }[]) ?? [];
@@ -83,6 +85,7 @@ export function SubcontractorForm() {
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+    const [sentTo, setSentTo] = useState("");
     const [turnstileToken, setTurnstileToken] = useState<string>(
         process.env.NODE_ENV === "development" ? "dev-bypass" : ""
     );
@@ -119,8 +122,10 @@ export function SubcontractorForm() {
         setStatus("idle");
 
         const formData = new FormData(e.currentTarget);
+        const email = String(formData.get("email") || "").trim();
         const data = {
             candidate_name: formData.get("name"),
+            email,
             specialization: formData.get("specialization"),
             legal_status: formData.get("legal_status"),
             car_and_tools: formData.get("car_and_tools"),
@@ -133,6 +138,7 @@ export function SubcontractorForm() {
             website: formData.get("website"), // honeypot
             photos,
             turnstileToken,
+            locale,
         };
 
         try {
@@ -142,6 +148,7 @@ export function SubcontractorForm() {
                 body: JSON.stringify(data),
             });
             if (!res.ok) throw new Error("Submission failed");
+            setSentTo(email);
             setStatus("success");
             setPhotos([]);
             setTurnstileToken(process.env.NODE_ENV === "development" ? "dev-bypass" : "");
@@ -175,6 +182,21 @@ export function SubcontractorForm() {
                                 <Field icon={<Phone className={iconCls} />}>
                                     <input name="phone" required type="tel" className={inputCls} placeholder={t("phone_ph")} />
                                 </Field>
+                            </div>
+                            <div className="space-y-1">
+                                <label className={labelCls}>{t("email")} *</label>
+                                <Field icon={<Mail className={iconCls} />}>
+                                    <input
+                                        name="email"
+                                        required
+                                        type="email"
+                                        autoComplete="email"
+                                        inputMode="email"
+                                        className={inputCls}
+                                        placeholder={t("email_ph")}
+                                    />
+                                </Field>
+                                <p className="text-xs text-gray-500 mt-1 ml-1">{t("email_hint")}</p>
                             </div>
                         </div>
 
@@ -366,7 +388,14 @@ export function SubcontractorForm() {
 
                         {status === "success" && (
                             <div className="p-4 bg-green-50 border border-green-100 text-green-700 rounded-xl text-center font-medium shadow-sm animate-in fade-in slide-in-from-top-2">
-                                {t("success_title")} {t("success_text")}
+                                <p>
+                                    {t("success_title")} {t("success_text")}
+                                </p>
+                                {sentTo && (
+                                    <p className="mt-2 text-sm font-normal text-green-800">
+                                        {t("success_email_note", { email: sentTo })}
+                                    </p>
+                                )}
                             </div>
                         )}
                         {status === "error" && (
