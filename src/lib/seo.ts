@@ -53,6 +53,37 @@ export function dutchOnlyAlternates(locale: string, path: string): Metadata['alt
     };
 }
 
+/**
+ * Canonical + hreflang for the vacancy cluster (vacancies and trade job pages).
+ *
+ * This is the ONE place where ru is a real alternate of nl, and it is deliberate:
+ * the B2B rule above exists because the Russian trade pages address a different
+ * audience with different content, so declaring them alternates would collapse two
+ * unrelated clusters. A vacancy, by contrast, is the SAME job in two languages —
+ * nl for the Belgian labour market, ru for the crews we recruit in Eastern Europe
+ * (most of whom speak Russian). Those are textbook hreflang pairs.
+ *
+ * fr has no vacancy audience: its pages carry the Dutch copy and are noindexed, so
+ * they get a self-canonical and do not join the cluster.
+ */
+export function vacancyAlternates(locale: string, path: string): Metadata['alternates'] {
+    const normalized = path === '/' ? '' : path;
+    const canonical = `${BASE}/${locale}${normalized}`;
+
+    if (locale === 'fr') {
+        return { canonical, languages: { 'x-default': canonical } };
+    }
+
+    return {
+        canonical,
+        languages: {
+            nl: `${BASE}/nl${normalized}`,
+            ru: `${BASE}/ru${normalized}`,
+            'x-default': `${BASE}/nl${normalized}`,
+        },
+    };
+}
+
 /** Canonical URL only (useful for fr-only pages). */
 export function selfCanonicalWithDefault(locale: string, path: string): Metadata['alternates'] {
     const normalized = path === '/' ? '' : path;

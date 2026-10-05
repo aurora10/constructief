@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
-import { jobTradePages } from '@/data/vacancyTrades';
+import { getTranslations } from 'next-intl/server';
+import { jobTradePages, tradeLinkLabel } from '@/data/vacancyTrades';
 import { jobsByTrade } from '@/data/vacancies';
 
 /**
@@ -12,18 +13,22 @@ import { jobsByTrade } from '@/data/vacancies';
  * would only confuse them. Once the job copy is translated this can be enabled for
  * the other locales as well.
  */
-export function TradeJobLinks({ locale }: { locale: string }) {
-    if (locale !== 'nl') return null;
+export async function TradeJobLinks({ locale }: { locale: string }) {
+    // nl (job seekers in Belgium) and ru (the crews we recruit in Eastern Europe)
+    // are the two languages this cluster serves. fr has no vacancy audience and its
+    // job pages carry the Dutch copy, so we do not send French visitors there.
+    if (locale !== 'nl' && locale !== 'ru') return null;
+
+    const t = await getTranslations({ locale, namespace: 'VacancyUI' });
 
     return (
         <section className="py-16 bg-neutral-50 border-t">
             <div className="container">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900">
-                    Vacatures per vakgebied
+                    {t('trade_pages_title')}
                 </h2>
                 <p className="mt-4 text-lg text-neutral-600 max-w-3xl">
-                    Zoek je werk in een bepaald vak? Bekijk per vakgebied wat het werk inhoudt,
-                    welke attesten gevraagd worden en welke opdrachten op dit moment openstaan.
+                    {t('trade_pages_text')}
                 </p>
 
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -37,12 +42,12 @@ export function TradeJobLinks({ locale }: { locale: string }) {
                             >
                                 <span>
                                     <span className="font-semibold block group-hover:text-primary">
-                                        {trade.linkLabel}
+                                        {tradeLinkLabel(trade, locale)}
                                     </span>
                                     <span className="text-sm text-neutral-500">
                                         {openCount > 0
-                                            ? `${openCount} openstaande opdracht${openCount === 1 ? '' : 'en'}`
-                                            : 'Doorlopend opdrachten in heel België'}
+                                            ? t('openings_count', { count: openCount })
+                                            : t('continuous_work')}
                                     </span>
                                 </span>
                                 <ArrowRight className="h-5 w-5 text-neutral-400 group-hover:text-primary shrink-0" />
@@ -56,7 +61,7 @@ export function TradeJobLinks({ locale }: { locale: string }) {
                         href="/vacatures"
                         className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
                     >
-                        Alle openstaande vacatures bekijken
+                        {t('all_vacancies_link')}
                         <ArrowRight className="h-4 w-4" />
                     </Link>
                 </div>

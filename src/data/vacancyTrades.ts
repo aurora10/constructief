@@ -1,11 +1,52 @@
+import type { JobTradeCopy, JobTradeFaq } from './vacancyTypes';
+import { jobTradeRu } from './vacancyTrades.ru';
+
+/** The trade page content in the reader's language (ru translated, fr falls back to nl). */
+export function tradeCopy(trade: JobTradePage, locale: string): JobTradeCopy {
+    const ru = jobTradeRu[trade.slug];
+    if (locale === 'ru' && ru) {
+        return {
+            h1: ru.h1,
+            metaTitle: ru.metaTitle,
+            metaDescription: ru.metaDescription,
+            intro: ru.intro,
+            tasks: ru.tasks,
+            requirements: ru.requirements,
+            certificates: ru.certificates,
+            offer: ru.offer,
+            faq: ru.faq,
+        };
+    }
+    return {
+        h1: trade.h1,
+        metaTitle: trade.metaTitle,
+        metaDescription: trade.metaDescription,
+        intro: trade.intro,
+        tasks: trade.tasks,
+        requirements: trade.requirements,
+        certificates: trade.certificates,
+        offer: trade.offer,
+        faq: trade.faq,
+    };
+}
+
+/** Short trade name for headings and links, in the reader's language. */
+export function tradeLinkLabel(trade: JobTradePage, locale: string): string {
+    const ru = jobTradeRu[trade.slug];
+    return locale === 'ru' && ru ? ru.linkLabel : trade.linkLabel;
+}
+
 /**
  * Trade job landing pages: /nl/vacatures/{slug}
  *
  * Why these exist: the site's own Search Console data shows the B2B queries
- * ("detachering bouwpersoneel") have almost no volume, while the job-seeker
- * queries (bouwvakker/metselaar/werfleider + vacature) carry the real impressions
- * — at positions 38–44. These pages target exactly those queries, in Dutch, with
+ * ("detachering bouwpersoneel") have almost no volume, while job-seeker queries
+ * carry the real demand at poor positions. These pages target those queries with
  * one page per trade instead of one page per opening.
+ *
+ * Language: the Dutch text below is the source for the nl market. The Russian
+ * version in vacancyTrades.ru.ts serves the crews we recruit in Eastern Europe —
+ * most of them speak Russian — and is the indexed version for /ru.
  *
  * Rules followed here:
  *  - The slug is the word people actually search ("metselaar"), while
@@ -18,10 +59,7 @@
  *    falls back to the registration call to action.
  */
 
-export interface JobTradeFaq {
-    q: string;
-    a: string;
-}
+export type { JobTradeFaq, JobTradeCopy };
 
 export interface JobTradePage {
     /** URL segment under /vacatures. */

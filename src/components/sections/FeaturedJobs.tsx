@@ -1,13 +1,14 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { MapPin, Clock, Euro } from "lucide-react";
-import { jobs as allJobs } from "@/data/vacancies";
+import { jobs as allJobs, jobCopy, jobLocation, jobType, jobSalary } from "@/data/vacancies";
 
 export function FeaturedJobs() {
     const t = useTranslations("FeaturedJobs");
+    const locale = useLocale();
 
     // Source of truth is src/data/vacancies.ts: this block used to carry its own
     // hardcoded copy of the first three jobs, which would silently drift from the
@@ -34,28 +35,31 @@ export function FeaturedJobs() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {jobs.map((job) => (
+                    {jobs.map((job) => {
+                        const copy = jobCopy(job, locale);
+                        return (
                         <div key={job.id} className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
-                            <h3 className="text-xl font-bold mb-4">{job.title}</h3>
+                            <h3 className="text-xl font-bold mb-4">{copy.title}</h3>
                             <div className="space-y-3 text-neutral-600 mb-6">
                                 <div className="flex items-center gap-2">
                                     <MapPin className="h-4 w-4" />
-                                    <span>{job.location}</span>
+                                    <span>{jobLocation(job, locale)}</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Clock className="h-4 w-4" />
-                                    <span>{job.type}</span>
+                                    <span>{jobType(job, locale)}</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Euro className="h-4 w-4" />
-                                    <span>{job.salary}</span>
+                                    <span>{jobSalary(job, locale)}</span>
                                 </div>
                             </div>
                             <Button asChild className="w-full">
                                 <Link href={`/vacatures/${job.id}`}>{t("apply")}</Link>
                             </Button>
                         </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>

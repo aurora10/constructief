@@ -1,10 +1,10 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { jobs } from '@/data/vacancies';
-import { jobTradePages, getJobTradePage } from '@/data/vacancyTrades';
+import { jobs, jobCopy, jobLocation } from '@/data/vacancies';
+import { jobTradePages, getJobTradePage, tradeCopy, tradeLinkLabel } from '@/data/vacancyTrades';
 import { routing } from '@/i18n/routing';
-import { dutchOnlyAlternates } from '@/lib/seo';
+import { vacancyAlternates } from '@/lib/seo';
 import { JobDetail } from '@/components/vacancies/JobDetail';
 import { TradeJobsLanding } from '@/components/vacancies/TradeJobsLanding';
 
@@ -21,10 +21,15 @@ const BASE = 'https://constructief-bouw.be';
  *
  * The flat URL matters for the trade pages: "vacatures metselaar" is the query
  * people type, so the slug sits directly under /vacatures instead of one level
- * deeper. Both cases are Dutch-only copy, so fr/ru resolve but are noindexed.
+ * deeper.
+ *
+ * Languages: nl and ru are both indexed. nl is the Belgian/Dutch job market; ru is
+ * the recruitment market — the crews come from Eastern Europe and most of them
+ * speak Russian, so /ru/vacatures is a full translation, not a fallback. fr has no
+ * vacancy audience and would only duplicate the Dutch copy, so it is noindexed.
  */
 function isIndexable(locale: string) {
-    return locale === 'nl';
+    return locale === 'nl' || locale === 'ru';
 }
 
 export function generateStaticParams() {
@@ -49,14 +54,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // Trade landing page (/vacatures/metselaar)
     const trade = getJobTradePage(id);
     if (trade) {
+        const copy = tradeCopy(trade, locale);
         return {
-            title: trade.metaTitle,
-            description: trade.metaDescription,
-            alternates: dutchOnlyAlternates(locale, `/vacatures/${trade.slug}`),
+            title: copy.metaTitle,
+            description: copy.metaDescription,
+            alternates: vacancyAlternates(locale, `/vacatures/${trade.slug}`),
             robots,
             openGraph: {
-                title: trade.metaTitle,
-                description: trade.metaDescription,
+                title: copy.metaTitle,
+                description: copy.metaDescription,
                 type: 'website',
                 siteName: 'Constructief',
             },
@@ -67,32 +73,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const job = jobs.find(j => j.id === Number(id));
     if (!job) return { title: 'Not Found' };
 
+    const copy = jobCopy(job, locale);
+    const title = `${copy.title} — ${jobLocation(job, locale)} | Constructief`;
+
     return {
-        title: `${job.title} — ${job.location} | Constructief`,
-        description: job.description,
-        alternates: dutchOnlyAlternates(locale, `/vacatures/${id}`),
+        title,
+        description: copy.description,
+        alternates: vacancyAlternates(locale, `/vacatures/${id}`),
         robots,
         openGraph: {
-            title: `${job.title} — ${job.location} | Constructief`,
-            description: job.description,
+            title,
+            description: copy.description,
             type: 'article',
             siteName: 'Constructief',
         },
     };
 }
 
-/** JobPosting.description wants the full posting, not just the teaser. */
-function jobPostingHtml(job: (typeof jobs)[number]) {
+/**
+ * JobPosting.description wants the full posting, not just the teaser. Headings
+ * follow the posting language so Google shows a coherent description.
+ */
+function jobPostingHtml(job: (typeof jobs)[number], locale: string) {
+    const copy = jobCopy(job, locale);
+    const h = locale === 'ru'
+        ? { tasks: 'Что входит в работу', requirements: 'Кого мы ищем', offer: 'Что мы предлагаем' }
+        : { tasks: 'Wat ga je doen', requirements: 'Wie zoeken wij', offer: 'Wat bieden wij' };
+
     const block = (heading: string, items: string[]) =>
         items.length === 0
             ? ''
             : `<h3>${heading}</h3><ul>${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
 
     return [
-        ...job.intro.map((p) => `<p>${p}</p>`),
-        block('Wat ga je doen', job.tasks),
-        block('Wie zoeken wij', job.requirements),
-        block('Wat bieden wij', job.offer),
+        ...copy.intro.map((p) => `<p>${p}</p>`),
+        block(h.tasks, copy.tasks),
+        block(h.requirements, copy.requirements),
+        block(h.offer, copy.offer),
     ]
         .filter(Boolean)
         .join('');
@@ -107,14 +124,16 @@ export default async function VacancyOrTradePage({ params }: Props) {
     if (trade) {
         const canonical = `${BASE}/${locale}/vacatures/${trade.slug}`;
         const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
+        const copy = tradeCopy(trade, locale);
+        const role = tradeLinkLabel(trade, locale);
 
         const pageJsonLd = {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
-            name: trade.h1,
-            description: trade.metaDescription,
+            name: copy.h1,
+            description: copy.metaDescription,
             url: canonical,
-            inLanguage: 'nl-BE',
+            inLanguage: locale === 'ru' ? 'ru' : 'nl-BE',
             isPartOf: { '@type': 'WebSite', name: 'Constructief', url: BASE },
         };
 
@@ -124,7 +143,7 @@ export default async function VacancyOrTradePage({ params }: Props) {
             itemListElement: [
                 { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/${locale}` },
                 { '@type': 'ListItem', position: 2, name: t('title'), item: `${BASE}/${locale}/vacatures` },
-                { '@type': 'ListItem', position: 3, name: trade.linkLabel, item: canonical },
+                { '@type': 'ListItem', position: 3, name: role, item: canonical },
             ],
         };
 
@@ -133,7 +152,7 @@ export default async function VacancyOrTradePage({ params }: Props) {
         const faqJsonLd = {
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: trade.faq.map((item) => ({
+            mainEntity: copy.faq.map((item) => ({
                 '@type': 'Question',
                 name: item.q,
                 acceptedAnswer: { '@type': 'Answer', text: item.a },
@@ -146,12 +165,12 @@ export default async function VacancyOrTradePage({ params }: Props) {
                 ? {
                       '@context': 'https://schema.org',
                       '@type': 'ItemList',
-                      name: `Openstaande vacatures ${trade.linkLabel}`,
+                      name: `${copy.h1}`,
                       numberOfItems: openJobs.length,
                       itemListElement: openJobs.map((job, index) => ({
                           '@type': 'ListItem',
                           position: index + 1,
-                          name: job.title,
+                          name: jobCopy(job, locale).title,
                           url: `${BASE}/${locale}/vacatures/${job.id}`,
                       })),
                   }
@@ -177,7 +196,7 @@ export default async function VacancyOrTradePage({ params }: Props) {
                         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
                     />
                 )}
-                <TradeJobsLanding trade={trade} />
+                <TradeJobsLanding trade={trade} locale={locale} />
             </div>
         );
     }
@@ -232,11 +251,12 @@ export default async function VacancyOrTradePage({ params }: Props) {
     const jsonLd = {
         '@context': 'https://schema.org/',
         '@type': 'JobPosting',
-        title: job.title,
-        description: jobPostingHtml(job),
+        title: jobCopy(job, locale).title,
+        description: jobPostingHtml(job, locale),
         datePosted: job.datePosted,
         validThrough,
         employmentType,
+        inLanguage: locale === 'ru' ? 'ru' : 'nl-BE',
         url: canonical,
         // Forms on this site post straight into our own pipeline — Google can
         // label the result "Direct apply" in the jobs experience.
@@ -277,7 +297,7 @@ export default async function VacancyOrTradePage({ params }: Props) {
         itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/${locale}` },
             { '@type': 'ListItem', position: 2, name: t('title'), item: `${BASE}/${locale}/vacatures` },
-            { '@type': 'ListItem', position: 3, name: job.title, item: canonical },
+            { '@type': 'ListItem', position: 3, name: jobCopy(job, locale).title, item: canonical },
         ],
     };
 

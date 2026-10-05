@@ -2,10 +2,10 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { User, Phone, Mail, FileText, Check, ChevronDown, Briefcase } from 'lucide-react';
 import { Turnstile } from '@marsidev/react-turnstile';
-import { jobs, candidateFormTrade, tradeLabel } from '@/data/vacancies';
+import { jobs, candidateFormTrade, tradeLabel, jobCopy, jobLocation } from '@/data/vacancies';
 
 // Trade clusters for Belgian construction market
 const TRADE_CLUSTERS = {
@@ -78,6 +78,7 @@ const TRADE_TRANSLATION_KEYS: Record<string, string> = {
 
 export function CandidateForm() {
     const t = useTranslations('CandidateForm');
+    const locale = useLocale();
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const searchParams = useSearchParams();
@@ -128,18 +129,23 @@ export function CandidateForm() {
             const job = jobs.find(j => String(j.id) === vacancyId);
             const trade = job ? candidateFormTrade[job.tradeSlug] : undefined;
             if (job && trade) {
-                return { label: `${job.title} — ${job.location}`, trade };
+                // Name the vacancy in the candidate's language: most of the people
+                // we recruit from Eastern Europe read Russian, not Dutch.
+                return {
+                    label: `${jobCopy(job, locale).title} — ${jobLocation(job, locale)}`,
+                    trade,
+                };
             }
         }
 
         const tradeSlug = searchParams.get('vak');
         const trade = tradeSlug ? candidateFormTrade[tradeSlug] : undefined;
         if (tradeSlug && trade) {
-            return { label: tradeLabel(tradeSlug, 'nl'), trade };
+            return { label: tradeLabel(tradeSlug, locale), trade };
         }
 
         return null;
-    }, [searchParams]);
+    }, [searchParams, locale]);
 
     useEffect(() => {
         if (!applicationContext) return;

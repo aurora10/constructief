@@ -3,6 +3,8 @@ import { flagshipTrades } from '@/data/cityContent';
 import { getArticles } from '@/content/nieuws';
 import { jobs } from '@/data/vacancies';
 import { jobTradePages } from '@/data/vacancyTrades';
+import { jobRu } from '@/data/vacancies.ru';
+import { jobTradeRu } from '@/data/vacancyTrades.ru';
 import nl from '@/messages/nl.json';
 import fr from '@/messages/fr.json';
 import ru from '@/messages/ru.json';
@@ -152,6 +154,24 @@ export function GET(): Response {
     }
     out.push('');
     out.push(
+        '### Открытые вакансии — русская версия (для бригад из Восточной Европы)',
+    );
+    out.push(
+        'Вакансии на русском языке: те же объекты, что и в нидерландской версии, с полным описанием работы, требований и оформления документов.',
+    );
+    for (const job of jobs) {
+        const ru = jobRu[job.id];
+        if (!ru) continue;
+        out.push(
+            line(
+                `${ru.title} — ${ru.location}`,
+                `${BASE}/ru/vacatures/${job.id}`,
+                `${ru.type}, ${ru.salary}. ${ru.description}`,
+            ),
+        );
+    }
+    out.push('');
+    out.push(
         'Per vakgebied is er een overzichtspagina met het werk, de gevraagde attesten, de open opdrachten en de veelgestelde vragen over loon en documenten:',
     );
     for (const trade of jobTradePages) {
@@ -163,6 +183,16 @@ export function GET(): Response {
                 `${trade.metaDescription}${openCount > 0 ? ` Momenteel ${openCount} openstaande opdracht(en).` : ''}`,
             ),
         );
+        const ru = jobTradeRu[trade.slug];
+        if (ru) {
+            out.push(
+                line(
+                    `Вакансии: ${ru.linkLabel} (RU)`,
+                    `${BASE}/ru/vacatures/${trade.slug}`,
+                    `${ru.metaDescription}${openCount > 0 ? ` Сейчас открыто позиций: ${openCount}.` : ''}`,
+                ),
+            );
+        }
     }
     out.push('');
 

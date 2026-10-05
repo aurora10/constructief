@@ -1,11 +1,15 @@
+import type { JobCopy } from './vacancyTypes';
+import { jobRu } from './vacancies.ru';
+
 /**
- * Vacancy data.
+ * Vacancy data — Dutch source text.
  *
- * Content is Dutch-first: these pages target the nl job-seeker queries
- * ("vacature metselaar", "bouwvakker vacature"). The fr/ru job pages are
- * noindexed until this content is properly translated (see
- * src/app/[locale]/vacatures/[id]/page.tsx), so we never publish duplicate
- * Dutch text under fr/ru URLs.
+ * Two audiences, two languages (see jobCopy() below):
+ *  - nl: people searching "vacature metselaar" in Belgium and the Netherlands.
+ *  - ru: the crews we recruit in Eastern Europe. Most of them speak Russian, so
+ *    the Russian copy in vacancies.ru.ts is the recruiting side of this cluster
+ *    and those pages are indexed (see src/app/[locale]/vacatures/[id]/page.tsx).
+ *  - fr: no vacancy audience; falls back to Dutch and stays noindexed.
  *
  * `tradeSlug` groups vacancies by trade — used by the trade job landing pages.
  */
@@ -235,13 +239,62 @@ export function jobsByTrade(tradeSlug: string): Job[] {
 }
 
 /**
+ * Language policy for this cluster: nl for the Belgian/Dutch market, ru for the
+ * crews we recruit in Eastern Europe (the large majority speak Russian — see
+ * vacancies.ru.ts). fr has no vacancy audience, so it falls back to the Dutch copy
+ * and its pages stay noindexed.
+ */
+export function isRussian(locale: string): boolean {
+    return locale === 'ru';
+}
+
+/** The vacancy text in the reader's language (falls back to Dutch). */
+export function jobCopy(job: Job, locale: string): JobCopy {
+    const ru = jobRu[job.id];
+    if (isRussian(locale) && ru) {
+        return {
+            title: ru.title,
+            description: ru.description,
+            intro: ru.intro,
+            tasks: ru.tasks,
+            requirements: ru.requirements,
+            offer: ru.offer,
+        };
+    }
+    return {
+        title: job.title,
+        description: job.description,
+        intro: job.intro,
+        tasks: job.tasks,
+        requirements: job.requirements,
+        offer: job.offer,
+    };
+}
+
+/** Place name for display. JSON-LD keeps the Dutch form (job.location). */
+export function jobLocation(job: Job, locale: string): string {
+    const ru = jobRu[job.id];
+    return isRussian(locale) && ru ? ru.location : job.location;
+}
+
+export function jobType(job: Job, locale: string): string {
+    const ru = jobRu[job.id];
+    return isRussian(locale) && ru ? ru.type : job.type;
+}
+
+export function jobSalary(job: Job, locale: string): string {
+    const ru = jobRu[job.id];
+    return isRussian(locale) && ru ? ru.salary : job.salary;
+}
+
+/**
  * Display name per trade slug, so the listing filter reads naturally in all three
  * locales even though the vacancy copy itself is still Dutch-only.
  */
 export const tradeLabels: Record<string, { nl: string; fr: string; ru: string }> = {
-    werfleider: { nl: 'Werfleiding & projectleiding', fr: 'Conduite de chantier', ru: 'Руководство работами' },
+    werfleider: { nl: 'Werfleiding & projectleiding', fr: 'Conduite de chantier', ru: 'Прораб' },
     bekister: { nl: 'Bekister', fr: 'Coffreur', ru: 'Опалубщик' },
-    kraanmachinist: { nl: 'Kraanmachinist', fr: 'Grutier', ru: 'Крановщик' },
+    kraanmachinist: { nl: 'Kraanmachinist', fr: 'Grutier', ru: 'Машинист башенного крана' },
     metser: { nl: 'Metselaar', fr: 'Maçon', ru: 'Каменщик' },
     elektricien_ind: { nl: 'Industrieel elektricien', fr: 'Électricien industriel', ru: 'Промышленный электрик' },
 };

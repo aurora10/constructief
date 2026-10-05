@@ -32,11 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     for (const locale of locales) {
         // Static pages.
-        // /vacatures is Dutch-only: the vacancy copy is not translated yet, so the
-        // fr/ru listings are noindexed (see app/[locale]/vacatures/page.tsx) and must
-        // not be advertised here.
+        // /vacatures is indexed for nl and ru only — see the note on the vacancy
+        // block below for why fr is excluded.
         for (const page of staticPages) {
-            if (page === '/vacatures' && locale !== 'nl') continue;
+            // /vacatures serves nl (Belgian job market) and ru (the crews we recruit
+            // in Eastern Europe). fr has no vacancy audience.
+            if (page === '/vacatures' && locale === 'fr') continue;
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}${page}`,
                 lastModified: new Date(),
@@ -97,9 +98,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         }
 
-        // Vacancy detail pages — nl only for the same reason as /vacatures, and with
-        // the real datePosted as lastmod so Google sees a fresh posting per job.
-        if (locale === 'nl') {
+        // Vacancy cluster — nl and ru, with the real datePosted as lastmod so Google
+        // sees a fresh posting per job. ru is the recruitment side: the crews come
+        // from Eastern Europe and mostly speak Russian, so /ru/vacatures carries a
+        // full translation instead of being a noindexed copy of the Dutch text.
+        if (locale === 'nl' || locale === 'ru') {
             for (const job of jobs) {
                 sitemapEntries.push({
                     url: `${baseUrl}/${locale}/vacatures/${job.id}`,

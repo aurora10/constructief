@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { MapPin, Clock, Euro, Search } from 'lucide-react';
-import { jobs, tradeLabel } from '@/data/vacancies';
+import { jobs, jobCopy, jobLocation, jobType, jobSalary, tradeLabel } from '@/data/vacancies';
 
 /**
  * Client side of the vacancy listing: working search + trade filter.
@@ -29,7 +29,16 @@ export function VacancyList() {
         return jobs.filter((job) => {
             if (trade !== 'all' && job.tradeSlug !== trade) return false;
             if (!q) return true;
-            return [job.title, job.description, job.location, job.type, tradeLabel(job.tradeSlug, locale)]
+            // Search the copy in the reader's language, so a Russian visitor can
+            // find work by typing Russian words.
+            const copy = jobCopy(job, locale);
+            return [
+                copy.title,
+                copy.description,
+                jobLocation(job, locale),
+                jobType(job, locale),
+                tradeLabel(job.tradeSlug, locale),
+            ]
                 .join(' ')
                 .toLowerCase()
                 .includes(q);
@@ -78,34 +87,37 @@ export function VacancyList() {
             {/* Job list */}
             {filtered.length > 0 ? (
                 <div className="grid grid-cols-1 gap-6">
-                    {filtered.map((job) => (
-                        <div
-                            key={job.id}
-                            className="border rounded-lg p-6 hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
-                        >
-                            <div>
-                                <h3 className="text-xl font-bold mb-2">{job.title}</h3>
-                                <p className="text-neutral-600 mb-4 max-w-2xl">{job.description}</p>
-                                <div className="flex flex-wrap gap-4 text-sm text-neutral-500">
-                                    <div className="flex items-center gap-1">
-                                        <MapPin className="h-4 w-4" />
-                                        <span>{job.location}</span>
-                                    </div>
-                                    <div className="flex items-center gap-1">
-                                        <Clock className="h-4 w-4" />
-                                        <span>{job.type}</span>
-                                    </div>
-                                    <div className="flex items-center gap-1">
-                                        <Euro className="h-4 w-4" />
-                                        <span>{job.salary}</span>
+                    {filtered.map((job) => {
+                        const copy = jobCopy(job, locale);
+                        return (
+                            <div
+                                key={job.id}
+                                className="border rounded-lg p-6 hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+                            >
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2">{copy.title}</h3>
+                                    <p className="text-neutral-600 mb-4 max-w-2xl">{copy.description}</p>
+                                    <div className="flex flex-wrap gap-4 text-sm text-neutral-500">
+                                        <div className="flex items-center gap-1">
+                                            <MapPin className="h-4 w-4" />
+                                            <span>{jobLocation(job, locale)}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <Clock className="h-4 w-4" />
+                                            <span>{jobType(job, locale)}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <Euro className="h-4 w-4" />
+                                            <span>{jobSalary(job, locale)}</span>
+                                        </div>
                                     </div>
                                 </div>
+                                <Button asChild>
+                                    <Link href={`/vacatures/${job.id}`}>{t('view_details')}</Link>
+                                </Button>
                             </div>
-                            <Button asChild>
-                                <Link href={`/vacatures/${job.id}`}>{t('view_details')}</Link>
-                            </Button>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             ) : (
                 <div className="border rounded-lg p-8 bg-neutral-50 text-center">
