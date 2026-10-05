@@ -1,7 +1,8 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { FeaturedJobs } from '@/components/sections/FeaturedJobs';
+import { TradeJobLinks } from '@/components/sections/TradeJobLinks';
 import { CandidateForm } from '@/components/forms/CandidateForm';
 import { WorkerFaqSection } from '@/components/sections/WorkerFaqSection';
 import type { Metadata } from 'next';
@@ -14,8 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     return { alternates: pageAlternates(locale, '/kandidaten') };
 }
 
-export default function CandidatesPage() {
-    const t = useTranslations('CandidatesPage');
+export default async function CandidatesPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'CandidatesPage' });
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -27,6 +29,7 @@ export default function CandidatesPage() {
             <HowItWorks />
             <WorkerFaqSection />
             <FeaturedJobs />
+            <TradeJobLinks locale={locale} />
         </div>
     );
 }

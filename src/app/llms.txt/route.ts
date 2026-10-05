@@ -2,6 +2,7 @@ import { citiesData, indexedCitySlugs, flagshipCitySlugs } from '@/data/cities';
 import { flagshipTrades } from '@/data/cityContent';
 import { getArticles } from '@/content/nieuws';
 import { jobs } from '@/data/vacancies';
+import { jobTradePages } from '@/data/vacancyTrades';
 import nl from '@/messages/nl.json';
 import fr from '@/messages/fr.json';
 import ru from '@/messages/ru.json';
@@ -146,6 +147,20 @@ export function GET(): Response {
                 `${job.title} — ${job.location}`,
                 `${BASE}/nl/vacatures/${job.id}`,
                 `${job.type}, ${job.salary}. ${job.description}`,
+            ),
+        );
+    }
+    out.push('');
+    out.push(
+        'Per vakgebied is er een overzichtspagina met het werk, de gevraagde attesten, de open opdrachten en de veelgestelde vragen over loon en documenten:',
+    );
+    for (const trade of jobTradePages) {
+        const openCount = jobs.filter((job) => job.tradeSlug === trade.jobTradeSlug).length;
+        out.push(
+            line(
+                `Vacatures ${trade.linkLabel} (NL)`,
+                `${BASE}/nl/vacatures/${trade.slug}`,
+                `${trade.metaDescription}${openCount > 0 ? ` Momenteel ${openCount} openstaande opdracht(en).` : ''}`,
             ),
         );
     }

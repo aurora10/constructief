@@ -4,33 +4,17 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { MapPin, Clock, Euro } from "lucide-react";
+import { jobs as allJobs } from "@/data/vacancies";
 
 export function FeaturedJobs() {
     const t = useTranslations("FeaturedJobs");
 
-    const jobs = [
-        {
-            id: 1,
-            title: "Projectleider Bouw",
-            location: "Antwerpen",
-            type: "Fulltime",
-            salary: "€4000 - €5500",
-        },
-        {
-            id: 2,
-            title: "Werfleider",
-            location: "Gent",
-            type: "Fulltime",
-            salary: "€3500 - €4500",
-        },
-        {
-            id: 3,
-            title: "Bekister",
-            location: "Brussel",
-            type: "Interim",
-            salary: "€17 - €19 / uur",
-        },
-    ];
+    // Source of truth is src/data/vacancies.ts: this block used to carry its own
+    // hardcoded copy of the first three jobs, which would silently drift from the
+    // real listings. Newest first, three of them.
+    const jobs = [...allJobs]
+        .sort((a, b) => b.datePosted.localeCompare(a.datePosted))
+        .slice(0, 3);
 
     return (
         <section className="py-20 bg-white">

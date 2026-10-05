@@ -1,13 +1,12 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PageHeader } from '@/components/layout/PageHeader';
-import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/routing";
-import { ArrowLeft, MapPin, Clock, Euro, Home, ChevronRight, CalendarDays, Check } from "lucide-react";
 import { jobs } from '@/data/vacancies';
+import { jobTradePages, getJobTradePage } from '@/data/vacancyTrades';
 import { routing } from '@/i18n/routing';
 import { dutchOnlyAlternates } from '@/lib/seo';
+import { JobDetail } from '@/components/vacancies/JobDetail';
+import { TradeJobsLanding } from '@/components/vacancies/TradeJobsLanding';
 
 type Props = {
     params: Promise<{ locale: string; id: string }>;
@@ -16,10 +15,13 @@ type Props = {
 const BASE = 'https://constructief-bouw.be';
 
 /**
- * The vacancy copy is Dutch only (it targets the nl job-seeker queries). The
- * fr/ru routes keep working but are noindexed, so we never publish the same
- * Dutch text a second and third time under /fr and /ru URLs — that was one of
- * the "duplicate, Google chose different canonical" sources.
+ * This route serves two page types under one flat URL space:
+ *   /vacatures/3           → a single vacancy (numeric id)
+ *   /vacatures/metselaar   → the trade job landing page (slug)
+ *
+ * The flat URL matters for the trade pages: "vacatures metselaar" is the query
+ * people type, so the slug sits directly under /vacatures instead of one level
+ * deeper. Both cases are Dutch-only copy, so fr/ru resolve but are noindexed.
  */
 function isIndexable(locale: string) {
     return locale === 'nl';
@@ -31,24 +33,51 @@ export function generateStaticParams() {
         for (const job of jobs) {
             params.push({ locale, id: String(job.id) });
         }
+        for (const trade of jobTradePages) {
+            params.push({ locale, id: trade.slug });
+        }
     }
     return params;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale, id } = await params;
-    const job = jobs.find(j => j.id === Number(id));
+    const robots = isIndexable(locale)
+        ? { index: true, follow: true }
+        : { index: false, follow: true };
 
+    // Trade landing page (/vacatures/metselaar)
+    const trade = getJobTradePage(id);
+    if (trade) {
+        return {
+            title: trade.metaTitle,
+            description: trade.metaDescription,
+            alternates: dutchOnlyAlternates(locale, `/vacatures/${trade.slug}`),
+            robots,
+            openGraph: {
+                title: trade.metaTitle,
+                description: trade.metaDescription,
+                type: 'website',
+                siteName: 'Constructief',
+            },
+        };
+    }
+
+    // Single vacancy (/vacatures/3)
+    const job = jobs.find(j => j.id === Number(id));
     if (!job) return { title: 'Not Found' };
 
     return {
         title: `${job.title} — ${job.location} | Constructief`,
         description: job.description,
-        // Dutch-only cluster: self-canonical, no fr alternate (see helper).
         alternates: dutchOnlyAlternates(locale, `/vacatures/${id}`),
-        robots: isIndexable(locale)
-            ? { index: true, follow: true }
-            : { index: false, follow: true },
+        robots,
+        openGraph: {
+            title: `${job.title} — ${job.location} | Constructief`,
+            description: job.description,
+            type: 'article',
+            siteName: 'Constructief',
+        },
     };
 }
 
@@ -69,11 +98,91 @@ function jobPostingHtml(job: (typeof jobs)[number]) {
         .join('');
 }
 
-export default async function VacancyDetailPage({ params }: Props) {
+export default async function VacancyOrTradePage({ params }: Props) {
     const { locale, id } = await params;
     setRequestLocale(locale);
-    const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
 
+    // ---------------------------------------------------------------- trade page
+    const trade = getJobTradePage(id);
+    if (trade) {
+        const canonical = `${BASE}/${locale}/vacatures/${trade.slug}`;
+        const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
+
+        const pageJsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: trade.h1,
+            description: trade.metaDescription,
+            url: canonical,
+            inLanguage: 'nl-BE',
+            isPartOf: { '@type': 'WebSite', name: 'Constructief', url: BASE },
+        };
+
+        const breadcrumbJsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/${locale}` },
+                { '@type': 'ListItem', position: 2, name: t('title'), item: `${BASE}/${locale}/vacatures` },
+                { '@type': 'ListItem', position: 3, name: trade.linkLabel, item: canonical },
+            ],
+        };
+
+        // Only the questions we actually answer on the page — Google rejects FAQ
+        // markup whose answers are not visible to the reader.
+        const faqJsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: trade.faq.map((item) => ({
+                '@type': 'Question',
+                name: item.q,
+                acceptedAnswer: { '@type': 'Answer', text: item.a },
+            })),
+        };
+
+        const openJobs = jobs.filter((job) => job.tradeSlug === trade.jobTradeSlug);
+        const itemListJsonLd =
+            openJobs.length > 0
+                ? {
+                      '@context': 'https://schema.org',
+                      '@type': 'ItemList',
+                      name: `Openstaande vacatures ${trade.linkLabel}`,
+                      numberOfItems: openJobs.length,
+                      itemListElement: openJobs.map((job, index) => ({
+                          '@type': 'ListItem',
+                          position: index + 1,
+                          name: job.title,
+                          url: `${BASE}/${locale}/vacatures/${job.id}`,
+                      })),
+                  }
+                : null;
+
+        return (
+            <div className="flex flex-col min-h-screen">
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+                />
+                {itemListJsonLd && (
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+                    />
+                )}
+                <TradeJobsLanding trade={trade} />
+            </div>
+        );
+    }
+
+    // ------------------------------------------------------------- vacancy page
     const job = jobs.find(j => j.id === Number(id));
 
     if (!job) {
@@ -81,6 +190,7 @@ export default async function VacancyDetailPage({ params }: Props) {
     }
 
     const canonical = `${BASE}/${locale}/vacatures/${id}`;
+    const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
 
     // Parse the salary ("€4000 - €5500" monthly, "€17 - €19 / uur" hourly) into a
     // numeric MonetaryAmount range so the JobPosting markup is valid.
@@ -169,13 +279,6 @@ export default async function VacancyDetailPage({ params }: Props) {
         ],
     };
 
-    const publishedLabel = new Date(job.datePosted + 'T00:00:00Z').toLocaleDateString('nl-BE', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-        timeZone: 'UTC',
-    });
-
     return (
         <div className="flex flex-col min-h-screen">
             <script
@@ -186,147 +289,7 @@ export default async function VacancyDetailPage({ params }: Props) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
-
-            <PageHeader
-                title={job.title}
-                subtitle={`${job.location} · ${job.type} · ${job.salary}`}
-            />
-
-            <nav aria-label="Breadcrumb" className="container py-4 text-sm text-muted-foreground">
-                <ol className="flex flex-wrap items-center gap-1.5">
-                    <li>
-                        <Link href="/" className="inline-flex items-center gap-1 hover:text-primary">
-                            <Home className="w-3.5 h-3.5" />
-                            Home
-                        </Link>
-                    </li>
-                    <li aria-hidden="true"><ChevronRight className="w-3.5 h-3.5" /></li>
-                    <li>
-                        <Link href="/vacatures" className="hover:text-primary">
-                            {t('title')}
-                        </Link>
-                    </li>
-                    <li aria-hidden="true"><ChevronRight className="w-3.5 h-3.5" /></li>
-                    <li className="text-foreground font-medium">{job.title}</li>
-                </ol>
-            </nav>
-
-            <section className="pb-12 bg-white">
-                <div className="container max-w-4xl">
-                    <Button asChild variant="ghost" className="mb-8">
-                        <Link href="/vacatures" className="flex items-center gap-2">
-                            <ArrowLeft className="h-4 w-4" />
-                            {t('view_all')}
-                        </Link>
-                    </Button>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="md:col-span-2 space-y-8">
-                            <div className="space-y-4">
-                                {job.intro.map((paragraph, index) => (
-                                    <p key={index} className="text-neutral-600 leading-relaxed">
-                                        {paragraph}
-                                    </p>
-                                ))}
-                            </div>
-
-                            {job.tasks.length > 0 && (
-                                <div>
-                                    <h2 className="text-2xl font-bold mb-4">Wat ga je doen</h2>
-                                    <ul className="space-y-2 text-neutral-600">
-                                        {job.tasks.map((task, index) => (
-                                            <li key={index} className="flex gap-3">
-                                                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                                                <span>{task}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {job.requirements.length > 0 && (
-                                <div>
-                                    <h2 className="text-2xl font-bold mb-4">Wie zoeken wij</h2>
-                                    <ul className="space-y-2 text-neutral-600">
-                                        {job.requirements.map((req, index) => (
-                                            <li key={index} className="flex gap-3">
-                                                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                                                <span>{req}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {job.offer.length > 0 && (
-                                <div>
-                                    <h2 className="text-2xl font-bold mb-4">Wat bieden wij</h2>
-                                    <ul className="space-y-2 text-neutral-600">
-                                        {job.offer.map((item, index) => (
-                                            <li key={index} className="flex gap-3">
-                                                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            <div className="p-6 border rounded-lg bg-neutral-50">
-                                <h2 className="text-xl font-bold mb-2">Solliciteren op deze functie</h2>
-                                <p className="text-neutral-600 mb-4">
-                                    Vul je gegevens in via het kandidaatformulier. We nemen contact op
-                                    zodra we je profiel bekeken hebben — meestal binnen twee werkdagen.
-                                </p>
-                                <div className="flex flex-wrap gap-3">
-                                    <Button asChild size="lg">
-                                        <Link href="/kandidaten">{t('apply')}</Link>
-                                    </Button>
-                                    <Button asChild size="lg" variant="outline">
-                                        <Link href="/vacatures">Alle vacatures</Link>
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="space-y-6">
-                            <div className="p-6 border rounded-lg bg-neutral-50 md:sticky md:top-24">
-                                <h3 className="font-bold mb-4">Over deze functie</h3>
-                                <div className="space-y-4 text-sm">
-                                    <div className="flex items-center gap-3 text-neutral-600">
-                                        <MapPin className="h-5 w-5 text-primary" />
-                                        <span>{job.location}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-neutral-600">
-                                        <Clock className="h-5 w-5 text-primary" />
-                                        <span>{job.type}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-neutral-600">
-                                        <Euro className="h-5 w-5 text-primary" />
-                                        <span>{job.salary}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-neutral-600">
-                                        <CalendarDays className="h-5 w-5 text-primary" />
-                                        <span>
-                                            <span className="sr-only">Gepubliceerd op </span>
-                                            {publishedLabel}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <Button asChild className="w-full mt-6">
-                                    <Link href="/kandidaten">{t('apply')}</Link>
-                                </Button>
-
-                                <p className="text-xs text-neutral-500 mt-4 leading-relaxed">
-                                    Constructief is een Belgische aannemer van bouwploegen. Wij werven,
-                                    screenen en begeleiden vakmensen voor werven in heel België.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <JobDetail job={job} locale={locale} />
         </div>
     );
 }

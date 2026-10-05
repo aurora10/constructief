@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { jobs } from '@/data/vacancies';
+import { jobTradePages } from '@/data/vacancyTrades';
 import { getArticles } from '@/content/nieuws';
 import { citiesData, flagshipCitySlugs, indexedCitySlugs } from '@/data/cities';
 import { flagshipTrades } from '@/data/cityContent';
@@ -103,6 +104,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 sitemapEntries.push({
                     url: `${baseUrl}/${locale}/vacatures/${job.id}`,
                     lastModified: safeDate(job.datePosted),
+                    changeFrequency: 'weekly',
+                    priority: 0.9,
+                });
+            }
+
+            // Trade job landing pages: one page per trade, targeting the job-seeker
+            // queries ("vacature metselaar") that actually carry search demand.
+            for (const trade of jobTradePages) {
+                sitemapEntries.push({
+                    url: `${baseUrl}/${locale}/vacatures/${trade.slug}`,
+                    lastModified: new Date(),
                     changeFrequency: 'weekly',
                     priority: 0.9,
                 });
