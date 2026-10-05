@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { jobs, jobCopy, tradeLabel, tradeLabels } from "@/data/vacancies";
 import { Turnstile } from "@marsidev/react-turnstile";
 import {
     ChevronDown,
@@ -83,6 +85,33 @@ export function SubcontractorForm() {
     const teamOptions = (t.raw("team_size_options") as { value: string; label: string }[]) ?? [];
     const availabilityOptions = (t.raw("availability_options") as { value: string; label: string }[]) ?? [];
 
+    /**
+     * Crews arrive here from a trade page or a vacancy ("откликнуться" on
+     * /ru/vacatures/metselaar). We carry that context into the specialisation field
+     * so the recruiter can see what the application is about, instead of receiving
+     * an empty box. Computed before the state below so the value is already in the
+     * server-rendered HTML.
+     */
+    const searchParams = useSearchParams();
+    const contextRole = useMemo(() => {
+        const vacancyId = searchParams.get("vacature");
+        if (vacancyId) {
+            const job = jobs.find((j) => String(j.id) === vacancyId);
+            if (job) return jobCopy(job, locale).title;
+        }
+
+        const tradeSlug = searchParams.get("vak");
+        if (tradeSlug && tradeLabels[tradeSlug]) {
+            // Specialisation is free text here, so give both names: the Russian one
+            // for the crew, the Dutch one for the recruiter who reads the sheet.
+            const ru = tradeLabel(tradeSlug, "ru");
+            const nl = tradeLabel(tradeSlug, "nl");
+            return locale === "ru" ? `${ru} (${nl.toLowerCase()})` : nl;
+        }
+
+        return "";
+    }, [searchParams, locale]);
+
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
     const [sentTo, setSentTo] = useState("");
@@ -91,6 +120,7 @@ export function SubcontractorForm() {
     );
     const [photos, setPhotos] = useState<PhotoFile[]>([]);
     const [photoError, setPhotoError] = useState<string>("");
+    const [specialization, setSpecialization] = useState(contextRole);
 
     async function onPickPhotos(files: FileList | null) {
         if (!files) return;
@@ -126,7 +156,7 @@ export function SubcontractorForm() {
         const data = {
             candidate_name: formData.get("name"),
             email,
-            specialization: formData.get("specialization"),
+            specialization: specialization || formData.get("specialization"),
             legal_status: formData.get("legal_status"),
             car_and_tools: formData.get("car_and_tools"),
             location: formData.get("location"),
@@ -200,10 +230,23 @@ export function SubcontractorForm() {
                             </div>
                         </div>
 
+                        {contextRole && (
+                            <div className="rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+                                {t("context_note", { role: contextRole })}
+                            </div>
+                        )}
+
                         <div className="space-y-1">
                             <label className={labelCls}>{t("specialization")}</label>
                             <Field icon={<Wrench className={iconCls} />}>
-                                <input name="specialization" type="text" className={inputCls} placeholder={t("specialization_ph")} />
+                                <input
+                                    name="specialization"
+                                    type="text"
+                                    className={inputCls}
+                                    placeholder={t("specialization_ph")}
+                                    value={specialization}
+                                    onChange={(e) => setSpecialization(e.target.value)}
+                                />
                             </Field>
                         </div>
 

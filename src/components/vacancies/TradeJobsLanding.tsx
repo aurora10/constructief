@@ -16,6 +16,7 @@ import {
 import { jobsByTrade, jobCopy, jobLocation, jobType, jobSalary } from '@/data/vacancies';
 import { tradeCopy, tradeLinkLabel, type JobTradePage } from '@/data/vacancyTrades';
 import { flagshipTrades } from '@/data/cityContent';
+import { applyHref } from '@/lib/applyRoute';
 
 /**
  * Trade job landing page: /{locale}/vacatures/{slug}.
@@ -123,7 +124,7 @@ export async function TradeJobsLanding({ trade, locale }: { trade: JobTradePage;
                         </ul>
                         <div className="flex flex-wrap gap-3 mt-6">
                             <Button asChild size="lg">
-                                <Link href={`/kandidaten?vak=${trade.jobTradeSlug}`}>
+                                <Link href={applyHref(locale, { vak: trade.jobTradeSlug })}>
                                     {t('register_as', { role: roleLower })}
                                 </Link>
                             </Button>
@@ -192,7 +193,7 @@ export async function TradeJobsLanding({ trade, locale }: { trade: JobTradePage;
                             <div className="border rounded-lg p-8 bg-neutral-50">
                                 <p className="text-neutral-600 mb-4">{t('no_openings')}</p>
                                 <Button asChild>
-                                    <Link href={`/kandidaten?vak=${trade.jobTradeSlug}`}>
+                                    <Link href={applyHref(locale, { vak: trade.jobTradeSlug })}>
                                         {t('leave_details')}
                                     </Link>
                                 </Button>
@@ -235,7 +236,7 @@ export async function TradeJobsLanding({ trade, locale }: { trade: JobTradePage;
                         <p className="text-neutral-600 mb-4">{t('ready_text')}</p>
                         <div className="flex flex-wrap gap-3">
                             <Button asChild size="lg">
-                                <Link href={`/kandidaten?vak=${trade.jobTradeSlug}`}>
+                                <Link href={applyHref(locale, { vak: trade.jobTradeSlug })}>
                                     {t('register_candidate')}
                                 </Link>
                             </Button>

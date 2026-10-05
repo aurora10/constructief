@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import { ArrowLeft, MapPin, Clock, Euro, Home, ChevronRight, CalendarDays, Check, ArrowRight } from 'lucide-react';
 import { jobCopy, jobLocation, jobType, jobSalary, type Job } from '@/data/vacancies';
 import { getJobTradePageByJobTrade, tradeLinkLabel } from '@/data/vacancyTrades';
+import { applyHref } from '@/lib/applyRoute';
 
 /**
  * One vacancy, rendered in the reader's language.
@@ -130,7 +131,7 @@ export async function JobDetail({ job, locale }: { job: Job; locale: string }) {
                                 <p className="text-neutral-600 mb-4">{t('apply_text')}</p>
                                 <div className="flex flex-wrap gap-3">
                                     <Button asChild size="lg">
-                                        <Link href={`/kandidaten?vacature=${job.id}`}>{tVacancies('apply')}</Link>
+                                        <Link href={applyHref(locale, { vacature: job.id })}>{tVacancies('apply')}</Link>
                                     </Button>
                                     <Button asChild size="lg" variant="outline">
                                         <Link href="/vacatures">{t('all_vacancies')}</Link>
@@ -165,7 +166,7 @@ export async function JobDetail({ job, locale }: { job: Job; locale: string }) {
                                 </div>
 
                                 <Button asChild className="w-full mt-6">
-                                    <Link href={`/kandidaten?vacature=${job.id}`}>{tVacancies('apply')}</Link>
+                                    <Link href={applyHref(locale, { vacature: job.id })}>{tVacancies('apply')}</Link>
                                 </Button>
 
                                 <p className="text-xs text-neutral-500 mt-4 leading-relaxed">

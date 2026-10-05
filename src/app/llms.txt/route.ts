@@ -170,6 +170,15 @@ export function GET(): Response {
             ),
         );
     }
+    // Russian-speaking applicants are crews, so their applications land on the
+    // subcontractor intake rather than the individual candidate form.
+    out.push(
+        line(
+            'Регистрация бригады или специалиста (заявка)',
+            `${BASE}/ru/onderaannemer-inschrijven`,
+            'Форма для бригад и отдельных мастеров: специализация, состав бригады, документы, ставка и фото работ. Заявки по вакансиям принимаются здесь.',
+        ),
+    );
     out.push('');
     out.push(
         'Per vakgebied is er een overzichtspagina met het werk, de gevraagde attesten, de open opdrachten en de veelgestelde vragen over loon en documenten:',

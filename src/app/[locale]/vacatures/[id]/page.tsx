@@ -243,10 +243,19 @@ export default async function VacancyOrTradePage({ params }: Props) {
     };
     const loc = addressByLocation[job.location] ?? {};
 
-    // A future expiry (datePosted + 60 days) so the posting isn't treated as expired.
+    // These openings are generic and rolling: the same trades are staffed all year,
+    // individual projects come and go. So the expiry must never be in the past, or
+    // Google drops the posting as expired and the Jobs experience stops showing it.
+    // We therefore keep the original datePosted (a stable publication date) and push
+    // validThrough forward — at least 60 days after publication, and at least 90 days
+    // from today. This route renders per request, so it stays fresh without a rebuild.
     const posted = new Date(job.datePosted + 'T00:00:00Z');
     posted.setDate(posted.getDate() + 60);
-    const validThrough = posted.toISOString().slice(0, 10);
+
+    const rolling = new Date();
+    rolling.setUTCDate(rolling.getUTCDate() + 90);
+
+    const validThrough = (posted > rolling ? posted : rolling).toISOString().slice(0, 10);
 
     const jsonLd = {
         '@context': 'https://schema.org/',

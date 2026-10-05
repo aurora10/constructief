@@ -816,6 +816,7 @@
         "page_subtitle": "Remplissez ce formulaire et nous ajouterons votre équipe à notre réseau de sous-traitants présélectionnés. Vos données vont directement à notre recruteur.",
         "form_title": "Inscription sous-traitant",
         "form_subtitle": "Comptez environ 2 minutes.",
+        "context_note": "Votre inscription concerne : {role}. Vous pouvez modifier la spécialisation.",
         "name": "Prénom",
         "name_ph": "Ex. Denys",
         "specialization": "Spécialisation",

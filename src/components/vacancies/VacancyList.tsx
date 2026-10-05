@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { MapPin, Clock, Euro, Search } from 'lucide-react';
 import { jobs, jobCopy, jobLocation, jobType, jobSalary, tradeLabel } from '@/data/vacancies';
+import { applyHref } from '@/lib/applyRoute';
 
 /**
  * Client side of the vacancy listing: working search + trade filter.
@@ -123,7 +124,7 @@ export function VacancyList() {
                 <div className="border rounded-lg p-8 bg-neutral-50 text-center">
                     <p className="text-neutral-600 mb-6">{t('no_results')}</p>
                     <Button asChild>
-                        <Link href="/kandidaten">{t('apply')}</Link>
+                        <Link href={applyHref(locale)}>{t('apply')}</Link>
                     </Button>
                 </div>
             )}

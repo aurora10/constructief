@@ -812,6 +812,7 @@
         "page_subtitle": "Vul dit formulier in en wij voegen je ploeg toe aan ons netwerk van gescreende onderaannemers. Je gegevens gaan rechtstreeks naar onze recruiter.",
         "form_title": "Inschrijving onderaannemer",
         "form_subtitle": "Invullen duurt ongeveer 2 minuten.",
+        "context_note": "Je inschrijving gaat over: {role}. Pas je specialisatie gerust aan.",
         "name": "Voornaam",
         "name_ph": "Bijv. Denys",
         "specialization": "Specialisatie",
