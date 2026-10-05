@@ -86,9 +86,12 @@ export default async function RootLayout({
         "areaServed": ["BE", "NL"]
       }
     ],
+    // sameAs is how Google ties the site, the social profiles and the Google
+    // Business Profile into one entity. The GBP link is included only when it is
+    // set in BRAND (see the note there on why it is not guessed).
     "sameAs": [
-      "https://www.instagram.com/constructief_bouw/",
-      "https://www.facebook.com/profile.php?id=61591572760518"
+      ...(BRAND.googleBusinessProfile ? [BRAND.googleBusinessProfile] : []),
+      ...BRAND.socialProfiles,
     ],
     "knowsAbout": [
       "Construction Subcontractors",

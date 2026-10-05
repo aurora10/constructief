@@ -29,6 +29,25 @@ export const BRAND = {
     alternateNames: ['Constructief', 'Constructief Bouw België'],
     url: 'https://constructief-bouw.be',
     /**
+     * Canonical Google Business Profile link, emitted into Organization.sameAs.
+     *
+     * Empty until it can be verified. A share URL copied out of Google Search is
+     * not usable (it is session-bound: sxsrf, ved, stick), and the CID can be
+     * derived from that token but cannot be confirmed to point at this listing —
+     * Google Maps answers 200 with a JavaScript shell for any CID, including wrong
+     * ones. A wrong sameAs merges this entity with a different business, which is
+     * worse than having no link at all, so it stays empty until the real URL is here.
+     *
+     * Where to copy it from: Google Business Profile → your profile → "Share" /
+     * "Profiel delen". That yields a stable https://maps.app.goo.gl/... or
+     * https://g.page/... link. The Maps address-bar URL of the listing also works.
+     */
+    googleBusinessProfile: '',
+    socialProfiles: [
+        'https://www.instagram.com/constructief_bouw/',
+        'https://www.facebook.com/profile.php?id=61591572760518',
+    ],
+    /**
      * Registered legal name, for Organization.legalName. Left unset on purpose:
      * guessing it would put a wrong legal entity into the structured data. Fill it
      * in from the KBO/BTW registration and it will be emitted automatically.
