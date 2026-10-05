@@ -60,7 +60,7 @@ export const jobTradePages: JobTradePage[] = [
             'Vacatures voor metselaars en metsers in heel België. Wij plaatsen je bij aannemers, spreken loon en startdatum vooraf af en regelen A1, Limosa en Checkinatwork.',
         intro: [
             'Constructief plaatst metselaars en metsers bij aannemers in heel België: ruwbouw, nieuwbouw, renovatie en gevelwerk. Je komt terecht in een bestaande ploeg of als versterking van een ploeg die wij zelf samenstellen.',
-            'Metselaar of metser — in Vlaanderen zegt men vaker metser, in Nederland metselaar, het werk is hetzelfde. Wij zoeken mensen die zelfstandig kunnen doorwerken, plan kunnen lezen en kwaliteit leveren die in het zicht blijft.',
+            'Metselaar of metser — in Vlaanderen zegt men vaker metser, in Nederland metselaar. Het werk is hetzelfde. Wij zoeken mensen die zelfstandig kunnen doorwerken, plan kunnen lezen en kwaliteit leveren die in het zicht blijft.',
         ],
         tasks: [
             'Metselwerk uitvoeren in snelbouw, lijmblokken en gevelsteen',
@@ -84,7 +84,7 @@ export const jobTradePages: JobTradePage[] = [
             'Duidelijke afspraken over brutoloon, uren en startdatum vóór je begint',
             'Betaald volgens het barema dat op de opdracht van toepassing is, met premies volgens de sector',
             'Eén vast aanspreekpunt dat je dossier opvolgt, ook als je al aan het werk bent',
-            'Voor buitenlandse vakmensen: A1, Limosa en werfregistratie (Checkinatwork) worden vooraf in orde gebracht',
+            'Voor buitenlandse vakmensen: A1, Limosa en werfregistratie (Checkinatwork) worden vooraf geregeld',
             'Begeleiding bij verblijf dicht bij de werf',
         ],
         faq: [
@@ -94,7 +94,7 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Wat is het verschil tussen metselaar en metser?',
-                a: 'Geen verschil in werk: "metser" is de Vlaamse benaming, "metselaar" de Nederlandse. In vacatures zie je beide door elkaar staan. Wij plaatsen voor hetzelfde beroep, of je nu metser of metselaar genoemd wordt.',
+                a: 'Geen verschil in werk: "metser" is de Vlaamse benaming, "metselaar" de Nederlandse. In vacatures zie je beide door elkaar staan. Wij plaatsen je voor hetzelfde beroep, of je nu metser of metselaar genoemd wordt.',
             },
             {
                 q: 'Heb ik een VCA-attest nodig om te metselen in België?',
@@ -106,7 +106,7 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Is er ook werk als metselaar in de winter?',
-                a: 'Buitenwerk vertraagt in de winter, dat is een realiteit in de sector. Waar het kan plannen we renovatiewerk of binnenafwerking, of we spreken een latere startdatum af. We beloven geen werk dat er niet is: we zeggen vooraf welke periode de opdracht dekt.',
+                a: 'Buitenwerk vertraagt in de winter. Dat is een realiteit in de sector. Waar het kan plannen we renovatiewerk of binnenafwerking, of we spreken een latere startdatum af. We beloven geen werk dat er niet is: we zeggen vooraf welke periode de opdracht dekt.',
             },
         ],
         serviceTradeSlug: 'ruwbouw',
@@ -122,7 +122,7 @@ export const jobTradePages: JobTradePage[] = [
             'Vacatures voor bekisters in België: systeembekisting en traditionele bekisting op betonwerven. Wij plaatsen je bij aannemers en regelen documenten, loon en verblijf vooraf.',
         intro: [
             'Wij plaatsen bekisters op betonwerven in heel België: funderingen, wanden, kolommen, vloerplaten en tunnels. Je werkt met systeembekisting of traditionele bekisting, altijd samen met de ijzervlechters en de betonploeg.',
-            'Bekisten is maatwerk: een paar millimeter afwijking plant zich door in de hele constructie. Daarom zoeken wij mensen die plan lezen, maatvast stellen en niet doorwerken boven een fout uit.',
+            'Bekisten is maatwerk: een paar millimeter afwijking plant zich door in de hele constructie. Daarom zoeken wij mensen die plannen kunnen lezen, maatvast stellen en niet verder werken op een fout.',
         ],
         tasks: [
             'Plaatsen, stellen en ontkisten van bekisting (systeem en traditioneel)',
@@ -156,11 +156,11 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Moet ik met systeembekisting kunnen werken?',
-                a: 'Het is een pluspunt, geen voorwaarde. Ervaring met traditionele bekisting volstaat als je plan kunt lezen en maatvast kunt stellen; de specifieke systemen (Doka, Peri, Meva, Ischebeck) leer je op de werf zelf. Zeg bij je inschrijving eerlijk met welke systemen je al werkte, dan matchen we je met de juiste werf.',
+                a: 'Het is een pluspunt, geen voorwaarde. Ervaring met traditionele bekisting volstaat als je plan kunt lezen en maatvast kunt stellen; de specifieke systemen (Doka, Peri, Meva, Ischebeck) leer je op de werf zelf. Zeg bij je inschrijving eerlijk met welke systemen je al werkte, dan koppelen we je aan de juiste werf.',
             },
             {
                 q: 'Kan ik als buitenlandse bekister in België werken?',
-                a: 'Ja. Voor werk in België heb je een A1-verklaring nodig als je onder de sociale zekerheid van je thuisland blijft, een Limosa-melding, en op de werf zelf de registratie in Checkinatwork. Wij regelen die documenten vóór je eerste werkdag en bezorgen je de bevestigingen.',
+                a: 'Ja. Voor werk in België heb je een A1-verklaring nodig (als je onder de sociale zekerheid van je thuisland blijft), een Limosa-melding en, op de werf zelf, de registratie in Checkinatwork. Wij regelen die documenten vóór je eerste werkdag en bezorgen je de bevestigingen.',
             },
             {
                 q: 'Hoe snel kan ik beginnen als bekister?',
@@ -177,7 +177,7 @@ export const jobTradePages: JobTradePage[] = [
         h1: 'Vacatures kraanmachinist (torenkraan) in België',
         metaTitle: 'Vacatures kraanmachinist torenkraan België | Constructief',
         metaDescription:
-            'Vacatures voor torenkraanmachinisten in België. Geldig attest vereist, wij plaatsen je bij aannemers op grote werven en regelen loon, documenten en verblijf vooraf.',
+            'Vacatures voor torenkraanmachinisten in België. Geldig attest vereist. Wij plaatsen je bij aannemers op grote werven en regelen loon, documenten en verblijf vooraf.',
         intro: [
             'Wij zoeken torenkraanmachinisten voor grotere bouwwerven in België: appartementsbouw, utiliteitsbouw en logistieke sites waar de kraan de hele dag draait en de ploegen op haar rekenen.',
             'Op zo\'n werf ben je de ogen van boven. Veiligheid en overzicht gaan voor snelheid: je werkt volgens het hijsplan, je communiceert met de ploeg op de grond en je stopt liever even dan dat je een risico neemt.',
@@ -214,7 +214,7 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Wat verdient een kraanmachinist in België?',
-                a: 'Het loon volgt het barema van het paritair comité van de opdracht — voor de meeste bouwwerven PC 124 — plus je ervaring en de premies op de werf. Kraanmachinisten zitten doorgaans in een hogere loonklasse dan uitvoerende taken, omdat het attest en de verantwoordelijkheid meetellen. Het exacte brutoloon krijg je van ons op papier vóór je start.',
+                a: 'Het loon volgt het barema van het paritair comité van de opdracht — voor de meeste bouwwerven PC 124 — plus je ervaring en de premies op de werf. Kraanmachinisten zitten doorgaans in een hogere loonklasse dan uitvoerende functies, omdat het attest en de verantwoordelijkheid meetellen. Het exacte brutoloon krijg je van ons op papier vóór je start.',
             },
             {
                 q: 'Werken kraanmachinisten in ploegen?',
@@ -235,7 +235,7 @@ export const jobTradePages: JobTradePage[] = [
         h1: 'Vacatures werfleider en uitvoerder in België',
         metaTitle: 'Vacatures werfleider & uitvoerder België | Constructief',
         metaDescription:
-            'Vacatures voor werfleiders, uitvoerders en projectleiders in de bouw in België. Nieuwbouw, renovatie en utiliteitsbouw. Wij regelen de match, het loon en de administratie.',
+            'Vacatures voor werfleiders, uitvoerders en projectleiders in de bouw in België. Nieuwbouw, renovatie en utiliteitsbouw. Wij zoeken de werf die bij je past en regelen loon en administratie.',
         intro: [
             'Wij plaatsen werfleiders, uitvoerders en projectleiders bij aannemers in België: nieuwbouw, renovatie en utiliteitsbouw. Het gaat om functies waar je de ploegen aanstuurt en de werf dagelijks opvolgt, met korte lijnen naar de projectleider en de bouwheer.',
             'In Vlaanderen spreekt men van werfleider, in Nederland van uitvoerder, bij grotere projecten van projectleider. De kern is hetzelfde: je zorgt dat het werk vlot, veilig en volgens plan verloopt en dat problemen gemeld worden vóór ze geld kosten.',
@@ -250,9 +250,9 @@ export const jobTradePages: JobTradePage[] = [
         requirements: [
             'Ervaring als werfleider, uitvoerder of in een vergelijkbare rol in de bouw',
             'Bachelor of master bouwkunde, of gelijkwaardig door ervaring',
-            'Leidinggevende capaciteiten en duidelijk kunnen communiceren',
+            'Leidinggevende capaciteiten en goede communicatieve vaardigheden',
             'Vloeiend Nederlands; Frans is een pluspunt op werven in Brussel en Wallonië',
-            'Plan kunnen lezen, en kennis van planningssoftware is een voordeel',
+            'Plan kunnen lezen; kennis van planningssoftware is een voordeel',
         ],
         certificates: [
             'VCA of een gelijkwaardige veiligheidsopleiding; op grotere werven wordt dit standaard gevraagd',
@@ -273,7 +273,7 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Wat is het verschil tussen werfleider, uitvoerder en projectleider?',
-                a: 'De uitvoerder of werfleider staat dagelijks op de werf en stuurt de ploegen aan. De projectleider volgt meerdere werven op, van voorbereiding tot oplevering, en zit meer op planning en budget. In kleinere bedrijven doet één persoon beide. Zeg bij je inschrijving welke rol je zoekt, dan matchen we daarop.',
+                a: 'De uitvoerder of werfleider staat dagelijks op de werf en stuurt de ploegen aan. De projectleider volgt meerdere werven op, van voorbereiding tot oplevering, en zit meer op planning en budget. In kleinere bedrijven doet één persoon beide. Zeg bij je inschrijving welke rol je zoekt, dan zoeken we daarop verder.',
             },
             {
                 q: 'Verloopt een sollicitatie vertrouwelijk?',
@@ -296,7 +296,7 @@ export const jobTradePages: JobTradePage[] = [
         metaDescription:
             'Vacatures voor industriële elektriciens in België: onderhoud, storingen en schakelkasten in de industrie en op werven. Wij plaatsen je en regelen documenten en loon vooraf.',
         intro: [
-            'Wij zoeken industriële elektriciens voor onderhoud en installatiewerk in België, onder meer in de Antwerpse havenregio en in de industriezones rond Gent en Limburg. Je werkt aan installaties waar stilstand geld kost, dus gestructureerd werken en vooruitdenken zijn belangrijker dan tempo.',
+            'Wij zoeken industriële elektriciens voor onderhoud en installatiewerk in België, onder meer in de Antwerpse havenregio en in de industriezones rond Gent en in Limburg. Je werkt aan installaties waar stilstand geld kost, dus gestructureerd werken en vooruitdenken zijn belangrijker dan tempo.',
             'Het werk gaat van het opsporen van storingen en het herstellen van installaties tot het aansluiten en controleren van schakelkasten, met veilig vrijschakelen als vaste gewoonte.',
         ],
         tasks: [
@@ -328,7 +328,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een industrieel elektricien in België?',
-                a: 'Het loon hangt af van de sector waarin je werkt — bouw, metaal of chemie hebben elk hun eigen barema — en van je ervaring en shiftenregeling. Shiftenwerk brengt premies mee, en in de chemie en de petrochemie liggen de lonen doorgaans hoger dan op een gewone werf. Wij zetten het brutoloon en de premies op papier vóór je start, inclusief het effect van shiften op je nettoloon.',
+                a: 'Het loon hangt af van de sector waarin je werkt — bouw, metaal of chemie hebben elk hun eigen barema — en van je ervaring en shiftregeling. Shiftenwerk brengt premies mee, en in de chemie en de petrochemie liggen de lonen doorgaans hoger dan op een gewone werf. Wij zetten het brutoloon en de premies op papier vóór je start, inclusief het effect van shiften op je nettoloon.',
             },
             {
                 q: 'Wat betekenen BA4 en BA5?',

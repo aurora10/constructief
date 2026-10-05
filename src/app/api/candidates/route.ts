@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     const data = await request.json();
-    const { name, trades, experience, phone, email, notes, turnstileToken, website } = data;
+    const { name, trades, experience, phone, email, notes, turnstileToken, website, vacancy } = data;
 
     // 2. Honeypot check (website field should be empty)
     if (website) {
@@ -61,6 +61,14 @@ export async function POST(request: NextRequest) {
     const now = new Date();
     const createdAt = `${String(now.getDate()).padStart(2, '0')} - ${String(now.getMonth() + 1).padStart(2, '0')} - ${now.getFullYear()}`;
 
+    // Which opening produced this application. Comes from the vacancy/trade page the
+    // candidate applied on; kept informational, so an unrecognised value is ignored
+    // rather than rejected (never block a real application over it).
+    const source = typeof vacancy === 'string' ? vacancy.replace(/[\r\n\t]+/g, ' ').trim().slice(0, 120) : '';
+    const recruiterNote = source
+        ? `Sollicitatie: ${source}${notes ? ` | ${notes}` : ''}`
+        : notes || '';
+
     // Append to the bottom of the Google Sheets "Candidates" tab
     // Column order: Id | Name | Trade | Experience | Status | Phone | Email | Recruiter Note | Created At
     const id = await insertRowWithId('Candidates', [
@@ -70,7 +78,7 @@ export async function POST(request: NextRequest) {
       'New',
       phone,
       email || '',
-      notes || '',
+      recruiterNote,
       createdAt,
     ]);
 

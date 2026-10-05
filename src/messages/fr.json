@@ -278,6 +278,7 @@
     "CandidateForm": {
         "title": "Inscription Directe",
         "subtitle": "Pas besoin de compte. Remplissez vos coordonnées et nous vous appellerons quand nous aurons une mission.",
+        "applying_for": "Vous postulez pour : {role}. Votre métier est déjà coché — vous pouvez encore le modifier.",
         "name": "Nom",
         "name_placeholder": "Jean Dupont",
         "trades_label": "Spécialité(s)",

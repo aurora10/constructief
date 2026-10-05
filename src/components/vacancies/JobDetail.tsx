@@ -125,7 +125,7 @@ export async function JobDetail({ job, locale }: { job: Job; locale: string }) {
                                 </p>
                                 <div className="flex flex-wrap gap-3">
                                     <Button asChild size="lg">
-                                        <Link href="/kandidaten">{t('apply')}</Link>
+                                        <Link href={`/kandidaten?vacature=${job.id}`}>{t('apply')}</Link>
                                     </Button>
                                     <Button asChild size="lg" variant="outline">
                                         <Link href="/vacatures">Alle vacatures</Link>
@@ -160,12 +160,12 @@ export async function JobDetail({ job, locale }: { job: Job; locale: string }) {
                                 </div>
 
                                 <Button asChild className="w-full mt-6">
-                                    <Link href="/kandidaten">{t('apply')}</Link>
+                                    <Link href={`/kandidaten?vacature=${job.id}`}>{t('apply')}</Link>
                                 </Button>
 
                                 <p className="text-xs text-neutral-500 mt-4 leading-relaxed">
-                                    Constructief is een Belgische aannemer van bouwploegen. Wij werven,
-                                    screenen en begeleiden vakmensen voor werven in heel België.
+                                    Constructief stelt bouwploegen samen voor aannemers in heel België. Wij
+                                    werven, screenen en begeleiden vakmensen voor werven in heel België.
                                 </p>
                             </div>
                         </div>

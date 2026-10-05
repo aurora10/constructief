@@ -278,6 +278,7 @@
     "CandidateForm": {
         "title": "Direct Inschrijven",
         "subtitle": "Geen account nodig. Vul je gegevens in en wij bellen je als we een klus hebben.",
+        "applying_for": "Je solliciteert voor: {role}. Je vakgebied staat al aangevinkt — je kan het nog aanpassen.",
         "name": "Naam",
         "name_placeholder": "Jan de Vries",
         "trades_label": "Vakgebied(en)",

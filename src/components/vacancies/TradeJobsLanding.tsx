@@ -114,7 +114,7 @@ export function TradeJobsLanding({ trade }: { trade: JobTradePage }) {
                         </ul>
                         <div className="flex flex-wrap gap-3 mt-6">
                             <Button asChild size="lg">
-                                <Link href="/kandidaten">{`Gratis inschrijven als ${trade.linkLabel.toLowerCase()}`}</Link>
+                                <Link href={`/kandidaten?vak=${trade.jobTradeSlug}`}>{`Gratis inschrijven als ${trade.linkLabel.toLowerCase()}`}</Link>
                             </Button>
                             {hasServicePage && (
                                 <Button asChild size="lg" variant="outline">
@@ -177,10 +177,10 @@ export function TradeJobsLanding({ trade }: { trade: JobTradePage }) {
                                 <p className="text-neutral-600 mb-4">
                                     Er staat vandaag geen opdracht voor deze functie open, maar wij
                                     plaatsen doorlopend voor aannemers in heel België. Schrijf je in,
-                                    dan nemen we contact op zodra er een werf past bij je profiel.
+                                    dan nemen we contact op zodra er een werf bij je profiel past.
                                 </p>
                                 <Button asChild>
-                                    <Link href="/kandidaten">Gegevens achterlaten</Link>
+                                    <Link href={`/kandidaten?vak=${trade.jobTradeSlug}`}>Gegevens achterlaten</Link>
                                 </Button>
                             </div>
                         )}
@@ -188,7 +188,7 @@ export function TradeJobsLanding({ trade }: { trade: JobTradePage }) {
 
                     <div className="mb-12">
                         <h2 className="text-2xl font-bold mb-6">
-                            {`Veelgestelde vragen van ${trade.linkLabel.toLowerCase()}`}
+                            {`Veelgestelde vragen over het beroep ${trade.linkLabel.toLowerCase()}`}
                         </h2>
                         <div className="space-y-6">
                             {trade.faq.map((item, index) => (
@@ -206,10 +206,10 @@ export function TradeJobsLanding({ trade }: { trade: JobTradePage }) {
                         <ol className="space-y-4">
                             {[
                                 'Je vult het kandidaatformulier in: ervaring, attesten, regio en beschikbaarheid. Gratis, zonder account.',
-                                'Wij bellen je voor een korte screening en overlopen wat je zoekt en wat je documenten zijn.',
+                                'Wij bellen je voor een korte screening en overlopen wat je zoekt en welke documenten je hebt.',
                                 'We stellen je voor aan een aannemer die past — niet aan tien partijen tegelijk.',
                                 'Loon, uren en startdatum worden afgesproken vóór je eerste werkdag.',
-                                'Documenten zoals A1, Limosa en Checkinatwork regelen we vooraf, jij kan starten.',
+                                'Documenten zoals A1, Limosa en Checkinatwork regelen we vooraf, zodat je kan starten.',
                             ].map((step, index) => (
                                 <li key={index} className="flex gap-4">
                                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-white text-sm font-semibold">
@@ -232,7 +232,7 @@ export function TradeJobsLanding({ trade }: { trade: JobTradePage }) {
                         </p>
                         <div className="flex flex-wrap gap-3">
                             <Button asChild size="lg">
-                                <Link href="/kandidaten">Inschrijven als kandidaat</Link>
+                                <Link href={`/kandidaten?vak=${trade.jobTradeSlug}`}>Inschrijven als kandidaat</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline">
                                 <Link href="/vacatures">

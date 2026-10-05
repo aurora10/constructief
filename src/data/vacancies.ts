@@ -39,7 +39,7 @@ export const jobs: Job[] = [
         title: 'Projectleider Bouw',
         location: 'Antwerpen',
         type: 'Fulltime',
-        salary: '€4000 - €5500',
+        salary: '€ 4.000 - € 5.500 per maand',
         description:
             'Ervaren projectleider voor grote utiliteitsbouwprojecten in de regio Antwerpen. Je leidt meerdere werven van voorbereiding tot oplevering.',
         intro: [
@@ -54,10 +54,10 @@ export const jobs: Job[] = [
             'Opvolging van veiligheid en werfadministratie',
         ],
         requirements: [
-            'Bachelor of Master in de Bouwkunde',
+            'Bachelor of master in de bouwkunde',
             'Minimaal 5 jaar ervaring in een soortgelijke functie',
             'Uitstekende organisatorische en communicatieve vaardigheden',
-            'Vloeiend in het Nederlands',
+            'Vloeiend Nederlands',
         ],
         offer: [
             'Duidelijke afspraken over loon, uren en startdatum vóór je begint',
@@ -73,7 +73,7 @@ export const jobs: Job[] = [
         title: 'Werfleider',
         location: 'Gent',
         type: 'Fulltime',
-        salary: '€3500 - €4500',
+        salary: '€ 3.500 - € 4.500 per maand',
         description:
             'Werfleider voor nieuwbouw- en renovatieprojecten in Gent en omgeving. Je stuurt de ploegen aan en bewaakt planning en kwaliteit.',
         intro: [
@@ -106,9 +106,9 @@ export const jobs: Job[] = [
         title: 'Bekister',
         location: 'Brussel',
         type: 'Interim',
-        salary: '€17 - €19 / uur',
+        salary: '€ 17 - € 19 per uur',
         description:
-            'Bekister voor diverse betonprojecten in Brussel. Ervaring met traditionele en systeembekisting is vereist.',
+            'Bekister voor diverse betonprojecten in Brussel. Ervaring met traditionele bekisting is vereist; systeembekisting is een pluspunt.',
         intro: [
             'Voor betonprojecten in Brussel zoeken wij ervaren bekisters. Je werkt met traditionele en systeembekisting op uiteenlopende werven, van funderingen tot wanden en kolommen.',
             'Je leest plannen zelfstandig, werkt nauwkeurig en houdt de bekisting maatvast. Ervaring met verschillende systemen is een voordeel, geen must.',
@@ -116,12 +116,12 @@ export const jobs: Job[] = [
         tasks: [
             'Plaatsen, stellen en ontkisten van bekisting',
             'Bekisting maatvast opbouwen volgens plan',
-            'Samenwerken met ijzervlechters en betonploeg',
+            'Samenwerken met de ijzervlechters en de betonploeg',
             'Materieel netjes en veilig gebruiken',
         ],
         requirements: [
             'Ervaring met traditionele en systeembekisting',
-            'Planlezen',
+            'Plannen kunnen lezen',
             'Nauwkeurig werken',
         ],
         offer: [
@@ -138,7 +138,7 @@ export const jobs: Job[] = [
         title: 'Kraanmachinist',
         location: 'Limburg',
         type: 'Fulltime',
-        salary: '€18 - €20 / uur',
+        salary: '€ 18 - € 20 per uur',
         description:
             'Torenkraanmachinist met geldig attest voor projecten in Limburg. Veilig en nauwkeurig werken staat voorop.',
         intro: [
@@ -148,7 +148,7 @@ export const jobs: Job[] = [
         tasks: [
             'Bedienen van de torenkraan volgens hijsplan',
             'Op- en afbouw van de kraan mee opvolgen',
-            'Dagelijkse controle van kraan en veiligheidssystemen',
+            'Dagelijkse controle van de kraan en de veiligheidssystemen',
             'Afstemming met de ploegbaas en de ploegen op de grond',
         ],
         requirements: [
@@ -170,7 +170,7 @@ export const jobs: Job[] = [
         title: 'Metser',
         location: 'West-Vlaanderen',
         type: 'Fulltime',
-        salary: '€16 - €18 / uur',
+        salary: '€ 16 - € 18 per uur',
         description:
             'Metselaar voor nieuwbouw en renovatie in West-Vlaanderen. Zelfstandig werken en oog voor kwaliteit.',
         intro: [
@@ -184,7 +184,7 @@ export const jobs: Job[] = [
             'Werf netjes en veilig achterlaten',
         ],
         requirements: [
-            'Ervaring met metselwerken',
+            'Ervaring met metselwerk',
             'Zelfstandig kunnen werken',
             'Fysiek in orde',
         ],
@@ -202,7 +202,7 @@ export const jobs: Job[] = [
         title: 'Elektricien',
         location: 'Antwerpen',
         type: 'Fulltime',
-        salary: '€17 - €19 / uur',
+        salary: '€ 17 - € 19 per uur',
         description:
             'Industrieel elektricien voor onderhoudswerken in de Antwerpse havenregio. Kennis van PLC is een plus.',
         intro: [
@@ -217,7 +217,7 @@ export const jobs: Job[] = [
         ],
         requirements: [
             'Diploma elektriciteit',
-            'Ervaring in industrie',
+            'Ervaring in de industrie',
             'Kennis van PLC is een plus',
         ],
         offer: [
@@ -251,3 +251,17 @@ export function tradeLabel(tradeSlug: string, locale: string): string {
     if (!labels) return tradeSlug;
     return labels[locale as keyof typeof labels] ?? labels.nl;
 }
+
+/**
+ * Bridges a vacancy's tradeSlug to the exact option label used by the trade
+ * checkboxes in CandidateForm. When someone applies from a vacancy or trade page
+ * we preselect this option for them, so the trade is never left blank and the
+ * candidate does not have to hunt through five collapsed clusters.
+ */
+export const candidateFormTrade: Record<string, string> = {
+    werfleider: 'Werfleider',
+    bekister: 'Bekister',
+    kraanmachinist: 'Kraanmachinist (Torenkraan)',
+    metser: 'Metser',
+    elektricien_ind: 'Elektricien (Industrieel)',
+};

@@ -192,12 +192,14 @@ export default async function VacancyOrTradePage({ params }: Props) {
     const canonical = `${BASE}/${locale}/vacatures/${id}`;
     const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
 
-    // Parse the salary ("€4000 - €5500" monthly, "€17 - €19 / uur" hourly) into a
-    // numeric MonetaryAmount range so the JobPosting markup is valid.
-    const salaryNumbers = (job.salary.match(/[\d.,]+/g) ?? [])
-        .map((n) => parseFloat(n.replace(',', '.')))
+    // Parse "€ 4.000 - € 5.500 per maand" / "€ 17 - € 19 per uur" into a numeric
+    // MonetaryAmount range so the JobPosting markup is valid. Belgian number
+    // formatting: "." groups thousands and "," is the decimal separator, so the
+    // grouping dots have to go before parsing ("4.000" is four thousand, not 4).
+    const salaryNumbers = (job.salary.match(/\d[\d.,]*/g) ?? [])
+        .map((n) => parseFloat(n.replace(/\./g, '').replace(',', '.')))
         .filter((n) => !Number.isNaN(n));
-    const isHourly = /\/\s*uur/i.test(job.salary);
+    const isHourly = /\bper\s+uur\b|\/\s*uur/i.test(job.salary);
     const baseMin = salaryNumbers[0];
     const baseMax = salaryNumbers.length > 1 ? salaryNumbers[1] : salaryNumbers[0];
 

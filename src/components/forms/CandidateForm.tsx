@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { User, Phone, Mail, FileText, Check, ChevronDown, Briefcase } from 'lucide-react';
 import { Turnstile } from '@marsidev/react-turnstile';
+import { jobs, candidateFormTrade, tradeLabel } from '@/data/vacancies';
 
 // Trade clusters for Belgian construction market
 const TRADE_CLUSTERS = {
@@ -78,6 +80,7 @@ export function CandidateForm() {
     const t = useTranslations('CandidateForm');
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const searchParams = useSearchParams();
     const [selectedTrades, setSelectedTrades] = useState<Set<string>>(new Set());
     const [expandedClusters, setExpandedClusters] = useState<Set<string>>(new Set(['structural']));
     const [turnstileToken, setTurnstileToken] = useState<string>(
@@ -113,6 +116,44 @@ export function CandidateForm() {
         return key ? t(key) : trade;
     }
 
+    /**
+     * Someone who arrives from a vacancy or a trade page carries that context in the
+     * URL (?vacature=3 / ?vak=metser). We preselect the matching trade so the field is
+     * never left blank, and we send the source along so the recruiter sees which
+     * opening produced the application.
+     */
+    const applicationContext = useMemo(() => {
+        const vacancyId = searchParams.get('vacature');
+        if (vacancyId) {
+            const job = jobs.find(j => String(j.id) === vacancyId);
+            const trade = job ? candidateFormTrade[job.tradeSlug] : undefined;
+            if (job && trade) {
+                return { label: `${job.title} — ${job.location}`, trade };
+            }
+        }
+
+        const tradeSlug = searchParams.get('vak');
+        const trade = tradeSlug ? candidateFormTrade[tradeSlug] : undefined;
+        if (tradeSlug && trade) {
+            return { label: tradeLabel(tradeSlug, 'nl'), trade };
+        }
+
+        return null;
+    }, [searchParams]);
+
+    useEffect(() => {
+        if (!applicationContext) return;
+        const { trade } = applicationContext;
+
+        setSelectedTrades(prev => (prev.has(trade) ? prev : new Set(prev).add(trade)));
+        for (const cluster of Object.keys(TRADE_CLUSTERS) as (keyof typeof TRADE_CLUSTERS)[]) {
+            if ((TRADE_CLUSTERS[cluster] as readonly string[]).includes(trade)) {
+                setExpandedClusters(prev => new Set(prev).add(cluster));
+                break;
+            }
+        }
+    }, [applicationContext]);
+
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setLoading(true);
@@ -127,6 +168,7 @@ export function CandidateForm() {
             email: formData.get('email'),
             notes: formData.get('notes'),
             website: formData.get('website'),
+            vacancy: applicationContext?.label,
             turnstileToken,
         };
 
@@ -158,6 +200,12 @@ export function CandidateForm() {
                 <div className="bg-white rounded-xl shadow-md border-l-4 border-blue-600 p-8 md:p-10 transition-all hover:shadow-lg">
                     <h2 className="text-3xl font-extrabold mb-2 text-slate-900">{t('title')}</h2>
                     <p className="mb-8 text-gray-600">{t('subtitle')}</p>
+
+                    {applicationContext && (
+                        <div className="mb-6 rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+                            {t('applying_for', { role: applicationContext.label })}
+                        </div>
+                    )}
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="space-y-1">
