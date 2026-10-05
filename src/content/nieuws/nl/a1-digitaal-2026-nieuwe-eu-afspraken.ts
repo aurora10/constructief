@@ -6,7 +6,7 @@ export const article: Article = {
     description:
         'De A1-verklaring wordt digitaal en de Europese coördinatieregels gaan op de schop. Wat betekent dat concreet voor een hoofdaannemer die met Oost-Europese ploegen werkt?',
     date: '2026-08-20',
-    author: 'Constructief',
+    author: 'Constructief Bouw',
     authorIsOrganization: true,
     category: 'Compliance',
     keywords: ['A1 verklaring 2026', 'digitaal A1', 'ESSPASS', 'detachering Oost-Europa', 'posted workers'],

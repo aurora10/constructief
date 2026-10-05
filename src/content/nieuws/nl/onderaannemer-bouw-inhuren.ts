@@ -7,7 +7,7 @@ export const article: Article = {
         'Van prijsopbouw tot legaliteit en opstarttermijn: de praktische checklist die u als hoofdaannemer doorloopt voordat u een onderaannemer of bouwploeg inschakelt.',
     date: '2026-08-10',
     updated: '2026-08-18',
-    author: 'Constructief',
+    author: 'Constructief Bouw',
     authorIsOrganization: true,
     category: 'Inkoop & compliance',
     keywords: ['onderaannemer bouw inhuren', 'bouwploeg inhuren', 'onderaanneming checklist'],

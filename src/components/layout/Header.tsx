@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { BRAND } from "@/lib/brand";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -15,6 +16,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 export function Header() {
     const t = useTranslations("Navigation");
+    const tBrand = useTranslations("Brand");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
@@ -57,8 +59,15 @@ export function Header() {
             )}
         >
             <div className="container flex h-20 items-center justify-between">
-                <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-3xl font-bold text-primary tracking-tight">Constructief Bouw</span>
+                {/* Brand lockup: the name is never lengthened with a category word. The
+                    category lives in the descriptor underneath, which is translated
+                    (bouwploegen & vakmensen / строительные бригады / équipes & ouvriers
+                    qualifiés) and therefore speaks to each audience in its own language. */}
+                <Link href="/" className="flex flex-col leading-none" aria-label={BRAND.name}>
+                    <span className="text-3xl font-bold text-primary tracking-tight">{BRAND.name}</span>
+                    <span className="mt-0.5 text-[11px] font-medium tracking-wide text-neutral-500">
+                        {tBrand('descriptor')}
+                    </span>
                 </Link>
 
                 {/* Desktop Navigation */}

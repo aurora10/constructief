@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { citiesData, flagshipCitySlugs } from "@/data/cities";
 import { Instagram, Facebook } from "lucide-react";
+import { BRAND } from '@/lib/brand';
 
 const socialLinks = [
     { label: "Instagram", href: "https://www.instagram.com/constructief_bouw/", Icon: Instagram },
@@ -10,6 +11,7 @@ const socialLinks = [
 
 export function Footer() {
     const t = useTranslations("Footer");
+    const tBrand = useTranslations("Brand");
     const currentYear = new Date().getFullYear();
 
     return (
@@ -17,7 +19,10 @@ export function Footer() {
             <div className="container py-8 md:py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="space-y-4">
-                        <h3 className="text-lg font-bold text-primary">Constructief</h3>
+                        <h3 className="text-lg font-bold text-primary">{BRAND.name}</h3>
+                        <p className="mt-0.5 text-[11px] font-medium tracking-wide text-muted-foreground">
+                            {tBrand("descriptor")}
+                        </p>
                         <p className="text-sm text-muted-foreground">
                             {t("tagline")}
                         </p>
@@ -115,7 +120,7 @@ export function Footer() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-                    <p>&copy; {currentYear} Constructief. {t("rights")}</p>
+                    <p>&copy; {currentYear} {BRAND.name}. {t("rights")}</p>
                 </div>
             </div>
         </footer>

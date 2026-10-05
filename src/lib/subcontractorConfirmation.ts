@@ -227,7 +227,7 @@ export function buildSubcontractorConfirmation(
     <div style="max-width:600px;margin:0 auto;padding:24px 12px;">
       <div style="background-color:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;">
         <div style="background-color:#1d4ed8;padding:22px 28px;">
-          <span style="color:#ffffff;font-size:20px;font-weight:700;letter-spacing:-0.3px;">Constructief</span>
+          <span style="color:#ffffff;font-size:20px;font-weight:700;letter-spacing:-0.3px;">Constructief Bouw</span>
         </div>
         <div style="padding:28px;">
           <p style="margin:0 0 16px;font-size:16px;color:#0f172a;font-weight:600;">${escapeHtml(

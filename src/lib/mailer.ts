@@ -1,4 +1,5 @@
 import nodemailer, { type Transporter } from 'nodemailer';
+import { BRAND } from '@/lib/brand';
 
 /**
  * Single source of truth for the Gmail SMTP transport (GMAIL_USER / GMAIL_PASS
@@ -47,7 +48,7 @@ export function getTransporter(): Transporter {
  * verified in the Gmail account.
  */
 export function getFromHeader(): string {
-  return process.env.MAIL_FROM || `"Constructief" <${getMailUser()}>`;
+  return process.env.MAIL_FROM || `"${BRAND.name}" <${getMailUser()}>`;
 }
 
 /**

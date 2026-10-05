@@ -5,6 +5,7 @@ import { pageAlternates } from '@/lib/seo';
 import { flagshipTrades } from '@/data/cityContent';
 import { MapPin, ArrowRight, Wrench } from 'lucide-react';
 import { PageHeader } from '@/components/layout/PageHeader';
+import { BRAND } from '@/lib/brand';
 
 export async function generateMetadata({ 
   params 
@@ -15,7 +16,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Navigation' });
   
   return {
-    title: `${t('regions')} | Constructief`,
+    title: `${t('regions')} | ${BRAND.name}`,
     description: "Vind betrouwbare onderaannemers en bouwpersoneel in uw regio.",
     alternates: pageAlternates(locale, '/diensten'),
   };

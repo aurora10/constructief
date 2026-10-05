@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { BRAND } from '@/lib/brand';
 import "../../styles/globals.css";
 
 const manrope = Manrope({
@@ -51,15 +52,24 @@ export default async function RootLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
   const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const tBrand = await getTranslations({ locale, namespace: 'Brand' });
 
+  // The company entity. Every field that names the business comes from BRAND so
+  // that the structured data, the logo, the titles and the Google Business Profile
+  // all describe one entity — the name on its own ("Constructief") is a common Dutch
+  // adjective and consolidates nothing.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["EmploymentAgency", "Organization", "ProfessionalService"],
-    "@id": "https://constructief-bouw.be/#organization",
-    "name": "Constructief",
-    "alternateName": "Constructief Bouw",
-    "url": "https://constructief-bouw.be",
-    "logo": "https://constructief-bouw.be/icon",
+    "@id": `${BRAND.url}/#organization`,
+    "name": BRAND.name,
+    "alternateName": [...BRAND.alternateNames],
+    ...(BRAND.legalName ? { "legalName": BRAND.legalName } : {}),
+    // The localized category descriptor that sits under the logo. It gives the
+    // entity a category in each language without lengthening the brand name.
+    "slogan": tBrand('descriptor'),
+    "url": BRAND.url,
+    "logo": `${BRAND.url}/icon`,
     "description": t('description'),
     "areaServed": [
       { "@type": "Country", "name": "Belgium", "alternateName": "BE" },

@@ -5,6 +5,7 @@ import { jobs } from '@/data/vacancies';
 import { jobTradePages } from '@/data/vacancyTrades';
 import { jobRu } from '@/data/vacancies.ru';
 import { jobTradeRu } from '@/data/vacancyTrades.ru';
+import { BRAND } from '@/lib/brand';
 import nl from '@/messages/nl.json';
 import fr from '@/messages/fr.json';
 import ru from '@/messages/ru.json';
@@ -47,10 +48,10 @@ export function GET(): Response {
 
     const out: string[] = [];
 
-    out.push('# Constructief Bouw');
+    out.push(`# ${BRAND.name}`);
     out.push('');
     out.push(
-        '> Constructief is een Belgische partner voor bouwpersoneel met twee duidelijke doelgroepen: (1) hoofdaannemers en bouwbedrijven die onderaannemers en complete bouwploegen inhuren, en (2) vakmensen en ploegen die werk zoeken in België of Nederland. Wij leveren gescreende, legale ploegen (A1, Limosa en Checkinatwork vooraf geregeld), met een 14-dagen testweek en vergoeding op resultaat.',
+        `> ${BRAND.name} (${nl.Brand.descriptor}) is een Belgische partner voor bouwpersoneel met twee duidelijke doelgroepen: (1) hoofdaannemers en bouwbedrijven die onderaannemers en complete bouwploegen inhuren, en (2) vakmensen en ploegen die werk zoeken in België of Nederland. Wij leveren gescreende, legale ploegen (A1, Limosa en Checkinatwork vooraf geregeld), met een 14-dagen testweek en vergoeding op resultaat.`,
     );
     out.push('');
     out.push(

@@ -1,5 +1,6 @@
 import type { JobTradeCopy, JobTradeFaq } from './vacancyTypes';
 import { jobTradeRu } from './vacancyTrades.ru';
+import { BRAND } from '@/lib/brand';
 
 /** The trade page content in the reader's language (ru translated, fr falls back to nl). */
 export function tradeCopy(trade: JobTradePage, locale: string): JobTradeCopy {
@@ -93,7 +94,7 @@ export const jobTradePages: JobTradePage[] = [
         jobTradeSlug: 'metser',
         linkLabel: 'Metselaar / metser',
         h1: 'Vacatures metselaar in België',
-        metaTitle: 'Vacatures metselaar in België | Constructief',
+        metaTitle: `Vacatures metselaar in België | ${BRAND.name}`,
         metaDescription:
             'Vacatures voor metselaars en metsers in heel België. Wij plaatsen je bij aannemers, spreken loon en startdatum vooraf af en regelen A1, Limosa en Checkinatwork.',
         intro: [
@@ -155,7 +156,7 @@ export const jobTradePages: JobTradePage[] = [
         jobTradeSlug: 'bekister',
         linkLabel: 'Bekister',
         h1: 'Vacatures bekister in België',
-        metaTitle: 'Vacatures bekister (bekisting) in België | Constructief',
+        metaTitle: `Vacatures bekister (bekisting) in België | ${BRAND.name}`,
         metaDescription:
             'Vacatures voor bekisters in België: systeembekisting en traditionele bekisting op betonwerven. Wij plaatsen je bij aannemers en regelen documenten, loon en verblijf vooraf.',
         intro: [
@@ -213,7 +214,7 @@ export const jobTradePages: JobTradePage[] = [
         jobTradeSlug: 'kraanmachinist',
         linkLabel: 'Kraanmachinist',
         h1: 'Vacatures kraanmachinist (torenkraan) in België',
-        metaTitle: 'Vacatures kraanmachinist torenkraan België | Constructief',
+        metaTitle: `Vacatures kraanmachinist torenkraan België | ${BRAND.name}`,
         metaDescription:
             'Vacatures voor torenkraanmachinisten in België. Geldig attest vereist. Wij plaatsen je bij aannemers op grote werven en regelen loon, documenten en verblijf vooraf.',
         intro: [
@@ -271,7 +272,7 @@ export const jobTradePages: JobTradePage[] = [
         jobTradeSlug: 'werfleider',
         linkLabel: 'Werfleider / uitvoerder',
         h1: 'Vacatures werfleider en uitvoerder in België',
-        metaTitle: 'Vacatures werfleider & uitvoerder België | Constructief',
+        metaTitle: `Vacatures werfleider & uitvoerder België | ${BRAND.name}`,
         metaDescription:
             'Vacatures voor werfleiders, uitvoerders en projectleiders in de bouw in België. Nieuwbouw, renovatie en utiliteitsbouw. Wij zoeken de werf die bij je past en regelen loon en administratie.',
         intro: [
@@ -330,7 +331,7 @@ export const jobTradePages: JobTradePage[] = [
         jobTradeSlug: 'elektricien_ind',
         linkLabel: 'Industrieel elektricien',
         h1: 'Vacatures industrieel elektricien in België',
-        metaTitle: 'Vacatures industrieel elektricien België | Constructief',
+        metaTitle: `Vacatures industrieel elektricien België | ${BRAND.name}`,
         metaDescription:
             'Vacatures voor industriële elektriciens in België: onderhoud, storingen en schakelkasten in de industrie en op werven. Wij plaatsen je en regelen documenten en loon vooraf.',
         intro: [

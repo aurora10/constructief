@@ -14,12 +14,13 @@
  */
 
 import type { JobTradeRu } from './vacancyTypes';
+import { BRAND } from '@/lib/brand';
 
 export const jobTradeRu: Record<string, JobTradeRu> = {
     metselaar: {
         linkLabel: 'Каменщик',
         h1: 'Работа каменщиком в Бельгии — вакансии',
-        metaTitle: 'Вакансии: каменщик в Бельгии | Constructief',
+        metaTitle: `Вакансии: каменщик в Бельгии | ${BRAND.name}`,
         metaDescription:
             'Вакансии для каменщиков по всей Бельгии. Мы направляем вас к подрядчикам, согласуем зарплату и дату начала заранее и оформляем A1, Limosa и Checkinatwork.',
         intro: [
@@ -77,7 +78,7 @@ export const jobTradeRu: Record<string, JobTradeRu> = {
     bekister: {
         linkLabel: 'Опалубщик',
         h1: 'Работа опалубщиком в Бельгии — вакансии',
-        metaTitle: 'Вакансии: опалубщик в Бельгии | Constructief',
+        metaTitle: `Вакансии: опалубщик в Бельгии | ${BRAND.name}`,
         metaDescription:
             'Вакансии для опалубщиков в Бельгии: системная и традиционная опалубка на бетонных объектах. Мы оформляем документы и согласуем зарплату заранее.',
         intro: [
@@ -131,7 +132,7 @@ export const jobTradeRu: Record<string, JobTradeRu> = {
     kraanmachinist: {
         linkLabel: 'Машинист башенного крана',
         h1: 'Работа машинистом башенного крана в Бельгии — вакансии',
-        metaTitle: 'Вакансии: машинист башенного крана в Бельгии | Constructief',
+        metaTitle: `Вакансии: машинист башенного крана в Бельгии | ${BRAND.name}`,
         metaDescription:
             'Вакансии для машинистов башенного крана в Бельгии. Нужен действующий допуск. Мы направляем вас к подрядчикам: зарплату согласуем и документы оформляем заранее.',
         intro: [
@@ -185,7 +186,7 @@ export const jobTradeRu: Record<string, JobTradeRu> = {
     werfleider: {
         linkLabel: 'Прораб',
         h1: 'Работа прорабом в Бельгии — вакансии',
-        metaTitle: 'Вакансии: прораб в Бельгии | Constructief',
+        metaTitle: `Вакансии: прораб в Бельгии | ${BRAND.name}`,
         metaDescription:
             'Вакансии для прорабов и мастеров в Бельгии. Новое строительство, реновация, промышленные объекты. Зарплату согласуем, документы оформляем заранее.',
         intro: [
@@ -240,7 +241,7 @@ export const jobTradeRu: Record<string, JobTradeRu> = {
     'industrieel-elektricien': {
         linkLabel: 'Промышленный электрик',
         h1: 'Работа промышленным электриком в Бельгии — вакансии',
-        metaTitle: 'Вакансии: промышленный электрик в Бельгии | Constructief',
+        metaTitle: `Вакансии: промышленный электрик в Бельгии | ${BRAND.name}`,
         metaDescription:
             'Вакансии для промышленных электриков в Бельгии: обслуживание, неисправности и распределительные щиты. Мы оформляем документы и согласуем зарплату заранее.',
         intro: [

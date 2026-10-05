@@ -7,7 +7,7 @@ export const article: Article = {
         'Praktische checklist voor Belgische aannemers: welke documenten vraagt u op bij een buitenlandse onderaannemer, en hoe voorkomt u dat u zelf aansprakelijk wordt bij een controle.',
     date: '2026-08-12',
     updated: '2026-08-18',
-    author: 'Constructief',
+    author: 'Constructief Bouw',
     authorIsOrganization: true,
     category: 'Compliance',
     keywords: ['A1 verklaring', 'Limosa melding', 'Checkinatwork', 'detachering bouw'],

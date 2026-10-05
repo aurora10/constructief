@@ -6,7 +6,7 @@ export const article: Article = {
     description:
         'Van "u moet controleren" naar "u moet kunnen aantonen dat u gecontroleerd heeft". Wat de nieuwe zorgvuldigheidsplicht voor risicosectoren betekent voor hoofdaannemers die met onderaannemers werken.',
     date: '2026-08-22',
-    author: 'Constructief',
+    author: 'Constructief Bouw',
     authorIsOrganization: true,
     category: 'Risico & compliance',
     keywords: ['ketenaansprakelijkheid 2026', 'zorgvuldigheidsplicht bouw', 'onderaanneming aansprakelijkheid', 'schijnconstructies'],

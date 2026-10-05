@@ -7,6 +7,7 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { getArticles } from '@/content/nieuws';
 import { heroImage } from '@/content/nieuws/media';
 import { ArticleImage } from '@/components/news/ArticleImage';
+import { BRAND } from '@/lib/brand';
 
 const BASE_URL = 'https://constructief-bouw.be';
 
@@ -21,7 +22,7 @@ export async function generateMetadata({
     const isWorkerCluster = locale === 'ru';
 
     return {
-        title: `${t('title')} | Constructief`,
+        title: `${t('title')} | ${BRAND.name}`,
         description: t('subtitle'),
         alternates: {
             canonical,

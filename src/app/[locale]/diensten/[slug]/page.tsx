@@ -9,6 +9,7 @@ import { jobs } from '@/data/vacancies';
 import { TradeCityLanding } from '@/components/sections/TradeCityLanding';
 import { TradeLanding } from '@/components/sections/TradeLanding';
 import { WerkgeversLink } from '@/components/sections/WerkgeversLink';
+import { BRAND } from '@/lib/brand';
 import {
   MapPin,
   Wrench,
@@ -122,16 +123,16 @@ export async function generateMetadata({
     // Base (nation-wide) trade page — substitute the {city} placeholder with region.
     const region = tradeRegion(locale);
     const tT = await getTranslations({ locale, namespace: 'Trades' });
-    title = `${tT(`${trade}.title`, { city: region })} | Constructief`;
+    title = `${tT(`${trade}.title`, { city: region })} | ${BRAND.name}`;
     description = tT(`${trade}.intro`, { city: region });
   } else if (trade) {
     const tT = await getTranslations({ locale, namespace: 'Trades' });
-    title = `${tT(`${trade}.title`, { city: cityData!.name })} | Constructief`;
+    title = `${tT(`${trade}.title`, { city: cityData!.name })} | ${BRAND.name}`;
     description = tT(`${trade}.intro`, { city: cityData!.name });
   } else {
     const namespace = `CitySEO_var${cityData!.variation}`;
     const t = await getTranslations({ locale, namespace });
-    title = `${t('heading', { city: cityData!.name })} | Constructief`;
+    title = `${t('heading', { city: cityData!.name })} | ${BRAND.name}`;
     description = t('intro', { city: cityData!.name });
   }
 
@@ -151,7 +152,7 @@ export async function generateMetadata({
       type: 'website',
       url: canonical,
       locale,
-      siteName: 'Constructief',
+      siteName: BRAND.name,
     },
   };
 }

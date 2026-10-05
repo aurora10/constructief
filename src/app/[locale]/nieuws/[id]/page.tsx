@@ -9,6 +9,7 @@ import { getArticle, getArticles, findSlugByLegacyId } from '@/content/nieuws';
 import { heroImage, ogImage } from '@/content/nieuws/media';
 import { ArticleImage } from '@/components/news/ArticleImage';
 import type { ArticleBlock } from '@/content/nieuws';
+import { BRAND } from '@/lib/brand';
 
 type Props = {
     params: Promise<{ locale: string; id: string }>;
@@ -57,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const og = ogImage(article);
 
     return {
-        title: `${article.title} | Constructief`,
+        title: `${article.title} | ${BRAND.name}`,
         description: article.description,
         keywords: article.keywords,
         alternates: { canonical, languages },
@@ -67,7 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description: article.description,
             url: canonical,
             locale,
-            siteName: 'Constructief',
+            siteName: BRAND.name,
             publishedTime: article.date,
             modifiedTime: article.updated || article.date,
             authors: [article.author],
@@ -137,7 +138,7 @@ export default async function NewsDetailPage({ params }: Props) {
             : { '@type': 'Person', name: article.author },
         publisher: {
             '@type': 'Organization',
-            name: 'Constructief',
+            name: BRAND.name,
             url: BASE_URL,
         },
         ...(image ? { image: [`${BASE_URL}${image}`] } : {}),

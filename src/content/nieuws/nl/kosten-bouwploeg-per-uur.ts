@@ -7,7 +7,7 @@ export const article: Article = {
         'Een all-in uurprijs voor een bouwploeg bestaat uit meer dan loon. Zo leest u een offerte, vergelijkt u aanbieders eerlijk en voorkomt u verrassingen op de eindafrekening.',
     date: '2026-08-14',
     updated: '2026-08-18',
-    author: 'Constructief',
+    author: 'Constructief Bouw',
     authorIsOrganization: true,
     category: 'Kosten & planning',
     keywords: ['bouwploeg prijs', 'uurtarief bouwploeg', 'kostprijs onderaannemer'],

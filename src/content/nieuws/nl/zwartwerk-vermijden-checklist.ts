@@ -7,7 +7,7 @@ export const article: Article = {
         'Zwartwerk op uw werf kost u meer dan een boete. Met deze controlelijst verifieert u een onderaannemer vóór de start en houdt u uw eigen dossier op orde.',
     date: '2026-08-16',
     updated: '2026-08-18',
-    author: 'Constructief',
+    author: 'Constructief Bouw',
     authorIsOrganization: true,
     category: 'Risico & compliance',
     keywords: ['zwartwerk bouw', 'illegale tewerkstelling', 'controle onderaannemer'],

@@ -6,6 +6,7 @@ import { vacancyAlternates } from '@/lib/seo';
 import { Link } from '@/i18n/routing';
 import { jobsByTrade } from '@/data/vacancies';
 import { jobTradePages, tradeLinkLabel } from '@/data/vacancyTrades';
+import { BRAND } from '@/lib/brand';
 
 type Props = {
     params: Promise<{ locale: string }>;
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
 
     return {
-        title: `${t('title')} | Constructief`,
+        title: `${t('title')} | ${BRAND.name}`,
         description: t('subtitle'),
         alternates: vacancyAlternates(locale, '/vacatures'),
         // Indexed for nl (Belgian job market) and ru (the crews we recruit in
@@ -24,10 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         // duplicates the Dutch copy, so it stays out of the index.
         robots: locale === 'fr' ? { index: false, follow: true } : { index: true, follow: true },
         openGraph: {
-            title: `${t('title')} | Constructief`,
+            title: `${t('title')} | ${BRAND.name}`,
             description: t('subtitle'),
             type: 'website',
-            siteName: 'Constructief',
+            siteName: BRAND.name,
         },
     };
 }

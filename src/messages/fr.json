@@ -333,8 +333,11 @@
         "privacy": "Politique de confidentialité"
     },
     "Metadata": {
-        "title": "Sous-traiter la main-d'œuvre bâtiment — Équipes présélectionnées | Constructief",
+        "title": "Sous-traiter la main-d'œuvre bâtiment — Équipes présélectionnées | Constructief Bouw",
         "description": "Sous-traitez des équipes de construction ou des ouvriers polonais par détachement. A1, Limosa et Checkinatwork gérés, essai de 14 jours, pour entrepreneurs."
+    },
+    "Brand": {
+        "descriptor": "équipes & ouvriers qualifiés"
     },
     "CitySEO_var1": {
         "heading": "Sous-traitants Fiables & Personnel de Construction à {city}",

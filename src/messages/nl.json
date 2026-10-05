@@ -183,7 +183,7 @@
         "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Wij hebben een directe pool van beschikbare metsers, bekisters, kraanmachinisten, elektriciens en lassers. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen. Naast individuele vakmannen stellen wij ook complete, legaal werkende bouwploegen samen voor hoofdaannemers — tegen een vergoeding op resultaat."
     },
     "NewsPage": {
-        "title": "Sector Insights",
+        "title": "Nieuws en kennis over bouwpersoneel",
         "subtitle": "Blijf op de hoogte van wat er speelt in de Belgische bouw.",
         "read_more": "Lees meer",
         "back_to_news": "Terug naar nieuws",
@@ -333,8 +333,11 @@
         "privacy": "Privacybeleid"
     },
     "Metadata": {
-        "title": "Onderaannemer bouw | Gescreende ploegen | Constructief",
+        "title": "Onderaannemer bouw | Gescreende ploegen | Constructief Bouw",
         "description": "Huur gescreende bouwploegen of Poolse arbeiders via detachering van bouwpersoneel. A1/Limosa/Checkinatwork geregeld, 14-dagen testweek, voor hoofdaannemers."
+    },
+    "Brand": {
+        "descriptor": "bouwploegen & vakmensen"
     },
     "CitySEO_var1": {
         "heading": "Betrouwbare Onderaannemers & Bouwpersoneel in {city}",

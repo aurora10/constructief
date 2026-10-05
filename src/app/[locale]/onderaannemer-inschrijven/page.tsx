@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { SubcontractorForm } from '@/components/forms/SubcontractorForm';
 import { SubcontractorInfo } from '@/components/sections/SubcontractorInfo';
+import { BRAND } from '@/lib/brand';
 
 // Intake page sent directly to sub-contractors. One URL per locale:
 // /nl/onderaannemer-inschrijven, /fr/onderaannemer-inschrijven,
@@ -16,7 +17,7 @@ export async function generateMetadata({
     const t = await getTranslations({ locale, namespace: 'SubcontractorForm' });
     const canonical = `https://constructief-bouw.be/${locale}/onderaannemer-inschrijven`;
     return {
-        title: `${t('page_title')} | Constructief`,
+        title: `${t('page_title')} | ${BRAND.name}`,
         description: t('page_subtitle'),
         alternates: {
             canonical,

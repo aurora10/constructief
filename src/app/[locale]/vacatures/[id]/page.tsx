@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import { vacancyAlternates } from '@/lib/seo';
 import { JobDetail } from '@/components/vacancies/JobDetail';
 import { TradeJobsLanding } from '@/components/vacancies/TradeJobsLanding';
+import { BRAND } from '@/lib/brand';
 
 type Props = {
     params: Promise<{ locale: string; id: string }>;
@@ -64,7 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 title: copy.metaTitle,
                 description: copy.metaDescription,
                 type: 'website',
-                siteName: 'Constructief',
+                siteName: BRAND.name,
             },
         };
     }
@@ -74,7 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!job) return { title: 'Not Found' };
 
     const copy = jobCopy(job, locale);
-    const title = `${copy.title} — ${jobLocation(job, locale)} | Constructief`;
+    const title = `${copy.title} — ${jobLocation(job, locale)} | ${BRAND.name}`;
 
     return {
         title,
@@ -85,7 +86,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title,
             description: copy.description,
             type: 'article',
-            siteName: 'Constructief',
+            siteName: BRAND.name,
         },
     };
 }
@@ -134,7 +135,7 @@ export default async function VacancyOrTradePage({ params }: Props) {
             description: copy.metaDescription,
             url: canonical,
             inLanguage: locale === 'ru' ? 'ru' : 'nl-BE',
-            isPartOf: { '@type': 'WebSite', name: 'Constructief', url: BASE },
+            isPartOf: { '@type': 'WebSite', name: BRAND.name, url: BASE },
         };
 
         const breadcrumbJsonLd = {
@@ -274,7 +275,7 @@ export default async function VacancyOrTradePage({ params }: Props) {
         hiringOrganization: {
             '@type': 'Organization',
             '@id': `${BASE}/#organization`,
-            name: 'Constructief',
+            name: BRAND.name,
             sameAs: BASE,
             logo: `${BASE}/icon`,
         },
