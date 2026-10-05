@@ -4,14 +4,26 @@ import { notFound } from 'next/navigation';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
-import { ArrowLeft, MapPin, Clock, Euro } from "lucide-react";
+import { ArrowLeft, MapPin, Clock, Euro, Home, ChevronRight, CalendarDays, Check } from "lucide-react";
 import { jobs } from '@/data/vacancies';
 import { routing } from '@/i18n/routing';
-import { pageAlternates } from '@/lib/seo';
+import { dutchOnlyAlternates } from '@/lib/seo';
 
 type Props = {
     params: Promise<{ locale: string; id: string }>;
 };
+
+const BASE = 'https://constructief-bouw.be';
+
+/**
+ * The vacancy copy is Dutch only (it targets the nl job-seeker queries). The
+ * fr/ru routes keep working but are noindexed, so we never publish the same
+ * Dutch text a second and third time under /fr and /ru URLs — that was one of
+ * the "duplicate, Google chose different canonical" sources.
+ */
+function isIndexable(locale: string) {
+    return locale === 'nl';
+}
 
 export function generateStaticParams() {
     const params: { locale: string; id: string }[] = [];
@@ -29,13 +41,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     if (!job) return { title: 'Not Found' };
 
-    // Self-referencing canonical + nl/fr alternates (ru stays standalone).
-
     return {
-        title: `${job.title} | Constructief`,
+        title: `${job.title} — ${job.location} | Constructief`,
         description: job.description,
-        alternates: pageAlternates(locale, `/vacatures/${id}`),
+        // Dutch-only cluster: self-canonical, no fr alternate (see helper).
+        alternates: dutchOnlyAlternates(locale, `/vacatures/${id}`),
+        robots: isIndexable(locale)
+            ? { index: true, follow: true }
+            : { index: false, follow: true },
     };
+}
+
+/** JobPosting.description wants the full posting, not just the teaser. */
+function jobPostingHtml(job: (typeof jobs)[number]) {
+    const block = (heading: string, items: string[]) =>
+        items.length === 0
+            ? ''
+            : `<h3>${heading}</h3><ul>${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
+
+    return [
+        ...job.intro.map((p) => `<p>${p}</p>`),
+        block('Wat ga je doen', job.tasks),
+        block('Wie zoeken wij', job.requirements),
+        block('Wat bieden wij', job.offer),
+    ]
+        .filter(Boolean)
+        .join('');
 }
 
 export default async function VacancyDetailPage({ params }: Props) {
@@ -48,6 +79,8 @@ export default async function VacancyDetailPage({ params }: Props) {
     if (!job) {
         notFound();
     }
+
+    const canonical = `${BASE}/${locale}/vacatures/${id}`;
 
     // Parse the salary ("€4000 - €5500" monthly, "€17 - €19 / uur" hourly) into a
     // numeric MonetaryAmount range so the JobPosting markup is valid.
@@ -88,15 +121,21 @@ export default async function VacancyDetailPage({ params }: Props) {
         '@context': 'https://schema.org/',
         '@type': 'JobPosting',
         title: job.title,
-        description: job.description,
+        description: jobPostingHtml(job),
         datePosted: job.datePosted,
         validThrough,
         employmentType,
+        url: canonical,
+        // Forms on this site post straight into our own pipeline — Google can
+        // label the result "Direct apply" in the jobs experience.
+        directApply: true,
+        industry: 'Bouw',
         hiringOrganization: {
             '@type': 'Organization',
+            '@id': `${BASE}/#organization`,
             name: 'Constructief',
-            sameAs: 'https://constructief-bouw.be',
-            logo: 'https://constructief-bouw.be/icon',
+            sameAs: BASE,
+            logo: `${BASE}/icon`,
         },
         jobLocation: {
             '@type': 'Place',
@@ -120,18 +159,59 @@ export default async function VacancyDetailPage({ params }: Props) {
         },
     };
 
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/${locale}` },
+            { '@type': 'ListItem', position: 2, name: t('title'), item: `${BASE}/${locale}/vacatures` },
+            { '@type': 'ListItem', position: 3, name: job.title, item: canonical },
+        ],
+    };
+
+    const publishedLabel = new Date(job.datePosted + 'T00:00:00Z').toLocaleDateString('nl-BE', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'UTC',
+    });
+
     return (
         <div className="flex flex-col min-h-screen">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <PageHeader
-                title={job.title}
-                subtitle={t('subtitle')}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
 
-            <section className="py-12 bg-white">
+            <PageHeader
+                title={job.title}
+                subtitle={`${job.location} · ${job.type} · ${job.salary}`}
+            />
+
+            <nav aria-label="Breadcrumb" className="container py-4 text-sm text-muted-foreground">
+                <ol className="flex flex-wrap items-center gap-1.5">
+                    <li>
+                        <Link href="/" className="inline-flex items-center gap-1 hover:text-primary">
+                            <Home className="w-3.5 h-3.5" />
+                            Home
+                        </Link>
+                    </li>
+                    <li aria-hidden="true"><ChevronRight className="w-3.5 h-3.5" /></li>
+                    <li>
+                        <Link href="/vacatures" className="hover:text-primary">
+                            {t('title')}
+                        </Link>
+                    </li>
+                    <li aria-hidden="true"><ChevronRight className="w-3.5 h-3.5" /></li>
+                    <li className="text-foreground font-medium">{job.title}</li>
+                </ol>
+            </nav>
+
+            <section className="pb-12 bg-white">
                 <div className="container max-w-4xl">
                     <Button asChild variant="ghost" className="mb-8">
                         <Link href="/vacatures" className="flex items-center gap-2">
@@ -142,36 +222,76 @@ export default async function VacancyDetailPage({ params }: Props) {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="md:col-span-2 space-y-8">
-                            <div>
-                                <h2 className="text-2xl font-bold mb-4">Functieomschrijving</h2>
-                                <p className="text-neutral-600 leading-relaxed">
-                                    {job.description}
-                                </p>
+                            <div className="space-y-4">
+                                {job.intro.map((paragraph, index) => (
+                                    <p key={index} className="text-neutral-600 leading-relaxed">
+                                        {paragraph}
+                                    </p>
+                                ))}
                             </div>
 
-                            {job.requirements && job.requirements.length > 0 && (
+                            {job.tasks.length > 0 && (
                                 <div>
-                                    <h2 className="text-2xl font-bold mb-4">Vereisten</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-neutral-600">
-                                        {job.requirements.map((req, index) => (
-                                            <li key={index}>{req}</li>
+                                    <h2 className="text-2xl font-bold mb-4">Wat ga je doen</h2>
+                                    <ul className="space-y-2 text-neutral-600">
+                                        {job.tasks.map((task, index) => (
+                                            <li key={index} className="flex gap-3">
+                                                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{task}</span>
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>
                             )}
 
-                            <div className="pt-8">
-                                <Button asChild size="lg" className="w-full md:w-auto">
-                                    <Link href="/kandidaten">
-                                        {t('apply')}
-                                    </Link>
-                                </Button>
+                            {job.requirements.length > 0 && (
+                                <div>
+                                    <h2 className="text-2xl font-bold mb-4">Wie zoeken wij</h2>
+                                    <ul className="space-y-2 text-neutral-600">
+                                        {job.requirements.map((req, index) => (
+                                            <li key={index} className="flex gap-3">
+                                                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{req}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {job.offer.length > 0 && (
+                                <div>
+                                    <h2 className="text-2xl font-bold mb-4">Wat bieden wij</h2>
+                                    <ul className="space-y-2 text-neutral-600">
+                                        {job.offer.map((item, index) => (
+                                            <li key={index} className="flex gap-3">
+                                                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            <div className="p-6 border rounded-lg bg-neutral-50">
+                                <h2 className="text-xl font-bold mb-2">Solliciteren op deze functie</h2>
+                                <p className="text-neutral-600 mb-4">
+                                    Vul je gegevens in via het kandidaatformulier. We nemen contact op
+                                    zodra we je profiel bekeken hebben — meestal binnen twee werkdagen.
+                                </p>
+                                <div className="flex flex-wrap gap-3">
+                                    <Button asChild size="lg">
+                                        <Link href="/kandidaten">{t('apply')}</Link>
+                                    </Button>
+                                    <Button asChild size="lg" variant="outline">
+                                        <Link href="/vacatures">Alle vacatures</Link>
+                                    </Button>
+                                </div>
                             </div>
                         </div>
 
                         <div className="space-y-6">
-                            <div className="p-6 border rounded-lg bg-neutral-50 sticky top-24">
-                                <h3 className="font-bold mb-4">Job Details</h3>
+                            <div className="p-6 border rounded-lg bg-neutral-50 md:sticky md:top-24">
+                                <h3 className="font-bold mb-4">Over deze functie</h3>
                                 <div className="space-y-4 text-sm">
                                     <div className="flex items-center gap-3 text-neutral-600">
                                         <MapPin className="h-5 w-5 text-primary" />
@@ -185,7 +305,23 @@ export default async function VacancyDetailPage({ params }: Props) {
                                         <Euro className="h-5 w-5 text-primary" />
                                         <span>{job.salary}</span>
                                     </div>
+                                    <div className="flex items-center gap-3 text-neutral-600">
+                                        <CalendarDays className="h-5 w-5 text-primary" />
+                                        <span>
+                                            <span className="sr-only">Gepubliceerd op </span>
+                                            {publishedLabel}
+                                        </span>
+                                    </div>
                                 </div>
+
+                                <Button asChild className="w-full mt-6">
+                                    <Link href="/kandidaten">{t('apply')}</Link>
+                                </Button>
+
+                                <p className="text-xs text-neutral-500 mt-4 leading-relaxed">
+                                    Constructief is een Belgische aannemer van bouwploegen. Wij werven,
+                                    screenen en begeleiden vakmensen voor werven in heel België.
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -164,13 +164,17 @@
         }
     },
     "VacanciesPage": {
-        "title": "Projets & Opportunités",
-        "subtitle": "Découvrez où votre savoir-faire est le plus apprécié.",
-        "search_placeholder": "Rechercher par expertise ou région...",
-        "filter": "Filtrer",
-        "view_details": "Détails du projet",
-        "view_all": "Tous les projets",
-        "apply": "Postuler"
+        "title": "Offres d'emploi dans la construction",
+        "subtitle": "Postes ouverts pour ouvriers qualifiés et conduite de chantier — partout en Belgique.",
+        "search_placeholder": "Rechercher par fonction, métier ou région...",
+        "filter": "Métier",
+        "filter_all": "Tous les métiers",
+        "results_count": "{count} offres trouvées",
+        "no_results": "Aucune offre ne correspond à cette recherche.",
+        "spontaneous": "Votre fonction n'y figure pas ? Laissez vos coordonnées — nous vous contactons dès qu'un poste correspond.",
+        "view_details": "Voir l'offre",
+        "view_all": "Toutes les offres",
+        "apply": "Postuler à cette offre"
     },
     "AboutPage": {
         "title": "Personnel & Constructif",

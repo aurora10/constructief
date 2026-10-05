@@ -30,8 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const sitemapEntries: MetadataRoute.Sitemap = [];
 
     for (const locale of locales) {
-        // Static pages
+        // Static pages.
+        // /vacatures is Dutch-only: the vacancy copy is not translated yet, so the
+        // fr/ru listings are noindexed (see app/[locale]/vacatures/page.tsx) and must
+        // not be advertised here.
         for (const page of staticPages) {
+            if (page === '/vacatures' && locale !== 'nl') continue;
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}${page}`,
                 lastModified: new Date(),
@@ -92,14 +96,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             });
         }
 
-        // Vacancy detail pages
-        for (const job of jobs) {
-            sitemapEntries.push({
-                url: `${baseUrl}/${locale}/vacatures/${job.id}`,
-                lastModified: new Date(),
-                changeFrequency: 'weekly',
-                priority: 0.8,
-            });
+        // Vacancy detail pages — nl only for the same reason as /vacatures, and with
+        // the real datePosted as lastmod so Google sees a fresh posting per job.
+        if (locale === 'nl') {
+            for (const job of jobs) {
+                sitemapEntries.push({
+                    url: `${baseUrl}/${locale}/vacatures/${job.id}`,
+                    lastModified: safeDate(job.datePosted),
+                    changeFrequency: 'weekly',
+                    priority: 0.9,
+                });
+            }
         }
 
         // News / insights articles (slug URLs, real lastmod per article)

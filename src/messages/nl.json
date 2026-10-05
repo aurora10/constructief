@@ -164,13 +164,17 @@
         }
     },
     "VacanciesPage": {
-        "title": "Projecten & Kansen",
-        "subtitle": "Ontdek waar uw vakmanschap het meest gewaardeerd wordt.",
-        "search_placeholder": "Zoek op expertise of regio...",
-        "filter": "Filteren",
-        "view_details": "Project details",
-        "view_all": "Alle projecten",
-        "apply": "Solliciteren"
+        "title": "Vacatures in de bouw",
+        "subtitle": "Openstaande functies voor vakmensen en leidinggevenden — in heel België.",
+        "search_placeholder": "Zoek op functie, vakgebied of regio...",
+        "filter": "Vakgebied",
+        "filter_all": "Alle vakgebieden",
+        "results_count": "{count} vacatures gevonden",
+        "no_results": "Geen vacature gevonden voor deze zoekopdracht.",
+        "spontaneous": "Staat je functie er niet tussen? Laat je gegevens achter — we contacteren je zodra er iets past.",
+        "view_details": "Bekijk vacature",
+        "view_all": "Alle vacatures",
+        "apply": "Solliciteer op deze functie"
     },
     "AboutPage": {
         "title": "Persoonlijk & Constructief",

@@ -30,6 +30,29 @@ export function pageAlternates(locale: string, path: string): Metadata['alternat
     };
 }
 
+/**
+ * Canonical + hreflang for pages whose content exists in Dutch only
+ * (vacancies today).
+ *
+ * fr/ru still resolve — they render the same Dutch text — but they are
+ * noindexed, so they must NOT be advertised as alternates of the Dutch page:
+ * pointing hreflang at a noindex URL is a contradiction Google resolves by
+ * ignoring the annotation (and it invites the "different canonical" report).
+ * The nl page therefore declares itself as both `nl` and `x-default`.
+ */
+export function dutchOnlyAlternates(locale: string, path: string): Metadata['alternates'] {
+    const normalized = path === '/' ? '' : path;
+    const canonical = `${BASE}/${locale}${normalized}`;
+
+    return {
+        canonical,
+        languages:
+            locale === 'nl'
+                ? { nl: canonical, 'x-default': canonical }
+                : { 'x-default': canonical },
+    };
+}
+
 /** Canonical URL only (useful for fr-only pages). */
 export function selfCanonicalWithDefault(locale: string, path: string): Metadata['alternates'] {
     const normalized = path === '/' ? '' : path;

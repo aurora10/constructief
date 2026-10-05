@@ -116,7 +116,7 @@ export function GET(): Response {
     out.push('');
     out.push('### Nederlands');
     out.push(line('Werken via Constructief (kandidaten)', `${BASE}/nl/kandidaten`, 'Inschrijven als vakman of ploeg: specialisatie, ervaring en beschikbaarheid doorgeven; persoonlijke screening en begeleiding.'));
-    out.push(line('Vacatures en projecten (NL)', `${BASE}/nl/vacatures`, 'Openstaande bouwprojecten en functies bij aannemers in België en Nederland.'));
+    out.push(line('Vacatures in de bouw (NL)', `${BASE}/nl/vacatures`, 'Openstaande functies voor vakmensen en leidinggevenden in de bouw, met locatie, loon en contractvorm. De vacatureteksten zijn Nederlandstalig.'));
     out.push('');
     out.push('**Veelgestelde vragen van kandidaten** (staan ook zichtbaar op /nl/kandidaten):');
     for (const item of workerFaq.nl) out.push(`- **${item.q}** ${item.a}`);
@@ -124,7 +124,7 @@ export function GET(): Response {
 
     out.push('### Français');
     out.push(line('Travailler via Constructief (candidats)', `${BASE}/fr/kandidaten`, 'Inscription comme artisan ou équipe: spécialisation, expérience et disponibilité; accompagnement personnel.'));
-    out.push(line('Offres et projets (FR)', `${BASE}/fr/vacatures`, 'Chantiers et postes ouverts chez les entrepreneurs en Belgique et aux Pays-Bas.'));
+    out.push(line('Offres d\'emploi (FR)', `${BASE}/fr/vacatures`, 'Liste des postes ouverts; le texte des offres est en néerlandais (non indexé en FR tant que la traduction n\'est pas faite).'));
     out.push('');
     out.push('**Questions fréquentes des candidats** (également visibles sur /fr/kandidaten) :');
     for (const item of workerFaq.fr) out.push(`- **${item.q}** ${item.a}`);
@@ -133,7 +133,7 @@ export function GET(): Response {
     out.push('### Русский (работа в Бельгии и Нидерландах)');
     out.push(line('Работа в строительстве — главная', `${BASE}/ru`, 'Работа в Бельгии и Нидерландах для строителей и бригад: легальное оформление, жильё и оплата.'));
     out.push(line('Вакансии и регистрация (RU)', `${BASE}/ru/kandidaten`, 'Регистрация мастеров и бригад: специализация, документы, опыт и доступность. Оформление A1 и Limosa берём на себя.'));
-    out.push(line('Вакансии (RU)', `${BASE}/ru/vacatures`, 'Актуальные объекты и вакансии в строительстве в Бельгии и Нидерландах.'));
+    out.push(line('Вакансии (RU)', `${BASE}/ru/vacatures`, 'Список открытых вакансий; тексты вакансий пока на нидерландском языке (страница не индексируется до перевода).'));
     out.push('');
     out.push('**Частые вопросы кандидатов** (также видны на /ru/kandidaten):');
     for (const item of workerFaq.ru) out.push(`- **${item.q}** ${item.a}`);
