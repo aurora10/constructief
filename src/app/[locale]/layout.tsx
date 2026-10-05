@@ -87,12 +87,23 @@ export default async function RootLayout({
       }
     ],
     // sameAs is how Google ties the site, the social profiles and the Google
-    // Business Profile into one entity. The GBP link is included only when it is
-    // set in BRAND (see the note there on why it is not guessed).
+    // Business Profile into one entity. The GBP link is included only when it is set
+    // in BRAND (see the note there on how it was verified).
     "sameAs": [
       ...(BRAND.googleBusinessProfile ? [BRAND.googleBusinessProfile] : []),
       ...BRAND.socialProfiles,
     ],
+    // The stable entity id behind the Business Profile. A shortener link can rot;
+    // this cannot, and it is the strongest single signal for entity consolidation.
+    ...(BRAND.googleKnowledgeGraphId
+      ? {
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "Google Knowledge Graph ID",
+            "value": BRAND.googleKnowledgeGraphId,
+          },
+        }
+      : {}),
     "knowsAbout": [
       "Construction Subcontractors",
       "General Contractors",

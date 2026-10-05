@@ -29,20 +29,25 @@ export const BRAND = {
     alternateNames: ['Constructief', 'Constructief Bouw België'],
     url: 'https://constructief-bouw.be',
     /**
-     * Canonical Google Business Profile link, emitted into Organization.sameAs.
+     * Google Business Profile, as handed out by Google's own "Share" button.
      *
-     * Empty until it can be verified. A share URL copied out of Google Search is
-     * not usable (it is session-bound: sxsrf, ved, stick), and the CID can be
-     * derived from that token but cannot be confirmed to point at this listing —
-     * Google Maps answers 200 with a JavaScript shell for any CID, including wrong
-     * ones. A wrong sameAs merges this entity with a different business, which is
-     * worse than having no link at all, so it stays empty until the real URL is here.
-     *
-     * Where to copy it from: Google Business Profile → your profile → "Share" /
-     * "Profiel delen". That yields a stable https://maps.app.goo.gl/... or
-     * https://g.page/... link. The Maps address-bar URL of the listing also works.
+     * Verified before being trusted: this short link redirects through
+     * google.com/share.google to a Google Search URL carrying
+     * `kgmid=/g/11n3b5wb3g` and `source=sh/x/loc/uni/...` — the /loc/ segment means
+     * Google resolved it to a local listing, so it is this business's profile and not
+     * a generic search result. The session parameters in that resolved URL (sxsrf,
+     * ved, stick) are per-session and are deliberately not stored here.
      */
-    googleBusinessProfile: '',
+    googleBusinessProfile: 'https://share.google/5ho6ek4gkfJWMTVyP',
+    /**
+     * Google Knowledge Graph ID for this business (the `kgmid` above).
+     *
+     * This is the durable half: the share link is a shortener, but the MID is the
+     * entity itself and does not change. Emitted as a schema.org identifier, which is
+     * what helps Google merge the site, the social profiles and the Business Profile
+     * into one entity instead of three weak ones. Sourced from Google, not invented.
+     */
+    googleKnowledgeGraphId: '/g/11n3b5wb3g',
     socialProfiles: [
         'https://www.instagram.com/constructief_bouw/',
         'https://www.facebook.com/profile.php?id=61591572760518',
