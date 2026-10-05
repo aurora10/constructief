@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { citiesData, formatCityName } from '@/data/cities';
+import { flagshipTrades } from '@/data/cityContent';
 import { MapPin, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { pageAlternates } from '@/lib/seo';
@@ -39,6 +40,8 @@ const heroCities = [
 export default function Home() {
   const t = useTranslations('HomePage');
   const tFooter = useTranslations('Footer');
+  const tTrades = useTranslations('Trades');
+  const tCluster = useTranslations('TradeCluster');
   const featured = citiesData.filter((c) => heroCities.includes(c.slug));
 
   return (
@@ -84,6 +87,33 @@ export default function Home() {
               <MapPin className="w-4 h-4" />
               {tFooter('view_all_regions')}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trade teams — internal links to the nationwide trade landing pages */}
+      <section className="py-20 px-4 md:px-8 bg-white dark:bg-neutral-950">
+        <div className="container max-w-6xl">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-900 dark:text-white">
+              {tCluster('homepage_title')}
+            </h2>
+            <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+              {tCluster('homepage_subtitle')}
+            </p>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-6"></div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {flagshipTrades.map((tr) => (
+              <Link
+                key={tr}
+                href={`/diensten/onderaannemer-${tr}`}
+                className="inline-flex items-center gap-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 px-6 py-3 font-semibold text-neutral-800 dark:text-neutral-200 hover:border-primary hover:text-primary transition-colors"
+              >
+                {tTrades(`${tr}.label`)}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

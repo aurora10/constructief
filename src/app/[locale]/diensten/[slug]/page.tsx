@@ -80,20 +80,23 @@ export async function generateMetadata({
   const canonical = `${baseUrl}/${locale}/diensten/${slug}`;
 
   // Indexability:
-  //  - TRADE pages (base `onderaannemer-{trade}` and `onderaannemer-{trade}-{city}`)
-  //    are indexable in every locale INCLUDING ru: each one now carries its own
-  //    unique copy per trade and per city (Trades/TradeNation/TradeCity), so the
-  //    near-duplicate reason the ru locale used to be excluded for no longer
-  //    applies.
+  //  - ru is NEVER indexable, for any page type: the Russian audience is workers
+  //    looking for jobs, not contractors looking to hire crews. Indexing ru
+  //    B2B trade pages would pull job-seekers onto buyer pages (intent mismatch).
+  //    The RU worker cluster (/ru, /ru/kandidaten, /ru/vacatures) is the right
+  //    target and stays indexable via its own pages.
   //  - city-only pages (`onderaannemer-{city}`) are indexable ONLY for the
-  //    promoted city set (indexedCitySlugs), and never for ru. The remaining city
-  //    pages stay reachable but noindexed, so Google stops choosing its own
-  //    canonical between dozens of near-identical templates ("Duplicate, Google
-  //    chose different canonical than user").
+  //    promoted city set (indexedCitySlugs). The remaining city pages stay
+  //    reachable but noindexed, so Google stops choosing its own canonical
+  //    between dozens of near-identical templates ("Duplicate, Google chose
+  //    different canonical than user").
+  //  - trade pages (base + trade+city) are indexable in nl/fr.
+  //
+  // To make ru trade pages indexable again, drop the `locale !== 'ru'` guard
+  // below AND remove the `locale === 'ru'` skips in src/app/sitemap.ts.
   const isCityOnlyPage = Boolean(cityData && !trade);
   const isIndexable =
-    Boolean(trade) ||
-    (locale !== 'ru' && (!isCityOnlyPage || indexedCitySlugs.includes(cityData!.slug)));
+    locale !== 'ru' && (!isCityOnlyPage || indexedCitySlugs.includes(cityData!.slug));
   // hreflang must describe the SAME set of URLs on every locale's copy of a page,
   // so the ru alternate is only advertised for trade pages (where ru is indexed).
   const ruIndexable = Boolean(trade);
@@ -199,6 +202,8 @@ export default async function CityLandingPage({
   const tSeo = await getTranslations({ locale, namespace: 'CitiesSeo' });
   const tNav = await getTranslations({ locale, namespace: 'Navigation' });
   const tSeoUi = await getTranslations({ locale, namespace: 'CitySeoUi' });
+  const tTradeLabels = await getTranslations({ locale, namespace: 'Trades' });
+  const tCluster = await getTranslations({ locale, namespace: 'TradeCluster' });
 
   const uniqueDescription = tSeo(cityData.slug);
 
@@ -569,6 +574,31 @@ export default async function CityLandingPage({
           </div>
         </div>
       </section>
+
+      {/* 4.75 Trade teams in this city — links the trade+city cluster (flagship cities only) */}
+      {flagshipCitySlugs.includes(cityData.slug) && (
+        <section className="py-16 px-4 md:px-8 bg-neutral-50 dark:bg-neutral-900/50">
+          <div className="container max-w-5xl">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">
+                {tCluster('city_trades_title', { city: cityName })}
+              </h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {flagshipTrades.map((tr) => (
+                <Link
+                  key={tr}
+                  href={`/diensten/onderaannemer-${tr}-${cityData.slug}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-5 py-2.5 font-medium text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 transition-colors"
+                >
+                  <Wrench className="w-4 h-4 text-primary" />
+                  {tTradeLabels(`${tr}.label`)}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 4.8 Nearby regions — internal links that tie the cluster together */}
       {nearby.length > 0 && (

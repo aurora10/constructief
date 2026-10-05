@@ -329,7 +329,7 @@
     },
     "Metadata": {
         "title": "Sous-traiter la main-d'œuvre bâtiment — Équipes présélectionnées | Constructief",
-        "description": "Sous-traitez des équipes de construction ou des ouvriers polonais par détachement. Équipes légales avec A1 & Limosa gérés et une semaine d'essai de 14 jours. Pour les entrepreneurs généraux en Belgique."
+        "description": "Sous-traitez des équipes de construction ou des ouvriers polonais par détachement. A1, Limosa et Checkinatwork gérés, essai de 14 jours, pour entrepreneurs."
     },
     "CitySEO_var1": {
         "heading": "Sous-traitants Fiables & Personnel de Construction à {city}",
@@ -1005,5 +1005,13 @@
             "leuven": "À Louvain, les logements collectifs, les bâtiments universitaires et les espaces de recherche créent des besoins en coffreurs, maçons et ferrailleurs capables de travailler sur des chantiers urbains contraints. Constructief propose des équipes légales présélectionnées, avec une période d’essai de 14 jours.",
             "brussel": "À Bruxelles, la rénovation lourde d’immeubles, les projets mixtes et les constructions sur des parcelles denses demandent des équipes expérimentées en structures en béton, sous-sols et maçonnerie. Constructief gère la sélection ainsi que les documents A1, Limosa et Checkinatwork pour les entrepreneurs généraux."
         }
+    },
+    "TradeCluster": {
+        "other_trades_title": "Autres équipes à {city}",
+        "nationwide_label": "{label} — disponible partout",
+        "city_page_label": "En savoir plus sur {city}",
+        "homepage_title": "Nos équipes par métier",
+        "homepage_subtitle": "Équipes spécialisées et présélectionnées par métier — disponibles en Belgique et aux Pays-Bas.",
+        "city_trades_title": "Équipes à {city}"
     }
 }

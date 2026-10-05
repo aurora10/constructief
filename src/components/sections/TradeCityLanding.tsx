@@ -6,7 +6,7 @@ import { EmployerUSP } from '@/components/sections/EmployerUSP';
 import { WerkgeversLink } from '@/components/sections/WerkgeversLink';
 import { CheckCircle2, ChevronRight, Home, Layers, Wrench } from 'lucide-react';
 import type { CityData } from '@/data/cities';
-import { tradeSchema } from '@/data/cityContent';
+import { tradeSchema, flagshipTrades } from '@/data/cityContent';
 
 export async function TradeCityLanding({
   trade,
@@ -29,6 +29,8 @@ export async function TradeCityLanding({
   const ctaDesc = tT(`${trade}.cta_desc`, { city: city.name });
   const ctaButton = tT(`${trade}.cta_button`);
   const features = (tT.raw(`${trade}.features`) as string[]) ?? [];
+  const tCluster = await getTranslations({ locale, namespace: 'TradeCluster' });
+  const siblingTrades = flagshipTrades.filter((t) => t !== trade);
 
   // Unique LOCAL copy per city (CitiesSeo + CityRegio). Without this, every
   // trade+city page is the same trade copy with only {city} swapped — which is
@@ -189,6 +191,43 @@ export async function TradeCityLanding({
               {cityContext}
             </p>
           )}
+        </div>
+      </section>
+
+      {/* Cluster links: sibling trades in this city + nationwide trade page + city page */}
+      <section className="py-16 px-4 md:px-8 bg-neutral-50">
+        <div className="container max-w-5xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-neutral-900">
+            {tCluster('other_trades_title', { city: city.name })}
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {siblingTrades.map((other) => (
+              <Link
+                key={other}
+                href={`/diensten/onderaannemer-${other}-${city.slug}`}
+                className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-5 py-2.5 font-medium text-neutral-800 hover:bg-neutral-100 transition-colors"
+              >
+                <Wrench className="w-4 h-4 text-primary" />
+                {tT(`${other}.label`)}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium">
+            <Link
+              href={`/diensten/onderaannemer-${trade}`}
+              className="inline-flex items-center gap-2 text-primary hover:underline"
+            >
+              <Layers className="w-4 h-4" />
+              {tCluster('nationwide_label', { label })}
+            </Link>
+            <Link
+              href={`/diensten/onderaannemer-${city.slug}`}
+              className="inline-flex items-center gap-2 text-primary hover:underline"
+            >
+              <ChevronRight className="w-4 h-4" />
+              {tCluster('city_page_label', { city: city.name })}
+            </Link>
+          </div>
         </div>
       </section>
 

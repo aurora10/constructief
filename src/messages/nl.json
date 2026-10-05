@@ -329,7 +329,7 @@
     },
     "Metadata": {
         "title": "Onderaannemer bouw | Gescreende ploegen | Constructief",
-        "description": "Onderaannemer bouw nodig? Wij spreken iedere vakman en regelen A1, Limosa en Checkinatwork. Start met een 14-daagse testweek."
+        "description": "Huur gescreende bouwploegen of Poolse arbeiders via detachering van bouwpersoneel. A1/Limosa/Checkinatwork geregeld, 14-dagen testweek, voor hoofdaannemers."
     },
     "CitySEO_var1": {
         "heading": "Betrouwbare Onderaannemers & Bouwpersoneel in {city}",
@@ -1001,5 +1001,13 @@
             "leuven": "In Leuven komt de vraag vooral uit compacte woonprojecten, zorggebouwen en gebouwen voor onderwijs en onderzoek. Wij leveren gescreende betonvlechters, bekisters en metselaars zonder stapels cv's, met een vergoeding gekoppeld aan resultaat.",
             "brussel": "In Brussel creëren appartementsrenovaties, kantoortransformaties en gemengde stadsprojecten behoefte aan flexibele ploegen voor beton- en casco-werken. Wij selecteren iedere vakman persoonlijk en verzorgen alle vereiste documenten voor een conforme inzet."
         }
+    },
+    "TradeCluster": {
+        "other_trades_title": "Andere vakploegen in {city}",
+        "nationwide_label": "{label} — landelijk inzetbaar",
+        "city_page_label": "Meer over {city}",
+        "homepage_title": "Onze vakploegen",
+        "homepage_subtitle": "Gespecialiseerde, gescreende ploegen per vakgebied — inzetbaar in heel België en Nederland.",
+        "city_trades_title": "Vakploegen in {city}"
     }
 }
