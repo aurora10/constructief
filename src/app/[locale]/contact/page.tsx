@@ -1,32 +1,106 @@
 "use client";
 
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useRef, useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
-import { Turnstile } from '@marsidev/react-turnstile';
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
+import {
+    CONTACT_LIMITS,
+    trimContactValues,
+    validateContact,
+    type ContactField,
+    type ContactIssue,
+    type ContactValues,
+} from '@/lib/contactValidation';
+
+// Local Turnstile would demand a real challenge on localhost, so skip it in dev
+// (same bypass the sub-contractor intake form uses).
+const DEV_BYPASS = process.env.NODE_ENV === 'development' ? 'dev-bypass' : '';
+
+type Errors = Partial<Record<ContactField, string>>;
+
+const inputCls = 'w-full p-2 border rounded-md';
+const inputErrCls = 'w-full p-2 border rounded-md border-red-500 focus:border-red-500 outline-none';
+
+function FieldError({ id, message }: { id: string; message?: string }) {
+    if (!message) return null;
+    return (
+        <p id={id} role="alert" className="mt-1 text-sm text-red-600">
+            {message}
+        </p>
+    );
+}
 
 export default function ContactPage() {
     const t = useTranslations('ContactPage');
+    const locale = useLocale();
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-    const [turnstileToken, setTurnstileToken] = useState<string>('');
+    const [errors, setErrors] = useState<Errors>({});
+    const [turnstileToken, setTurnstileToken] = useState<string>(DEV_BYPASS);
+    const turnstileRef = useRef<TurnstileInstance | undefined>(undefined);
+
+    function clearError(field: ContactField) {
+        setErrors((prev) => {
+            if (!prev[field]) return prev;
+            const next = { ...prev };
+            delete next[field];
+            return next;
+        });
+    }
+
+    function messageFor(issue: ContactIssue): string {
+        if (issue.field === 'name') {
+            return issue.reason === 'required' ? t('err_name_required') : t('err_name_long');
+        }
+        if (issue.field === 'email') {
+            return issue.reason === 'required' ? t('err_email_required') : t('err_email_invalid');
+        }
+        return issue.reason === 'required' ? t('err_message_required') : t('err_message_long');
+    }
+
+    /** Same rules the API enforces; only the messages are localised here. */
+    function validate(values: ContactValues): Errors {
+        const next: Errors = {};
+        for (const issue of validateContact(values)) {
+            if (!next[issue.field]) next[issue.field] = messageFor(issue);
+        }
+        return next;
+    }
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        setLoading(true);
-        setStatus('idle');
+        if (loading) return;
 
-        const formData = new FormData(e.currentTarget);
-        const data = {
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const values = trimContactValues({
             name: formData.get('name'),
             email: formData.get('email'),
             subject: formData.get('subject'),
             message: formData.get('message'),
+        });
+
+        // Block empty / whitespace-only submissions before hitting the network.
+        const found = validate(values);
+        if (Object.keys(found).length > 0) {
+            setErrors(found);
+            setStatus('idle');
+            return;
+        }
+
+        setErrors({});
+        setLoading(true);
+        setStatus('idle');
+
+        const data = {
+            ...values,
             website: formData.get('website'), // Honeypot field
             turnstileToken,
+            locale,
         };
 
         try {
@@ -36,17 +110,31 @@ export default function ContactPage() {
                 headers: { 'Content-Type': 'application/json' },
             });
 
-            if (!res.ok) throw new Error('Submission failed');
+            if (!res.ok) {
+                // The API reports which field failed so we can point at it.
+                const payload = await res.json().catch(() => null);
+                const field = payload?.field as ContactField | undefined;
+                if (field && ['name', 'email', 'message'].includes(field)) {
+                    setErrors({ [field]: t('err_invalid_field') });
+                }
+                throw new Error('Submission failed');
+            }
 
             setStatus('success');
-            setTurnstileToken(''); // Clear token on success
-            (e.target as HTMLFormElement).reset();
-        } catch (error) {
+            setErrors({});
+            setTurnstileToken(DEV_BYPASS);
+            // Turnstile tokens are single-use: reset the widget so a second
+            // message can be sent without reloading the page.
+            turnstileRef.current?.reset();
+            form.reset();
+        } catch {
             setStatus('error');
         } finally {
             setLoading(false);
         }
     }
+
+    const submitDisabled = loading || !turnstileToken;
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -103,7 +191,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <p className="font-semibold">{t('address')}</p>
-                                        <p className="text-neutral-600">Antwerp, Belgium</p>
+                                        <p className="text-neutral-600">{t('address_value')}</p>
                                     </div>
                                 </div>
                                 <div>
@@ -136,29 +224,80 @@ export default function ContactPage() {
 
                         {/* Contact Form */}
                         <div className="bg-neutral-50 p-8 rounded-lg">
-                            <h2 className="text-2xl font-bold mb-6">{t('form_title')}</h2>
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                            <h2 className="text-2xl font-bold mb-1">{t('form_title')}</h2>
+                            <p className="text-sm text-neutral-500 mb-6">{t('required_hint')}</p>
+                            <form onSubmit={handleSubmit} noValidate className="space-y-4">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-sm font-medium mb-1">{t('form_name')}</label>
-                                        <input name="name" required type="text" className="w-full p-2 border rounded-md" />
+                                        <label htmlFor="contact-name" className="block text-sm font-medium mb-1">
+                                            {t('form_name')} <span className="text-red-600">*</span>
+                                        </label>
+                                        <input
+                                            id="contact-name"
+                                            name="name"
+                                            required
+                                            type="text"
+                                            maxLength={CONTACT_LIMITS.name}
+                                            autoComplete="name"
+                                            className={errors.name ? inputErrCls : inputCls}
+                                            aria-invalid={Boolean(errors.name)}
+                                            aria-describedby={errors.name ? 'contact-name-error' : undefined}
+                                            onInput={() => clearError('name')}
+                                        />
+                                        <FieldError id="contact-name-error" message={errors.name} />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium mb-1">{t('form_email')}</label>
-                                        <input name="email" required type="email" className="w-full p-2 border rounded-md" />
+                                        <label htmlFor="contact-email" className="block text-sm font-medium mb-1">
+                                            {t('form_email')} <span className="text-red-600">*</span>
+                                        </label>
+                                        <input
+                                            id="contact-email"
+                                            name="email"
+                                            required
+                                            type="email"
+                                            maxLength={CONTACT_LIMITS.email}
+                                            autoComplete="email"
+                                            inputMode="email"
+                                            className={errors.email ? inputErrCls : inputCls}
+                                            aria-invalid={Boolean(errors.email)}
+                                            aria-describedby={errors.email ? 'contact-email-error' : undefined}
+                                            onInput={() => clearError('email')}
+                                        />
+                                        <FieldError id="contact-email-error" message={errors.email} />
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium mb-1">{t('form_subject')}</label>
-                                    <input name="subject" type="text" className="w-full p-2 border rounded-md" />
+                                    <label htmlFor="contact-subject" className="block text-sm font-medium mb-1">
+                                        {t('form_subject')}
+                                    </label>
+                                    <input
+                                        id="contact-subject"
+                                        name="subject"
+                                        type="text"
+                                        maxLength={CONTACT_LIMITS.subject}
+                                        className={inputCls}
+                                    />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium mb-1">{t('form_message')}</label>
-                                    <textarea name="message" required rows={4} className="w-full p-2 border rounded-md" />
+                                    <label htmlFor="contact-message" className="block text-sm font-medium mb-1">
+                                        {t('form_message')} <span className="text-red-600">*</span>
+                                    </label>
+                                    <textarea
+                                        id="contact-message"
+                                        name="message"
+                                        required
+                                        rows={4}
+                                        maxLength={CONTACT_LIMITS.message}
+                                        className={errors.message ? inputErrCls : inputCls}
+                                        aria-invalid={Boolean(errors.message)}
+                                        aria-describedby={errors.message ? 'contact-message-error' : undefined}
+                                        onInput={() => clearError('message')}
+                                    />
+                                    <FieldError id="contact-message-error" message={errors.message} />
                                 </div>
 
                                 {/* Honeypot field (hidden from users) */}
-                                <div className="hidden">
+                                <div className="hidden" aria-hidden="true">
                                     <input
                                         name="website"
                                         type="text"
@@ -167,26 +306,29 @@ export default function ContactPage() {
                                     />
                                 </div>
 
-                                <div className="flex justify-center py-2">
-                                    <Turnstile
-                                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
-                                        onSuccess={(token) => setTurnstileToken(token)}
-                                        onExpire={() => setTurnstileToken('')}
-                                        onError={() => setTurnstileToken('')}
-                                    />
-                                </div>
+                                {process.env.NODE_ENV !== 'development' && (
+                                    <div className="flex justify-center py-2">
+                                        <Turnstile
+                                            ref={turnstileRef}
+                                            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+                                            onSuccess={(token) => setTurnstileToken(token)}
+                                            onExpire={() => setTurnstileToken('')}
+                                            onError={() => setTurnstileToken('')}
+                                        />
+                                    </div>
+                                )}
 
-                                <Button type="submit" disabled={loading || !turnstileToken} className="w-full">
+                                <Button type="submit" disabled={submitDisabled} className="w-full">
                                     {loading ? t('form_submit') + '...' : t('form_submit')}
                                 </Button>
 
                                 {status === 'success' && (
-                                    <p className="mt-4 text-green-600 text-center font-medium">
+                                    <p role="status" className="mt-4 text-green-600 text-center font-medium">
                                         {t('success')}
                                     </p>
                                 )}
                                 {status === 'error' && (
-                                    <p className="mt-4 text-red-600 text-center font-medium">
+                                    <p role="alert" className="mt-4 text-red-600 text-center font-medium">
                                         {t('error')}
                                     </p>
                                 )}

@@ -208,7 +208,16 @@
         "social": "Volg ons",
         "form_submit": "Versturen",
         "success": "Bedankt voor je bericht! We hebben het goed ontvangen en nemen binnen 24 uur contact met je op.",
-        "error": "Er is een fout opgetreden bij het verzenden. Controleer je internetverbinding of probeer het later opnieuw."
+        "error": "Er is een fout opgetreden bij het verzenden. Controleer je internetverbinding of probeer het later opnieuw.",
+        "address_value": "Antwerpen, België",
+        "required_hint": "Velden met * zijn verplicht.",
+        "err_name_required": "Vul je naam in.",
+        "err_name_long": "Je naam is te lang (max. 100 tekens).",
+        "err_email_required": "Vul je e-mailadres in.",
+        "err_email_invalid": "Dit e-mailadres is niet geldig.",
+        "err_message_required": "Schrijf een bericht.",
+        "err_message_long": "Je bericht is te lang (max. 5000 tekens).",
+        "err_invalid_field": "Controleer dit veld en probeer opnieuw."
     },
     "PrivacyPage": {
         "title": "Privacy & Vertrouwen",

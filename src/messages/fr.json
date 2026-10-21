@@ -208,7 +208,16 @@
         "social": "Suivez-nous",
         "form_submit": "Envoyer",
         "success": "Merci pour votre message ! Nous l'avons bien reçu et nous vous contacterons dans les 24 heures.",
-        "error": "Une erreur s'est produite lors de l'envoi. Veuillez vérifier votre connexion Internet ou réessayer plus tard."
+        "error": "Une erreur s'est produite lors de l'envoi. Veuillez vérifier votre connexion Internet ou réessayer plus tard.",
+        "address_value": "Anvers, Belgique",
+        "required_hint": "Les champs marqués d'un * sont obligatoires.",
+        "err_name_required": "Indiquez votre nom.",
+        "err_name_long": "Votre nom est trop long (max. 100 caractères).",
+        "err_email_required": "Indiquez votre adresse e-mail.",
+        "err_email_invalid": "Cette adresse e-mail n'est pas valide.",
+        "err_message_required": "Écrivez un message.",
+        "err_message_long": "Votre message est trop long (max. 5000 caractères).",
+        "err_invalid_field": "Vérifiez ce champ et réessayez."
     },
     "PrivacyPage": {
         "title": "Confidentialité & Confiance",
