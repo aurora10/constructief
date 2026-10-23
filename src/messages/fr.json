@@ -85,17 +85,6 @@
         "view_all": "Tous les postes",
         "apply": "Postuler"
     },
-    "Testimonials": {
-        "title": "Ce que disent nos partenaires",
-        "reviews": {
-            "1": {
-                "text": "Enfin un recruteur qui comprend que nous n'avons pas besoin de CV, mais de personnes qui savent travailler."
-            },
-            "2": {
-                "text": "L'approche personnelle et la semaine d'essai nous ont donné la confiance nécessaire pour agir rapidement."
-            }
-        }
-    },
     "TrustSignals": {
         "candidates": "Réponse",
         "candidates_value": "< 24h",

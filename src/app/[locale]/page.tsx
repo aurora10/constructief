@@ -9,7 +9,6 @@ import { Hero } from '@/components/sections/Hero';
 import { ValueProps } from '@/components/sections/ValueProps';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { FeaturedJobs } from '@/components/sections/FeaturedJobs';
-import { Testimonials } from '@/components/sections/Testimonials';
 import { TrustSignals } from '@/components/sections/TrustSignals';
 
 // Self-referencing canonical. For the RU worker cluster, x-default points at the
@@ -50,7 +49,6 @@ export default function Home() {
       <ValueProps />
       <HowItWorks />
       <FeaturedJobs />
-      <Testimonials />
       <TrustSignals />
 
       {/* Popular regions — internal links to the city landing pages */}

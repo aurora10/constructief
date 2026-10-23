@@ -85,17 +85,6 @@
         "view_all": "Alle vacatures",
         "apply": "Solliciteren"
     },
-    "Testimonials": {
-        "title": "Wat onze partners zeggen",
-        "reviews": {
-            "1": {
-                "text": "Eindelijk een recruiter die begrijpt dat we geen CV's nodig hebben, maar mensen die weten van aanpakken."
-            },
-            "2": {
-                "text": "De persoonlijke aanpak en de testweek gaven ons het vertrouwen dat we nodig hadden om snel te schakelen."
-            }
-        }
-    },
     "TrustSignals": {
         "candidates": "Respons",
         "candidates_value": "< 24u",

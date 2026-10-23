@@ -6,7 +6,6 @@ import { selfCanonicalWithDefault } from '@/lib/seo';
 import { EmployerUSP } from '@/components/sections/EmployerUSP';
 import { Services } from '@/components/sections/Services';
 import { TrustSignals } from '@/components/sections/TrustSignals';
-import { Testimonials } from '@/components/sections/Testimonials';
 import { EmployerForm } from '@/components/forms/EmployerForm';
 
 const BASE_URL = 'https://constructief-bouw.be';
@@ -55,7 +54,6 @@ export default async function SousTraitancePage({
             <EmployerForm />
             <Services />
             <TrustSignals />
-            <Testimonials />
         </div>
     );
 }
