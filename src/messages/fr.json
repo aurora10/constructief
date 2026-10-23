@@ -149,17 +149,13 @@
         "title": "Notre Expertise",
         "subtitle": "Nous offrons des solutions adaptées à la dynamique de la construction.",
         "items": {
-            "temp": {
-                "title": "Services de Gestion de Paie",
-                "description": "Une rémunération sans souci via nos partenaires agréés, tout en conservant votre flexibilité."
-            },
             "perm": {
                 "title": "Recrutement & Sélection",
                 "description": "Trouvez le parfait renfort permanent pour votre équipe de base grâce à notre sélection rigoureuse."
             },
             "project": {
-                "title": "Intermédiation Freelance",
-                "description": "Les bons professionnels indépendants pour la durée spécifique de votre projet."
+                "title": "Équipes pour votre chantier",
+                "description": "Nous mettons votre chantier en relation avec une équipe vérifiée et légale pour la durée du projet : maçons, coffreurs, bétonneurs, couvreurs ou finisseurs. Nous réglons A1, Limosa et Checkinatwork à l'avance."
             }
         }
     },

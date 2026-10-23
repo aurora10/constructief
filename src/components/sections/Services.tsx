@@ -1,13 +1,15 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { HardHat, Briefcase, Clock } from "lucide-react";
+import { HardHat, Briefcase } from "lucide-react";
 
 export function Services() {
     const t = useTranslations("Services");
 
+    // Only services that actually exist. The payroll item ("verloning via erkende
+    // partners") was removed because that service is not offered — a claim like that
+    // on the site is what makes a visitor distrust everything else on the page.
     const services = [
-        { key: "temp", icon: Clock },
         { key: "perm", icon: Briefcase },
         { key: "project", icon: HardHat },
     ];

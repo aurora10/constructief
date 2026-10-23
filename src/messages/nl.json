@@ -110,7 +110,7 @@
     },
     "EmployersPage": {
         "title": "Onderaannemer bouw: gescreende ploegen voor uw project",
-        "subtitle": "Van Poolse arbeiders voor de bouw tot volledige bouwploegen: wij koppelen u aan persoonlijk gescreende ploegen. A1, Limosa en Checkinatwork zijn geregeld.",
+        "subtitle": "Van bouwploegen uit Polen, Oekraïne en Roemenië tot complete, ingespeelde ploegen: wij koppelen u aan persoonlijk gescreende vakmensen. A1, Limosa en Checkinatwork zijn geregeld.",
         "form_title": "Personeel Aanvragen",
         "form_subtitle": "Vertel ons wat je nodig hebt. Wij matchen de juiste vakmensen.",
         "company_name": "Bedrijfsnaam",
@@ -149,17 +149,13 @@
         "title": "Onze Expertise",
         "subtitle": "Wij bieden oplossingen die passen bij de dynamiek van de bouw.",
         "items": {
-            "temp": {
-                "title": "Payroll Services",
-                "description": "Zorgeloze verloning via onze erkende partners, met behoud van uw flexibiliteit."
-            },
             "perm": {
                 "title": "Werving & Selectie",
                 "description": "Vind de perfecte vaste aanwinst voor uw kernteam door onze grondige screening."
             },
             "project": {
-                "title": "Freelance Bemiddeling",
-                "description": "De juiste zelfstandige professionals voor uw specifieke projectduur."
+                "title": "Bouwploegen voor uw project",
+                "description": "Wij koppelen uw werf aan een gescreende, legale ploeg voor de duur van het project: metselaars, bekisters, betonwerkers, dakwerkers of afwerkers. A1, Limosa en Checkinatwork regelen wij vooraf."
             }
         }
     },
@@ -343,7 +339,7 @@
     },
     "Metadata": {
         "title": "Onderaannemer bouw | Gescreende ploegen | Constructief Bouw",
-        "description": "Huur gescreende bouwploegen of Poolse arbeiders via detachering van bouwpersoneel. A1/Limosa/Checkinatwork geregeld, 14-dagen testweek, voor hoofdaannemers."
+        "description": "Huur gescreende bouwploegen uit Polen, Oekraïne en Roemenië voor uw werf. A1, Limosa en Checkinatwork geregeld, 14 dagen proefperiode, voor hoofdaannemers."
     },
     "Brand": {
         "descriptor": "bouwploegen & vakmensen"
@@ -594,7 +590,7 @@
     "EmployersUsp": {
         "eyebrow": "Voor hoofdaannemers & bouwbedrijven",
         "title": "Onderaannemers inhuren die wérken — geen CV-stapels",
-        "intro": "U hoeft niet te bladeren door stapels cv's. Bouwploeg inhuren kan vandaag: gescreende Poolse arbeiders en vakmensen, via detachering van bouwpersoneel — legaal, direct inzetbaar en versterkt met vakmanschap uit heel Europa.",
+        "intro": "U hoeft niet te bladeren door stapels cv's. Bouwploeg inhuren kan vandaag: gescreende vakmensen en ploegen uit Polen, Oekraïne en Roemenië — legaal, direct inzetbaar en aangevuld met vakmanschap uit heel Europa.",
         "features": [
             {
                 "title": "Geteste ploegen, geen CV-stapels",
@@ -1005,7 +1001,7 @@
             "antwerpen": "De renovatie van herenwoningen, appartementen en handelspanden in Antwerpen vraagt vakmensen voor gyproc, plafonds, binnenschrijnwerk en maatwerk. Als onderaannemer bouw leveren wij persoonlijk gescreende ploegen, met A1, Limosa en Checkinatwork volledig geregeld.",
             "gent": "In Gent zorgen renovaties van rijwoningen, studentenkamers en historische panden voor vraag naar ervaren plaatsers van wanden, plafonds, deuren en vaste meubels. U krijgt geen stapels cv’s, maar een voorgestelde ploeg die u tijdens een 14-daagse testperiode op de werf beoordeelt.",
             "leuven": "De markt in Leuven wordt mee bepaald door renovaties van woningen, studentenhuisvesting, kantoren en zorggebouwen. Voor detachering bouwpersoneel selecteren wij vakmensen die nauwkeurig gyproc, binnenschrijnwerk en afwerking uitvoeren, met een vergoeding gekoppeld aan het resultaat.",
-            "brussel": "In Brussel vragen de renovatie van appartementen, kantoren en handelspanden vaak meertalige ploegen voor wanden, plafonds, deuren en maatwerk. Wie zoekt naar poolse arbeiders bouw krijgt via Constructief een persoonlijk gescreende ploeg met alle wettelijke documenten vooraf geregeld."
+            "brussel": "In Brussel vragen de renovatie van appartementen, kantoren en handelspanden vaak meertalige ploegen voor wanden, plafonds, deuren en maatwerk. Wij zetten ploegen in uit Polen, Oekraïne en Roemenië die meertalig kunnen werken, met alle wettelijke documenten vooraf in orde."
         },
         "renovatie": {
             "antwerpen": "Bij de vernieuwing van herenhuizen, appartementen en handelspanden in Antwerpen zijn polyvalente afwerkers, stukadoors en tegelzetters nodig. Constructief levert persoonlijk gescreende ploegen, met A1, Limosa en Checkinatwork volledig geregeld.",
