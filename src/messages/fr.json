@@ -15,7 +15,7 @@
     },
     "Hero": {
         "title": "Équipes de construction présélectionnées pour entrepreneurs en Belgique",
-        "subtitle": "Pas de piles de CV, mais des artisans et des équipes de construction directement opérationnels. Exclusivement pour les entrepreneurs professionnels et les grandes entreprises de construction. Pas de projets particuliers.",
+        "subtitle": "Pas de piles de CV, mais des artisans et des équipes directement opérationnels. Nous travaillons uniquement sur des projets de moyenne et grande envergure pour des entrepreneurs professionnels et de grandes entreprises de construction — les petits travaux ne sont pas repris.",
         "cta_candidates": "Découvrir les offres",
         "cta_employers": "Pour les entrepreneurs"
     },
@@ -721,7 +721,7 @@
             },
             {
                 "q": "Le logement est-il fourni ?",
-                "a": "Oui, nous aidons avec un logement près du chantier. Vous ne perdez ni temps ni argent en déplacements — vous habitez près du projet."
+                "a": "Nous ne fournissons pas de logement. Nous vous aidons à en trouver un près du chantier, et nous discutons du coût à l'avance."
             },
             {
                 "q": "Quand et comment suis-je payé ?",
@@ -1054,7 +1054,7 @@
             "Les documents A1, Limosa et Checkinatwork sont réglés à l'avance, pour que vous puissiez commencer."
         ],
         "ready_title": "Prêt à postuler ?",
-        "ready_text": "Laissez vos coordonnées via le formulaire candidat. Nous vous contactons dès que nous avons examiné votre profil — généralement dans les deux jours ouvrables.",
+        "ready_text": "Laissez vos coordonnées via le formulaire candidat. Nous vous contactons dès que nous avons examiné votre profil.",
         "register_candidate": "S'inscrire comme candidat",
         "all_vacancies": "Toutes les offres",
         "view_vacancy": "Voir l'offre",
@@ -1063,7 +1063,7 @@
         "job_requirements": "Qui nous cherchons",
         "job_offer": "Ce que nous offrons",
         "apply_title": "Postuler à cette offre",
-        "apply_text": "Remplissez le formulaire candidat. Nous vous contactons dès que nous avons examiné votre profil — généralement dans les deux jours ouvrables.",
+        "apply_text": "Remplissez le formulaire candidat. Nous vous contactons dès que nous avons examiné votre profil.",
         "about_role": "À propos de cette fonction",
         "published_on": "Publié le",
         "company_note": "Constructief constitue des équipes de construction pour des entrepreneurs partout en Belgique. Nous recrutons, sélectionnons et accompagnons des ouvriers qualifiés sur les chantiers du pays.",
