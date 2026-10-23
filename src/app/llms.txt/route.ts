@@ -122,7 +122,7 @@ export function GET(): Response {
     out.push(line('Werken via Constructief (kandidaten)', `${BASE}/nl/onderaannemer-inschrijven`, 'Inschrijven als vakman of ploeg: specialisatie, ervaring en beschikbaarheid doorgeven; persoonlijke screening en begeleiding.'));
     out.push(line('Vacatures in de bouw (NL)', `${BASE}/nl/vacatures`, 'Openstaande functies voor vakmensen en leidinggevenden in de bouw, met locatie, loon en contractvorm. De vacatureteksten zijn Nederlandstalig.'));
     out.push('');
-    out.push('**Veelgestelde vragen van kandidaten** (staan ook zichtbaar op /nl/onderaannemer-inschrijven):');
+    out.push('**Veelgestelde vragen van vakmensen en ploegen:**');
     for (const item of workerFaq.nl) out.push(`- **${item.q}** ${item.a}`);
     out.push('');
 
@@ -130,7 +130,7 @@ export function GET(): Response {
     out.push(line('Travailler via Constructief (candidats)', `${BASE}/fr/onderaannemer-inschrijven`, 'Inscription comme artisan ou équipe: spécialisation, expérience et disponibilité; accompagnement personnel.'));
     out.push(line('Offres d\'emploi (FR)', `${BASE}/fr/vacatures`, 'Liste des postes ouverts; le texte des offres est en néerlandais (non indexé en FR tant que la traduction n\'est pas faite).'));
     out.push('');
-    out.push('**Questions fréquentes des candidats** (également visibles sur /fr/onderaannemer-inschrijven) :');
+    out.push('**Questions fréquentes des ouvriers et équipes :**');
     for (const item of workerFaq.fr) out.push(`- **${item.q}** ${item.a}`);
     out.push('');
 
@@ -139,7 +139,7 @@ export function GET(): Response {
     out.push(line('Вакансии и регистрация (RU)', `${BASE}/ru/onderaannemer-inschrijven`, 'Регистрация мастеров и бригад: специализация, документы, опыт и доступность. Оформление A1 и Limosa берём на себя.'));
     out.push(line('Вакансии (RU)', `${BASE}/ru/vacatures`, 'Список открытых вакансий; тексты вакансий пока на нидерландском языке (страница не индексируется до перевода).'));
     out.push('');
-    out.push('**Частые вопросы кандидатов** (также видны на /ru/onderaannemer-inschrijven):');
+    out.push('**Частые вопросы мастеров и бригад:**');
     for (const item of workerFaq.ru) out.push(`- **${item.q}** ${item.a}`);
     out.push('');
 

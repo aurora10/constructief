@@ -9,9 +9,12 @@ export function Services() {
     // Only services that actually exist. The payroll item ("verloning via erkende
     // partners") was removed because that service is not offered — a claim like that
     // on the site is what makes a visitor distrust everything else on the page.
+    // Only services that exist. Payroll ("verloning via erkende partners") and hiring
+    // staff for employers are gone: Constructief brokers crews and self-employed
+    // specialists — it is not the employer of anyone.
     const services = [
-        { key: "perm", icon: Briefcase },
         { key: "project", icon: HardHat },
+        { key: "freelance", icon: Briefcase },
     ];
 
     return (

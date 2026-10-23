@@ -149,13 +149,13 @@
         "title": "Onze Expertise",
         "subtitle": "Wij bieden oplossingen die passen bij de dynamiek van de bouw.",
         "items": {
-            "perm": {
-                "title": "Werving & Selectie",
-                "description": "Vind de perfecte vaste aanwinst voor uw kernteam door onze grondige screening."
-            },
             "project": {
                 "title": "Bouwploegen voor uw project",
                 "description": "Wij koppelen uw werf aan een gescreende, legale ploeg voor de duur van het project: metselaars, bekisters, betonwerkers, dakwerkers of afwerkers. A1, Limosa en Checkinatwork regelen wij vooraf."
+            },
+            "freelance": {
+                "title": "Zelfstandige specialisten",
+                "description": "Ook losse zelfstandigen — een kraanmachinist, een werfleider, een elektricien — koppelen wij aan uw project. Zelfde screening, zelfde documenten, dezelfde vaste contactpersoon."
             }
         }
     },
