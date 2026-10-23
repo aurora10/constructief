@@ -111,8 +111,8 @@
     "EmployersPage": {
         "title": "Onderaannemer bouw: gescreende ploegen voor uw project",
         "subtitle": "Van Oost-Europese ploegen — vooral uit Oekraïne — tot complete, ingespeelde ploegen: wij koppelen u aan persoonlijk gescreende vakmensen met het recht om in België te werken. A1, Limosa en Checkinatwork zijn geregeld.",
-        "form_title": "Personeel Aanvragen",
-        "form_subtitle": "Vertel ons wat je nodig hebt. Wij matchen de juiste vakmensen.",
+        "form_title": "Ploeg aanvragen",
+        "form_subtitle": "Vertel ons wat u nodig hebt. Wij zoeken de juiste ploeg of specialist.",
         "company_name": "Bedrijfsnaam",
         "company_name_placeholder": "Bouwbedrijf Jansen BV",
         "url": "Website (URL)",
@@ -176,7 +176,7 @@
         "title": "Persoonlijk & Constructief",
         "subtitle": "Uw directe lijn naar vakmanschap in de bouwsector.",
         "story_p1": "Constructief is geen groot kantoor met anonieme consultants. Ik ben uw persoonlijke partner die de taal van de bouw spreekt. Met jarenlange ervaring in de sector weet ik dat een goede match meer is dan wat regels op een CV.",
-        "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Wij hebben een directe pool van beschikbare metsers, bekisters, kraanmachinisten, elektriciens en lassers. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen. Naast individuele vakmannen stellen wij ook complete, legaal werkende bouwploegen samen voor hoofdaannemers — tegen een vergoeding op resultaat."
+        "story_p2": "Mijn aanpak is simpel: ik spreek iedere vakman, ik check iedere referentie, en ik sta persoonlijk garant voor de kwaliteit die ik lever. Wij hebben een directe pool van beschikbare metsers, bekisters, kraanmachinisten, elektriciens en lassers. Geen loze beloftes, maar eerlijk advies en harde resultaten waar u op kunt bouwen. Naast losse zelfstandige specialisten koppelen wij complete, legaal werkende bouwploegen aan hoofdaannemers. Ons honorarium is een vindersloon dat de opdrachtgever betaalt — wij nemen geen percentage van het tarief dat u met de ploeg afspreekt."
     },
     "NewsPage": {
         "title": "Nieuws en kennis over bouwpersoneel",
@@ -594,7 +594,7 @@
         "features": [
             {
                 "title": "Geteste ploegen, geen CV-stapels",
-                "desc": "Elke vakman wordt vóór de start gescreend en werkt daarna 14 dagen op proef op uw werf. In plaats van twintig cv's sturen wij u drie gescreende ploegen die binnen enkele dagen kunnen starten."
+                "desc": "Elke vakman wordt vóór de start gescreend en werkt daarna 14 dagen op proef op uw werf. In plaats van twintig cv's stellen wij u één gescreende ploeg voor die binnen enkele dagen kan starten."
             },
             {
                 "title": "Legale ploegen: A1 & Limosa geregeld",
@@ -602,7 +602,7 @@
             },
             {
                 "title": "14-dagen testweek",
-                "desc": "Zekerheid vooraf: de eerste 14 dagen bepalen of de ploeg echt klikt met uw werf en uw aanpak. Geeft het niet? Dan gaan we verder."
+                "desc": "De eerste 14 dagen bepalen of de ploeg echt klikt met uw werf en uw aanpak. Geeft het niet, dan volgt er geen factuur voor die ploeg."
             },
             {
                 "title": "Vergoeding op resultaat",
@@ -610,12 +610,12 @@
             },
             {
                 "title": "Ploegen uit heel Europa",
-                "desc": "Wij stellen ploegen samen uit vakmensen uit heel Europa, aangevuld met lokale krachten wanneer het project erom vraagt."
+                "desc": "Wij werken met ploegen uit Oost-Europa, vooral uit Oekraïne. Iedereen met het recht om in België te werken is welkom — ook wie al in België woont."
             }
         ],
         "cta_title": "Vraag direct een gescreende ploeg aan",
         "cta_desc": "Vertel ons wat u nodig heeft — wij leveren een geteste, legale ploeg op uw werf.",
-        "cta_button": "Personeel aanvragen"
+        "cta_button": "Ploeg aanvragen"
     },
     "Trades": {
         "gevel": {

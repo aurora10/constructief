@@ -111,8 +111,8 @@
     "EmployersPage": {
         "title": "Sous-traitance bâtiment — équipes présélectionnées pour les entrepreneurs",
         "subtitle": "Des équipes d'Europe de l'Est — surtout d'Ukraine — aux équipes complètes déjà rodées : nous vous mettons en relation avec des artisans présélectionnés en droit de travailler en Belgique. A1, Limosa et Checkinatwork sont gérés.",
-        "form_title": "Demander du Personnel",
-        "form_subtitle": "Dites-nous ce dont vous avez besoin. Nous trouvons les bons artisans.",
+        "form_title": "Demander une équipe",
+        "form_subtitle": "Dites-nous ce dont vous avez besoin. Nous cherchons l'équipe ou l'indépendant qui convient.",
         "company_name": "Nom de l'entreprise",
         "company_name_placeholder": "Entreprise de Construction Dupont SA",
         "url": "Site Web (URL)",
@@ -176,7 +176,7 @@
         "title": "Personnel & Constructif",
         "subtitle": "Votre ligne directe vers le savoir-faire dans le secteur de la construction.",
         "story_p1": "Constructief n'est pas un grand bureau avec des consultants anonymes. Je suis votre partenaire personnel qui parle le langage de la construction. Avec des années d'expérience dans le secteur, je sais qu'un bon match est plus que quelques lignes sur un CV.",
-        "story_p2": "Mon approche est simple : je rencontre chaque artisan, je vérifie chaque référence, et je garantis personnellement la qualité que je fournis. Nous avons un vivier direct de maçons, coffreurs, grutiers, électriciens et soudeurs disponibles. Pas de fausses promesses, mais des conseils honnêtes et des résultats solides sur lesquels vous pouvez compter. En plus d'artisans individuels, nous constituons aussi des équipes de construction complètes et légales pour les entrepreneurs généraux — contre une rémunération au résultat."
+        "story_p2": "Mon approche est simple : je rencontre chaque artisan, je vérifie chaque référence, et je garantis personnellement la qualité que je fournis. Nous avons un vivier direct de maçons, coffreurs, grutiers, électriciens et soudeurs disponibles. Pas de fausses promesses, mais des conseils honnêtes et des résultats solides sur lesquels vous pouvez compter. Outre les indépendants seuls, nous mettons des équipes de construction complètes et légales en relation avec des entrepreneurs généraux. Notre rémunération est un finder fee payé par le donneur d'ordre — nous ne prenons aucun pourcentage du tarif que vous convenez avec l'équipe."
     },
     "NewsPage": {
         "title": "Aperçus du Secteur",
@@ -594,7 +594,7 @@
         "features": [
             {
                 "title": "Équipes testées, pas de piles de CV",
-                "desc": "Chaque artisan est présélectionné avant le démarrage, puis travaille 14 jours à l'essai sur votre chantier. Au lieu de vingt CV, vous recevez trois équipes présélectionnées, prêtes à démarrer."
+                "desc": "Chaque artisan est présélectionné avant le démarrage, puis travaille 14 jours à l'essai sur votre chantier. Au lieu de vingt CV, nous vous présentons une équipe présélectionnée, prête à démarrer en quelques jours."
             },
             {
                 "title": "Équipes légales : A1 & Limosa gérés",
@@ -602,7 +602,7 @@
             },
             {
                 "title": "Semaine d'essai de 14 jours",
-                "desc": "Sécurité avant tout : les 14 premiers jours déterminent si l'équipe s'accorde vraiment à votre chantier."
+                "desc": "Les 14 premiers jours déterminent si l'équipe s'accorde vraiment à votre chantier. Si ce n'est pas le cas, il n'y a pas de facture pour cette équipe."
             },
             {
                 "title": "Rémunération au résultat",
@@ -610,12 +610,12 @@
             },
             {
                 "title": "Équipes venues de toute l'Europe",
-                "desc": "Nous constituons des équipes d'artisans venus de toute l'Europe, complétées par des forces locales quand le projet l'exige."
+                "desc": "Nous travaillons avec des équipes d'Europe de l'Est, surtout d'Ukraine. Toute personne en droit de travailler en Belgique est la bienvenue — y compris celles qui vivent déjà ici."
             }
         ],
         "cta_title": "Demandez une équipe présélectionnée",
         "cta_desc": "Dites-nous ce dont vous avez besoin — nous livrons une équipe testée et légale sur votre chantier.",
-        "cta_button": "Demander du personnel"
+        "cta_button": "Demander une équipe"
     },
     "SousTraitance": {
         "title": "Sous-traitance bâtiment : des équipes prêtes à travailler",
