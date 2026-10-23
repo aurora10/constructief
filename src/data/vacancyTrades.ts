@@ -128,7 +128,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een metselaar in België?',
-                a: 'Je tarief spreek je af met de aannemer, vóór je begint — wij leggen het vast zodat je het zwart op wit hebt. Wij werken niet met een Belgische sectorloonschaal, want zo werkt deze samenwerking niet: je komt met je eigen ervaring of je eigen ploeg, en wat je verdient hangt af van het project en van die afspraak.',
+                a: 'Je werkt als zelfstandige of met je eigen ploeg en factureert de aannemer voor het geleverde werk. Het tarief op die factuur ligt meestal rond 30–35 €/uur en loopt voor bepaalde specialismen op tot 60 €/uur. Wat elk lid van je ploeg daarvan krijgt, is jullie eigen afspraak — wij bepalen geen loon en betalen geen loon uit. Het tarief spreken we vooraf met de aannemer af en leggen we schriftelijk vast vóór de start.',
             },
             {
                 q: 'Wat is het verschil tussen metselaar en metser?',
@@ -190,7 +190,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een bekister in België?',
-                a: 'Je tarief hangt af van je ervaring en van het project, en je spreekt het af met de aannemer vóór de start. Wij bevestigen dat tarief en het aantal uren schriftelijk voor je begint — geen "we zien wel" achteraf. Er geldt hier geen Belgische sectorloonschaal.',
+                a: 'Je werkt met je ploeg of als zelfstandige en factureert de aannemer. Het factuurtarief ligt meestal rond 30–35 €/uur, voor bepaalde specialismen tot 60 €/uur; wat jouw mensen daarvan krijgen, spreek je zelf met hen af. Tarief en uren bevestigen we schriftelijk vóór je begint — geen "we zien wel" achteraf.',
             },
             {
                 q: 'Moet ik met systeembekisting kunnen werken?',
@@ -252,7 +252,7 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Wat verdient een kraanmachinist in België?',
-                a: 'Je tarief hangt af van je ervaring, je attest en het project, en je spreekt het af met de aannemer vóór de start. Wij leggen het schriftelijk vast voor je begint. Er geldt hier geen Belgische sectorloonschaal.',
+                a: 'Je factureert de aannemer als zelfstandige of met je ploeg. Het tarief hangt af van je specialisme en het project: meestal rond 30–35 €/uur, voor kraanmachinisten tot 60 €/uur. Het loon van je eigen mensen bepaal je zelf — wij niet. We leggen het tarief schriftelijk vast vóór de start.',
             },
             {
                 q: 'Werken kraanmachinisten in ploegen?',
@@ -307,7 +307,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een werfleider in België?',
-                a: 'Je tarief hangt af van je ervaring, het type project (renovatie, nieuwbouw, utiliteitsbouw) en de regio, en je spreekt het af met de aannemer. Wij bespreken het volledige pakket vóór je tekent, niet erna, en leggen het schriftelijk vast.',
+                a: 'Je werkt als zelfstandige of met je ploeg en factureert de aannemer voor het project. Het tarief spreken jullie af naargelang het project en de verantwoordelijkheid: meestal rond 30–35 €/uur, op grote werven hoger. De lonen binnen je ploeg bepaalt de ploeg zelf. Wij bespreken en noteren de voorwaarden vóór de ondertekening, niet erna.',
             },
             {
                 q: 'Wat is het verschil tussen werfleider, uitvoerder en projectleider?',
@@ -366,7 +366,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een industrieel elektricien in België?',
-                a: 'Je tarief hangt af van je ervaring, de sector waarin je werkt en de shiftregeling op de opdracht. In de chemie en de petrochemie liggen de tarieven doorgaans hoger dan op een gewone werf. Wij zetten het tarief en de afspraken over shiften op papier vóór je start.',
+                a: 'Je factureert de aannemer als zelfstandige of met je ploeg. Het tarief hangt af van je ervaring, de sector en de shiftregeling: meestal rond 30–35 €/uur, in de chemie en petrochemie hoger. Wat je eigen mensen krijgen, bepaal je zelf. We zetten tarief en afspraken over shiften schriftelijk vast vóór de start.',
             },
             {
                 q: 'Wat betekenen BA4 en BA5?',

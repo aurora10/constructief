@@ -212,10 +212,11 @@ export default async function VacancyOrTradePage({ params }: Props) {
     const canonical = `${BASE}/${locale}/vacatures/${id}`;
     const t = await getTranslations({ locale, namespace: 'VacanciesPage' });
 
-    // Parse "€ 4.000 - € 5.500 per maand" / "€ 17 - € 19 per uur" into a numeric
-    // MonetaryAmount range so the JobPosting markup is valid. Belgian number
-    // formatting: "." groups thousands and "," is the decimal separator, so the
-    // grouping dots have to go before parsing ("4.000" is four thousand, not 4).
+    // We broker work to crews and self-employed specialists: we are not the employer
+    // and we do not pay a wage. A posting is therefore CONTRACTOR work, and any
+    // hourly figure on the page is a rate agreed between the crew and the contractor,
+    // not a salary we offer. That is why the rates moved out of the data and why
+    // baseSalary is only emitted when a posting genuinely carries a number.
     const salaryNumbers = (job.salary.match(/\d[\d.,]*/g) ?? [])
         .map((n) => parseFloat(n.replace(/\./g, '').replace(',', '.')))
         .filter((n) => !Number.isNaN(n));
@@ -230,7 +231,7 @@ export default async function VacancyOrTradePage({ params }: Props) {
               ? 'PART_TIME'
               : job.type === 'Interim'
                 ? 'TEMPORARY'
-                : 'OTHER';
+                : 'CONTRACTOR';
 
     // Best-effort postal address used in the JobPosting markup. Where the data
     // only names a province ("Limburg", "West-Vlaanderen") there is no single
@@ -289,16 +290,22 @@ export default async function VacancyOrTradePage({ params }: Props) {
                 addressCountry: 'BE',
             },
         },
-        baseSalary: {
-            '@type': 'MonetaryAmount',
-            currency: 'EUR',
-            value: {
-                '@type': 'QuantitativeValue',
-                ...(baseMin !== undefined ? { minValue: baseMin } : {}),
-                ...(baseMax !== undefined ? { maxValue: baseMax } : {}),
-                unitText: isHourly ? 'HOUR' : 'MONTH',
-            },
-        },
+        // Only when a posting actually carries a figure. Inventing or reusing a wage
+        // here would tell Google — and the candidate — something untrue.
+        ...(baseMin !== undefined
+            ? {
+                  baseSalary: {
+                      '@type': 'MonetaryAmount',
+                      currency: 'EUR',
+                      value: {
+                          '@type': 'QuantitativeValue',
+                          minValue: baseMin,
+                          ...(baseMax !== undefined ? { maxValue: baseMax } : {}),
+                          unitText: isHourly ? 'HOUR' : 'MONTH',
+                      },
+                  },
+              }
+            : {}),
     };
 
     const breadcrumbJsonLd = {

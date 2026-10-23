@@ -42,8 +42,8 @@ export const jobs: Job[] = [
         datePosted: '2026-08-06',
         title: 'Projectleider Bouw',
         location: 'Antwerpen',
-        type: 'Fulltime',
-        salary: '€ 4.000 - € 5.500 per maand',
+        type: 'Projectopdracht',
+        salary: 'Tarief in overleg met de aannemer',
         description:
             'Ervaren projectleider voor grote utiliteitsbouwprojecten in de regio Antwerpen. Je leidt meerdere werven van voorbereiding tot oplevering.',
         intro: [
@@ -76,8 +76,8 @@ export const jobs: Job[] = [
         datePosted: '2026-08-08',
         title: 'Werfleider',
         location: 'Gent',
-        type: 'Fulltime',
-        salary: '€ 3.500 - € 4.500 per maand',
+        type: 'Projectopdracht',
+        salary: 'Tarief in overleg met de aannemer',
         description:
             'Werfleider voor nieuwbouw- en renovatieprojecten in Gent en omgeving. Je stuurt de ploegen aan en bewaakt planning en kwaliteit.',
         intro: [
@@ -109,8 +109,8 @@ export const jobs: Job[] = [
         datePosted: '2026-08-10',
         title: 'Bekister',
         location: 'Brussel',
-        type: 'Interim',
-        salary: '€ 17 - € 19 per uur',
+        type: 'Projectopdracht',
+        salary: 'Tarief in overleg met de aannemer',
         description:
             'Bekister voor diverse betonprojecten in Brussel. Ervaring met traditionele bekisting is vereist; systeembekisting is een pluspunt.',
         intro: [
@@ -141,8 +141,8 @@ export const jobs: Job[] = [
         datePosted: '2026-08-11',
         title: 'Kraanmachinist',
         location: 'Limburg',
-        type: 'Fulltime',
-        salary: '€ 18 - € 20 per uur',
+        type: 'Projectopdracht',
+        salary: 'Tarief in overleg met de aannemer',
         description:
             'Torenkraanmachinist met geldig attest voor projecten in Limburg. Veilig en nauwkeurig werken staat voorop.',
         intro: [
@@ -173,8 +173,8 @@ export const jobs: Job[] = [
         datePosted: '2026-08-12',
         title: 'Metser',
         location: 'West-Vlaanderen',
-        type: 'Fulltime',
-        salary: '€ 16 - € 18 per uur',
+        type: 'Projectopdracht',
+        salary: 'Tarief in overleg met de aannemer',
         description:
             'Metselaar voor nieuwbouw en renovatie in West-Vlaanderen. Zelfstandig werken en oog voor kwaliteit.',
         intro: [
@@ -205,8 +205,8 @@ export const jobs: Job[] = [
         datePosted: '2026-08-13',
         title: 'Elektricien',
         location: 'Antwerpen',
-        type: 'Fulltime',
-        salary: '€ 17 - € 19 per uur',
+        type: 'Projectopdracht',
+        salary: 'Tarief in overleg met de aannemer',
         description:
             'Industrieel elektricien voor onderhoudswerken in de Antwerpse havenregio. Kennis van PLC is een plus.',
         intro: [

@@ -30,7 +30,7 @@ export interface JobLocalized {
     location: string;
     /** "Fulltime" / "Полная занятость". */
     type: string;
-    /** "€ 17 - € 19 per uur" / "€ 17 - € 19 в час". */
+    /** Rate text shown to the reader, e.g. "Tarief in overleg met de aannemer". */
     salary: string;
 }
 
