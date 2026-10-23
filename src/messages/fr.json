@@ -14,7 +14,7 @@
         "regions": "Régions"
     },
     "Hero": {
-        "title": "Construisons ensemble un avenir plus solide",
+        "title": "Équipes de construction présélectionnées pour entrepreneurs en Belgique",
         "subtitle": "Pas de piles de CV, mais des artisans et des équipes de construction directement opérationnels. Exclusivement pour les entrepreneurs professionnels et les grandes entreprises de construction. Pas de projets particuliers.",
         "cta_candidates": "Découvrir les offres",
         "cta_employers": "Pour les entrepreneurs"
@@ -80,9 +80,9 @@
         }
     },
     "FeaturedJobs": {
-        "title": "Projets Actuels",
-        "subtitle": "Des opportunités pour les vrais artisans.",
-        "view_all": "Tous les projets",
+        "title": "Postes actuels",
+        "subtitle": "Postes ouverts chez des entrepreneurs partout en Belgique.",
+        "view_all": "Tous les postes",
         "apply": "Postuler"
     },
     "Testimonials": {

@@ -131,7 +131,7 @@ export const jobs: Job[] = [
         offer: [
             'Correcte, transparante betaling volgens afspraak',
             'Voor buitenlandse kandidaten: A1, Limosa en werfregistratie worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
         ],
     },
@@ -163,7 +163,7 @@ export const jobs: Job[] = [
         offer: [
             'Correcte, transparante betaling volgens afspraak',
             'Voor buitenlandse kandidaten: A1, Limosa en werfregistratie worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
         ],
     },
@@ -195,7 +195,7 @@ export const jobs: Job[] = [
         offer: [
             'Correcte, transparante betaling volgens afspraak',
             'Voor buitenlandse kandidaten: A1, Limosa en werfregistratie worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
         ],
     },
@@ -227,7 +227,7 @@ export const jobs: Job[] = [
         offer: [
             'Correcte, transparante betaling volgens afspraak',
             'Voor buitenlandse kandidaten: A1, Limosa en werfregistratie worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
         ],
     },

@@ -14,8 +14,8 @@
         "regions": "Regio's"
     },
     "Hero": {
-        "title": "Samen bouwen we aan een sterkere toekomst",
-        "subtitle": "Geen stapels CV's, maar direct inzetbare vakmannen en bouwploegen. Uitsluitend voor professionele (hoofd)aannemers en grote bouwbedrijven. Geen particuliere projecten.",
+        "title": "Gescreende bouwploegen en vakmensen voor aannemers in België",
+        "subtitle": "Geen stapels cv's, maar direct inzetbare vakmannen en bouwploegen. Wij werken uitsluitend op middelgrote en grote projecten voor professionele (hoofd)aannemers en bouwbedrijven — kleine klussen nemen wij niet aan.",
         "cta_candidates": "Ontdek vacatures",
         "cta_employers": "Voor aannemers"
     },
@@ -80,9 +80,9 @@
         }
     },
     "FeaturedJobs": {
-        "title": "Actuele Projecten",
-        "subtitle": "Kansen voor echte vakmensen.",
-        "view_all": "Alle projecten",
+        "title": "Actuele vacatures",
+        "subtitle": "Openstaande opdrachten bij aannemers in heel België.",
+        "view_all": "Alle vacatures",
         "apply": "Solliciteren"
     },
     "Testimonials": {
@@ -717,7 +717,7 @@
             },
             {
                 "q": "Wordt huisvesting geregeld?",
-                "a": "Ja, wij helpen met onderdak dicht bij de werf. Zo verlies je geen tijd en geld aan reizen — je woont vlakbij het project."
+                "a": "Huisvesting voorzien wij niet. Wij helpen je wel bij het vinden van onderdak dicht bij de werf, en de kosten daarvan bespreken we vooraf."
             },
             {
                 "q": "Wanneer en hoe word ik betaald?",

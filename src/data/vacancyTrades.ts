@@ -124,7 +124,7 @@ export const jobTradePages: JobTradePage[] = [
             'Betaald volgens het barema dat op de opdracht van toepassing is, met premies volgens de sector',
             'Eén vast aanspreekpunt dat je dossier opvolgt, ook als je al aan het werk bent',
             'Voor buitenlandse vakmensen: A1, Limosa en werfregistratie (Checkinatwork) worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
         ],
         faq: [
             {
@@ -186,7 +186,7 @@ export const jobTradePages: JobTradePage[] = [
             'Correcte, transparante betaling volgens afspraak, met loonfiches',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
             'Voor buitenlandse bekisters: A1, Limosa en werfregistratie worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
         ],
         faq: [
             {
@@ -244,7 +244,7 @@ export const jobTradePages: JobTradePage[] = [
             'Loon volgens het barema van de opdracht, met premies en maaltijdcheques volgens de sector',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
             'Voor buitenlandse machinisten: A1, Limosa en werfregistratie worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
         ],
         faq: [
             {
@@ -362,7 +362,7 @@ export const jobTradePages: JobTradePage[] = [
             'Loon volgens het barema en de sector van de opdracht, met premies voor shiften',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
             'Voor buitenlandse elektriciens: A1, Limosa en werfregistratie worden vooraf geregeld',
-            'Begeleiding bij verblijf dicht bij de werf',
+            'Hulp bij het vinden van onderdak dicht bij de werf',
         ],
         faq: [
             {
