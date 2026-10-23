@@ -18,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const staticPages = [
         '',
-        '/kandidaten',
         '/werkgevers',
         '/vacatures',
         '/over-ons',

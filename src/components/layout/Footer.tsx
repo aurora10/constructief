@@ -49,7 +49,7 @@ export function Footer() {
                     <div>
                         <h4 className="font-semibold mb-4">{t("links")}</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="/kandidaten" className="hover:text-primary">{t("candidates")}</Link></li>
+                            <li><Link href="/onderaannemer-inschrijven" className="hover:text-primary">{t("candidates")}</Link></li>
                             <li><Link href="/werkgevers" className="hover:text-primary">{t("employers")}</Link></li>
                             <li><Link href="/vacatures" className="hover:text-primary">{t("vacancies")}</Link></li>
                         </ul>

@@ -5,7 +5,7 @@ import { jobTradePages, tradeLinkLabel } from '@/data/vacancyTrades';
 import { jobsByTrade } from '@/data/vacancies';
 
 /**
- * Links the worker hub (/kandidaten) to the trade job pages, so the job cluster is
+ * Links the crew intake (the only apply funnel) to the trade job pages, so the cluster is
  * reachable from the page about working with us instead of only from /vacatures.
  *
  * Rendered for nl only: the vacancy copy is not translated yet and the fr/ru job

@@ -37,7 +37,7 @@ export function Header() {
 
     const navItems = [
         { label: t("home"), href: "/" },
-        { label: t("candidates"), href: "/kandidaten" },
+        { label: t("candidates"), href: "/onderaannemer-inschrijven" },
         { label: t("employers"), href: "/werkgevers" },
         { label: t("vacancies"), href: "/vacatures" },
         { label: t("regions"), href: "/diensten" },

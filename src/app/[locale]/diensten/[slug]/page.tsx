@@ -84,7 +84,7 @@ export async function generateMetadata({
   //  - ru is NEVER indexable, for any page type: the Russian audience is workers
   //    looking for jobs, not contractors looking to hire crews. Indexing ru
   //    B2B trade pages would pull job-seekers onto buyer pages (intent mismatch).
-  //    The RU worker cluster (/ru, /ru/kandidaten, /ru/vacatures) is the right
+  //    The RU worker cluster (/ru, /ru/vacatures) is the right
   //    target and stays indexable via its own pages.
   //  - city-only pages (`onderaannemer-{city}`) are indexable ONLY for the
   //    promoted city set (indexedCitySlugs). The remaining city pages stay

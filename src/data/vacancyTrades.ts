@@ -128,7 +128,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een metselaar in België?',
-                a: 'Je werkt als zelfstandige of met je eigen ploeg en factureert de aannemer voor het geleverde werk. Het tarief op die factuur ligt meestal rond 30–35 €/uur en loopt voor bepaalde specialismen op tot 60 €/uur. Wat elk lid van je ploeg daarvan krijgt, is jullie eigen afspraak — wij bepalen geen loon en betalen geen loon uit. Het tarief spreken we vooraf met de aannemer af en leggen we schriftelijk vast vóór de start.',
+                a: 'Je werkt als zelfstandige of met je eigen ploeg en spreekt het tarief rechtstreeks met de aannemer af. Wat jij en je mensen daaraan verdienen, is jullie afspraak: wij stellen geen tarief vast en nemen geen percentage van je tarief. Onze vergoeding is een vindersloon dat de aannemer betaalt. De afspraken leggen we schriftelijk vast vóór de start.'
             },
             {
                 q: 'Wat is het verschil tussen metselaar en metser?',
@@ -190,7 +190,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een bekister in België?',
-                a: 'Je werkt met je ploeg of als zelfstandige en factureert de aannemer. Het factuurtarief ligt meestal rond 30–35 €/uur, voor bepaalde specialismen tot 60 €/uur; wat jouw mensen daarvan krijgen, spreek je zelf met hen af. Tarief en uren bevestigen we schriftelijk vóór je begint — geen "we zien wel" achteraf.',
+                a: 'Je werkt met je ploeg of als zelfstandige en spreekt het tarief rechtstreeks met de aannemer af. Wij stellen geen tarief vast en nemen er geen percentage van: onze vergoeding is een vindersloon, betaald door de aannemer. Tarief en uren spreken jullie zelf af; wij leggen de afspraken schriftelijk vast voor de start.'
             },
             {
                 q: 'Moet ik met systeembekisting kunnen werken?',
@@ -252,7 +252,7 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Wat verdient een kraanmachinist in België?',
-                a: 'Je factureert de aannemer als zelfstandige of met je ploeg. Het tarief hangt af van je specialisme en het project: meestal rond 30–35 €/uur, voor kraanmachinisten tot 60 €/uur. Het loon van je eigen mensen bepaal je zelf — wij niet. We leggen het tarief schriftelijk vast vóór de start.',
+                a: 'Je factureert de aannemer als zelfstandige of met je ploeg; het tarief is jullie afspraak. Wij stellen het niet vast en nemen er geen percentage van — onze vergoeding is een vindersloon van de aannemer. De lonen binnen je ploeg bepaal je zelf.'
             },
             {
                 q: 'Werken kraanmachinisten in ploegen?',
@@ -307,7 +307,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een werfleider in België?',
-                a: 'Je werkt als zelfstandige of met je ploeg en factureert de aannemer voor het project. Het tarief spreken jullie af naargelang het project en de verantwoordelijkheid: meestal rond 30–35 €/uur, op grote werven hoger. De lonen binnen je ploeg bepaalt de ploeg zelf. Wij bespreken en noteren de voorwaarden vóór de ondertekening, niet erna.',
+                a: 'Je werkt als zelfstandige of met je ploeg en spreekt het tarief rechtstreeks met de aannemer af. Wij stellen geen tarief vast en nemen geen percentage — de aannemer betaalt ons een vindersloon. De voorwaarden noteren we vóór de ondertekening.'
             },
             {
                 q: 'Wat is het verschil tussen werfleider, uitvoerder en projectleider?',
@@ -366,7 +366,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een industrieel elektricien in België?',
-                a: 'Je factureert de aannemer als zelfstandige of met je ploeg. Het tarief hangt af van je ervaring, de sector en de shiftregeling: meestal rond 30–35 €/uur, in de chemie en petrochemie hoger. Wat je eigen mensen krijgen, bepaal je zelf. We zetten tarief en afspraken over shiften schriftelijk vast vóór de start.',
+                a: 'Je factureert de aannemer als zelfstandige of met je ploeg; tarief en shiftregeling zijn jullie afspraak. Wij stellen het tarief niet vast en nemen er geen percentage van — onze vergoeding is een vindersloon van de aannemer.'
             },
             {
                 q: 'Wat betekenen BA4 en BA5?',

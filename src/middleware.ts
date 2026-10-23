@@ -23,7 +23,25 @@ const intlMiddleware = createMiddleware(routing);
  *
  * Everything else (locale-prefixed paths) passes through untouched.
  */
+/** /kandidaten is retired: the candidate funnel was replaced by the crew intake. */
+const RETIRED_PREFIXES: Record<string, string> = {
+    kandidaten: 'onderaannemer-inschrijven',
+};
+
 export default function middleware(request: NextRequest) {
+    const pathname = request.nextUrl.pathname;
+    const segments = pathname.split('/').filter(Boolean);
+    const maybeLocale = segments[0];
+    const hasLocale = routing.locales.includes(maybeLocale as never);
+    const firstSegment = hasLocale ? segments[1] : segments[0];
+
+    if (firstSegment && RETIRED_PREFIXES[firstSegment]) {
+        const url = request.nextUrl.clone();
+        url.pathname = `/${hasLocale ? maybeLocale : routing.defaultLocale}/${RETIRED_PREFIXES[firstSegment]}`;
+        url.search = '';
+        return NextResponse.redirect(url, 308);
+    }
+
     const response = intlMiddleware(request);
 
     if (response.status === 307 || response.status === 302) {
