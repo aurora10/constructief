@@ -110,7 +110,7 @@
     },
     "EmployersPage": {
         "title": "Onderaannemer bouw: gescreende ploegen voor uw project",
-        "subtitle": "Van bouwploegen uit Polen, Oekraïne en Roemenië tot complete, ingespeelde ploegen: wij koppelen u aan persoonlijk gescreende vakmensen. A1, Limosa en Checkinatwork zijn geregeld.",
+        "subtitle": "Van Oost-Europese ploegen — vooral uit Oekraïne — tot complete, ingespeelde ploegen: wij koppelen u aan persoonlijk gescreende vakmensen met het recht om in België te werken. A1, Limosa en Checkinatwork zijn geregeld.",
         "form_title": "Personeel Aanvragen",
         "form_subtitle": "Vertel ons wat je nodig hebt. Wij matchen de juiste vakmensen.",
         "company_name": "Bedrijfsnaam",
@@ -192,7 +192,7 @@
         "title": "Laten we praten",
         "subtitle": "Direct contact voor snelle oplossingen.",
         "info_title": "Contactgegevens",
-        "info_description": "Wilt u weten wat ik voor uw project kan betekenen? Bel me direct of stuur een bericht. Let op: Wij werken uitsluitend B2B voor erkende bouwbedrijven.",
+        "info_description": "Wilt u weten wat ik voor uw project kan betekenen? Bel me direct of stuur een bericht. Let op: wij werken uitsluitend voor bouwbedrijven en zelfstandigen (zzp), niet voor particulieren.",
         "phone": "Telefoon",
         "email": "E-mail",
         "address": "Locatie",
@@ -339,7 +339,7 @@
     },
     "Metadata": {
         "title": "Onderaannemer bouw | Gescreende ploegen | Constructief Bouw",
-        "description": "Huur gescreende bouwploegen uit Polen, Oekraïne en Roemenië voor uw werf. A1, Limosa en Checkinatwork geregeld, 14 dagen proefperiode, voor hoofdaannemers."
+        "description": "Huur gescreende Oost-Europese bouwploegen (vooral Oekraïne) voor uw werf. A1, Limosa en Checkinatwork geregeld, 14 dagen proefperiode, voor aannemers."
     },
     "Brand": {
         "descriptor": "bouwploegen & vakmensen"
@@ -590,11 +590,11 @@
     "EmployersUsp": {
         "eyebrow": "Voor hoofdaannemers & bouwbedrijven",
         "title": "Onderaannemers inhuren die wérken — geen CV-stapels",
-        "intro": "U hoeft niet te bladeren door stapels cv's. Bouwploeg inhuren kan vandaag: gescreende vakmensen en ploegen uit Polen, Oekraïne en Roemenië — legaal, direct inzetbaar en aangevuld met vakmanschap uit heel Europa.",
+        "intro": "U hoeft niet te bladeren door stapels cv's. Bouwploeg inhuren kan vandaag: gescreende vakmensen en ploegen uit Oost-Europa, vooral Oekraïne — legaal, direct inzetbaar, en iedereen met het recht om in België te werken is welkom.",
         "features": [
             {
                 "title": "Geteste ploegen, geen CV-stapels",
-                "desc": "Elke vakman wordt gescreend en proeft bij u aan de slag. In plaats van twintig cv's stuurt u drie gescreende ploegen die morgen kunnen starten."
+                "desc": "Elke vakman wordt vóór de start gescreend en werkt daarna 14 dagen op proef op uw werf. In plaats van twintig cv's sturen wij u drie gescreende ploegen die binnen enkele dagen kunnen starten."
             },
             {
                 "title": "Legale ploegen: A1 & Limosa geregeld",
@@ -606,7 +606,7 @@
             },
             {
                 "title": "Vergoeding op resultaat",
-                "desc": "Geen vaste staffingkosten. Onze vergoeding is gekoppeld aan het geleverde resultaat — u betaalt wanneer het werkt."
+                "desc": "Geen vaste staffingkosten. U ontvangt onze factuur pas nadat de ploeg de testperiode van 14 dagen heeft doorstaan."
             },
             {
                 "title": "Ploegen uit heel Europa",
@@ -717,7 +717,7 @@
             },
             {
                 "q": "Wanneer en hoe word ik betaald?",
-                "a": "Betaling is regelmatig en transparant, volgens afspraak en naar werkelijkheid. Alle betalingen verlopen officieel en gedocumenteerd."
+                "a": "De betaling loopt rechtstreeks tussen jou (of je ploeg) en de aannemer bij wie je werkt — niet via ons. Wij spreken het tarief en de afspraken vóór de start af en leggen ze vast, zodat je vooraf weet waar je aan toe bent."
             },
             {
                 "q": "Hoe snel kan ik starten?",
@@ -938,7 +938,7 @@
                 "Geldig paspoort of ID.",
                 "A1 — voor werknemers uit de EU.",
                 "Voor niet-EU: wettige verblijfsstatus en recht op werk.",
-                "Limosa-melding (wij helpen bij de aanvraag).",
+                "Limosa-melding (wij regelen die voor je).",
                 "IBAN-bankrekeningnummer voor uitbetaling."
             ],
             "process_heading": "Hoe de selectie verloopt",

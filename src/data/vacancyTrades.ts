@@ -52,10 +52,9 @@ export function tradeLinkLabel(trade: JobTradePage, locale: string): string {
  * Rules followed here:
  *  - The slug is the word people actually search ("metselaar"), while
  *    `jobTradeSlug` links it to the vacancies in src/data/vacancies.ts.
- *  - No wage figures are invented. Belgian construction pay follows the barema of
- *    the joint committee that applies to the project (PC 124 for most sites), plus
- *    seniority, region, shift and travel premiums — so the FAQ explains how the
- *    number is built and that we fix it in writing before the start.
+ *  - No wage figures are invented. We do not quote Belgian wage scales: the crew
+ *    agrees its rate with the contractor before the start, and our invoice follows
+ *    only after the 14-day trial has been passed. The FAQ says exactly that.
  *  - Every trade page keeps working when it has no open vacancy: the live list
  *    falls back to the registration call to action.
  */
@@ -121,7 +120,7 @@ export const jobTradePages: JobTradePage[] = [
         ],
         offer: [
             'Duidelijke afspraken over brutoloon, uren en startdatum vóór je begint',
-            'Betaald volgens het barema dat op de opdracht van toepassing is, met premies volgens de sector',
+            'Je tarief spreek je af met de aannemer vóór de start — geen verrassingen achteraf',
             'Eén vast aanspreekpunt dat je dossier opvolgt, ook als je al aan het werk bent',
             'Voor buitenlandse vakmensen: A1, Limosa en werfregistratie (Checkinatwork) worden vooraf geregeld',
             'Hulp bij het vinden van onderdak dicht bij de werf',
@@ -129,7 +128,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een metselaar in België?',
-                a: 'Het loon volgt het barema van het paritair comité dat op de werf van toepassing is — voor de meeste bouwwerven is dat PC 124 (bouw) — plus je ervaring, de regio, ploegenpremies en maaltijdcheques. Wij zetten het exacte brutoloon en de premies op papier vóór je start, zodat je weet wat je verdient voor je je eerste dag begint. Je krijgt daarbij ook je loonfiches en je vakantiegeld via de sector.',
+                a: 'Je tarief spreek je af met de aannemer, vóór je begint — wij leggen het vast zodat je het zwart op wit hebt. Wij werken niet met een Belgische sectorloonschaal, want zo werkt deze samenwerking niet: je komt met je eigen ervaring of je eigen ploeg, en wat je verdient hangt af van het project en van die afspraak.',
             },
             {
                 q: 'Wat is het verschil tussen metselaar en metser?',
@@ -191,7 +190,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een bekister in België?',
-                a: 'Bekisters vallen op de meeste werven onder PC 124 (bouw). Je brutoloon hangt af van je ervaring, de regio en de premies die op de opdracht gelden, zoals ploegenpremie en maaltijdcheques. Wij bevestigen het exacte bedrag en het aantal uren schriftelijk vóór je begint — geen "we zien wel" achteraf.',
+                a: 'Je tarief hangt af van je ervaring en van het project, en je spreekt het af met de aannemer vóór de start. Wij bevestigen dat tarief en het aantal uren schriftelijk voor je begint — geen "we zien wel" achteraf. Er geldt hier geen Belgische sectorloonschaal.',
             },
             {
                 q: 'Moet ik met systeembekisting kunnen werken?',
@@ -235,13 +234,13 @@ export const jobTradePages: JobTradePage[] = [
             'Nauwkeurig en veiligheidsbewust werken, ook onder tijdsdruk',
         ],
         certificates: [
-            'Attest torenkraan is verplicht — zonder geldig attest kun je wettelijk niet bedienen',
+            'Attest torenkraan is verplicht — zonder geldig attest kun je wettelijk niet bedienen. De aannemer controleert dat attest; wij controleren of beoordelen geen certificaten',
             'VCA wordt op de werven gevraagd, vaak als eis van de hoofdaannemer',
             'Attest voor het aanslaan van lasten (hijstechnieken) is een pluspunt',
         ],
         offer: [
             'Duidelijke afspraken over brutoloon, uren en startdatum vóór je begint',
-            'Loon volgens het barema van de opdracht, met premies en maaltijdcheques volgens de sector',
+            'Je tarief spreek je vóór de start af met de aannemer',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
             'Voor buitenlandse machinisten: A1, Limosa en werfregistratie worden vooraf geregeld',
             'Hulp bij het vinden van onderdak dicht bij de werf',
@@ -253,7 +252,7 @@ export const jobTradePages: JobTradePage[] = [
             },
             {
                 q: 'Wat verdient een kraanmachinist in België?',
-                a: 'Het loon volgt het barema van het paritair comité van de opdracht — voor de meeste bouwwerven PC 124 — plus je ervaring en de premies op de werf. Kraanmachinisten zitten doorgaans in een hogere loonklasse dan uitvoerende functies, omdat het attest en de verantwoordelijkheid meetellen. Het exacte brutoloon krijg je van ons op papier vóór je start.',
+                a: 'Je tarief hangt af van je ervaring, je attest en het project, en je spreekt het af met de aannemer vóór de start. Wij leggen het schriftelijk vast voor je begint. Er geldt hier geen Belgische sectorloonschaal.',
             },
             {
                 q: 'Werken kraanmachinisten in ploegen?',
@@ -300,7 +299,7 @@ export const jobTradePages: JobTradePage[] = [
         ],
         offer: [
             'Duidelijke afspraken over brutoloon, uren, wagen en startdatum vóór je begint',
-            'Functies met verantwoordelijkheid, betaald volgens het barema van de opdracht',
+            'Functies met verantwoordelijkheid; je tarief spreek je vóór de start af',
             'Eén vast aanspreekpunt dat je dossier opvolgt, ook na je start',
             'Sollicitatie verloopt vertrouwelijk: je huidige werkgever hoort niets voor je ja zegt',
             'Voor buitenlandse kandidaten: A1, Limosa en werfregistratie worden vooraf geregeld',
@@ -308,7 +307,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een werfleider in België?',
-                a: 'Het loon hangt af van je ervaring, het type project (renovatie, nieuwbouw, utiliteitsbouw) en de regio, en volgt het barema dat op de functie van toepassing is. Bij functies met verantwoordelijkheid komen vaak een firmawagen, maaltijdcheques en onkostenvergoedingen bovenop het brutoloon. Wij bespreken het volledige pakket — loon én voordelen — vóór je tekent, niet erna.',
+                a: 'Je tarief hangt af van je ervaring, het type project (renovatie, nieuwbouw, utiliteitsbouw) en de regio, en je spreekt het af met de aannemer. Wij bespreken het volledige pakket vóór je tekent, niet erna, en leggen het schriftelijk vast.',
             },
             {
                 q: 'Wat is het verschil tussen werfleider, uitvoerder en projectleider?',
@@ -359,7 +358,7 @@ export const jobTradePages: JobTradePage[] = [
         ],
         offer: [
             'Duidelijke afspraken over brutoloon, uren, shiften en startdatum vóór je begint',
-            'Loon volgens het barema en de sector van de opdracht, met premies voor shiften',
+            'Je tarief spreek je vóór de start af; bij shiftenwerk gelden de afspraken van de opdracht',
             'Eén vast aanspreekpunt dat je dossier opvolgt',
             'Voor buitenlandse elektriciens: A1, Limosa en werfregistratie worden vooraf geregeld',
             'Hulp bij het vinden van onderdak dicht bij de werf',
@@ -367,7 +366,7 @@ export const jobTradePages: JobTradePage[] = [
         faq: [
             {
                 q: 'Wat verdient een industrieel elektricien in België?',
-                a: 'Het loon hangt af van de sector waarin je werkt — bouw, metaal of chemie hebben elk hun eigen barema — en van je ervaring en shiftregeling. Shiftenwerk brengt premies mee, en in de chemie en de petrochemie liggen de lonen doorgaans hoger dan op een gewone werf. Wij zetten het brutoloon en de premies op papier vóór je start, inclusief het effect van shiften op je nettoloon.',
+                a: 'Je tarief hangt af van je ervaring, de sector waarin je werkt en de shiftregeling op de opdracht. In de chemie en de petrochemie liggen de tarieven doorgaans hoger dan op een gewone werf. Wij zetten het tarief en de afspraken over shiften op papier vóór je start.',
             },
             {
                 q: 'Wat betekenen BA4 en BA5?',

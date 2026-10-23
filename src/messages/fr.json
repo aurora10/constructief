@@ -110,7 +110,7 @@
     },
     "EmployersPage": {
         "title": "Sous-traitance bâtiment — équipes présélectionnées pour les entrepreneurs",
-        "subtitle": "Sous-traitez une équipe sans piles de CV : ouvriers polonais et artisans présélectionnés par détachement, 100% légaux, avec A1 & Limosa gérés et une semaine d'essai de 14 jours. Exclusivement B2B.",
+        "subtitle": "Des équipes d'Europe de l'Est — surtout d'Ukraine — aux équipes complètes déjà rodées : nous vous mettons en relation avec des artisans présélectionnés en droit de travailler en Belgique. A1, Limosa et Checkinatwork sont gérés.",
         "form_title": "Demander du Personnel",
         "form_subtitle": "Dites-nous ce dont vous avez besoin. Nous trouvons les bons artisans.",
         "company_name": "Nom de l'entreprise",
@@ -192,7 +192,7 @@
         "title": "Parlons-en",
         "subtitle": "Contact direct pour des solutions rapides.",
         "info_title": "Coordonnées",
-        "info_description": "Vous voulez savoir ce que je peux faire pour votre projet ? Appelez-moi directement ou envoyez un message. Attention : Nous travaillons exclusivement en B2B pour des entreprises de construction reconnues.",
+        "info_description": "Vous voulez savoir ce que je peux faire pour votre projet ? Appelez-moi ou envoyez un message. Attention : nous travaillons exclusivement avec des entreprises de construction et des indépendants (zzp), pas avec des particuliers.",
         "phone": "Téléphone",
         "email": "E-mail",
         "address": "Localisation",
@@ -339,7 +339,7 @@
     },
     "Metadata": {
         "title": "Sous-traiter la main-d'œuvre bâtiment — Équipes présélectionnées | Constructief Bouw",
-        "description": "Sous-traitez des équipes de construction ou des ouvriers polonais par détachement. A1, Limosa et Checkinatwork gérés, essai de 14 jours, pour entrepreneurs."
+        "description": "Sous-traitez des équipes de construction d'Europe de l'Est (surtout d'Ukraine). A1, Limosa et Checkinatwork gérés, essai de 14 jours, pour entrepreneurs."
     },
     "Brand": {
         "descriptor": "équipes & ouvriers qualifiés"
@@ -590,11 +590,11 @@
     "EmployersUsp": {
         "eyebrow": "Pour les entrepreneurs généraux",
         "title": "Sous-traitez la main-d'œuvre qui travaille — pas des piles de CV",
-        "intro": "Pas besoin de trier des piles de CV. Sous-traitez une équipe en construction dès aujourd'hui : ouvriers polonais et artisans présélectionnés par détachement — 100% légaux, immédiatement opérationnels et renforcés par des artisans venus de toute l'Europe.",
+        "intro": "Pas besoin de trier des piles de CV. Sous-traitez une équipe dès aujourd'hui : des artisans et équipes d'Europe de l'Est, surtout d'Ukraine — légaux, immédiatement opérationnels, et toute personne en droit de travailler en Belgique est la bienvenue.",
         "features": [
             {
                 "title": "Équipes testées, pas de piles de CV",
-                "desc": "Chaque artisan est présélectionné et démarre chez vous à l'essai. Au lieu de vingt CV, vous recevez trois équipes présélectionnées, prêtes à démarrer demain."
+                "desc": "Chaque artisan est présélectionné avant le démarrage, puis travaille 14 jours à l'essai sur votre chantier. Au lieu de vingt CV, vous recevez trois équipes présélectionnées, prêtes à démarrer."
             },
             {
                 "title": "Équipes légales : A1 & Limosa gérés",
@@ -606,7 +606,7 @@
             },
             {
                 "title": "Rémunération au résultat",
-                "desc": "Pas de coûts fixes de staffing. Notre rémunération est liée au résultat — vous payez quand ça fonctionne."
+                "desc": "Pas de coûts fixes de personnel. Vous ne recevez notre facture qu'après la période d'essai de 14 jours."
             },
             {
                 "title": "Équipes venues de toute l'Europe",
@@ -721,7 +721,7 @@
             },
             {
                 "q": "Quand et comment suis-je payé ?",
-                "a": "Le paiement est régulier et transparent, selon l'accord et le travail fourni. Tous les paiements sont officiels et documentés."
+                "a": "Le paiement se fait directement entre vous (ou votre équipe) et l'entrepreneur chez qui vous travaillez — pas via nous. Nous fixons le tarif et les conditions avant le début, pour que vous sachiez à quoi vous attendre."
             },
             {
                 "q": "À quelle vitesse puis-je commencer ?",
@@ -942,7 +942,7 @@
                 "Passeport ou carte d'identité valable.",
                 "A1 — pour les travailleurs de l'UE.",
                 "Hors UE : statut de séjour légal et droit de travail.",
-                "Notification Limosa (nous vous aidons à la faire).",
+                "Notification Limosa (nous la gérons).",
                 "Numéro de compte bancaire (IBAN) pour les paiements."
             ],
             "process_heading": "Comment se déroule la sélection",
