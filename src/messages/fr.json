@@ -42,41 +42,41 @@
         }
     },
     "HowItWorks": {
-        "title": "Notre méthode de travail",
-        "subtitle": "Un processus transparent axé sur la qualité et la parfaite adéquation.",
+        "title": "Comment nous travaillons",
+        "subtitle": "Les deux côtés d'un même accord : vous demandez une équipe, les équipes s'inscrivent — nous faisons la sélection.",
         "candidates": {
-            "title": "Pour les Artisans",
-            "description": "Trouvez le bon lieu de travail sans tracas.",
+            "title": "Pour les équipes et les indépendants",
+            "description": "Le travail est fait par des équipes, pas par des candidats isolés : inscrivez-vous une fois, nous vous proposons aux chantiers qui correspondent.",
             "step1": {
-                "title": "Présentation",
-                "description": "Nous vous rencontrons en personne pour comprendre vos compétences et vos ambitions."
+                "title": "Inscription",
+                "description": "Remplissez le formulaire sous-traitant : spécialité, composition de l'équipe, documents et tarif souhaité. Gratuit, sans compte."
             },
             "step2": {
-                "title": "Présentation Anonyme",
-                "description": "Nous vous présentons à nos partenaires sur la base de votre savoir-faire, pas de vos données personnelles."
+                "title": "Vérification personnelle",
+                "description": "Nous vous appelons, parlons avec chaque artisan et vérifions les documents. S'il en manque un, nous disons franchement lequel."
             },
             "step3": {
-                "title": "La Semaine d'Essai",
-                "description": "Commencez par une semaine d'essai de 14 jours pour voir si l'entreprise vous convient."
+                "title": "Un chantier, 14 jours d'essai",
+                "description": "Nous vous présentons à un seul entrepreneur. Le tarif et la date de début, vous les convenez directement avec lui ; A1, Limosa et Checkinatwork, c'est nous. Les 14 premiers jours sont une période d'essai."
             },
-            "cta": "S'inscrire"
+            "cta": "Inscrire l'équipe"
         },
         "employers": {
-            "title": "Pour les Partenaires",
-            "description": "La qualité avant la quantité en 3 étapes.",
+            "title": "Pour les entrepreneurs",
+            "description": "La qualité plutôt que la quantité, en trois étapes.",
             "step1": {
-                "title": "Définir les besoins",
-                "description": "Dites-nous précisément quelle expertise vous recherchez pour votre projet."
+                "title": "Définir le besoin",
+                "description": "Dites-nous quelle expertise et quelle composition votre projet demande."
             },
             "step2": {
-                "title": "Propositions Sélectionnées",
-                "description": "Vous recevez une sélection de candidats présélectionnés que nous avons rencontrés personnellement."
+                "title": "Une proposition sélectionnée",
+                "description": "Nous vous présentons une équipe ou un indépendant présélectionné, que nous avons rencontré personnellement — pas une pile de CV."
             },
             "step3": {
-                "title": "Démarrage & Évaluation",
-                "description": "Le candidat commence directement avec une période d'évaluation de 14 jours."
+                "title": "Démarrage et évaluation",
+                "description": "L'équipe démarre avec une période d'essai de 14 jours. Notre facture ne suit qu'après."
             },
-            "cta": "Demander du personnel"
+            "cta": "Demander une équipe"
         }
     },
     "FeaturedJobs": {

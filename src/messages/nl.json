@@ -43,40 +43,40 @@
     },
     "HowItWorks": {
         "title": "Zo werken wij",
-        "subtitle": "Een transparant proces gericht op kwaliteit en de perfecte klik.",
+        "subtitle": "Twee kanten van dezelfde afspraak: u vraagt een ploeg aan, ploegen schrijven zich in — wij doen de selectie.",
         "candidates": {
-            "title": "Voor Vakmannen",
-            "description": "Vind de juiste werkplek zonder gedoe.",
+            "title": "Voor ploegen en zelfstandigen",
+            "description": "Werk wordt gedaan door ploegen, niet door losse sollicitanten: schrijf je één keer in, wij stellen je voor aan werven die passen.",
             "step1": {
-                "title": "Kennismaking",
-                "description": "Wij spreken je persoonlijk om je skills en ambities te begrijpen."
+                "title": "Inschrijven",
+                "description": "Vul het inschrijfformulier voor onderaannemers in: specialisatie, samenstelling van je ploeg, documenten en gewenst tarief. Gratis, zonder account."
             },
             "step2": {
-                "title": "Anonieme Voorstelling",
-                "description": "We stellen je voor aan partners op basis van je vakmanschap, niet je privégegevens."
+                "title": "Persoonlijke screening",
+                "description": "Wij bellen je, spreken elke vakman en bekijken de documenten. Ontbreekt er iets, dan zeggen we eerlijk wat er nog geregeld moet worden."
             },
             "step3": {
-                "title": "De Testweek",
-                "description": "Start met een proefweek van 14 dagen om te zien of het bedrijf bij je past."
+                "title": "Eén werf, 14 dagen proef",
+                "description": "Wij stellen je voor aan één aannemer. Tarief en startdatum spreken jullie rechtstreeks af; A1, Limosa en Checkinatwork regelen wij. De eerste 14 dagen zijn een testperiode."
             },
-            "cta": "Meld je aan"
+            "cta": "Ploeg inschrijven"
         },
         "employers": {
-            "title": "Voor Partners",
-            "description": "Kwaliteit boven kwantiteit in 3 stappen.",
+            "title": "Voor aannemers",
+            "description": "Kwaliteit boven kwantiteit in drie stappen.",
             "step1": {
                 "title": "Behoefte bepalen",
-                "description": "Vertel ons precies welke expertise u zoekt voor uw project."
+                "description": "Vertel ons precies welke expertise en welke bezetting uw project vraagt."
             },
             "step2": {
-                "title": "Geselecteerde Voorstellen",
-                "description": "U ontvangt een selectie van gescreende kandidaten die wij persoonlijk hebben gesproken."
+                "title": "Eén geselecteerd voorstel",
+                "description": "Wij stellen u één gescreende ploeg of specialist voor die wij persoonlijk hebben gesproken — geen stapel cv's."
             },
             "step3": {
-                "title": "Start & Evaluatie",
-                "description": "De kandidaat start direct met een 14-daagse evaluatieperiode."
+                "title": "Start en evaluatie",
+                "description": "De ploeg start met een testperiode van 14 dagen. Onze factuur volgt pas nadat die periode is doorstaan."
             },
-            "cta": "Vraag personeel aan"
+            "cta": "Ploeg aanvragen"
         }
     },
     "FeaturedJobs": {
