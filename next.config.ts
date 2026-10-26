@@ -17,6 +17,21 @@ const nextConfig = {
                 destination: 'https://constructief-bouw.be/:path*',
                 permanent: true,
             },
+
+            // Pages that existed before the site moved to locale prefixes. Google still
+            // knows these URLs and was reporting them as "Not found (404)"; they now
+            // consolidate onto the Dutch version instead. One hop each, including
+            // sub-paths (/nieuws/<slug> -> /nl/nieuws/<slug>).
+            ...['werkgevers', 'vacatures', 'nieuws', 'over-ons', 'contact', 'privacy', 'diensten', 'onderaannemer-inschrijven']
+                .flatMap((page) => [
+                    { source: `/${page}`, destination: `/nl/${page}`, permanent: true },
+                    { source: `/${page}/:path*`, destination: `/nl/${page}/:path*`, permanent: true },
+                ]),
+
+            // The retired candidate funnel goes straight to the crew intake (one hop, not
+            // via /nl/kandidaten which would chain two redirects).
+            { source: '/kandidaten', destination: '/nl/onderaannemer-inschrijven', permanent: true },
+            { source: '/kandidaten/:path*', destination: '/nl/onderaannemer-inschrijven', permanent: true },
         ];
     },
 };
