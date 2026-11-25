@@ -28,7 +28,12 @@ export async function generateMetadata({
             canonical,
             languages: isWorkerCluster
                 ? { 'x-default': canonical }
-                : { nl: `${BASE_URL}/nl/nieuws`, fr: `${BASE_URL}/fr/nieuws`, 'x-default': `${BASE_URL}/nl/nieuws` },
+                : {
+                      nl: `${BASE_URL}/nl/nieuws`,
+                      fr: `${BASE_URL}/fr/nieuws`,
+                      en: `${BASE_URL}/en/nieuws`,
+                      'x-default': `${BASE_URL}/nl/nieuws`,
+                  },
         },
     };
 }

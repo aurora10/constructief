@@ -24,6 +24,10 @@ export async function generateMetadata({
             languages: {
                 nl: 'https://constructief-bouw.be/nl/onderaannemer-inschrijven',
                 fr: 'https://constructief-bouw.be/fr/onderaannemer-inschrijven',
+                // This one intake page is genuinely the same form in four
+                // languages (crew leaders arrive from all of them), so ru is an
+                // alternate here even though the B2B trade pages keep it apart.
+                en: 'https://constructief-bouw.be/en/onderaannemer-inschrijven',
                 ru: 'https://constructief-bouw.be/ru/onderaannemer-inschrijven',
                 'x-default': 'https://constructief-bouw.be/nl/onderaannemer-inschrijven',
             },

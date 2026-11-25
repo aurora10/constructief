@@ -21,9 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description: t('subtitle'),
         alternates: vacancyAlternates(locale, '/vacatures'),
         // Indexed for nl (Belgian job market) and ru (the crews we recruit in
-        // Eastern Europe, who read Russian). fr has no vacancy audience and only
-        // duplicates the Dutch copy, so it stays out of the index.
-        robots: locale === 'fr' ? { index: false, follow: true } : { index: true, follow: true },
+        // Eastern Europe, who read Russian). fr and en have no vacancy audience and
+        // only duplicate the Dutch copy, so they stay out of the index.
+        robots:
+            locale === 'fr' || locale === 'en'
+                ? { index: false, follow: true }
+                : { index: true, follow: true },
         openGraph: {
             title: `${t('title')} | ${BRAND.name}`,
             description: t('subtitle'),

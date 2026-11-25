@@ -32,11 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const locale of locales) {
         // Static pages.
         // /vacatures is indexed for nl and ru only — see the note on the vacancy
-        // block below for why fr is excluded.
+        // block below for why fr and en are excluded.
         for (const page of staticPages) {
             // /vacatures serves nl (Belgian job market) and ru (the crews we recruit
-            // in Eastern Europe). fr has no vacancy audience.
-            if (page === '/vacatures' && locale === 'fr') continue;
+            // in Eastern Europe). fr and en have no vacancy audience.
+            if (page === '/vacatures' && (locale === 'fr' || locale === 'en')) continue;
             sitemapEntries.push({
                 url: `${baseUrl}/${locale}${page}`,
                 lastModified: new Date(),

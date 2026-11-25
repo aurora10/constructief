@@ -3,10 +3,10 @@
  * successful registration through /[locale]/onderaannemer-inschrijven.
  *
  * Only the strings are per-locale; the text/HTML layout is built once so all
- * three languages stay structurally identical.
+ * four languages stay structurally identical.
  */
 
-export const CONFIRMATION_LOCALES = ['nl', 'fr', 'ru'] as const;
+export const CONFIRMATION_LOCALES = ['nl', 'fr', 'en', 'ru'] as const;
 export type ConfirmationLocale = (typeof CONFIRMATION_LOCALES)[number];
 
 export function resolveConfirmationLocale(value: unknown): ConfirmationLocale {
@@ -107,6 +107,34 @@ const STRINGS: Record<ConfirmationLocale, Strings> = {
     signOff: 'Cordialement,',
     company: "L'équipe Constructief",
     automatedNote: "Ceci est une confirmation automatique de votre inscription via notre site web.",
+  },
+  en: {
+    subject: (name) => `Confirmation of your registration as a subcontractor – ${name}`,
+    greeting: (name) => `Dear ${name},`,
+    intro:
+      'Thank you for registering with Constructief. We have received your details and added them to our network of subcontractors.',
+    summaryTitle: 'Your registration at a glance',
+    referenceLabel: 'Reference',
+    labels: {
+      phone: 'Phone (WhatsApp)',
+      specialization: 'Specialisation',
+      legal_status: 'Documents / right to work',
+      car_and_tools: 'Vehicle and tools',
+      location: 'Location',
+      rate: 'Requested rate',
+      languages: 'Languages on site',
+      team_size: 'Working alone or in a crew',
+      availability: 'Availability',
+    },
+    nextTitle: 'What happens next?',
+    nextBody:
+      'Our recruiter reviews your profile and will contact you on WhatsApp or by phone as soon as a matching project comes up.',
+    helpTitle: 'Questions or changes?',
+    helpBody:
+      'This is an automated message — replies are not read. Send a WhatsApp message for questions or changes.',
+    signOff: 'Kind regards,',
+    company: 'The Constructief team',
+    automatedNote: 'This is an automatic confirmation of your registration through our website.',
   },
   ru: {
     subject: (name) => `Подтверждение регистрации субподрядчика – ${name}`,

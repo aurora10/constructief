@@ -1,0 +1,1058 @@
+{
+    "HomePage": {
+        "title": "Constructief",
+        "subtitle": "No stacks of CVs — skilled tradespeople who can start straight away."
+    },
+    "Navigation": {
+        "home": "Home",
+        "candidates": "For crews",
+        "employers": "Employers",
+        "vacancies": "Jobs",
+        "about": "About us",
+        "news": "News",
+        "contact": "Contact",
+        "regions": "Regions"
+    },
+    "Hero": {
+        "title": "Screened construction crews and skilled tradespeople for contractors in Belgium",
+        "subtitle": "No stacks of CVs — just tradespeople and construction crews who can start on site straight away. We work exclusively on medium-sized and large projects for professional (main) contractors and construction companies; we do not take on small jobs.",
+        "cta_candidates": "Explore vacancies",
+        "cta_employers": "For contractors"
+    },
+    "ValueProps": {
+        "title": "Why Constructief is your partner",
+        "subtitle": "We are not an algorithm, we are your personal partner in construction. Quality through human selection — for individual tradespeople and complete construction crews alike.",
+        "features": {
+            "quality": {
+                "title": "Personal Vetting",
+                "description": "We speak to every candidate in person and check every reference. You only get people we would hire ourselves."
+            },
+            "speed": {
+                "title": "14-Day Trial Week",
+                "description": "Not sure about the fit? Use our trial week. The first 14 days are there to see whether the chemistry is really right."
+            },
+            "network": {
+                "title": "Anonymous Screening",
+                "description": "We protect the privacy of our tradespeople. You assess skills and experience; contact details follow once there is a match."
+            },
+            "reliability": {
+                "title": "No Headaches",
+                "description": "We handle the administration (through our payroll partners) for individual tradespeople and construction crews alike, so you can focus on the build."
+            }
+        }
+    },
+    "HowItWorks": {
+        "title": "How we work",
+        "subtitle": "Two sides of the same agreement: you request a crew, crews sign up — we do the selection.",
+        "candidates": {
+            "title": "For crews and self-employed tradespeople",
+            "description": "Work is done by crews, not by individual applicants: sign up once and we introduce you to sites that fit.",
+            "step1": {
+                "title": "Sign up",
+                "description": "Fill in the registration form for subcontractors: specialism, how your crew is made up, documents and the rate you have in mind. Free, no account needed."
+            },
+            "step2": {
+                "title": "Personal screening",
+                "description": "We call you, speak to every tradesperson and check the documents. If something is missing, we tell you honestly what still has to be arranged."
+            },
+            "step3": {
+                "title": "One site, 14-day trial",
+                "description": "We introduce you to one contractor. You agree the rate and start date directly with them; we take care of A1 posting declarations, Limosa (the Belgian notification for posted workers) and Checkinatwork (the Belgian site check-in register). The first 14 days are a trial period."
+            },
+            "cta": "Register your crew"
+        },
+        "employers": {
+            "title": "For contractors",
+            "description": "Quality over quantity, in three steps.",
+            "step1": {
+                "title": "Define the need",
+                "description": "Tell us exactly which expertise and which headcount your project requires."
+            },
+            "step2": {
+                "title": "One selected proposal",
+                "description": "We put forward one screened crew or specialist we have spoken to in person — not a stack of CVs."
+            },
+            "step3": {
+                "title": "Start and evaluation",
+                "description": "The crew starts with a 14-day trial period. Our invoice only follows once that period has been completed successfully."
+            },
+            "cta": "Request a crew"
+        }
+    },
+    "FeaturedJobs": {
+        "title": "Current vacancies",
+        "subtitle": "Open assignments at contractors across Belgium.",
+        "view_all": "All vacancies",
+        "apply": "Apply"
+    },
+    "TrustSignals": {
+        "candidates": "Response",
+        "candidates_value": "< 24h",
+        "companies": "References",
+        "companies_value": "Checked",
+        "placements": "Region",
+        "placements_value": "All of Belgium & the Netherlands"
+    },
+    "CandidatesPage": {
+        "title": "Build your future",
+        "subtitle": "We are your voice with the best construction companies. Personal, anonymous and focused on your growth."
+    },
+    "EmployersPage": {
+        "title": "Construction subcontractor: screened crews for your project",
+        "subtitle": "From Eastern European crews — mainly from Ukraine — to complete, well-drilled teams: we connect you with personally screened tradespeople who have the right to work in Belgium. A1, Limosa and Checkinatwork are taken care of.",
+        "form_title": "Request a crew",
+        "form_subtitle": "Tell us what you need. We look for the right crew or specialist.",
+        "company_name": "Company name",
+        "company_name_placeholder": "Jansen Construction BV",
+        "url": "Website (URL)",
+        "url_placeholder": "https://company.be",
+        "contact_person": "Contact person",
+        "contact_person_placeholder": "Name of contact person",
+        "email": "Email",
+        "email_placeholder": "info@company.be",
+        "phone": "Phone number",
+        "phone_placeholder": "+32 465 811031",
+        "city": "City / Location",
+        "city_placeholder": "Antwerp",
+        "trade_label": "Who are you looking for?",
+        "trade_placeholder": "Search a trade...",
+        "amount_label": "How many tradespeople do you need?",
+        "amount_placeholder": "1",
+        "project_type_label": "Project Type",
+        "project_type_placeholder": "Choose type...",
+        "project_type_new": "New build",
+        "project_type_renovation": "Renovation",
+        "project_type_industrial": "Industrial",
+        "project_type_civil": "Civil engineering (infrastructure)",
+        "description_label": "Description of the tasks",
+        "description_placeholder": "E.g.: facing brickwork, thin-bed mortar, Antwerp region, starting next week...",
+        "start_date_label": "When do they need to start?",
+        "submit": "Send request",
+        "submitting": "Sending...",
+        "selected_one": "1 trade selected",
+        "selected_multiple": "{count} trades selected",
+        "success": "Request received! We will contact you as soon as possible to discuss the details.",
+        "error": "Something went wrong. Please try again later."
+    },
+    "Services": {
+        "title": "Our Expertise",
+        "subtitle": "We offer solutions that match the way construction works.",
+        "items": {
+            "project": {
+                "title": "Construction crews for your project",
+                "description": "We match your site with a screened, fully legal crew for the duration of the project: bricklayers, formwork carpenters, concrete workers, roofers or finishers. We arrange A1, Limosa and Checkinatwork in advance."
+            },
+            "freelance": {
+                "title": "Self-employed specialists",
+                "description": "Individual self-employed tradespeople too — a crane operator, a site manager, an electrician — we match to your project. Same screening, same documents, same fixed point of contact."
+            }
+        }
+    },
+    "VacanciesPage": {
+        "title": "Construction vacancies",
+        "subtitle": "Open positions for skilled tradespeople and site supervisors — across Belgium.",
+        "search_placeholder": "Search by job title, trade or region...",
+        "filter": "Trade",
+        "filter_all": "All trades",
+        "results_count": "{count} vacancies found",
+        "no_results": "No vacancies found for this search.",
+        "spontaneous": "Can't find your job in the list? Leave your details and we will contact you as soon as something fits.",
+        "view_details": "View vacancy",
+        "view_all": "All vacancies",
+        "apply": "Apply for this position"
+    },
+    "AboutPage": {
+        "title": "Personal & Constructive",
+        "subtitle": "Your direct line to craftsmanship in construction.",
+        "story_p1": "Constructief is not a large office full of anonymous consultants. I am your personal partner, and I speak the language of construction. After years in the sector I know that a good match is more than a few lines on a CV.",
+        "story_p2": "My approach is simple: I speak to every tradesperson, I check every reference, and I personally stand behind the quality I deliver. We have a direct pool of available bricklayers, formwork carpenters, crane operators, electricians and welders. No empty promises, but honest advice and solid results you can build on. Alongside individual self-employed specialists, we match complete, fully legal construction crews to main contractors. Our fee is a finder's fee paid by the client — we take no percentage of the rate you agree with the crew."
+    },
+    "NewsPage": {
+        "title": "News and knowledge on construction staffing",
+        "subtitle": "Keep up with what is happening in Belgian construction.",
+        "read_more": "Read more",
+        "back_to_news": "Back to news",
+        "share": "Share",
+        "min_read": "min read",
+        "related_title": "Related",
+        "updated_label": "Updated"
+    },
+    "ContactPage": {
+        "title": "Let's talk",
+        "subtitle": "Direct contact for fast solutions.",
+        "info_title": "Contact details",
+        "info_description": "Want to know what I can do for your project? Call me directly or send a message. Please note: we work exclusively for construction companies and self-employed contractors (zzp — sole traders with no staff), not for private individuals.",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Location",
+        "form_title": "Quick contact",
+        "form_name": "Name",
+        "form_email": "Email",
+        "form_subject": "Subject",
+        "form_message": "Your question",
+        "social": "Follow us",
+        "form_submit": "Send",
+        "success": "Thank you for your message! We have received it and will get back to you within 24 hours.",
+        "error": "Something went wrong while sending. Check your internet connection or try again later.",
+        "address_value": "Antwerp, Belgium",
+        "required_hint": "Fields marked with * are required.",
+        "err_name_required": "Please enter your name.",
+        "err_name_long": "Your name is too long (max. 100 characters).",
+        "err_email_required": "Please enter your email address.",
+        "err_email_invalid": "This email address is not valid.",
+        "err_message_required": "Please write a message.",
+        "err_message_long": "Your message is too long (max. 5000 characters).",
+        "err_invalid_field": "Please check this field and try again."
+    },
+    "PrivacyPage": {
+        "title": "Privacy & Trust",
+        "last_updated": "Last updated: 22 January 2026",
+        "intro": "Trust is the foundation of construction. At Constructief we go further than the law requires: we protect your identity and your data as if they were our own.",
+        "sections": {
+            "collection": {
+                "title": "1. Personal Screening",
+                "content": "We only collect what is needed to introduce you: experience, skills and references. Your contact details stay with us until there is a mutual fit."
+            },
+            "usage": {
+                "title": "2. Targeted Matching",
+                "content": "Your information is used to find the perfect match. No automated systems: human judgement decides whether a project suits you."
+            },
+            "sharing": {
+                "title": "3. Anonymous Process",
+                "content": "Your privacy comes first. We introduce you to partners anonymously. Only when you and the partner agree to meet do we share the details that are needed."
+            },
+            "security": {
+                "title": "4. Secure Storage",
+                "content": "Your data is stored securely and is accessible only to me, as your personal point of contact."
+            },
+            "rights": {
+                "title": "5. You Decide",
+                "content": "You decide. Want to change your data or remove it from our network? One short message is enough for us to arrange it straight away."
+            }
+        }
+    },
+    "Team": {
+        "title": "Your Point of Contact",
+        "subtitle": "Direct contact with the person behind the match."
+    },
+    "Values": {
+        "title": "Our Foundation",
+        "items": {
+            "integrity": {
+                "title": "Honesty",
+                "description": "No sales talk, but transparent advice on every candidate and every project."
+            },
+            "passion": {
+                "title": "Craftsmanship",
+                "description": "Passion for construction and respect for the people who do the work."
+            },
+            "innovation": {
+                "title": "Flexibility",
+                "description": "Switching fast and finding solutions that work for you."
+            }
+        }
+    },
+    "Footer": {
+        "tagline": "No stacks of CVs — skilled tradespeople who can start straight away.",
+        "links": "Navigation",
+        "candidates": "Tradespeople",
+        "employers": "Partners",
+        "vacancies": "Projects",
+        "company": "About Constructief",
+        "about": "Our personal story",
+        "contact": "Contact",
+        "privacy": "Privacy & Trust",
+        "regions": "Regions",
+        "view_all_regions": "View all regions →",
+        "social": "Follow us",
+        "rights": "All rights reserved.",
+        "for_subcontractors": "For subcontractors",
+        "subcontractor_signup": "Register as a subcontractor"
+    },
+    "CandidateForm": {
+        "title": "Sign Up Directly",
+        "subtitle": "No account needed. Fill in your details and we will call you when we have a job for you.",
+        "applying_for": "You are applying for: {role}. Your trade is already ticked — you can still change it.",
+        "name": "Name",
+        "name_placeholder": "John Smith",
+        "trades_label": "Trade(s)",
+        "trades_hint": "Select every trade you have experience in",
+        "select_trade_hint": "Select at least one trade to continue",
+        "cluster_structural": "Structural works",
+        "cluster_roofing": "Roofing",
+        "cluster_finishing": "Finishing",
+        "cluster_technical": "Technical installations",
+        "cluster_management": "Supervision & Support",
+        "trade_metser": "Bricklayer",
+        "trade_bekister": "Formwork carpenter",
+        "trade_ijzervlechter": "Steel fixer",
+        "trade_lasser": "Welder (TIG/MIG/MAG)",
+        "trade_grondwerker": "Groundworker",
+        "trade_kraanmachinist": "Crane operator (Tower crane)",
+        "trade_graafkraanmachinist": "Excavator operator",
+        "trade_wegenwerker": "Roadworker / Block paver",
+        "trade_stellingbouwer": "Scaffolder",
+        "trade_dakwerker_plat": "Roofer (Flat roofs / EPDM)",
+        "trade_dakwerker_hellend": "Roofer (Pitched roofs)",
+        "trade_schilder": "Painter",
+        "trade_stukadoor": "Plasterer",
+        "trade_tegelzetter": "Tiler / Floor layer",
+        "trade_gyproc": "Drywall fitter",
+        "trade_schrijnwerker_binnen": "Joiner (Interior)",
+        "trade_schrijnwerker_buiten": "Joiner (Exterior / Workshop)",
+        "trade_monteur_ramen": "Window and door fitter",
+        "trade_elektricien_resi": "Electrician (Residential)",
+        "trade_elektricien_ind": "Electrician (Industrial)",
+        "trade_loodgieter": "Plumber / Sanitary",
+        "trade_hvac": "HVAC technician",
+        "trade_ploegbaas": "Foreman",
+        "trade_werfleider": "Site manager",
+        "trade_handlanger": "Labourer",
+        "experience": "Years of Experience",
+        "experience_placeholder": "5",
+        "phone": "Phone number (WhatsApp)",
+        "phone_placeholder": "+32 465 811031",
+        "email": "Email (Optional)",
+        "email_placeholder": "john@example.com",
+        "notes": "Remarks / Availability",
+        "notes_placeholder": "I am available immediately...",
+        "submit": "Register",
+        "submitting": "Sending...",
+        "success": "Thank you! We have received your details and will contact you within 24 hours.",
+        "error": "Something went wrong. Please try again later or call us directly."
+    },
+    "CookieBanner": {
+        "message": "We use cookies to improve your experience.",
+        "accept": "Accept",
+        "privacy": "Privacy policy"
+    },
+    "Metadata": {
+        "title": "Construction subcontractor | Screened crews | Constructief Bouw",
+        "description": "Hire screened Eastern European construction crews (mainly from Ukraine) for your site. A1, Limosa and Checkinatwork arranged, 14-day trial period, for contractors."
+    },
+    "Brand": {
+        "descriptor": "construction crews & skilled tradespeople"
+    },
+    "CitySEO_var1": {
+        "heading": "Reliable Subcontractors & Construction Staff in {city}",
+        "intro": "Do you need extra capacity at short notice for your construction project in the {city} region? Constructief supplies immediately deployable, screened tradespeople and subcontractors for major contractors and construction companies.",
+        "hero_cta": "Request capacity now",
+        "trades_title": "Trades available in the {city} region",
+        "trade_1": "Structural shell (Bricklayers, Formwork carpenters, Rebar fixers)",
+        "trade_2": "Finishing (Plasterers, Painters, Tilers)",
+        "trade_3": "Building services (Electricians, Plumbers, HVAC)",
+        "trade_4": "Plant operators (Crane, Excavator)",
+        "trust_title": "Why choose Constructief in {city}?",
+        "trust_1_title": "Local Knowledge",
+        "trust_1_desc": "Our subcontractors live locally or are willing to stay near {city}, so you are not held up by long travel times.",
+        "trust_2_title": "Hassle-Free Administration",
+        "trust_2_desc": "We handle all statutory obligations (Limosa, A1, Checkinatwork) so you can focus entirely on the build.",
+        "trust_3_title": "14-Day Trial Period",
+        "trust_3_desc": "Not sure about the match? Take advantage of our trial week. The first 14 days are there to see whether the fit really works on your site in {city}.",
+        "regional_text": "We are active not only in {city} city centre but also on site every day in the surrounding municipalities and the rest of the province.",
+        "faq_title": "Frequently Asked Questions About Staff in {city}",
+        "faq_1_q": "How quickly can subcontractors start in {city}?",
+        "faq_1_a": "Once approved, our tradespeople can often start on your site in {city} within a few days to a week, depending on the specialisation required.",
+        "faq_2_q": "Are all documents in order for sites in Belgium?",
+        "faq_2_a": "Yes, we make sure all required documents such as A1 certificates and Limosa notifications are strictly in order in advance.",
+        "faq_3_q": "Can I also hire crews that include a working foreman?",
+        "faq_3_a": "Absolutely. We supply both individual specialists and complete, well-drilled crews including a foreman.",
+        "final_cta_title": "Ready to strengthen your site in {city}?",
+        "final_cta_desc": "Discuss your staffing needs with our team today and avoid delays on your construction project.",
+        "final_cta_button": "Get in Touch"
+    },
+    "CitySEO_var2": {
+        "heading": "Immediately Available Tradespeople & Subcontractors in {city}",
+        "intro": "As a main contractor, are you looking for extra hands for a large construction project near {city}? We connect you with qualified, hard-working construction staff who can start straight away.",
+        "hero_cta": "Request capacity",
+        "trades_title": "Our specialisations in the {city} region",
+        "trade_1": "Construction workers (Broadly deployable)",
+        "trade_2": "Finishers (Precise & skilled)",
+        "trade_3": "Technicians (Experienced installers)",
+        "trade_4": "Heavy Equipment (Certified plant operators)",
+        "trust_title": "Why contractors in {city} build with us",
+        "trust_1_title": "Regional Flexibility",
+        "trust_1_desc": "Our tradespeople are quickly on site at your projects in and around {city}, which means a smooth start with no delays.",
+        "trust_2_title": "100% Legally Compliant",
+        "trust_2_desc": "No administrative stress. We take care of Limosa, A1 and Checkinatwork in full for you.",
+        "trust_3_title": "Guaranteed Quality",
+        "trust_3_desc": "See the match for yourself during our 14-day trial week. That way you know for certain that the tradesperson fits your project in {city}.",
+        "regional_text": "We are active not only in {city} city centre but across the whole province of {province}.",
+        "faq_title": "Frequently Asked Questions for {city}",
+        "faq_1_q": "Are tradespeople available in {city} at short notice?",
+        "faq_1_a": "Yes, we have an extensive network and can often propose suitable profiles for your site in {city} within a few days.",
+        "faq_2_q": "What about the foreign documents?",
+        "faq_2_a": "All statutory obligations (A1, Limosa, etc.) are strictly managed and checked by us and our partners.",
+        "faq_3_q": "Can I bring in a whole team?",
+        "faq_3_a": "Certainly, we often supply complete teams including an English- or Dutch-speaking foreman.",
+        "final_cta_title": "Ready to build in {city}?",
+        "final_cta_desc": "Let us know which profiles you need and we will get started straight away.",
+        "final_cta_button": "Start your request"
+    },
+    "CitySEO_var3": {
+        "heading": "Certified Construction Staff for Large Projects in {city}",
+        "intro": "Avoid delays on your construction site in {city}. We supply experienced, motivated subcontractors and flexible tradespeople to strengthen your team right away.",
+        "hero_cta": "Find staff",
+        "trades_title": "Expertise available in {city}",
+        "trade_1": "Structural shell & Foundations (Bricklayers, Formwork carpenters)",
+        "trade_2": "Interior finishing (Plasterers, Painters)",
+        "trade_3": "Building services engineering (HVAC, Electrical)",
+        "trade_4": "Earthworks & Plant Operators",
+        "trust_title": "Your reliable construction partner in {city}",
+        "trust_1_title": "Quick to Deploy in {city}",
+        "trust_1_desc": "Thanks to a local presence or accommodation close to {city}, we guarantee punctual, motivated workers.",
+        "trust_2_title": "Fully Handled",
+        "trust_2_desc": "All paperwork, from contracts to A1 certificates and Limosa, is taken off your hands.",
+        "trust_3_title": "Try It Yourself",
+        "trust_3_desc": "With our 14-day evaluation period you can find out at no risk whether the collaboration on your site in {city} suits you.",
+        "regional_text": "Our teams work every day on large sites in {city} and across the whole province of {province}.",
+        "faq_title": "Information About Staff in {city}",
+        "faq_1_q": "When can subcontractors start in {city}?",
+        "faq_1_a": "Depending on the specific requirements, our people are usually operational in {city} within a week.",
+        "faq_2_q": "Are all administrative documents in order?",
+        "faq_2_a": "Yes, transparency is our core value. Limosa and A1 are always in order before the start.",
+        "faq_3_q": "Do you also provide working foremen?",
+        "faq_3_a": "Yes, that is one of our specialities, so that communication on site runs smoothly.",
+        "final_cta_title": "Need extra capacity in {city}?",
+        "final_cta_desc": "Avoid standstill and get in touch with our network today.",
+        "final_cta_button": "Contact us directly"
+    },
+    "CitiesSeo": {
+        "antwerpen": "Antwerp is not only the largest port city but also a hub for large-scale infrastructure and industrial construction. Demand for specialised tradespeople for the chemical cluster and the port expansions is extremely high here.",
+        "gent": "The historic city of Ghent combines carefully executed renovation projects with modern urban development around the docks. There is strong demand for restoration experts and tradespeople with experience in sustainable, modern timber construction and renovation.",
+        "brussel": "As the capital of Europe, Brussels is characterised by large office complexes and complex inner-city renovations. It calls for tradespeople who can handle tight spaces, strict noise regulations and multilingual sites.",
+        "brugge": "In Bruges the focus is firmly on heritage and historic preservation. The strict building regulations in the city centre call for subcontractors with specific expertise in traditional building techniques and detailed finishing.",
+        "leuven": "With its growing population and university institutions, Leuven is seeing a boom in the construction of laboratories, student housing and modern care homes. Innovation and energy-efficient building are central here.",
+        "mechelen": "Located centrally between Antwerp and Brussels, Mechelen is undergoing major urban renewal. Large residential projects and the development around the station call for efficient, versatile construction teams.",
+        "hasselt": "Hasselt and the wider Limburg region are front-runners in circular construction and new residential districts. There is a great need for groundworkers and tradespeople for large infrastructure works across the province.",
+        "luik": "Liège's transformation from an old industrial city into a modern logistics hub is generating a great deal of construction activity. Welders, industrial electricians and steelworkers are especially sought after here.",
+        "aalst": "Located in the Dender region, Aalst is seeing strong growth in both apartment building and industrial projects along the motorway. Reliable bricklayers and formwork carpenters are essential for these rapid developments.",
+        "kortrijk": "Kortrijk is known for its innovative entrepreneurship and design. The construction of modern business premises and architectural showpieces attracts specialised joiners and finishers.",
+        "sint-niklaas": "In the heart of the Waasland region, Sint-Niklaas is busy redeveloping old industrial sites into green residential districts. Renewable-energy installers and HVAC technicians are crucial here.",
+        "oostende": "On the coast, construction in Ostend calls for specific materials that withstand salty sea air and strong winds. Specialists in façade renovation and high-quality roofing are kept very busy here.",
+        "genk": "Genk is transforming former mine sites into innovation campuses. This calls for a mix of industrial builders and specialists in repurposing large, complex structures.",
+        "roeselare": "As the beating heart of the West Flemish food and agricultural industry, Roeselare has a constant need for hall builders, concrete workers and refrigeration technicians.",
+        "amsterdam": "Amsterdam combines complex foundation repairs in the historic canal ring with large-scale new-build on the Zuidas. A shortage of space and strict logistics rules make building here a real challenge.",
+        "rotterdam": "Known for its modern skyline and Europe's largest port, Rotterdam is the city of high-rise and innovative architecture. Rebar fixers, crane operators and welders are indispensable here.",
+        "den-haag": "As the political capital, The Hague requires high-quality finishing for ministries, embassies and luxury residences in Scheveningen. Discretion and top-quality plasterers and painters are essential here.",
+        "utrecht": "Utrecht's central location and rapid population growth are driving enormous infrastructure works around the station and in Leidsche Rijn. There is a constant call for road builders and all-round construction workers.",
+        "eindhoven": "Eindhoven, the heart of the Brainport region, is seeing an explosion of high-tech facilities and housing for expatriates. Installers specialising in cleanrooms and smart home automation find plenty of work here.",
+        "tilburg": "Tilburg is the logistics hotspot of the Netherlands. The rapid construction of huge distribution centres along the motorways calls for efficient steel builders, roofers and floor layers.",
+        "almere": "As the fastest-growing city on reclaimed land, Almere is the testing ground for new building styles and sustainable districts. Timber-frame construction and serial housing are the order of the day here.",
+        "groningen": "Alongside regular construction, Groningen places a heavy emphasis on earthquake-resistant building and on strengthening existing structures. Specialists in foundation engineering and structural reinforcement are badly needed.",
+        "breda": "Breda is investing heavily in renewing its station area and in making its Burgundian city centre more sustainable. Tradespeople who can apply modern techniques with respect for history are worth their weight in gold here.",
+        "nijmegen": "The oldest city in the Netherlands is growing fast across the river Waal. Large civil engineering projects and new sustainable districts require an army of groundworkers and building services technicians.",
+        "apeldoorn": "Located on the Veluwe, Apeldoorn focuses on green and nature-inclusive construction. There is high demand for ecological builders and experts in sustainable finishing.",
+        "haarlem": "Its proximity to Amsterdam makes Haarlem extremely popular. The focus is on high-quality renovation, splitting listed buildings into separate units and making the most of every square metre.",
+        "enschede": "The transformation from a former textile stronghold into a technology region is generating innovative construction projects in Enschede. There is a strong need for tradespeople in commercial construction and building services.",
+        "arnhem": "Arnhem positions itself as an energy city. Projects around the power grid, hydrogen and sustainable district heating call for highly qualified welders and electricians.",
+        "amersfoort": "The historic centre combined with the huge growth district of Vathorst makes Amersfoort a dynamic city. Here contractors look for reliable bricklayers, carpenters and roofers for serial housing.",
+        "zaandam": "Characterised by Zaan timber construction, Zaandam calls for tradespeople who have mastered that specific style and traditional woodworking, combined with modern insulation standards.",
+        "s-hertogenbosch": "Den Bosch is busy developing the Paleiskwartier district and making the city resilient to flooding. Civil engineering contractors and water-management experts are crucial here.",
+        "zwolle": "As a hub in the east of the country, Zwolle is growing fast. There is a desperate shortage of hands, especially in road building and the delivery of climate-neutral commercial buildings.",
+        "zoetermeer": "This former growth centre is now due for a large-scale sustainability upgrade of the housing stock built in the 1970s and 1980s. Insulation experts and façade workers are highly sought after.",
+        "leiden": "With Leiden Bio Science Park as its engine, there is a constant stream of complex laboratory construction. This demands absolute precision from installers and finishing crews.",
+        "maastricht": "Construction in the hilly, historic city of Maastricht brings unique logistical challenges. Tradespeople with experience in marlstone (mergel) construction and complex restoration are indispensable here.",
+        "dordrecht": "As the oldest city in Holland, located on the water, maritime construction and dyke reinforcement play a major role in Dordrecht. There is plenty of work for specialists in water engineering and foundation repair."
+    },
+    "CitySeoUi": {
+        "local_title": "Local deployment & regional demand in {city}",
+        "local_context_title": "Construction market in {city} ({province})",
+        "demand_title": "Local demand in {city}",
+        "demand_line": "Constructief recruits actively in {city} for {trades}.",
+        "nearby_title": "Also active near {city}",
+        "nearby_desc": "Constructief also supplies staff in the surrounding municipalities and regions of {city}. Choose a neighbouring region below.",
+        "werkgevers_link_lead": "Do you work nationwide or are you looking for a specific crew? See how we ",
+        "werkgevers_link_anchor": "select and supply screened construction crews for contractors",
+        "werkgevers_link_tail": "."
+    },
+    "CityRegio": {
+        "antwerpen": {
+            "context": "Antwerp combines the country's largest port with continuous urban renewal along the Scheldt; structural shell, formwork and crane profiles are in constant demand there."
+        },
+        "gent": {
+            "context": "Ghent is a hub for renovation and urban development around the docks; restoration tradespeople and teams for sustainable new-build are very much in demand."
+        },
+        "brussel": {
+            "context": "The Brussels property market runs on office and residential conversions plus the European institutions; painting, plastering and technical profiles are strongly represented there."
+        },
+        "brugge": {
+            "context": "Bruges combines heritage renovation in the historic centre with new-build on the outskirts; roofing and joinery profiles are clearly present there."
+        },
+        "leuven": {
+            "context": "Leuven is a knowledge city where hospital and campus projects drive demand; bricklaying, electrical and team leadership profiles are common there."
+        },
+        "mechelen": {
+            "context": "Mechelen is growing in the area between Brussels and Antwerp; finishing profiles such as drywalling (gyproc), tilers and façade renovation are commonplace there."
+        },
+        "hasselt": {
+            "context": "Hasselt and its surroundings benefit from groundworks and road works as well as development around the Albert Canal; groundworkers and crane operators are well represented there."
+        },
+        "luik": {
+            "context": "Liège is an industrial axis on the Meuse with plenty of maintenance and breakdown work; welders, electrical and HVAC technicians are highly sought after there."
+        },
+        "aalst": {
+            "context": "Aalst and the Dender area see a great deal of new-build and renovation; bricklaying, formwork and finishing profiles are always in demand there."
+        },
+        "kortrijk": {
+            "context": "Kortrijk is an enterprising region in West Flanders with strong joinery and roofing; joiners and fitters of windows and doors are indispensable there."
+        },
+        "sint-niklaas": {
+            "context": "Sint-Niklaas is a logistics player between Ghent and Antwerp; electrical, plumbing and technical profiles are plentiful there."
+        },
+        "oostende": {
+            "context": "Ostend combines coastal renovation with tourism-related new-build; façade, plastering and finishing profiles are strongly present on renovation projects there."
+        },
+        "genk": {
+            "context": "Genk is a hub of Limburg manufacturing; welders, electrical and scaffolding profiles are much sought after around the industrial parks there."
+        },
+        "roeselare": {
+            "context": "Roeselare is a strongly entrepreneurial city with many construction companies; bricklaying, roofing and full-crew profiles are widely available there."
+        },
+        "amsterdam": {
+            "context": "Amsterdam combines foundation repair in the canal ring with large new-build such as on the Zuidas; painting, plastering and technical profiles are in strong demand there."
+        },
+        "rotterdam": {
+            "context": "Rotterdam is the city of high-rise, ports and innovative architecture; welders, plant operators and electrical profiles are indispensable there."
+        },
+        "den-haag": {
+            "context": "The Hague combines government offices with residential and renovation projects; bricklaying, tiling and electrical profiles are commonplace there."
+        },
+        "utrecht": {
+            "context": "Utrecht is a hub with a great deal of new-build and conversion of office buildings; formwork, team leadership and technical services are strongly represented there."
+        },
+        "eindhoven": {
+            "context": "Eindhoven and Brainport run on industry and technology; industrial electrical, welding and HVAC profiles are much sought after there."
+        },
+        "tilburg": {
+            "context": "Tilburg has many logistics and conversion projects; groundwork, road works and scaffolding profiles are commonplace there."
+        },
+        "almere": {
+            "context": "Almere is a fast-growing municipality with a great deal of new-build; bricklaying, roofing and joinery profiles are plentiful there."
+        },
+        "groningen": {
+            "context": "Groningen combines city-centre renovation with new-build and structural reinforcement work; painting, plastering and façade profiles are in strong demand there."
+        },
+        "breda": {
+            "context": "Breda is an attractive residential region with a great deal of renovation; formwork, rebar work and team leadership are well represented there."
+        },
+        "nijmegen": {
+            "context": "Nijmegen is known for the Waal quarters and riverside urban development; joinery, plumbing and technical profiles are commonplace there."
+        },
+        "apeldoorn": {
+            "context": "Apeldoorn is a leafy municipality with a great deal of housing and commercial construction; residential electrical, plumbing and tiling profiles are sought after there."
+        },
+        "haarlem": {
+            "context": "Haarlem combines heritage homes in the centre with new-build; bricklaying, plastering and technical profiles are strongly present there."
+        },
+        "enschede": {
+            "context": "Enschede and Twente are enterprising, with a great deal of new-build and conversion; groundwork, road works and scaffolding profiles are commonplace there."
+        },
+        "arnhem": {
+            "context": "Arnhem lies on the Rhine and sees a great deal of urban renewal; welders, industrial electrical and crane profiles are represented there."
+        },
+        "amersfoort": {
+            "context": "Amersfoort is a historic city with a great deal of new-build on its outskirts; formwork, rebar work and team leadership are commonplace there."
+        },
+        "zaandam": {
+            "context": "Zaandam combines industrial activity with housing renovation; joinery, plumbing and façade profiles are in demand there."
+        },
+        "s-hertogenbosch": {
+            "context": "'s-Hertogenbosch combines heritage in the centre with new residential districts; bricklaying, tiling and electrical profiles are well represented there."
+        },
+        "zwolle": {
+            "context": "Zwolle is growing as an economic hub with a great deal of new-build; roofing, painting and plastering profiles are commonplace there."
+        },
+        "zoetermeer": {
+            "context": "Zoetermeer is a post-war residential town with a great deal of renovation and commercial construction; groundwork, road works and labourer profiles are sought after there."
+        },
+        "leiden": {
+            "context": "Leiden is a university and healthcare city with a great deal of renovation; formwork, rebar work and team leadership are present there."
+        },
+        "maastricht": {
+            "context": "Maastricht combines heritage, healthcare and manufacturing; welders, industrial electrical and crane profiles are in strong demand there."
+        },
+        "dordrecht": {
+            "context": "Dordrecht is an inland port city with a great deal of renovation and water engineering; bricklaying, joinery and assembly profiles are commonplace there."
+        }
+    },
+    "EmployersUsp": {
+        "eyebrow": "For general contractors & construction companies",
+        "title": "Hire subcontractors who actually work — not piles of CVs",
+        "intro": "No need to trawl through piles of CVs. You can hire a construction crew today: screened tradespeople and crews from Eastern Europe, mainly Ukraine — legal, ready to start, and anyone with the right to work in Belgium is welcome.",
+        "features": [
+            {
+                "title": "Tested crews, not piles of CVs",
+                "desc": "Every tradesperson is screened before the start and then works a 14-day trial on your site. Instead of twenty CVs, we put forward one screened crew that can start within a few days."
+            },
+            {
+                "title": "Legal crews: A1 & Limosa arranged",
+                "desc": "We handle every statutory obligation — A1 certificates, Limosa notifications and Check-in-at-work. You hire 100% legally, with no risk of undeclared work."
+            },
+            {
+                "title": "14-day test week",
+                "desc": "The first 14 days show whether the crew really clicks with your site and the way you work. If it doesn't, there is no invoice for that crew."
+            },
+            {
+                "title": "Fee tied to results",
+                "desc": "No fixed staffing costs. You only receive our invoice once the crew has come through the 14-day trial period."
+            },
+            {
+                "title": "Crews from across Europe",
+                "desc": "We work with crews from Eastern Europe, mainly Ukraine. Anyone with the right to work in Belgium is welcome — including people who already live in Belgium."
+            }
+        ],
+        "cta_title": "Request a screened crew today",
+        "cta_desc": "Tell us what you need — we deliver a tested, legal crew to your site.",
+        "cta_button": "Request a crew"
+    },
+    "Trades": {
+        "gevel": {
+            "label": "Façade",
+            "title": "Façade contractors & façade renovation in {city}",
+            "intro": "Specialist façade crews that renovate, insulate and refresh the exterior walls of older homes in {city}. Legal, screened and ready to start.",
+            "features": [
+                "Façade renovation and insulation",
+                "Repair of façade render and brickwork",
+                "Repointing and painting on exterior walls"
+            ],
+            "cta_title": "Request a screened façade crew in {city}",
+            "cta_desc": "Request a façade crew for your project in {city} today.",
+            "cta_button": "Request a façade crew",
+            "section_title": "What your façade crew does in {city}"
+        },
+        "renovatie": {
+            "label": "Renovation",
+            "title": "General renovation & upgrading of older homes in {city}",
+            "intro": "General renovation crews that refurbish and add storeys to older homes in {city} — from roof to foundations, including structural shell work and finishing. Legal, screened and flexible.",
+            "features": [
+                "Renovation and storey extensions on older homes",
+                "Structural shell, finishing and building services",
+                "Putting together one complete crew that already works well together"
+            ],
+            "cta_title": "Request a renovation crew in {city}",
+            "cta_desc": "Request a complete renovation crew for your project in {city} today.",
+            "cta_button": "Request a renovation crew",
+            "section_title": "What your renovation crew does in {city}"
+        },
+        "beton": {
+            "label": "Concrete",
+            "title": "Concrete crews & concrete workers in {city}",
+            "intro": "Experienced concrete crews for foundations, floors and structural work in {city}. Concrete workers, formwork carpenters and rebar fixers — legal, screened and ready to start.",
+            "features": [
+                "Foundations, floors and concrete structures",
+                "Formwork and rebar fixing",
+                "A complete crew including a foreman who works on the tools"
+            ],
+            "cta_title": "Request a concrete crew in {city}",
+            "cta_desc": "Request a tested concrete crew for your project in {city} today.",
+            "cta_button": "Request a concrete crew",
+            "section_title": "What your concrete crew does in {city}"
+        },
+        "dak": {
+            "label": "Roofing",
+            "title": "Roofers & roofing crews in {city}",
+            "intro": "Roofers for flat and pitched roofs in {city} — EPDM, bitumen, tiles. Screened crews, fully legal with A1 and Limosa arranged.",
+            "features": [
+                "Flat roofs (EPDM, bitumen)",
+                "Pitched roofs (tiles, slates)",
+                "Roof renovation and repairs"
+            ],
+            "cta_title": "Request a roofing crew in {city}",
+            "cta_desc": "Request a screened roofing crew for your project in {city} today.",
+            "cta_button": "Request a roofing crew",
+            "section_title": "What your roofing crew does in {city}"
+        },
+        "ruwbouw": {
+            "label": "Structural shell",
+            "title": "Structural shell crews & shell construction workers in {city}",
+            "intro": "Structural shell crews for brickwork, formwork and shell construction of residential and non-residential buildings in {city}. Bricklayers, formwork carpenters and rebar fixers — legal, screened and ready to start.",
+            "features": [
+                "Brickwork, formwork and concrete shell work",
+                "Shell construction for residential and non-residential buildings",
+                "A complete crew including a site foreman"
+            ],
+            "cta_title": "Request a structural shell crew in {city}",
+            "cta_desc": "Request a screened structural shell crew for your project in {city} today.",
+            "cta_button": "Request a structural shell crew",
+            "section_title": "What your structural shell crew does in {city}"
+        },
+        "interieur": {
+            "label": "Interior",
+            "title": "Interior finishing & fit-out crews in {city}",
+            "intro": "Crews for interior finishing in {city}: plasterboard partitions, plastering, painting and fit-out for homes and offices. Screened, legal and ready to start.",
+            "features": [
+                "Plasterboard and internal partitions",
+                "Plastering, painting and finishing work",
+                "Fit-out for homes, offices and commercial buildings"
+            ],
+            "cta_title": "Request a finishing crew in {city}",
+            "cta_desc": "Request a screened interior and finishing crew for your project in {city} today.",
+            "cta_button": "Request a finishing crew",
+            "section_title": "What your interior and finishing crew does in {city}"
+        }
+    },
+    "WorkerFaq": {
+        "title": "Frequently asked questions from tradespeople",
+        "subtitle": "What you need to know before you start.",
+        "items": [
+            {
+                "q": "Do I need documents like A1 or Limosa?",
+                "a": "We handle all the legal obligations, including A1 certificates and Limosa notifications. You don't have to worry about the paperwork — we make sure you work 100% legally."
+            },
+            {
+                "q": "Do you arrange housing?",
+                "a": "We don't provide housing. We do help you find a place to stay close to the site, and we discuss what it costs up front."
+            },
+            {
+                "q": "When and how do I get paid?",
+                "a": "Payment runs directly between you (or your crew) and the contractor you work for — not through us. We agree the rate and the terms before you start and put them in writing, so you know where you stand up front."
+            },
+            {
+                "q": "How soon can I start?",
+                "a": "Once you're approved, you can usually be on site within a few days to a week, depending on your trade."
+            },
+            {
+                "q": "Do I have to register in Belgium?",
+                "a": "No. We guide you through the whole process. Only your experience and skills count — we take care of the rest."
+            }
+        ]
+    },
+    "TradeNation": {
+        "beton": {
+            "title": "Bring in experienced concrete crews",
+            "meta_description": "Construction subcontractor for concrete works. Personally screened crews with A1, Limosa and Checkinatwork fully arranged.",
+            "intro": "Constructief supplies screened concrete crews to general contractors across Belgium. We speak to every tradesperson personally and arrange A1, Limosa and Checkinatwork. You get no piles of CVs — you get a crew that fits your schedule and your site.",
+            "section_title": "What our concrete crews deliver",
+            "features": [
+                "Formwork and striking for foundations, walls, columns and floor slabs",
+                "Placing and installing rebar to the construction drawings",
+                "Pouring, compacting and finishing concrete on shell construction and infrastructure sites"
+            ],
+            "cta_title": "Need a concrete crew for your site",
+            "cta_desc": "Talk to us about your schedule and requirements. Start with a 14-day test week. Our fee is tied to results.",
+            "cta_button": "Request a concrete crew"
+        },
+        "dak": {
+            "title": "Find a subcontractor for roofing works",
+            "meta_description": "Need a roofing subcontractor? Personally screened crews. A1, Limosa and Checkinatwork fully arranged.",
+            "intro": "Constructief connects general contractors across Belgium with personally screened crews for roofing works. We speak to every tradesperson, handle the admin and offer a 14-day test week. You get no piles of CVs, and you pay a fee tied to results.",
+            "section_title": "What our roofing crews deliver",
+            "features": [
+                "Installation and renovation of flat roofs with bitumen, EPDM or other roof membranes.",
+                "Building up and finishing pitched roofs, including roof underlay, tiles and slates.",
+                "Installation of roof insulation, gutters, roof edges and junctions for new build and renovation."
+            ],
+            "cta_title": "Let's talk about your roofing project",
+            "cta_desc": "Send us your schedule, site requirements and the crew size you need. We find a pre-screened crew that fits your job.",
+            "cta_button": "Request a roofing crew"
+        },
+        "gevel": {
+            "title": "Bring in a façade crew for your construction project",
+            "meta_description": "Need a construction subcontractor for façade works? Every tradesperson is personally screened. A1, Limosa and Checkinatwork are fully arranged.",
+            "intro": "Constructief connects general contractors across Belgium with pre-screened, legal façade crews. Whether you need a façade crew for new build, renovation or repairing brickwork: we speak to every tradesperson personally. You get no piles of CVs, and we take care of A1, Limosa and Checkinatwork in full.",
+            "section_title": "What our façade crews deliver",
+            "features": [
+                "New-build façades: built in facing brick, blockwork and pointing to plan and schedule.",
+                "Façade insulation and cladding: installation of insulation systems, brick slips and various façade claddings.",
+                "Façade renovation and detailing: repair, repointing and finishing at roof edges, coordinated with your roofing subcontractor."
+            ],
+            "cta_title": "Need a façade crew?",
+            "cta_desc": "Share your schedule, scope and preferred start date. We select a façade crew that fits, with a 14-day test week and a fee tied to results.",
+            "cta_button": "Request a façade crew"
+        },
+        "interieur": {
+            "title": "Bring in screened interior crews",
+            "meta_description": "Need a construction subcontractor for interior work? We speak to every tradesperson. A1, Limosa and Checkinatwork arranged, with a 14-day test week.",
+            "intro": "For interior projects across Belgium we connect general contractors with personally screened crews. We speak to every tradesperson and arrange A1, Limosa and Checkinatwork. You get no piles of CVs — you get a crew that fits, with a 14-day test week.",
+            "section_title": "What our interior crews deliver",
+            "features": [
+                "Installation of plasterboard walls, stud partitions and suspended ceilings.",
+                "Fitting internal doors, bespoke joinery, skirting boards and other interior carpentry.",
+                "Laying floor coverings and carrying out painting and finishing works."
+            ],
+            "cta_title": "Need an interior crew",
+            "cta_desc": "Talk to us about your schedule, the skills you need and the crew size. We find a screened crew and tie our fee to the result.",
+            "cta_button": "Request an interior crew"
+        },
+        "renovatie": {
+            "title": "Find your renovation subcontractor in Belgium",
+            "meta_description": "Need a renovation subcontractor? Personally screened crews across Belgium. A1, Limosa and Checkinatwork fully arranged.",
+            "intro": "Constructief connects general contractors across Belgium with a renovation crew that fits. We speak to every tradesperson personally and arrange all the required documents. You get no piles of CVs — you get a crew ready to start, with a 14-day test week.",
+            "section_title": "What our renovation crews carry out",
+            "features": [
+                "Full interior renovation, including demolition, rebuilding and finishing",
+                "Renovation of façades, roofs and other building envelopes",
+                "Adaptation and repair of homes, offices and commercial buildings"
+            ],
+            "cta_title": "Need a renovation crew?",
+            "cta_desc": "Talk to us about your schedule and requirements. We find a screened crew and arrange A1, Limosa and Checkinatwork. Our fee is tied to results.",
+            "cta_button": "Find my renovation crew"
+        },
+        "ruwbouw": {
+            "title": "Bring in a structural shell subcontractor",
+            "meta_description": "Need a structural shell subcontractor or rebar fixers? We speak to every tradesperson and fully arrange A1, Limosa and Checkinatwork.",
+            "intro": "Constructief supplies pre-screened structural shell crews for projects across Belgium. We speak to every tradesperson personally and arrange A1, Limosa and Checkinatwork. You get a crew that fits — not piles of CVs.",
+            "section_title": "What our structural shell crews deliver",
+            "features": [
+                "Formwork, rebar and concrete works for foundations, floors, walls and columns.",
+                "Experienced rebar fixers for cutting, bending and placing reinforcement to drawing.",
+                "Brickwork for load-bearing walls, internal walls and other structural shell elements."
+            ],
+            "cta_title": "Find a structural shell crew that fits",
+            "cta_desc": "Talk to us about your schedule and crew size. Start with a 14-day test week. Our fee is tied to results.",
+            "cta_button": "Request a structural shell crew"
+        }
+    },
+    "SubcontractorForm": {
+        "page_title": "Become a subcontractor — register your crew",
+        "page_subtitle": "Fill in this form and we will add your crew to our network of screened subcontractors. Your details go straight to our recruiter.",
+        "form_title": "Subcontractor registration",
+        "form_subtitle": "Filling this in takes about 2 minutes.",
+        "context_note": "Your registration is for: {role}. Feel free to change the specialisation.",
+        "name": "First name",
+        "name_ph": "E.g. Denys",
+        "specialization": "Specialisation",
+        "specialization_ph": "E.g. bricklayer, plasterer, façade worker...",
+        "legal_status": "Documents / right to work in Belgium",
+        "car_and_tools": "Car and tools",
+        "location": "Current location (city)",
+        "location_ph": "E.g. Antwerp",
+        "rate": "Desired rate",
+        "rate_ph": "E.g. €22/hour or €18/m²",
+        "phone": "Phone number (WhatsApp)",
+        "phone_ph": "+32 465 811031",
+        "email": "Email address",
+        "email_ph": "name@example.be",
+        "email_hint": "You will receive confirmation of your registration at this address.",
+        "success_email_note": "We have sent a confirmation to {email}.",
+        "languages": "Languages on site",
+        "languages_ph": "E.g. Polish, basic Dutch",
+        "team_size": "Alone or a crew?",
+        "availability": "When can you start?",
+        "photos": "Photos of your work (optional, max 3)",
+        "photos_hint": "Choose photos of recent projects (JPG/PNG).",
+        "submit": "Send registration",
+        "submitting": "Sending...",
+        "success_title": "Thank you for registering!",
+        "success_text": "Our recruiter reviews your profile and will contact you as soon as a suitable project comes up.",
+        "error_title": "Something went wrong",
+        "error_text": "Try again or contact us on WhatsApp.",
+        "required_hint": "required",
+        "legal_status_options": [
+            {
+                "value": "EU-paspoort (EU-land)",
+                "label": "EU passport (EU country)"
+            },
+            {
+                "value": "Belgische kaart A",
+                "label": "Belgian A card"
+            },
+            {
+                "value": "A1-detachering (buitenlandse firma)",
+                "label": "A1 posting (foreign company)"
+            },
+            {
+                "value": "Eigen BV / firma (TVA actief)",
+                "label": "Own BV / company (VAT registered)"
+            },
+            {
+                "value": "Anders / nog te bevestigen",
+                "label": "Other / still to be confirmed"
+            }
+        ],
+        "car_and_tools_options": [
+            {
+                "value": "Eigen vervoer + eigen handgereedschap",
+                "label": "Own transport + own hand tools"
+            },
+            {
+                "value": "Eigen vervoer, beperkt gereedschap",
+                "label": "Own transport, limited tools"
+            },
+            {
+                "value": "Geen eigen vervoer",
+                "label": "No own transport"
+            }
+        ],
+        "team_size_options": [
+            {
+                "value": "Ik werk alleen (zzp)",
+                "label": "I work alone (self-employed)"
+            },
+            {
+                "value": "Ploeg van 2-3 man",
+                "label": "Crew of 2-3 people"
+            },
+            {
+                "value": "Ploeg van 4-6 man",
+                "label": "Crew of 4-6 people"
+            },
+            {
+                "value": "Ploeg van 7+ man",
+                "label": "Crew of 7+ people"
+            }
+        ],
+        "availability_options": [
+            {
+                "value": "Per direct beschikbaar",
+                "label": "Available immediately"
+            },
+            {
+                "value": "Vanaf binnen 1 week",
+                "label": "Within 1 week"
+            },
+            {
+                "value": "Vanaf binnen 2-4 weken",
+                "label": "Within 2-4 weeks"
+            },
+            {
+                "value": "Later (datum volgt)",
+                "label": "Later (date to follow)"
+            }
+        ],
+        "content": {
+            "heading": "Become a subcontractor at Constructief",
+            "intro": "Constructief is a Belgian company that supplies screened construction crews to general contractors in Belgium and the Netherlands. We work with crews from Eastern Europe: bricklayers, concrete workers, plasterers, façade workers, roofers and finishers. Registration is free — you pay nothing; our fee is paid by the client.",
+            "benefits_heading": "What you get",
+            "benefits": [
+                "Direct assignments from general contractors — no intermediaries.",
+                "We arrange A1, Limosa and Checkinatwork.",
+                "The rate is known before you start on site.",
+                "One fixed point of contact who speaks your language.",
+                "Work over longer periods, not for a single day."
+            ],
+            "docs_heading": "Which documents you need",
+            "docs": [
+                "Valid passport or ID card.",
+                "A1 — for workers from the EU.",
+                "For non-EU workers: legal residence status and the right to work.",
+                "Limosa notification (we arrange it for you).",
+                "IBAN bank account number for payment."
+            ],
+            "process_heading": "How the selection works",
+            "process": [
+                "You fill in the form below (± 2 minutes).",
+                "We contact you on WhatsApp and discuss experience, crew and rate.",
+                "We check the documents and look for a suitable site.",
+                "You start on site; the first two weeks are a trial period.",
+                "If it works, we continue on a permanent basis."
+            ],
+            "faq_heading": "Frequently asked questions",
+            "faq": [
+                {
+                    "q": "Do I have to pay to register?",
+                    "a": "No. Registration and matching are free. Our fee is paid by the client, not by you."
+                },
+                {
+                    "q": "What are A1 and Limosa, and who arranges them?",
+                    "a": "A1 proves that you pay social contributions in your EU country. Limosa is the mandatory notification for work in Belgium. We tell you which documents are needed and help with Limosa."
+                },
+                {
+                    "q": "Can I work without knowing the language?",
+                    "a": "Yes. On site, basic Dutch or English is enough, and you are in contact with a supervisor who speaks your language."
+                },
+                {
+                    "q": "How much will I earn?",
+                    "a": "The rate depends on your speciality and the site. You know the rate before you start."
+                },
+                {
+                    "q": "I work alone — am I eligible?",
+                    "a": "Yes. We place both individual specialists and full crews with a crew leader."
+                },
+                {
+                    "q": "Where can I live during the work?",
+                    "a": "We help you find accommodation near the site. We discuss the costs in advance."
+                }
+            ]
+        }
+    },
+    "TradeCity": {
+        "beton": {
+            "antwerpen": "In Antwerp, port buildings, logistics halls and urban apartment construction drive demand for formwork carpenters, rebar fixers and concrete pouring crews. As a construction subcontractor you get personally screened tradespeople, with A1, Limosa and Checkinatwork fully arranged.",
+            "gent": "In Ghent, urban renewal, apartment projects and works around the quays call for experienced formwork carpenters and rebar fixers who can work on compact sites. You test the proposed crew for 14 days and receive no stacks of CVs.",
+            "leuven": "In Leuven, student housing, care buildings and research environments create demand for precise structural crews for foundations, walls and floor slabs. For posting construction staff we select every tradesperson personally and link our fee to the result.",
+            "brussel": "In Brussels, apartment construction, office conversions and underground structures boost demand for formwork carpenters, rebar fixers and pouring crews. We supply pre-screened crews to the construction subcontractor, with the required A1 documents, Limosa notification and Checkinatwork in order."
+        },
+        "dak": {
+            "antwerpen": "In Antwerp, renovation of terraced houses, apartment buildings and industrial premises in the port area drives demand for experienced roofers. Constructief supplies a personally screened roofing subcontractor for flat and pitched roofs, with A1, Limosa and Checkinatwork arranged.",
+            "gent": "Ghent combines renovation in the historic centre with new housing projects on the edge of the city. That calls for crews with experience in pitched roofs, insulation and renovation work on tight sites.",
+            "leuven": "In Leuven, demand comes mainly from renovating student housing, terraced houses and apartment buildings. You get no stacks of CVs, but a personally screened roofing subcontractor you can test for 14 days first.",
+            "brussel": "Brussels has many renovations of apartment buildings, townhouses and flat roofs, often on sites with limited access. If you are looking for a roofing crew, Constructief gives you a pre-screened crew with all the required paperwork fully arranged."
+        },
+        "gevel": {
+            "antwerpen": "In Antwerp, apartment renovations, warehouses and logistics buildings drive demand for bricklayers, pointers and external insulation installers. As a construction subcontractor we supply personally screened tradespeople, with A1, Limosa and Checkinatwork fully arranged.",
+            "gent": "In Ghent, renovating historic buildings and new housing projects calls for tradespeople for traditional masonry, pointing and insulation systems. Through posting construction staff you get a suitable crew without stacks of CVs, with a trial period of 14 days.",
+            "leuven": "In Leuven, renovation of student housing, apartment buildings and compact urban projects drives demand for bricklayers and insulation installers. We speak to every tradesperson personally and link our fee to the result.",
+            "brussel": "In Brussels, renovating offices and apartment buildings and making older properties more sustainable call for crews for masonry, repair and external insulation. We supply pre-screened construction workers and arrange A1, Limosa and Checkinatwork in full."
+        },
+        "interieur": {
+            "antwerpen": "Renovating townhouses, apartments and retail premises in Antwerp calls for tradespeople for gyproc, ceilings, interior joinery and bespoke work. As a construction subcontractor we supply personally screened crews, with A1, Limosa and Checkinatwork fully arranged.",
+            "gent": "In Ghent, renovating terraced houses, student rooms and historic buildings drives demand for experienced installers of walls, ceilings, doors and fitted furniture. You get no stacks of CVs, but a proposed crew you assess on site during a 14-day trial period.",
+            "leuven": "The Leuven market is shaped by renovation of homes, student housing, offices and care buildings. For posting construction staff we select tradespeople who carry out gyproc, interior joinery and finishing precisely, with a fee linked to the result.",
+            "brussel": "In Brussels, renovating apartments, offices and retail premises often calls for multilingual crews for walls, ceilings, doors and bespoke work. We deploy crews from Poland, Ukraine and Romania who can work in several languages, with all legal documents in order in advance."
+        },
+        "renovatie": {
+            "antwerpen": "Renewing townhouses, apartments and retail premises in Antwerp calls for all-round finishers, plasterers and tilers. Constructief supplies personally screened crews, with A1, Limosa and Checkinatwork fully arranged.",
+            "gent": "In Ghent, modernising terraced houses, student housing and old commercial premises drives demand for tradespeople for demolition, structural repair and interior finishing. You test the proposed crew for 14 days and our fee is linked to the result.",
+            "leuven": "In Leuven, renewing townhouses, apartment buildings and student properties calls for compact crews who can work in occupied buildings with difficult access. We speak to every tradesperson personally, so you receive no stacks of CVs.",
+            "brussel": "In Brussels, upgrading apartment buildings, offices and older townhouses drives demand for multilingual crews for full refurbishment and finishing. If you are looking for a renovation crew, Constructief gives you a personally screened crew with all required documents arranged."
+        },
+        "ruwbouw": {
+            "antwerpen": "In Antwerp, urban apartment construction, renovation and logistics projects around the port drive demand for steel fixers, formwork carpenters and bricklayers. We speak to every tradesperson personally and arrange A1, Limosa and Checkinatwork in full.",
+            "gent": "In Ghent, urban renewal, apartment construction and the repurposing of industrial buildings call for experienced crews for foundations, concrete structures and masonry. You test the selected tradespeople on site for 14 days first.",
+            "leuven": "In Leuven, demand comes mainly from compact housing projects, care buildings and buildings for education and research. We supply screened steel fixers, formwork carpenters and bricklayers without stacks of CVs, with a fee linked to the result.",
+            "brussel": "In Brussels, apartment renovations, office conversions and mixed urban projects create a need for flexible crews for concrete and shell works. We select every tradesperson personally and take care of all required documents for a compliant deployment."
+        }
+    },
+    "TradeCluster": {
+        "other_trades_title": "Other trade crews in {city}",
+        "nationwide_label": "{label} — available nationwide",
+        "city_page_label": "More about {city}",
+        "homepage_title": "Our trade crews",
+        "homepage_subtitle": "Specialist, screened crews by trade — available across Belgium and the Netherlands.",
+        "city_trades_title": "Trade crews in {city}"
+    },
+    "VacancyUI": {
+        "trade_header_subtitle": "Constructief recruits skilled tradespeople for contractors across Belgium. Registration is free, you get one fixed point of contact, and we agree pay and start date before you begin.",
+        "what_you_do": "What you do on site",
+        "what_contractors_expect": "What contractors expect",
+        "certificates_title": "Diplomas, certificates and documents",
+        "what_you_get": "What you get at Constructief",
+        "register_as": "Register for free as a {role}",
+        "open_vacancies_title": "Open vacancies: {role}",
+        "one_opening": "One position is open for this role at the moment.",
+        "n_openings": "{count} positions are open for this role at the moment.",
+        "no_openings": "No position is open for this role today, but we place people for contractors across Belgium all year round. Register and we will contact you as soon as a site matches your profile.",
+        "leave_details": "Leave your details",
+        "faq_title": "Frequently asked questions about the {role} trade",
+        "process_title": "How your registration works",
+        "process_steps": [
+            "You fill in the candidate form: experience, certificates, region and availability. Free, no account needed.",
+            "We call you for a short screening and go through what you are looking for and which documents you have.",
+            "We introduce you to one contractor who fits — not to ten at once.",
+            "Pay, hours and start date are agreed before your first working day.",
+            "We arrange documents such as A1, Limosa and Checkinatwork in advance, so you can start."
+        ],
+        "ready_title": "Ready to apply?",
+        "ready_text": "Leave your details in the candidate form. We will contact you as soon as we have reviewed your profile.",
+        "register_candidate": "Register as a candidate",
+        "all_vacancies": "All vacancies",
+        "view_vacancy": "View vacancy",
+        "all_vacancies_link": "View all open vacancies",
+        "job_tasks": "What you will do",
+        "job_requirements": "Who we are looking for",
+        "job_offer": "What we offer",
+        "apply_title": "Apply for this position",
+        "apply_text": "Fill in your details in the candidate form. We will contact you as soon as we have reviewed your profile.",
+        "about_role": "About this position",
+        "published_on": "Published on",
+        "company_note": "Constructief builds construction crews for contractors across Belgium. We recruit, screen and guide skilled tradespeople for sites all over Belgium.",
+        "more_jobs_for": "More vacancies and information for {role}",
+        "service_trade_link": "More about this trade",
+        "trade_pages_title": "Vacancies by trade",
+        "trade_pages_text": "Looking for work in a particular trade? See per trade what the work involves, which certificates are required and which positions are open at the moment.",
+        "openings_count": "{count, plural, =0 {No open positions} one {# open position} other {# open positions}}",
+        "continuous_work": "Ongoing assignments across Belgium"
+    }
+}

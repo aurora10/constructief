@@ -55,5 +55,5 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
     // Match only internationalized pathnames
-    matcher: ['/', '/(nl|ru|fr)/:path*'],
+    matcher: ['/', '/(nl|fr|en|ru)/:path*'],
 };

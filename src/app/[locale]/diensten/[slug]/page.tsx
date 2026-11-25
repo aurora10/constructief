@@ -29,7 +29,13 @@ import {
 // /diensten/onderaannemer-renovatie. The Trades.* copy uses a {city} placeholder;
 // we substitute it with the region so the page reads without a specific city.
 function tradeRegion(locale: string): string {
-  return locale === 'fr' ? 'Belgique' : locale === 'ru' ? 'Бельгия' : 'België';
+  return locale === 'fr'
+    ? 'Belgique'
+    : locale === 'ru'
+      ? 'Бельгия'
+      : locale === 'en'
+        ? 'Belgium'
+        : 'België';
 }
 
 // Synthetic city used to reuse TradeCityLanding for base-trade pages.
@@ -106,6 +112,7 @@ export async function generateMetadata({
   if (isIndexable) {
     languages.nl = `${baseUrl}/nl/diensten/${slug}`;
     languages.fr = `${baseUrl}/fr/diensten/${slug}`;
+    languages.en = `${baseUrl}/en/diensten/${slug}`;
     if (ruIndexable) {
       languages.ru = `${baseUrl}/ru/diensten/${slug}`;
     }

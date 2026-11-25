@@ -8,9 +8,11 @@ const BASE = 'https://constructief-bouw.be';
  * Rules (consistent site-wide):
  *  - Every page declares a self-referencing canonical (never omitted, otherwise
  *    Google picks its own → "Duplicate, Google chose different canonical than user").
- *  - nl ⇄ fr are true language alternates; x-default points at the nl version.
- *  - ru is a separate (worker) cluster and is NEVER an alternate of nl/fr; it gets
- *    x-default → itself so it stands alone instead of being collapsed.
+ *  - nl ⇄ fr ⇄ en are true language alternates: one page, three audiences, each
+ *    with its own translated copy. x-default points at the nl version, because
+ *    Dutch is the default for visitors with no language preference.
+ *  - ru is a separate (worker) cluster and is NEVER an alternate of nl/fr/en; it
+ *    gets x-default → itself so it stands alone instead of being collapsed.
  */
 export function pageAlternates(locale: string, path: string): Metadata['alternates'] {
     const normalized = path === '/' ? '' : path;
@@ -25,6 +27,7 @@ export function pageAlternates(locale: string, path: string): Metadata['alternat
         languages: {
             nl: `${BASE}/nl${normalized}`,
             fr: `${BASE}/fr${normalized}`,
+            en: `${BASE}/en${normalized}`,
             'x-default': `${BASE}/nl${normalized}`,
         },
     };
@@ -63,14 +66,16 @@ export function dutchOnlyAlternates(locale: string, path: string): Metadata['alt
  * nl for the Belgian labour market, ru for the crews we recruit in Eastern Europe
  * (most of whom speak Russian). Those are textbook hreflang pairs.
  *
- * fr has no vacancy audience: its pages carry the Dutch copy and are noindexed, so
- * they get a self-canonical and do not join the cluster.
+ * fr and en have no vacancy audience: their pages carry the Dutch copy and are
+ * noindexed, so they get a self-canonical and do not join the cluster. (An English
+ * page wrapper around a Dutch job ad is not a translation, so publishing it as an
+ * en alternate would promise Google content that isn't there.)
  */
 export function vacancyAlternates(locale: string, path: string): Metadata['alternates'] {
     const normalized = path === '/' ? '' : path;
     const canonical = `${BASE}/${locale}${normalized}`;
 
-    if (locale === 'fr') {
+    if (locale === 'fr' || locale === 'en') {
         return { canonical, languages: { 'x-default': canonical } };
     }
 

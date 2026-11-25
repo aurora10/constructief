@@ -43,15 +43,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const canonical = `${BASE_URL}/${locale}/nieuws/${article.slug}`;
     const isWorkerCluster = locale === 'ru';
 
-    // ru is a separate (worker) cluster → never an alternate of the nl/fr pages.
+    // ru is a separate (worker) cluster → never an alternate of the nl/fr/en pages.
     const languages: Record<string, string> = isWorkerCluster
         ? { 'x-default': canonical }
         : {
               nl: `${BASE_URL}/nl/nieuws/${article.slug}`,
               'x-default': `${BASE_URL}/nl/nieuws/${article.slug}`,
           };
+    // Only advertise a language once this specific article exists in it, so every
+    // copy of the page publishes the same alternate set.
     if (!isWorkerCluster && getArticle('fr', article.slug)) {
         languages.fr = `${BASE_URL}/fr/nieuws/${article.slug}`;
+    }
+    if (!isWorkerCluster && getArticle('en', article.slug)) {
+        languages.en = `${BASE_URL}/en/nieuws/${article.slug}`;
     }
 
     const image = heroImage(article);

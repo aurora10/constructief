@@ -8,6 +8,7 @@ import { jobTradeRu } from '@/data/vacancyTrades.ru';
 import { BRAND } from '@/lib/brand';
 import nl from '@/messages/nl.json';
 import fr from '@/messages/fr.json';
+import en from '@/messages/en.json';
 import ru from '@/messages/ru.json';
 
 const BASE = 'https://constructief-bouw.be';
@@ -43,6 +44,7 @@ export function GET(): Response {
     const workerFaq: Record<string, { q: string; a: string }[]> = {
         nl: ((nl as any).WorkerFaq?.items ?? []) as { q: string; a: string }[],
         fr: ((fr as any).WorkerFaq?.items ?? []) as { q: string; a: string }[],
+        en: en.WorkerFaq.items,
         ru: ((ru as any).WorkerFaq?.items ?? []) as { q: string; a: string }[],
     };
 
@@ -55,7 +57,7 @@ export function GET(): Response {
     );
     out.push('');
     out.push(
-        'Werkgebied: België (Vlaanderen, Brussel) en Nederland. Talen: Nederlands, Frans, Russisch.',
+        'Werkgebied: België (Vlaanderen, Brussel) en Nederland. Talen: Nederlands, Frans, Engels, Russisch.',
     );
     out.push('');
     out.push('Kies de sectie die bij de intentie van de gebruiker past:');
@@ -132,6 +134,14 @@ export function GET(): Response {
     out.push('');
     out.push('**Questions fréquentes des ouvriers et équipes :**');
     for (const item of workerFaq.fr) out.push(`- **${item.q}** ${item.a}`);
+    out.push('');
+
+    out.push('### English');
+    out.push(line('Work through Constructief (crews & tradespeople)', `${BASE}/en/onderaannemer-inschrijven`, 'Register as a tradesperson or crew: specialisation, documents, experience and availability. Personal screening, A1 and Limosa handled for you.'));
+    out.push(line('Construction subcontractor (EN, for contractors)', `${BASE}/en/werkgevers`, 'Screened construction crews and tradespeople for contractors in Belgium and the Netherlands: legal employment with A1 and Limosa, 14-day trial week, payment on results.'));
+    out.push('');
+    out.push('**Frequently asked questions from tradespeople and crews:**');
+    for (const item of workerFaq.en) out.push(`- **${item.q}** ${item.a}`);
     out.push('');
 
     out.push('### Русский (работа в Бельгии и Нидерландах)');

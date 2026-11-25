@@ -75,14 +75,14 @@ export default async function RootLayout({
       { "@type": "Country", "name": "Belgium", "alternateName": "BE" },
       { "@type": "Country", "name": "Netherlands", "alternateName": "NL" }
     ],
-    "availableLanguage": ["nl", "fr", "ru"],
+    "availableLanguage": ["nl", "fr", "en", "ru"],
     "contactPoint": [
       {
         "@type": "ContactPoint",
         "contactType": "sales",
         "telephone": "+32465811031",
         "email": "info@constructief.be",
-        "availableLanguage": ["nl", "fr", "ru"],
+        "availableLanguage": ["nl", "fr", "en", "ru"],
         "areaServed": ["BE", "NL"]
       }
     ],

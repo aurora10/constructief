@@ -134,6 +134,19 @@ export function Header() {
                             size="sm"
                             className={cn(
                                 "font-bold text-xs rounded-full px-3 transition-colors",
+                                locale === "en"
+                                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                                    : "hover:bg-primary/15"
+                            )}
+                            onClick={() => switchLocale("en")}
+                        >
+                            EN
+                        </Button>
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className={cn(
+                                "font-bold text-xs rounded-full px-3 transition-colors",
                                 locale === "ru"
                                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
                                     : "hover:bg-primary/15"
@@ -202,6 +215,19 @@ export function Header() {
                                 onClick={() => switchLocale("fr")}
                             >
                                 FR
+                            </Button>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className={cn(
+                                    "rounded-full px-3 transition-colors font-bold text-xs",
+                                    locale === "en"
+                                        ? "bg-primary text-primary-foreground border-primary hover:bg-primary/90"
+                                        : "hover:bg-primary/15"
+                                )}
+                                onClick={() => switchLocale("en")}
+                            >
+                                EN
                             </Button>
                             <Button
                                 variant="outline"

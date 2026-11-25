@@ -2,11 +2,12 @@ import type { Article } from './types';
 
 import { articles as nl } from './nl';
 import { articles as fr } from './fr';
+import { articles as en } from './en';
 import { articles as ru } from './ru';
 
 export type { Article, ArticleBlock, ArticleLink, ArticleCta } from './types';
 
-const byLocale: Record<string, Article[]> = { nl, fr, ru };
+const byLocale: Record<string, Article[]> = { nl, fr, en, ru };
 
 /** All articles for a locale (newest first as authored in the locale index). */
 export function getArticles(locale: string): Article[] {

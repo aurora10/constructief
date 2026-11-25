@@ -73,7 +73,7 @@ export async function TradeCityLanding({
       { '@type': 'City', name: city.name },
       { '@type': 'AdministrativeArea', name: city.province },
     ],
-    availableLanguage: ['nl', 'fr', 'ru'],
+    availableLanguage: ['nl', 'fr', 'en', 'ru'],
     ...(schemaInfo?.additionalType ? { additionalType: `https://schema.org/${schemaInfo.additionalType}` } : {}),
   };
 
